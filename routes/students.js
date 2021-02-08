@@ -8,7 +8,8 @@ students.get('/readall', async (req, res) => {
         const students = await Student.find();
         res.json(students);
     } catch (err) {
-        res.json({error: err})
+        res.json({error: err});
+        console.log(err);
     }
 
 });
