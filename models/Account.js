@@ -26,7 +26,7 @@ const AccountSchema = mongoose.Schema({
         required: false
     },
     knowledgeTree: {
-        type: String,
+        type: JSON,
         required: false
     }
 
@@ -35,12 +35,13 @@ const AccountSchema = mongoose.Schema({
 module.exports = mongoose.model('accounts', AccountSchema);
 
 
-/* Username
-Firstname
-Surname
-Email
-Password
-PasswordSalt
-Cookie
-KnowledgeTree */
+/*
+Firstname -> String
+Surname -> String
+Email -> String, will be used to login
+Password -> String, hashed sha256
+PasswordSalt -> Generated (String)
+Cookie -> Generated (String)
+KnowledgeTree -> JSON
+*/
 
