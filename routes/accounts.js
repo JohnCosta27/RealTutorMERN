@@ -76,22 +76,24 @@ accounts.post('/register', async (req, res) => {
 -> Recieves: Email, 
 */
 
-accounts.get('/login', async (req, res) => {
+accounts.post('/login', async (req, res) => {
     
     //Validation, make sure email and password are in the request (security and all that).
     if (req.body.email == null || req.body.password == null) {
         res.json({error: "Email or password missing from request"});
     } else {
         try {
-            
+
             const account = await Account.find({email: req.body.email});
             
+            console.log(account);
+
             // If the result of the search is more than 1 (as in it found an account with that email)
             if (account.length > 0) {
                 
-                const hashedPassword = sha256(req.body.password + account.passwordsalt);
-                if (hashedPassword == account.password) {
-                    res.json({cookie: account.cookie});
+                const hashedPassword = sha256(req.body.password + account[0].passwordsalt);
+                if (hashedPassword == account[0].password) {
+                    res.json({cookie: account[0].cookie});
                 } else {
                     res.json({error: "Incorrect password"});
                 }

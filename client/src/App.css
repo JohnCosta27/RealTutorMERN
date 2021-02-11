@@ -10,10 +10,29 @@
   height: 100%;
   background-color: #555555;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
 }
 
 .mainWrapper {
   flex: 4;
   height: 100%;
   margin-right: 20px;
+}
+
+.loginWrapper {
+  width: 90%;
+  margin-left: 5px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.loginComponents {
+  margin-top: 20px;
+  margin-bottom: 2px;
 }
