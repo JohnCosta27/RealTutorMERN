@@ -4,19 +4,47 @@ import './App.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { green, orange } from '@material-ui/core/colors';
+import { makeStyles, createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
+import { green, orange, grey } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: green[500]
+      main: green[500],
+      dark: grey[800],
+      darker: grey[900],
+      light: grey[100],
     },
     secondary: {
       main: orange[500]
     }
   }
 });
+
+const CssTextField = withStyles({
+  root: {
+    '& label': {
+      color: theme.palette.primary.darker
+    },
+    '& label.Mui-focused': {
+      color: theme.palette.primary.main,
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: theme.palette.primary.main,
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: theme.palette.primary.light,
+      },
+      '&:hover fieldset': {
+        borderColor: theme.palette.primary.main,
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: theme.palette.primary.main,
+      },
+    },
+  },
+})(TextField);
 
 function Login() {
   
@@ -61,33 +89,34 @@ const passwordChange = (event) => {
 
 const setErrorFalse = () => setError(false);
 
+const classes = makeStyles();
+
 return (
   <ThemeProvider theme={theme}>
   <div className="App">
-  <div className="leftNav">
+  <div className="leftNav" style={{backgroundColor: theme.palette.primary.dark}}>
   
   <form className="loginWrapper" onSubmit={submitLogin}>
-  
-  <TextField name="email"
-  value={email}
-  id="outlined-basic" 
-  label="Email" 
-  variant="outlined" 
-  color="primary" 
-  onChange={emailChange} 
-  error={error} 
-  onFocus={setErrorFalse}/>
 
-  <TextField name="password"
-  value={password}
-  id="outlined-basic" 
-  label="Password" 
-  variant="outlined" 
-  color="primary" 
-  type="password" 
-  onChange={passwordChange} 
+  <CssTextField
+  className={classes.margin}
+  variant="outlined"
+  value={email}
+  label="Email"
+  onChange={emailChange}
   error={error} 
-  onFocus={setErrorFalse}/>
+  onFocus={setErrorFalse}
+  />
+
+<CssTextField
+  className={classes.margin}
+  variant="outlined"
+  value={password}
+  label="Password"
+  onChange={passwordChange}
+  error={error} 
+  onFocus={setErrorFalse}
+  />
 
   <Button variant="contained" color="secondary" type="submit" value="submit">Login</Button>
   </form>
