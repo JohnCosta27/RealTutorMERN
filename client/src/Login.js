@@ -4,8 +4,10 @@ import './App.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import { makeStyles, createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { green, orange, grey } from '@material-ui/core/colors';
+
+import CustomTextField from './components/general/CustomTextField';
 
 const theme = createMuiTheme({
   palette: {
@@ -20,31 +22,6 @@ const theme = createMuiTheme({
     }
   }
 });
-
-const CssTextField = withStyles({
-  root: {
-    '& label': {
-      color: theme.palette.primary.darker
-    },
-    '& label.Mui-focused': {
-      color: theme.palette.primary.main,
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: theme.palette.primary.main,
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: theme.palette.primary.light,
-      },
-      '&:hover fieldset': {
-        borderColor: theme.palette.primary.main,
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: theme.palette.primary.main,
-      },
-    },
-  },
-})(TextField);
 
 function Login() {
   
@@ -89,8 +66,6 @@ const passwordChange = (event) => {
 
 const setErrorFalse = () => setError(false);
 
-const classes = makeStyles();
-
 return (
   <ThemeProvider theme={theme}>
   <div className="App">
@@ -98,27 +73,10 @@ return (
   
   <form className="loginWrapper" onSubmit={submitLogin}>
 
-  <CssTextField
-  className={classes.margin}
-  variant="outlined"
-  value={email}
-  label="Email"
-  onChange={emailChange}
-  error={error} 
-  onFocus={setErrorFalse}
-  />
-
-<CssTextField
-  className={classes.margin}
-  variant="outlined"
-  value={password}
-  label="Password"
-  onChange={passwordChange}
-  error={error} 
-  onFocus={setErrorFalse}
-  />
-
+  <CustomTextField theme={theme} label="Email" onChange={emailChange} error={error} onFocus={setErrorFalse} />
+  <CustomTextField theme={theme} label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} />
   <Button variant="contained" color="secondary" type="submit" value="submit">Login</Button>
+
   </form>
   
   </div>

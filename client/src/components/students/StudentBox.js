@@ -1,10 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import './StudentBox.css';
 import Student from './Student';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 
-function StudentBox() {
+function StudentBox(props) {
 
   const [students, setStudents] = useState([]);
+  const theme = createMuiTheme(props.theme);
+
+  const useStyles = makeStyles(
+    {
+      studentBox: {
+        display: "flex",
+        flexDirection: "column",
+        width: "100%"
+      }
+    }
+  )
+
+  const classes = useStyles();
 
   useEffect(() => {
       getStudents();
@@ -16,10 +29,17 @@ function StudentBox() {
       setStudents(data);
   }
 
+  let key = 0;
+
   return (
-    <div className="studentList">
+    <div className={classes.studentBox}>
       {students.map(student => (
-        <Student firstname={student.firstname} surname={student.surname} />
+        <Student 
+        firstname={student.firstname} 
+        surname={student.surname} 
+        theme={theme}
+        key={key++} 
+        m={20}/>
       ))}
     </div>
   );
