@@ -8,8 +8,11 @@ function CustomTextField(props) {
     
     const useStyles = makeStyles(
         {customTextField: {
+            '& .MuiInputBase-input': {
+                color: theme.palette.primary.text
+            },
             '& label': {
-                color: theme.palette.primary.darker
+                color: theme.palette.primary.light
             },
             '& label.Mui-focused': {
                 color: theme.palette.primary.main,
