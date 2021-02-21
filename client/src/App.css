@@ -19,7 +19,7 @@
   flex: 4;
   height: 100%;
   display: flex;
-  background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);
+  /*background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);*/
 }
 
 .studentBoxWrapper {
