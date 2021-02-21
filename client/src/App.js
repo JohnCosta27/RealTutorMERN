@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 //Pages
 import Dashboard from './components/pages/Dashboard';
 import Login from './components/pages/Login';
+import StudentDashboard from './components/pages/StudentDashboard';
 
 const theme = createMuiTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
     <Router>
       <Route exact path="/" render={(props) => (<Dashboard theme={theme}></Dashboard>)}></Route>
       <Route path="/login" render={(props) => (<Login theme={theme}></Login>)}></Route>
+      <Route path="/studentdashboard" render={(props) => (<StudentDashboard theme={theme}></StudentDashboard>)}></Route>
     </Router>
     );
   }
