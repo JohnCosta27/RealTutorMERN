@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, rgbToHex, ThemeProvider } from '@material-ui/core/styles';
 import { grey, blueGrey, teal } from '@material-ui/core/colors';
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
@@ -13,15 +13,20 @@ import StudentDashboard from './components/pages/StudentDashboard';
 
 const theme = createMuiTheme({
   palette: {
-    primary: {
+    p: {
       main: blueGrey[500],
-      background: teal[900],
+      background: teal[500],
       light: grey[100],
       text: '#DDDDDD',
-      cards: grey[500]
-    }
+      cards: grey[900]
+    },
+    primary: teal,
+    secondary: grey,
+    cards: '#FFFFFF',
+    divBackground: "#009688"
   },
 typography: {
+  fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
   h1: {
     fontSize: "5em",
     color: grey[900]

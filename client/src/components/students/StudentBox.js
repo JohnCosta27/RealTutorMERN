@@ -12,7 +12,8 @@ function StudentBox(props) {
       studentBox: {
         display: "flex",
         flexDirection: "column",
-        width: "100%"
+        width: "75%",
+        marginLeft: "12.5%"
       }
     }
   )

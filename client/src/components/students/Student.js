@@ -1,6 +1,9 @@
 import React from 'react';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 
+import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+
 function Student(props) {
     
     const theme = createMuiTheme(props.theme);
@@ -8,7 +11,10 @@ function Student(props) {
     const useStyles = makeStyles(
         {
             studentWrapper: {
-                backgroundColor: theme.palette.primary.dark,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                backgroundColor: theme.palette.Card,
                 marginBottom: "20px",
                 height: 150,
                 borderRadius: 10,
@@ -18,17 +24,15 @@ function Student(props) {
                     "transform": "translateY(-3px) scale(1.02)"
                 }
             },
-            studentName: {
-                color: theme.palette.primary.light
-            }
+
         });
         
         const classes = useStyles();
         
         return (
-            <div className={classes.studentWrapper} m={props.m}>
-            <h1 className={classes.studentName}>{props.firstname} {props.surname}</h1>
-            </div>  
+            <Card className={classes.studentWrapper}>
+                <Typography variant="h1" align="center">{props.firstname} {props.surname}</Typography>
+            </Card>  
             );
         }
         

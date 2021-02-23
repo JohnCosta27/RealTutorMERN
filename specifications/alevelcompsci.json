@@ -1,0 +1,220 @@
+{
+    "alevelcompsci":
+        
+        {
+            "section": 1,
+            "name": "Computer Systems",
+            "content": [
+                
+                {
+                    "section": 1,
+                    "name": "The characteristics of contemporary processors, input, output and storage devices",
+                    "content": [
+                        
+                        {
+                            "section": 1,
+                            "name": "Structure and function of the processor",
+                            "content": [
+
+                                {
+                                    "contentID": 1,
+                                    "content": "The Arithmetic and Logic Unit"
+                                },
+                                {
+                                    "contentID": 2,
+                                    "content": "ALU"
+                                },
+                                {
+                                    "contentID": 3,
+                                    "content": "Control Unit"
+                                },
+                                {
+                                    "contentID": 4,
+                                    "content": "Registers",
+                                    "sub_content": [
+                                        "Program Counter (PC)",
+                                        "Accumulator (ACC)",
+                                        "Memory Address Register (MAR)",
+                                        "Memory Data Register (MDR)",
+                                        "Current Instruction Register (CIR)",
+                                        "Data bus",
+                                        "Address bus",
+                                        "Control bus"
+                                    ]
+                                },
+                                {
+                                    "contentID": 5,
+                                    "content": "The Fetch-Decode-Execute Cycle, including its effects on registers"
+                                },
+                                {
+                                    "contentID": 6,
+                                    "content": "The factors affecting the performance of the CPU"
+                                },
+                                {
+                                    "contentID": 7,
+                                    "content": "The use of pipelining in a processor to improve efficiency"
+                                },
+                                {
+                                    "contentID": 8,
+                                    "content": "Von Neumann, Harvard and contemporary processor architecture"
+                                }
+
+                            ]
+
+                        },
+                        {
+                            "section": 2,
+                            "name": "Types of processor",
+                            "content": [
+
+                                {
+                                    "contentID": 1,
+                                    "content": "The differences between and uses of CISC and RISC processors"
+                                },
+                                {
+                                    "contentID": 2,
+                                    "content": "GPUs and their uses including those not related to graphics"
+                                },
+                                {
+                                    "contentID": 3,
+                                    "content": "Multicore and Parallel systems"
+                                }
+
+                            ]
+                        },
+                        {
+                            "section": 3,
+                            "name": "Input, output and storage",
+                            "content": [
+
+                                {
+                                    "contentID": 1,
+                                    "content": "How different input, output and storage devices can be applied to the solution of different problems"
+                                },
+                                {
+                                    "contentID": 2,
+                                    "content": "The uses of magnetic, flash and optical storage devices"
+                                },
+                                {
+                                    "contentID": 3,
+                                    "content": "RAM and ROM"
+                                },
+                                {
+                                    "contentID": 4,
+                                    "content": "Virtual storage"
+                                }
+
+                            ]
+                        }
+                        
+                    ]
+                    
+                },
+                {
+                    "section": 2,
+                    "name": "Software and software development",
+                    "content": [
+
+                        {
+                            "section": 1,
+                            "name": "Systems Software",
+                            "content": [
+
+                                {
+                                    "contentID": 1,
+                                    "content": "The need for, function and purpose of operating systems"
+                                },
+                                {
+                                    "contentID": 2,
+                                    "content": "Memory Management paging, segmentation and virtual memory"
+                                },
+                                {
+                                    "contentID": 3,
+                                    "content": "Interrupts, the role of interrupts and Interrupt Service Routines"
+                                },
+                                {
+                                    "contentID": 4,
+                                    "content": "Scheduling",
+                                    "sub_content": [
+                                        "Round robin",
+                                        "First come first served",
+                                        "multi-level feedback queues",
+                                        "shortest job first",
+                                        "shortest remaining time"
+                                    ]
+                                },
+                                {
+                                    "contentID": 5,
+                                    "content": "Types of operating systems",
+                                    "sub_content": [
+                                        "Distributed",
+                                        "Embedded",
+                                        "Multi-tasking",
+                                        "Multi-user",
+                                        "Real Time"
+                                    ]
+                                },
+                                {
+                                    "contentID": 6,
+                                    "content": "BIOS"
+                                },
+                                {
+                                    "contentID": 7,
+                                    "content": "Device drivers"
+                                },
+                                {
+                                    "contentID": 8,
+                                    "content": "Virtual machines"
+                                }
+
+                            ]
+                        },
+                        {
+                            "section": 2,
+                            "name": "Application Generation",
+                            "content": [
+                                {
+                                    "contentID": 1,
+                                    "content": "The nature of applications, justifying suitable applications for a specific purpose"
+                                },
+                                {
+                                    "contentID": 2,
+                                    "content": "Utilities"
+                                },
+                                {
+                                    "contentID": 3,
+                                    "content": "Open source vs closed source"
+                                },
+                                {
+                                    "contentID": 4,
+                                    "content": "Translators",
+                                    "sub_content": [
+                                        "Interpreters",
+                                        "Compilers",
+                                        "Assemblers"
+                                    ]
+                                },
+                                {
+                                    "contentID": 5,
+                                    "content": "Stages of compilation lexical analysis, syntax analysis, code generation and optimisation.",
+                                    "sub_content": [
+                                        "Lexical analysis",
+                                        "Syntax analysis",
+                                        "Code generation",
+                                        "Optimisation"
+                                    ]
+                                    
+                                },
+                                {
+                                    "contentID": 6,
+                                    "content": "Linkers, loaders and use of libraries"
+                                }
+                            ]
+                        }
+                    
+                    ]
+                }
+                
+            ]
+        }
+}

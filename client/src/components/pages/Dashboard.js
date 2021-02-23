@@ -10,8 +10,8 @@ function Dashboard(props) {
 
     return (
         <div className="App">
-        <div className="leftNav" style={{backgroundColor: theme.palette.primary.background}}></div>
-        <div className="mainWrapper" style={{backgroundColor: theme.palette.primary.main}}>
+        <div className="leftNav" style={{backgroundColor: theme.palette.divBackground}}></div>
+        <div className="mainWrapper">
         <div className="studentBoxWrapper">
         <StudentBox theme={theme}/>
         </div>
