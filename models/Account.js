@@ -23,11 +23,12 @@ const AccountSchema = mongoose.Schema({
     },
     cookie: {
         type: String,
-        required: false
     },
     knowledgeTree: {
         type: JSON,
-        required: false
+    },
+    lessons: {
+        type: [JSON],
     }
 
 });

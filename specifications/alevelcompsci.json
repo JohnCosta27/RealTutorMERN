@@ -1,5 +1,6 @@
 {
-    "alevelcompsci":
+    "specificationName": "A-level Computer Science (OCR)",
+    "sections": [
         
         {
             "section": 1,
@@ -15,7 +16,7 @@
                             "section": 1,
                             "name": "Structure and function of the processor",
                             "content": [
-
+                                
                                 {
                                     "contentID": 1,
                                     "content": "The Arithmetic and Logic Unit"
@@ -58,52 +59,52 @@
                                     "contentID": 8,
                                     "content": "Von Neumann, Harvard and contemporary processor architecture"
                                 }
-
+                                
                             ]
-
+                            
                         },
                         {
                             "section": 2,
                             "name": "Types of processor",
                             "content": [
-
+                                
                                 {
-                                    "contentID": 1,
+                                    "contentID": 9,
                                     "content": "The differences between and uses of CISC and RISC processors"
                                 },
                                 {
-                                    "contentID": 2,
+                                    "contentID": 10,
                                     "content": "GPUs and their uses including those not related to graphics"
                                 },
                                 {
-                                    "contentID": 3,
+                                    "contentID": 11,
                                     "content": "Multicore and Parallel systems"
                                 }
-
+                                
                             ]
                         },
                         {
                             "section": 3,
                             "name": "Input, output and storage",
                             "content": [
-
+                                
                                 {
-                                    "contentID": 1,
+                                    "contentID": 12,
                                     "content": "How different input, output and storage devices can be applied to the solution of different problems"
                                 },
                                 {
-                                    "contentID": 2,
+                                    "contentID": 13,
                                     "content": "The uses of magnetic, flash and optical storage devices"
                                 },
                                 {
-                                    "contentID": 3,
+                                    "contentID": 14,
                                     "content": "RAM and ROM"
                                 },
                                 {
-                                    "contentID": 4,
+                                    "contentID": 15,
                                     "content": "Virtual storage"
                                 }
-
+                                
                             ]
                         }
                         
@@ -114,26 +115,26 @@
                     "section": 2,
                     "name": "Software and software development",
                     "content": [
-
+                        
                         {
                             "section": 1,
                             "name": "Systems Software",
                             "content": [
-
+                                
                                 {
-                                    "contentID": 1,
+                                    "contentID": 16,
                                     "content": "The need for, function and purpose of operating systems"
                                 },
                                 {
-                                    "contentID": 2,
+                                    "contentID": 17,
                                     "content": "Memory Management paging, segmentation and virtual memory"
                                 },
                                 {
-                                    "contentID": 3,
+                                    "contentID": 18,
                                     "content": "Interrupts, the role of interrupts and Interrupt Service Routines"
                                 },
                                 {
-                                    "contentID": 4,
+                                    "contentID": 19,
                                     "content": "Scheduling",
                                     "sub_content": [
                                         "Round robin",
@@ -144,7 +145,7 @@
                                     ]
                                 },
                                 {
-                                    "contentID": 5,
+                                    "contentID": 20,
                                     "content": "Types of operating systems",
                                     "sub_content": [
                                         "Distributed",
@@ -155,18 +156,18 @@
                                     ]
                                 },
                                 {
-                                    "contentID": 6,
+                                    "contentID": 21,
                                     "content": "BIOS"
                                 },
                                 {
-                                    "contentID": 7,
+                                    "contentID": 22,
                                     "content": "Device drivers"
                                 },
                                 {
-                                    "contentID": 8,
+                                    "contentID": 23,
                                     "content": "Virtual machines"
                                 }
-
+                                
                             ]
                         },
                         {
@@ -174,19 +175,19 @@
                             "name": "Application Generation",
                             "content": [
                                 {
-                                    "contentID": 1,
+                                    "contentID": 24,
                                     "content": "The nature of applications, justifying suitable applications for a specific purpose"
                                 },
                                 {
-                                    "contentID": 2,
+                                    "contentID": 25,
                                     "content": "Utilities"
                                 },
                                 {
-                                    "contentID": 3,
+                                    "contentID": 26,
                                     "content": "Open source vs closed source"
                                 },
                                 {
-                                    "contentID": 4,
+                                    "contentID": 27,
                                     "content": "Translators",
                                     "sub_content": [
                                         "Interpreters",
@@ -195,8 +196,8 @@
                                     ]
                                 },
                                 {
-                                    "contentID": 5,
-                                    "content": "Stages of compilation lexical analysis, syntax analysis, code generation and optimisation.",
+                                    "contentID": 28,
+                                    "content": "Stages of compilation lexical analysis, syntax analysis, code generation and optimisation",
                                     "sub_content": [
                                         "Lexical analysis",
                                         "Syntax analysis",
@@ -206,15 +207,386 @@
                                     
                                 },
                                 {
-                                    "contentID": 6,
+                                    "contentID": 29,
                                     "content": "Linkers, loaders and use of libraries"
                                 }
                             ]
+                        },
+                        {
+                            "section": 3,
+                            "name": "Software Development",
+                            "content": [
+                                {
+                                    "contentID": 30,
+                                    "content": "Development Methodologies",
+                                    "sub_content": [
+                                        "Waterfall cycle",
+                                        "Agile methodologies",
+                                        "Extreme programming",
+                                        "The spiral model",
+                                        "Rapid application development"
+                                    ]
+                                },
+                                {
+                                    "contentID": 31,
+                                    "content": "The relative merits and drawbacks of different methodologies and when they might be used"
+                                },
+                                {
+                                    "contentID": 32,
+                                    "content": "Writing and following algorithms"
+                                }
+                            ]
+                        },
+                        {
+                            "section": 4,
+                            "name": "Types of Programming Language",
+                            "content": [
+                                {
+                                    "contentID": 33,
+                                    "content": "Need for and characteristics of a variety of programming paradigms"
+                                },
+                                {
+                                    "contentID": 34,
+                                    "content": "Procedural languages"
+                                },
+                                {
+                                    "contentID": 35,
+                                    "content": "Assembly language [including following and writing simple programs with the Little Man Computer instruction set]"
+                                },
+                                {
+                                    "contentID": 36,
+                                    "content": "Modes of addressing memory [immediate, direct, indirect and indexed]"
+                                },
+                                {
+                                    "contentID": 37,
+                                    "content": "Object-orientated languages",
+                                    "sub_content": [
+                                        "Classes",
+                                        "Objects",
+                                        "Methods",
+                                        "Attributes",
+                                        "Inheritance",
+                                        "Encapsulation",
+                                        "Polymorphism"
+                                    ]
+                                }
+                            ]
                         }
-                    
+                        
+                    ]
+                },
+                {
+                    "section": 3,
+                    "name": "Exchanging data",
+                    "content": [
+                        
+                        {
+                            "section": 1,
+                            "name": "Compression, Encryption and Hashing",
+                            "content": [
+                                {
+                                    "contentID": 38,
+                                    "content": "Lossy vs Lossless compression"
+                                },
+                                {
+                                    "contentID": 39,
+                                    "content": "Run length encoding and dictionary coding for lossless compression"
+                                },
+                                {
+                                    "contentID": 40,
+                                    "content": "Symmetric and asymmetric encryption"
+                                },
+                                {
+                                    "contentID": 41,
+                                    "content": "Different uses of hashing"
+                                }
+                            ]
+                        },
+                        {
+                            "section": 2,
+                            "name": "Databases",
+                            "content": [
+                                {
+                                    "contentID": 42,
+                                    "content": "Flat files"
+                                },
+                                {
+                                    "contentID": 43,
+                                    "content": "Relational Databases",
+                                    "sub_content": [
+                                        "Primary key",
+                                        "Foreign key",
+                                        "Secondary key",
+                                        "Entity relationship modelling",
+                                        "Normalisation",
+                                        "Indexing"
+                                    ]
+                                },
+                                {
+                                    "contentID": 44,
+                                    "content": "Methods of capturing, selecting, managing and exchanging data"
+                                },
+                                {
+                                    "contentID": 45,
+                                    "content": "Normalisation to 3NF"
+                                },
+                                {
+                                    "contentID": 46,
+                                    "content": "SQL – Interpret and modify"
+                                },
+                                {
+                                    "contentID": 47,
+                                    "content": "Referential integrity"
+                                },
+                                {
+                                    "contentID": 48,
+                                    "content": "Transacticd on processing",
+                                    "sub_content": [
+                                        "ACID: Atomicity, Consistency, Isolation, Durability",
+                                        "Record locking",
+                                        "Redundancy"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "section": 3,
+                            "name": "Networks",
+                            "content": [
+                                
+                                {
+                                    "contentID": 49,
+                                    "content": "Characteristics of networks and the importance of protocols and standards"
+                                },
+                                {
+                                    "contentID": 50,
+                                    "content": "The internet structure",
+                                    "sub_content": [
+                                        "The TCP/IP stack",
+                                        "DNS",
+                                        "Protocol layering",
+                                        "LANs and WANs",
+                                        "Packet and circuit switching"
+                                    ]
+                                },
+                                {
+                                    "contentID": 51,
+                                    "content": "Network security and threats, use of firewalls, proxies and encryption"
+                                },
+                                {
+                                    "contentID": 52,
+                                    "content": "Network hardware"
+                                },
+                                {
+                                    "contentID": 53,
+                                    "content": "Client-server and peer to peer"
+                                }
+                                
+                            ]
+                        },
+                        {
+                            "section": 4,
+                            "name": "Web technologies",
+                            "content": [
+                                
+                                {
+                                    "contentID": 54,
+                                    "content": "HTML, CSS and JavaScript"
+                                },
+                                {
+                                    "contentID": 55,
+                                    "content": "Search engine indexing"
+                                },
+                                {
+                                    "contentID": 56,
+                                    "content": "PageRank algorithm"
+                                },
+                                {
+                                    "contentID": 57,
+                                    "content": "Server and client side processing"
+                                }
+                                
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "section": 4,
+                    "name": "Data types",
+                    "content": [
+                        
+                        {
+                            "section": 1,
+                            "name": "Primitive data types",
+                            "content": [
+                                
+                                {
+                                    "contentID": 58,
+                                    "content": "Represent positive integers in binary"
+                                },
+                                {
+                                    "contentID": 59,
+                                    "content": "Use of sign and magnitude and two’s complement to represent negative numbers in binary"
+                                },
+                                {
+                                    "contentID": 60,
+                                    "content": "Addition and subtraction of binary integers"
+                                },
+                                {
+                                    "contentID": 61,
+                                    "content": "Represent positive integers in hexadecimal"
+                                },
+                                {
+                                    "contentID": 62,
+                                    "content": "Convert positive integers between binary hexadecimal and denary"
+                                },
+                                {
+                                    "contentID": 63,
+                                    "content": "Representation and normalisation of floating point numbers in binary"
+                                },
+                                {
+                                    "contentID": 64,
+                                    "content": "Floating point arithmetic, positive and negative numbers, addition and subtraction"
+                                },
+                                {
+                                    "contentID": 65,
+                                    "content": "Bitwise manipulation and masks: shifts, combining with AND, OR, and XOR"
+                                },
+                                {
+                                    "contentID": 66,
+                                    "content": "How character sets are used to represent text"
+                                }
+                            ]
+                        },
+                        {
+                            "section": 2,
+                            "name": "Data Structures",
+                            "content": [
+                                
+                                {
+                                    "contentID": 67,
+                                    "content": "Arrays, records, lists, tuples"
+                                },
+                                {
+                                    "contentID": 68,
+                                    "content": "Data structures",
+                                    "sub_content": [
+                                        "Linked lists",
+                                        "Graphs",
+                                        "Stacks",
+                                        "Queues",
+                                        "Trees",
+                                        "Binary search trees",
+                                        "Hash tables"
+                                    ]
+                                },
+                                {
+                                    "contentID": 69,
+                                    "content": "How to create, traverse, add and remove data from the above data structures"
+                                }
+                                
+                            ]
+                        },
+                        {
+                            "section": 3,
+                            "name": "Boolean Algebra",
+                            "content": [
+                                
+                                {
+                                    "contentID": 70,
+                                    "content": "Define problems using Boolean logic"
+                                },
+                                {
+                                    "contentID": 71,
+                                    "content": "Manipulate Boolean expressions"
+                                },
+                                {
+                                    "contentID": 72,
+                                    "content": "The use of Karnaugh maps to simplify Boolean expressions"
+                                },
+                                {
+                                    "contentID": 73,
+                                    "content": "Algebra laws and how to use them",
+                                    "sub_content": [
+                                        "De Morgan’s Laws",
+                                        "Distribution",
+                                        "Association",
+                                        "Commutation",
+                                        "Double negation"
+                                    ]
+                                },
+                                {
+                                    "contentID": 74,
+                                    "content": "Using logic gate diagrams and truth tables"
+                                },
+                                {
+                                    "contentID": 75,
+                                    "content": "The logic associated with D type flip flops, half and full adders"
+                                }
+                                
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "section": 5,
+                    "name": "Legal, moral, cultural and ethical issues",
+                    "content": [
+                        
+                        {
+                            "section": 1,
+                            "name": "Computing related legislation",
+                            "content": [
+                                
+                                {
+                                    "contentID": 76,
+                                    "content": "The Data Protection Act 1998"
+                                },
+                                {
+                                    "contentID": 77,
+                                    "content": "The Computer Misuse Act 1990"
+                                },
+                                {
+                                    "contentID": 78,
+                                    "content": "The Copyright Design and Patents Act 1988"
+                                },
+                                {
+                                    "contentID": 79,
+                                    "content": "The Regulation of Investigatory Powers Act 2000"
+                                }
+                                
+                            ]
+                        },
+                        {
+                            "section": 2,
+                            "name": "Moral and ethical Issues",
+                            "content": [
+                                
+                                {
+                                    "contentID": 80,
+                                    "content": "The individual moral, social, ethical and cultural opportunities and risks of digital technology",
+                                    "sub_content": [
+                                        "Computers in the workforce",
+                                        "Automated decision making",
+                                        "Artificial intelligence",
+                                        "Environmental effects",
+                                        "Censorship and the Internet",
+                                        "Monitor behaviour",
+                                        "Analyse personal information",
+                                        "Piracy and offensive communications",
+                                        "Layout, colour paradigms and character sets"
+                                    ]
+                                }
+                                
+                            ]
+                        }
+                        
                     ]
                 }
                 
             ]
         }
+    ]
 }

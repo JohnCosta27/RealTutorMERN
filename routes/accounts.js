@@ -1,6 +1,8 @@
 const express = require('express');
 const accounts = express.Router();
 const Account = require('../models/Account');
+const Lesson = require('../models/Lesson');
+const Specification = require('../models/Specification');
 const sha256 = require('js-sha256');
 
 accounts.get('/readall', async (req, res) => {
@@ -83,11 +85,8 @@ accounts.post('/login', async (req, res) => {
         res.json({error: "Email or password missing from request"});
     } else {
         try {
-
-            const account = await Account.find({email: req.body.email});
             
-            console.log(account);
-
+            const account = await Account.find({email: req.body.email});
             // If the result of the search is more than 1 (as in it found an account with that email)
             if (account.length > 0) {
                 
@@ -110,6 +109,59 @@ accounts.post('/login', async (req, res) => {
     
 });
 
+/*
+* Adds a lesson to the "lesson" array in an account
+* Recieves: Email (To identify account), date, plan, specPoints
+* Validation: Verify email is found, all fields are present, and that the specpoints provided are valid
+* Sends: Confirmation or error message
+*/
+accounts.post('/addlesson', async (req, res) => {
+    
+    if (req.body.date == null || req.body.plan == null || req.body.email == null || req.body.specPoints == null) {
+        res.json({error: "One or more parameters missing from the request"});
+    } else {
+        
+        let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
+        
+        if (validateSpecPoint(tree, req.body.specPoints)) {
+            
+            let lesson = new Lesson({plan: req.body.plan, date: req.body.date, plan: req.body.plan, specPoints: req.body.specPoints});
+            Account.findOne({email: req.body.email}, (err, object) => {
+
+                if (err) {
+                    res.json(error);
+                } else {
+                    if (object != null) {
+                        object.lessons.push(lesson);
+                        object.save();
+                        res.json({sucess: "Lesson saved succesfully"});
+                    } else {
+                        res.json({error: "Account could not be found"});
+                    }
+                }
+
+            });
+            
+        } else {
+            res.json({error: "1 or more specification points were invalid"});
+        }
+        
+    }
+    
+});
+
+accounts.post('/addlessonreport', async (req, res) => {
+
+    if (req.body.report == null || req.body.specPointsAchieved == null) {
+
+        
+
+    } else {
+        res.json({error: "1 or more specification points were invalid"});
+    }
+
+});
+
 function randomString(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -118,6 +170,34 @@ function randomString(length) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
+}
+
+function validateSpecPoint(tree, specPoints) {
+    
+    try {
+        
+        for (let point of specPoints) {
+            let validPoint = false;
+            for (let headings of tree[0].sections) {
+                for (let sections of headings.content) {
+                    for (let subSections of sections.content) {
+                        for (let content of subSections.content) {
+                            if (content.contentID == point) {
+                                validPoint = true;
+                            }
+                        }
+                    }
+                }
+            }
+            if (!validPoint) return false;
+        }
+        
+        return true;
+        
+    } catch (err) {
+        return false;
+    }
+    
 }
 
 module.exports = accounts;
