@@ -121,30 +121,36 @@ accounts.post('/addlesson', async (req, res) => {
         res.json({error: "One or more parameters missing from the request"});
     } else {
         
-        let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
-        
-        if (validateSpecPoint(tree, req.body.specPoints)) {
+        if (await validateCookie(req.cookies.token)) {
+
+            let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
             
-            let lesson = new Lesson({plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints});
-            
-            try {
+            if (validateSpecPoint(tree, req.body.specPoints)) {
+                
+                let lesson = new Lesson({plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints});
+                
+                try {
+                    
+                    await lesson.save();
+                    
+                    Account.findOne({email: req.body.email}, (err, account) => {
+                        
+                        if (err) res.json(error);
+                        else {
+                            account.lessons.push(lesson._id);
+                            account.save();
+                            res.json({sucess: "Lesson saved successfully"});
+                        }
+                        
+                    });
+                    
+                } catch (err) {
+                    res.json({ error: err });
+                    console.log(err);
+                }
 
-                await lesson.save();
-
-                Account.findOne({email: req.body.email}, (err, account) => {
-
-                    if (err) res.json(error);
-                    else {
-                        account.lessons.push(lesson._id);
-                        account.save();
-                        res.json({sucess: "Lesson saved successfully"});
-                    }
-
-                });
-
-            } catch (err) {
-                res.json({ error: err });
-                console.log(err);
+            } else {
+                res.json({error: "Token not recognised!"});
             }
             
         } else {
@@ -161,23 +167,29 @@ accounts.post('/addlessonreport', async (req, res) => {
         res.json({error: "1 or more specification points were invalid"});
     } else {
         
-        let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
-        
-        if (validateSpecPoint(tree, req.body.specPointsAchieved)) {
+        if (await validateCookie(req.cookies.token)) {
             
-            Lesson.findById(req.body.lessonID, (err, lesson) => {
-                if (err) {
-                    res.json(err)
-                } else {
-                    lesson.report = req.body.report;
-                    lesson.specPointsAchieved = req.body.specPointsAchieved;
-                    lesson.save();
-                    res.json({success: "Lesson updated successfully"});
-                }
-            });
+            let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
+            
+            if (validateSpecPoint(tree, req.body.specPointsAchieved)) {
+                
+                Lesson.findById(req.body.lessonID, (err, lesson) => {
+                    if (err) {
+                        res.json(err)
+                    } else {
+                        lesson.report = req.body.report;
+                        lesson.specPointsAchieved = req.body.specPointsAchieved;
+                        lesson.save();
+                        res.json({success: "Lesson updated successfully"});
+                    }
+                });
+                
+            } else {
+                res.json({error: "Specification points incorrect"});
+            }
             
         } else {
-            res.json({error: "Specification points incorrect"});
+            res.json({error: "Token not recognised!"});
         }
         
     }
@@ -192,6 +204,14 @@ function randomString(length) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
+}
+
+async function validateCookie(cookie) {
+    
+    const result = await Account.findOne({cookie: cookie});
+    if (result == undefined) return false;
+    return true;
+    
 }
 
 function validateSpecPoint(tree, specPoints) {

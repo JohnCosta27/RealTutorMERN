@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const Specification = require('./models/Specification');
+const cookieParser = require('cookie-parser')
 require('dotenv/config');
 
 mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
+app.use(cookieParser());
 
 const port = 3000;
 app.listen(port, () => console.log("Listening on port: " + port));
