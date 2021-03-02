@@ -172,7 +172,7 @@ accounts.post('/addlessonreport', async (req, res) => {
                     lesson.report = req.body.report;
                     lesson.specPointsAchieved = req.body.specPointsAchieved;
                     lesson.save();
-                    res.json({sucess: "Lesson updated successfully"});
+                    res.json({success: "Lesson updated successfully"});
                 }
             });
             
