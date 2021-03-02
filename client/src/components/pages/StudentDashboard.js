@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
 
 function StudentDashboard(props) {
@@ -55,10 +56,14 @@ function StudentDashboard(props) {
         cardAction: {
             width: "50%",
             marginLeft: "25%",
-            flex: 2,
+            marginBottom: 10,
+            flex: 1,
             display: "flex",
-            flexDirection: "column",
             justifyContent: "center"
+        },
+        button: {
+            marginLeft: 5,
+            marginRight: 5
         }
     }));
     
@@ -66,7 +71,7 @@ function StudentDashboard(props) {
 
     return (
         <div className="App">
-        <div className="leftNav" style={{backgroundColor: theme.palette.divBackground}}></div>
+        <div className="leftNav" style={{backgroundColor: theme.palette.p.cards}}></div>
         <div className="mainWrapper" style={{backgroundColor: theme.palette.secondary}}>
         <div className={classes.studentBoxWrapper}>
         
@@ -85,7 +90,8 @@ function StudentDashboard(props) {
                 <Typography variant="h4" align="center">Test txt, this is a title</Typography>
             </Box>
             <Box className={classes.cardAction}>
-                <Button variant="contained" color="primary">View lessons</Button>
+                <Button className={classes.button} variant="contained" color="primary">Add report</Button>
+                <Button className={classes.button} variant="contained" color="primary">View lessons</Button>
             </Box>
         </Box>
         </Card>
@@ -98,7 +104,8 @@ function StudentDashboard(props) {
                 <Typography variant="h4" align="center">Test txt, this is a title</Typography>
             </Box>
             <Box className={classes.cardAction}>
-                <Button variant="contained" color="primary">Schedule</Button>
+            <Button className={classes.button} variant="contained" color="primary">Schedule</Button>
+                <Button className={classes.button} variant="contained" color="primary">Plan lesson</Button>
             </Box>
         </Box>
         </Card>
@@ -108,10 +115,11 @@ function StudentDashboard(props) {
         <Box display="flex" className={classes.cardsWrapper}>
             <Typography variant="h2">Progress</Typography>
             <Box className={classes.cardContent}>
-                <Typography variant="h4" align="center">Test txt, this is a title</Typography>
+            <Typography variant="h4">5% Course Completion</Typography>
+            <LinearProgress variant="determinate" value={5} />
             </Box>
             <Box className={classes.cardAction}>
-                <Button variant="contained" color="primary">View lessons</Button>
+                <Button variant="contained" color="primary">View progress</Button>
             </Box>
         </Box>
         </Card>
@@ -121,10 +129,9 @@ function StudentDashboard(props) {
         <Box display="flex" className={classes.cardsWrapper}>
             <Typography variant="h2">Details</Typography>
             <Box className={classes.cardContent}>
-                <Typography variant="h4" align="center">Test txt, this is a title</Typography>
             </Box>
             <Box className={classes.cardAction}>
-                <Button variant="contained" color="primary">View lessons</Button>
+                <Button variant="contained" color="primary">Edit details</Button>
             </Box>
         </Box>
         </Card>

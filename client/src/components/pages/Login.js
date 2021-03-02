@@ -8,19 +8,10 @@ import { grey, blueGrey, teal } from '@material-ui/core/colors';
 
 import CustomTextField from '../general/CustomTextField';
 
-function Login() {
+function Login(props) {
+    
+  const theme = createMuiTheme(props.theme);
   
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: blueGrey[500],
-        background: teal[900],
-        light: grey[100],
-        text: '#DDDDDD'
-      }
-    }
-  });
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -65,12 +56,12 @@ const setErrorFalse = () => setError(false);
 return (
   <ThemeProvider theme={theme}>
   <div className="App">
-  <div className="leftNav" style={{backgroundColor: theme.palette.primary.background}}>
+  <div className="leftNav" style={{backgroundColor: theme.palette.p.cards}}>
   
   <form className="loginWrapper" onSubmit={submitLogin}>
 
   <CustomTextField theme={theme} label="Email" onChange={emailChange} error={error} onFocus={setErrorFalse} />
-  <CustomTextField theme={theme} label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} />
+  <CustomTextField theme={theme} label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} type="password"/>
   <Button variant="contained" color="primary" type="submit" value="submit">Login</Button>
 
   </form>

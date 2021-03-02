@@ -7,47 +7,55 @@ function CustomTextField(props) {
     const theme = createMuiTheme(props.theme);
     
     const useStyles = makeStyles(
-        {customTextField: {
-            '& .MuiInputBase-input': {
-                color: theme.palette.primary.text
-            },
-            '& label': {
-                color: theme.palette.primary.light
-            },
-            '& label.Mui-focused': {
-                color: theme.palette.primary.main,
-            },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: theme.palette.primary.main,
-            },
-            '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                    borderColor: theme.palette.primary.light,
+        {
+            customTextField: {
+                '& .MuiInputBase-input': {
+                    color: theme.palette.p.text
                 },
-                '&:hover fieldset': {
-                    borderColor: theme.palette.primary.main,
+                '& label': {
+                    color: theme.palette.p.text
                 },
-                '&.Mui-focused fieldset': {
-                    borderColor: theme.palette.primary.main,
+                '& label.Mui-focused': {
+                    color: theme.palette.p.text
+                },
+                '& .MuiInput-underline:after': {
+                    color: theme.palette.p.text
+                },
+                '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                        borderColor: theme.palette.p.text
+                    },
+                    '&:hover fieldset': {
+                        borderColor: theme.palette.p.text
+                    },
+                    '&.Mui-focused fieldset': {
+                        borderColor: theme.palette.p.text
+                    },
                 },
             },
-        },
-    });
-    
-    const classes = useStyles();
-
-    return(
-        <TextField 
-        variant="outlined" 
-        className={classes.customTextField}
-        label={props.label}
-        onChange={props.onChange}
-        error={props.error}
-        onFocus={props.onFocus}>
+            multilineColor:{
+                color: theme.palette.p.text
+            }
+        });
+        
+        const classes = useStyles();
+        
+        return(
+            <TextField 
+            variant="filled" 
+            className={classes.customTextField}
+            label={props.label}
+            onChange={props.onChange}
+            error={props.error}
+            onFocus={props.onFocus}
+            InputProps={{
+                className: classes.multilineColor
+              }}
+            type={props.type}>
             Hello there
             </TextField>
-        )
+            )
+            
+        }
         
-    }
-    
-    export default CustomTextField;
+        export default CustomTextField;

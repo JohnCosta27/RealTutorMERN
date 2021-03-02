@@ -125,22 +125,27 @@ accounts.post('/addlesson', async (req, res) => {
         
         if (validateSpecPoint(tree, req.body.specPoints)) {
             
-            let lesson = new Lesson({plan: req.body.plan, date: req.body.date, plan: req.body.plan, specPoints: req.body.specPoints});
-            Account.findOne({email: req.body.email}, (err, object) => {
+            let lesson = new Lesson({plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints});
+            
+            try {
 
-                if (err) {
-                    res.json(error);
-                } else {
-                    if (object != null) {
-                        object.lessons.push(lesson);
-                        object.save();
-                        res.json({sucess: "Lesson saved succesfully"});
-                    } else {
-                        res.json({error: "Account could not be found"});
+                await lesson.save();
+
+                Account.findOne({email: req.body.email}, (err, account) => {
+
+                    if (err) res.json(error);
+                    else {
+                        account.lessons.push(lesson._id);
+                        account.save();
+                        res.json({sucess: "Lesson saved successfully"});
                     }
-                }
 
-            });
+                });
+
+            } catch (err) {
+                res.json({ error: err });
+                console.log(err);
+            }
             
         } else {
             res.json({error: "1 or more specification points were invalid"});
@@ -151,15 +156,32 @@ accounts.post('/addlesson', async (req, res) => {
 });
 
 accounts.post('/addlessonreport', async (req, res) => {
-
-    if (req.body.report == null || req.body.specPointsAchieved == null) {
-
-        
-
-    } else {
+    
+    if (req.body.report == null || req.body.specPointsAchieved == null || req.body.email == null || req.body.lessonID == null) {
         res.json({error: "1 or more specification points were invalid"});
+    } else {
+        
+        let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
+        
+        if (validateSpecPoint(tree, req.body.specPointsAchieved)) {
+            
+            Lesson.findById(req.body.lessonID, (err, lesson) => {
+                if (err) {
+                    res.json(err)
+                } else {
+                    lesson.report = req.body.report;
+                    lesson.specPointsAchieved = req.body.specPointsAchieved;
+                    lesson.save();
+                    res.json({sucess: "Lesson updated successfully"});
+                }
+            });
+            
+        } else {
+            res.json({error: "Specification points incorrect"});
+        }
+        
     }
-
+    
 });
 
 function randomString(length) {
