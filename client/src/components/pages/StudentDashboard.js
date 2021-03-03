@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../App.css';
 
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
@@ -10,10 +10,34 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
 
 function StudentDashboard(props) {
-    
+
     const theme = createMuiTheme(props.theme);
-    
+
+    const id = "603fedb40a23a3cf13437ccd";
+    const [lessons, setLessons] = useState();
+
+    useEffect(() => {
+        getLessons();
+    }, []);
+
+    const getLessons = async () => {
+        let requestData = {id: id};
+        await fetch("http://localhost:3000/accounts/getstudentlessons", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify(requestData)})
+        .then(response => response.json()).then((data) => {
+            setLessons(data);
+            console.log(data);
+        });
+    }
+
     const useStyles = makeStyles((theme) => ({
+
         studentBox: {
             display: "flex",
             flexDirection: "column"

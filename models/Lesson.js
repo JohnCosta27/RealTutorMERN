@@ -18,6 +18,14 @@ const LessonSchema = mongoose.Schema({
     date: {
         type: Number,
         required: true
+    },
+    studentID: {
+        type: String,
+        required: true
+    },
+    tutorID: {
+        type: String,
+        required: true
     }
 
 });

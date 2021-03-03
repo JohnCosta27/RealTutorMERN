@@ -28,7 +28,7 @@ accounts.get('/readall', async (req, res) => {
 
 accounts.post('/register', async (req, res) => {
     
-    if (req.body.firstname == null || req.body.surname == null || req.body.email == null || req.body.password == null) {
+    if (req.body.firstname == null || req.body.surname == null || req.body.email == null || req.body.password == null || req.body.type == null) {
         res.json({error: "One or more parameters missing"});
     } else {
         try {
@@ -50,7 +50,8 @@ accounts.post('/register', async (req, res) => {
                     password: hashedPassword,
                     passwordsalt: passwordsalt,
                     cookie: randomString(32),
-                    knowledgeTree: {}
+                    knowledgeTree: {},
+                    type: req.body.type
                     
                 });
                 
@@ -113,61 +114,79 @@ accounts.post('/login', async (req, res) => {
 * Adds a lesson to the "lesson" array in an account
 * Recieves: Email (To identify account), date, plan, specPoints
 * Validation: Verify email is found, all fields are present, and that the specpoints provided are valid
+* Validation: Verifies that tutor & student emails are actually that given type.
+* Cookies: Session token is valid and from a tutor or manager.
 * Sends: Confirmation or error message
 */
 accounts.post('/addlesson', async (req, res) => {
     
-    if (req.body.date == null || req.body.plan == null || req.body.email == null || req.body.specPoints == null) {
+    if (req.body.date == null || req.body.plan == null || req.body.studentEmail == null || req.body.specPoints == null || req.body.tutorEmail == null) {
         res.json({error: "One or more parameters missing from the request"});
     } else {
         
-        if (await validateCookie(req.cookies.token)) {
-
+        if (await validateCookie(req.cookies.token) >= 2) {
+            
             let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
             
             if (validateSpecPoint(tree, req.body.specPoints)) {
                 
-                let lesson = new Lesson({plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints});
+                const student = await getID(req.body.studentEmail);
+                const tutor = await getID(req.body.tutorEmail);
                 
-                try {
+                if (student == null || tutor == null) {
+                    res.json({error: "One of the emails was invalid"});
+                } else if (tutor.type != "manager" && tutor.type != "tutor") {
+                    res.json({error: "Tutor account is invalid"});
+                } else {
                     
-                    await lesson.save();
+                    let lesson = new Lesson({plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints, studentID: student._id, tutorID: tutor._id});
                     
-                    Account.findOne({email: req.body.email}, (err, account) => {
+                    try {
                         
-                        if (err) res.json(error);
-                        else {
-                            account.lessons.push(lesson._id);
-                            account.save();
-                            res.json({sucess: "Lesson saved successfully"});
-                        }
+                        await lesson.save();
+                        Account.findOne({email: req.body.email}, (err, account) => {
+                            if (err) res.json(error);
+                            else {
+                                account.lessons.push(lesson._id);
+                                account.save();
+                                res.json({sucess: "Lesson saved successfully"});
+                            }
+                        });
                         
-                    });
+                    } catch (err) {
+                        res.json({ error: err });
+                        console.log(err);
+                    }
                     
-                } catch (err) {
-                    res.json({ error: err });
-                    console.log(err);
                 }
-
+                
             } else {
-                res.json({error: "Token not recognised!"});
+                res.json({error: "1 or more specification points are invalid"});
             }
             
         } else {
-            res.json({error: "1 or more specification points were invalid"});
+            res.json({error: "Token invalid"});
         }
         
     }
     
 });
 
+/*
+* Adds the lesson report, achieved spec points to the lesson
+* Recieves: Report, achieved spec points and the lessonID
+* Validation: The achieved spec points must be valid specification points
+* LessonID must also be valid
+* Cookies: Session token must be from tutor or above
+* Sends: Confirmation
+*/
 accounts.post('/addlessonreport', async (req, res) => {
     
-    if (req.body.report == null || req.body.specPointsAchieved == null || req.body.email == null || req.body.lessonID == null) {
+    if (req.body.report == null || req.body.specPointsAchieved == null || req.body.lessonID == null) {
         res.json({error: "1 or more specification points were invalid"});
     } else {
         
-        if (await validateCookie(req.cookies.token)) {
+        if (await validateCookie(req.cookies.token) >= 2) {
             
             let tree = await Specification.find({specificationName: "A-level Computer Science (OCR)"});
             
@@ -189,12 +208,92 @@ accounts.post('/addlessonreport', async (req, res) => {
             }
             
         } else {
-            res.json({error: "Token not recognised!"});
+            res.json({error: "Token invalid"});
         }
         
     }
     
 });
+
+/*
+* -> Gets the lessons from a particular studentID
+* Recieves: ID, this is the ID of the student you want to fetch the lessons from
+* Validation: Makes sure you are either a tutor or manager, or that you are fetching your own lessons as a student
+* Sends: Lessons or error message
+*/
+
+accounts.post('/getstudentlessons', async (req, res) => {
+    
+    console.log(req.cookies.token);
+    
+    if (req.body.id == null) {
+        res.json({error: "Paremeters missing from request"});
+    } else {
+        
+        const validation = await validateCookie(req.cookies.token);
+        const account = await AccountFromCookie(req.cookies.token);
+        
+        if (validation >= 2 || (validation == 1 && account._id == req.body.id)) {
+            
+            try {
+                
+                const lessons = await Lesson.find({studentID: req.body.id});
+                
+                if (lessons.length > 0) {
+                    res.json(lessons);
+                } else {
+                    res.json({error: "This account was not found"});
+                }
+                
+            } catch (error) {
+                res.json({error: error});
+                console.log(error);
+            }
+            
+        } else {
+            res.json({error: "Token invalid"});
+        }
+        
+    }
+    
+});
+
+async function getID(email) {
+    const result = await Account.findOne({email: email});
+    if (result == undefined) return result;
+    return result;
+}
+
+async function AccountFromCookie(cookie) {
+    const result = await Account.findOne({cookie: cookie});
+    return result;
+}
+
+async function validateCookie(cookie) {
+    
+    /*
+    * Returns 0 -> Token not found
+    * 1 -> Student account
+    * 2 -> Tutor account
+    * 3 -> Manager account
+    */
+    
+    const result = await Account.findOne({cookie: cookie});
+    if (result == undefined) {
+        return 0;
+    } else {
+        
+        if (result.type == "student") {
+            return 1;
+        } else if (result.type == "tutor") {
+            return 2;
+        } else if (result.type == "manager") {
+            return 3;
+        }
+        
+    }
+    
+}
 
 function randomString(length) {
     var result = '';
@@ -204,14 +303,6 @@ function randomString(length) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-}
-
-async function validateCookie(cookie) {
-    
-    const result = await Account.findOne({cookie: cookie});
-    if (result == undefined) return false;
-    return true;
-    
 }
 
 function validateSpecPoint(tree, specPoints) {

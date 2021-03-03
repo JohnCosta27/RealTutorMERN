@@ -29,6 +29,15 @@ const AccountSchema = mongoose.Schema({
     },
     lessons: {
         type: [JSON],
+    },
+    type: {
+        type: String,
+        required: true,
+        enum: [
+            "manager",
+            "tutor",
+            "student"
+        ]
     }
 
 });

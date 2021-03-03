@@ -4,7 +4,7 @@ import '../../App.css';
 import Button from '@material-ui/core/Button';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { grey, blueGrey, teal } from '@material-ui/core/colors';
+import {Redirect} from 'react-router-dom';
 
 import CustomTextField from '../general/CustomTextField';
 
@@ -36,7 +36,8 @@ function Login(props) {
     setEmail("");
     setPassword("");
   } else {
-    console.log(data);
+    document.cookie = "token=" + data.cookie;
+    document.location.href = "studentdashboard";
   }
 
 }
@@ -58,11 +59,11 @@ return (
   <div className="App">
   <div className="leftNav" style={{backgroundColor: theme.palette.p.cards}}>
   
-  <form className="loginWrapper" onSubmit={submitLogin}>
+  <form className="loginWrapper">
 
   <CustomTextField theme={theme} label="Email" onChange={emailChange} error={error} onFocus={setErrorFalse} />
   <CustomTextField theme={theme} label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} type="password"/>
-  <Button variant="contained" color="primary" type="submit" value="submit">Login</Button>
+  <Button variant="contained" color="primary" type="submit" value="submit" onClick={submitLogin}>Login</Button>
 
   </form>
   
