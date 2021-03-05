@@ -5,7 +5,6 @@ import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 function StudentBox(props) {
 
   const [students, setStudents] = useState([]);
-  const theme = createMuiTheme(props.theme);
 
   const useStyles = makeStyles(
     {
@@ -25,8 +24,9 @@ function StudentBox(props) {
   }, []);
 
   const getStudents = async () => {
-      const response = await fetch('/students/readall');
+      const response = await fetch('/accounts/readall');
       const data = await response.json();
+      console.log(data);
       setStudents(data);
   }
 
@@ -37,10 +37,9 @@ function StudentBox(props) {
       {students.map(student => (
         <Student 
         firstname={student.firstname} 
-        surname={student.surname} 
-        theme={theme}
+        surname={student.surname}
         key={key++} 
-        m={20}/>
+      ></Student>
       ))}
     </div>
   );

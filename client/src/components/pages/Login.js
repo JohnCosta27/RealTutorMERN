@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
-import '../../App.css';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {Redirect} from 'react-router-dom';
-
 import CustomTextField from '../general/CustomTextField';
 
-function Login(props) {
-    
-  const theme = createMuiTheme(props.theme);
+import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
+
+function Login() {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-
+  
+  const useStyles = makeStyles(theme => ({
+    leftNav: {
+      flex: 1,
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      minWidth: 400,
+    },
+    leftNavPaper: {
+      backgroundColor: theme.palette.secondary.main
+    }
+  }));
+  
   const submitLogin = async (event) => {
     
     event.preventDefault();
@@ -39,7 +52,7 @@ function Login(props) {
     document.cookie = "token=" + data.cookie;
     document.location.href = "studentdashboard";
   }
-
+  
 }
 
 const emailChange = (event) => {
@@ -54,23 +67,26 @@ const passwordChange = (event) => {
 
 const setErrorFalse = () => setError(false);
 
+const classes = useStyles();
+
 return (
-  <ThemeProvider theme={theme}>
   <div className="App">
-  <div className="leftNav" style={{backgroundColor: theme.palette.p.cards}}>
-  
+  <Paper className={classes.leftNavPaper} square>
+  <Box className={classes.leftNav}>
+
   <form className="loginWrapper">
-
-  <CustomTextField theme={theme} label="Email" onChange={emailChange} error={error} onFocus={setErrorFalse} />
-  <CustomTextField theme={theme} label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} type="password"/>
-  <Button variant="contained" color="primary" type="submit" value="submit" onClick={submitLogin}>Login</Button>
-
-  </form>
   
-  </div>
+  <CustomTextField label="Email" onChange={emailChange} error={error} onFocus={setErrorFalse} />
+  <CustomTextField label="Password" onChange={passwordChange} error={error} onFocus={setErrorFalse} type="password"/>
+  <Button variant="contained" color="primary" type="submit" value="submit" onClick={submitLogin}>Login</Button>
+  
+  </form>
+
+  </Box>
+  </Paper>
+  
   <div className="mainWrapper"></div>
   </div>
-  </ThemeProvider>
   );
 }
 

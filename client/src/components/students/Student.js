@@ -6,15 +6,13 @@ import Card from '@material-ui/core/Card';
 
 function Student(props) {
     
-    const theme = createMuiTheme(props.theme);
-    
-    const useStyles = makeStyles(
+    const useStyles = makeStyles(theme => (
         {
             studentWrapper: {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                backgroundColor: theme.palette.Card,
+                backgroundColor: theme.palette.cards,
                 marginBottom: "20px",
                 height: 150,
                 borderRadius: 10,
@@ -25,7 +23,7 @@ function Student(props) {
                 }
             },
 
-        });
+        }));
         
         const classes = useStyles();
         

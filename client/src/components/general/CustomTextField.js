@@ -3,40 +3,38 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 
 function CustomTextField(props) {
-    
-    const theme = createMuiTheme(props.theme);
-    
-    const useStyles = makeStyles(
+
+    const useStyles = makeStyles(theme => (
         {
             customTextField: {
                 '& .MuiInputBase-input': {
-                    color: theme.palette.p.text
+                    color: theme.palette.cards
                 },
                 '& label': {
-                    color: theme.palette.p.text
+                    color: theme.palette.cards
                 },
                 '& label.Mui-focused': {
-                    color: theme.palette.p.text
+                    color: theme.palette.cards
                 },
                 '& .MuiInput-underline:after': {
-                    color: theme.palette.p.text
+                    color: theme.palette.cards
                 },
                 '& .MuiOutlinedInput-root': {
                     '& fieldset': {
-                        borderColor: theme.palette.p.text
+                        borderColor: theme.palette.cards
                     },
                     '&:hover fieldset': {
-                        borderColor: theme.palette.p.text
+                        borderColor: theme.palette.cards
                     },
                     '&.Mui-focused fieldset': {
-                        borderColor: theme.palette.p.text
+                        borderColor: theme.palette.cards
                     },
                 },
             },
             multilineColor:{
-                color: theme.palette.p.text
+                color: theme.palette.cards
             }
-        });
+        }));
         
         const classes = useStyles();
         

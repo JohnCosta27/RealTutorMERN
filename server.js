@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const Specification = require('./models/Specification');
 const cookieParser = require('cookie-parser')
+const path = require("path");
 require('dotenv/config');
 
 mongoose.set('useFindAndModify', false);
@@ -22,9 +23,11 @@ app.use('/students', studentsRoute);
 const accountsRoute = require('./routes/accounts.js')
 app.use('/accounts', accountsRoute);
 
-app.get('/', (req, res) => {
-    res.send("Hello world");
-})
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 /*app.get('/insertspec', async (req, res) => {
 
