@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
-
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-
 //Pages
 import Dashboard from '../pages/Dashboard';
-import Login from '../pages/Login';
+import Login from '../Login';
 import StudentDashboard from '../pages/StudentDashboard';
+
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
   return (
     <Router>
-    <Route exact path="/" render={(props) => (<Dashboard></Dashboard>)}></Route>
-    <Route path="/login" render={(props) => (<Login></Login>)}></Route>
-    <Route path="/studentdashboard" render={(props) => (<StudentDashboard></StudentDashboard>)}></Route>
+    <Switch>
+    <Route exact path="/" component={Dashboard} />
+    <Route path="/login" component={Login} />
+    <Route path="/studentdashboard" component={StudentDashboard} />
+    </Switch>
     </Router>
     );
   }
-
-  export default App;
+export default App;
   

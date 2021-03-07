@@ -20,7 +20,7 @@ function StudentDashboard(props) {
     
     const getLessons = async () => {
         let requestData = {id: id};
-        await fetch("http://localhost:3000/accounts/getstudentlessons", {
+        await fetch("/accounts/getstudentlessons", {
         method: "POST",
         headers: {
             'Accept': 'application/json',

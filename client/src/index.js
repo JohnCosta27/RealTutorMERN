@@ -5,7 +5,7 @@ import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 
 ReactDOM.render(
