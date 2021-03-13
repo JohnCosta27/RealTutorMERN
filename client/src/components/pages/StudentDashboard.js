@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
 import Lesson from '../general/Lessons';
+import UpcomingLesson from '../general/UpcomingLesson';
 
 const StudentDashboard = () => {
     
@@ -62,8 +63,7 @@ const StudentDashboard = () => {
         cardContent: {
             flex: 5,
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center"
+            flexDirection: "column"
         },
         cardAction: {
             width: "50%",
@@ -117,7 +117,7 @@ const StudentDashboard = () => {
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Upcoming</Typography>
         <Box className={classes.cardContent}>
-        <Typography variant="h4" align="center">Test txt, this is a title</Typography>
+        <UpcomingLesson />
         </Box>
         <Box className={classes.cardAction}>
         <Button className={classes.button} variant="contained" color="primary">Schedule</Button>

@@ -297,7 +297,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
                     }
                 }
                 
-                if (lesson == undefined) {
+                if (lessonReturn == undefined) {
                     res.json({ error: "No upcoming lesson" });
                 } else {
                     res.json(lessonReturn);
