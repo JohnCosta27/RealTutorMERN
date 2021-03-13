@@ -11,7 +11,12 @@ const Lesson = () => {
 
     const getLessons = async () => {
 
-        const response = await fetch("/accounts/getstudentlatestlesson", {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        console.log(urlParams.get("studentid"));
+
+        const response = await fetch("/accounts/getstudentlatestlesson?studentid=" + urlParams.get('studentid'), {
             method: "GET",
             headers: {
                 'Accept': 'application/json',
@@ -21,11 +26,10 @@ const Lesson = () => {
         });
 
         const data = await response.json();
+        console.log(data);
         setLesson(data);
 
     }
-
-    console.log(lesson);
 
     if (lesson.error != null) {
         return (<div></div>);
