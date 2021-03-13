@@ -6,6 +6,8 @@ const cors = require('cors');
 const Specification = require('./models/Specification');
 const cookieParser = require('cookie-parser')
 const path = require("path");
+const formProcessor = require('express-formidable');
+
 require('dotenv/config');
 
 mongoose.set('useFindAndModify', false);
@@ -13,6 +15,7 @@ mongoose.set('useFindAndModify', false);
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
+app.use(formProcessor());
 
 const port = 3000;
 app.listen(port, () => console.log("Listening on port: " + port));

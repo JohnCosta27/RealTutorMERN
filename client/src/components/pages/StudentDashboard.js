@@ -8,31 +8,9 @@ import Card from '@material-ui/core/Card';
 import Paper from '@material-ui/core/Paper';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
+import Lesson from '../general/Lessons';
 
-function StudentDashboard(props) {
-    
-    const id = "603fedb40a23a3cf13437ccd";
-    const [lessons, setLessons] = useState();
-    
-    useEffect(() => {
-        getLessons();
-    }, []);
-    
-    const getLessons = async () => {
-        let requestData = {id: id};
-        await fetch("/accounts/getstudentlessons", {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(requestData)})
-        .then(response => response.json()).then((data) => {
-            setLessons(data);
-            console.log(data);
-        });
-    }
+const StudentDashboard = () => {
     
     const useStyles = makeStyles(theme => ({
         
@@ -104,6 +82,7 @@ function StudentDashboard(props) {
     const classes = useStyles();
     
     return (
+
         <div className="App">
         <Paper className={classes.leftNavPaper} square>
         <Box className={classes.leftNav}>
@@ -124,7 +103,7 @@ function StudentDashboard(props) {
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Lessons</Typography>
         <Box className={classes.cardContent}>
-        <Typography variant="h4" align="center">Test txt, this is a title</Typography>
+        <Lesson />
         </Box>
         <Box className={classes.cardAction}>
         <Button className={classes.button} variant="contained" color="primary">Add report</Button>
