@@ -2,9 +2,8 @@ const express = require('express');
 const accounts = express.Router();
 const Account = require('../models/Account');
 const Lesson = require('../models/Lesson');
-const Specification = require('../models/Specification');
+const SpecificationPoint = require('../models/SpecificationPoints');
 const sha256 = require('js-sha256');
-const ObjectId = require('mongoose').Types.ObjectId;
 
 accounts.get('/readall', async (req, res) => {
     
@@ -134,8 +133,7 @@ accounts.post('/addlesson', async (req, res) => {
             res.json({ error: "Authentication failed" });
         } else {
             
-            let tree = await Specification.find({ specificationName: "A-level Computer Science (OCR)" });
-            if (validateSpecPoint(tree, req.body.specPoints)) {
+            if (await validateSpecPoint(req.body.specPoints)) {
                 
                 let lesson = new Lesson({ plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints, studentID: student._id, tutorID: tutor._id });
                 
@@ -179,10 +177,7 @@ accounts.post('/addlessonreport', async (req, res) => {
     } else {
         
         if (await validateCookie(req.cookies.token) >= 2) {
-            
-            let tree = await Specification.find({ specificationName: "A-level Computer Science (OCR)" });
-            
-            if (validateSpecPoint(tree, req.body.specPointsAchieved)) {
+            if (await validateSpecPoint(tree)) {
                 
                 Lesson.findById(req.body.lessonID, (err, lesson) => {
                     if (err) {
@@ -316,6 +311,9 @@ async function getStudentLessons(studentID) {
         if (lessons.length == 0) {
             return { error: "This student could not be found" };
         } else {
+
+            const specPoints = await getSpecPoints(pointsArray);
+
             return lessons;
         }
     } catch (error) {
@@ -384,32 +382,21 @@ function randomString(length) {
     return result;
 }
 
-function validateSpecPoint(tree, specPoints) {
+async function validateSpecPoint(specPoints) {
     
-    try {
-        
-        for (let point of specPoints) {
-            let validPoint = false;
-            for (let headings of tree[0].sections) {
-                for (let sections of headings.content) {
-                    for (let subSections of sections.content) {
-                        for (let content of subSections.content) {
-                            if (content.contentID == point) {
-                                validPoint = true;
-                            }
-                        }
-                    }
-                }
-            }
-            if (!validPoint) return false;
+    for (let point of specPoints) {
+
+        try {
+            let data = await SpecificationPoint.findById(point);
+            if (data == null) return false;
+        } catch (error) {
+            return false;
         }
-        
-        return true;
-        
-    } catch (err) {
-        return false;
+
     }
     
+    return true;
+
 }
 
 module.exports = accounts;

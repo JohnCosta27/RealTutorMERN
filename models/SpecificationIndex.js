@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const specificationSchema = mongoose.Schema({
+const specificationIndexSchema = mongoose.Schema({
 
-    specificationName: {
+    index: {
         type: String,
         required: true
     },
@@ -9,7 +9,6 @@ const specificationSchema = mongoose.Schema({
         type: JSON,
         required: true
     }
-
 });
 
-module.exports = mongoose.model('specification', specificationSchema);
+module.exports = mongoose.model('specificationIndex', specificationIndexSchema);
