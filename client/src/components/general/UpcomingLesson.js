@@ -39,7 +39,7 @@ const UpcomingLesson = () => {
                 <Typography variant="h4" align="left">{upcomingLesson.plan}</Typography>
                 <ul>
                 {upcomingLesson.specPoints.map(point => (
-                    <li key={point}><Typography variant="body1" align="left">{point}</Typography></li>
+                    <li key={point}><Typography variant="body1" align="left">{point.content}</Typography></li>
                     ))}
                     </ul>
                     </div>

@@ -1,32 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import Paper from '@material-ui/core/Paper';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
 import Lesson from '../general/Lessons';
 import UpcomingLesson from '../general/UpcomingLesson';
+import Progress from '../general/Progress';
+import LeftDrawer from '../general/LeftDrawer';
 
 const StudentDashboard = () => {
-    
+
     const useStyles = makeStyles(theme => ({
         
-        leftNav: {
-            flex: 1,
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            minWidth: 400,
-        },
-        leftNavPaper: {
-            backgroundColor: theme.palette.secondary.main
-        },
         studentBox: {
             display: "flex",
             flexDirection: "column"
@@ -84,10 +72,7 @@ const StudentDashboard = () => {
     return (
 
         <div className="App">
-        <Paper className={classes.leftNavPaper} square>
-        <Box className={classes.leftNav}>
-        </Box>
-        </Paper>
+        <LeftDrawer />
         <div className="mainWrapper">
         <div className={classes.studentBoxWrapper}>
         
@@ -107,7 +92,8 @@ const StudentDashboard = () => {
         </Box>
         <Box className={classes.cardAction}>
         <Button className={classes.button} variant="contained" color="primary">Add report</Button>
-        <Button className={classes.button} variant="contained" color="primary">View lessons</Button>
+        <Button className={classes.button} variant="contained" color="primary"
+        onClick={() => {document.location.href = "lessons"}}>View lessons</Button>
         </Box>
         </Box>
         </Card>
@@ -131,8 +117,7 @@ const StudentDashboard = () => {
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Progress</Typography>
         <Box className={classes.cardContent}>
-        <Typography variant="h4">5% Course Completion</Typography>
-        <LinearProgress variant="determinate" value={5} />
+        <Progress />
         </Box>
         <Box className={classes.cardAction}>
         <Button variant="contained" color="primary">View progress</Button>

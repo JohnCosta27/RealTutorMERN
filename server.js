@@ -17,9 +17,6 @@ app.use(cookieParser());
 const port = 3000;
 app.listen(port, () => console.log("Listening on port: " + port));
 
-const studentsRoute = require('./routes/students.js');
-app.use('/students', studentsRoute);
-
 const accountsRoute = require('./routes/accounts.js');
 app.use('/accounts', accountsRoute);
 

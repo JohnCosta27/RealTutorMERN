@@ -24,9 +24,6 @@ const AccountSchema = mongoose.Schema({
     cookie: {
         type: String,
     },
-    knowledgeTree: {
-        type: JSON,
-    },
     lessons: {
         type: [JSON],
     },
@@ -38,6 +35,12 @@ const AccountSchema = mongoose.Schema({
             "tutor",
             "student"
         ]
+    },
+    specPoints: {
+        type: Array
+    },
+    course: {
+        type: Array
     }
 
 });

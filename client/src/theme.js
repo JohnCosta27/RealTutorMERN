@@ -7,7 +7,8 @@ const theme = createMuiTheme({
         secondary: grey,
         cards: '#FFFFFF',
         divBackground: "#009688",
-        background: teal
+        leftNav: '#313131',
+        lightText: '#DDDDDD'
       },
     typography: {
       fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
