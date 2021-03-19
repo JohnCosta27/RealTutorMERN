@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -36,10 +36,9 @@ const StudentDashboard = () => {
             borderRadius: 10,
         },
         studentBoxWrapper: {
-            width: "100%",
+            width: "90%",
             marginTop: 50,
-            marginLeft: 10,
-            marginRight: 10
+            marginLeft: "5%"
         },
         cardsWrapper: {
             width: "90%",
@@ -67,6 +66,9 @@ const StudentDashboard = () => {
         }
     }));
     
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
     const classes = useStyles();
     
     return (
@@ -83,7 +85,7 @@ const StudentDashboard = () => {
         </div>
         
         <Grid container>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
         <Card className={classes.paper}>
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Lessons</Typography>
@@ -93,12 +95,12 @@ const StudentDashboard = () => {
         <Box className={classes.cardAction}>
         <Button className={classes.button} variant="contained" color="primary">Add report</Button>
         <Button className={classes.button} variant="contained" color="primary"
-        onClick={() => {document.location.href = "lessons"}}>View lessons</Button>
+        onClick={() => {document.location.href = "lessons?studentid=" + urlParams.get("studentid")}}>View lessons</Button>
         </Box>
         </Box>
         </Card>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
         <Card className={classes.paper}>
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Upcoming</Typography>
@@ -112,7 +114,7 @@ const StudentDashboard = () => {
         </Box>
         </Card>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
         <Card className={classes.paper}>
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Progress</Typography>
@@ -125,7 +127,7 @@ const StudentDashboard = () => {
         </Box>
         </Card>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
         <Card className={classes.paper}>
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Details</Typography>

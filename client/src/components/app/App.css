@@ -23,6 +23,7 @@
   height: 100%;
   display: flex;
   margin-left: 10px;
+  flex-direction: column;
   /*background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);*/
 }
 

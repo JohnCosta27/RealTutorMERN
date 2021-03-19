@@ -4,15 +4,28 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 
-const FullLesson = () => {
+const FullLesson = (props) => {
 
     const useStyles = makeStyles(theme => ({
-
         lessonBox: {
-            width: 400
+            minWidth: 400,
+            maxWidth: 600,
+            transition: "all .1s ease-in-out",
+            '&:hover': {
+                transform: "scale(1.1)"
+            },
+            cursor: "pointer"
+        },
+        specPoints: {
+            alignContent: "left"
+        },
+        textContent: {
+            paddingLeft: 5,
+            paddingRight: 5
         }
-
     }));
 
     const classes = useStyles();
@@ -20,10 +33,23 @@ const FullLesson = () => {
     return (
         <Box className={classes.lessonBox}>
             <Paper elevation="2">
-            <Typography variant="h2">Hello World</Typography>
-            <Typography variant="body1">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </Typography>
+            <Typography variant="h2">{new Date(props.date).toLocaleDateString("en-UK")}</Typography>
+            <Typography variant="h5" align="left" className={classes.textContent}>Plan</Typography>
+            <Typography variant="body1" align="left" className={classes.textContent}>{props.plan}</Typography>
+            <Typography variant="h5" align="left" className={classes.textContent}>Planned Points</Typography>
+            <List>
+            {props.specPoints.map(point => (
+                <ListItem>{point.content}</ListItem>
+            ))}
+            </List>
+            <Typography variant="h5" align="left" className={classes.textContent}>Achieved Points</Typography>
+            <List>
+            {props.specPointsAchieved.map(point => (
+                <ListItem>{point.content}</ListItem>
+            ))}
+            </List>
+            <Typography variant="h5" align="left" className={classes.textContent}>Report</Typography>
+            <Typography variant="body1" align="left" className={classes.textContent}>{props.report}</Typography>
             </Paper>
         </Box>
     )

@@ -412,6 +412,11 @@ async function getStudentLessons(studentID) {
                 const specPoints = await getSpecPoints(lesson.specPoints);
                 if (specPoints.error != undefined) res.json({error: specPoints.error});
                 lesson.specPoints = specPoints;
+
+                const specPointsAchieved = await getSpecPoints(lesson.specPointsAchieved);
+                if (specPointsAchieved.error != undefined) res.json({error: specPointsAchieved.error});
+                lesson.specPointsAchieved = specPointsAchieved;
+
             }
 
             return lessons;
