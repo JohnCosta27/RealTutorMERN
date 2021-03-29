@@ -20,6 +20,9 @@ app.listen(port, () => console.log("Listening on port: " + port));
 const accountsRoute = require('./routes/accounts.js');
 app.use('/accounts', accountsRoute);
 
+const specification = require('./routes/specification.js');
+app.use('/spec', specification);
+
 app.use(express.static(path.join(__dirname, "build")));
 
 app.get('*', (req, res) => {

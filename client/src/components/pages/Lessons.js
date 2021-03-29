@@ -9,9 +9,11 @@ import FullLesson from '../general/FullLesson';
 const Lessons = () => {
 
     const [lessons, setLessons] = useState([]);
+    const [auth, setAuth] = useState({empty: true});
 
     useEffect(() => {
         getLessons();
+        getAuth();
     }, []);
 
     const getLessons = async () => {
@@ -29,8 +31,28 @@ const Lessons = () => {
         });
 
         const data = await response.json();
+        console.log(data);
         setLessons(data);
 
+    }
+    
+    const getAuth = async () => {
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        const response = await fetch("/accounts/auth?studentid=" + urlParams.get('studentid'), {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+        setAuth(data);
+        
     }
 
     const useStyles = makeStyles(theme => ({
@@ -46,28 +68,46 @@ const Lessons = () => {
 
     const classes = useStyles();
 
-    return (
-        <div className="App">
+    if (auth.error != undefined) {
+        return (
+            <div className="app">
+            <Typography variant="h1">You fucking donkey</Typography>
+            </div>
+            )
+    } else if (lessons.length == 0) {
+        return (
+            <div className="App">
             <LeftDrawer />
             <div className="mainWrapper">
                 <Typography variant="h1">John Costa</Typography>
-                <Grid container spacing={3} className={classes.lessonsWrapper}>
-                    {lessons.map(lesson => (
-                        <div style={{marginLeft: 10, marginRight: 10}}>
-                        <Grid item xs>
-                            <FullLesson 
-                            plan={lesson.plan} 
-                            date={lesson.date} 
-                            specPoints={lesson.specPoints} 
-                            specPointsAchieved={lesson.specPointsAchieved}
-                            report={lesson.report} />
-                        </Grid>
-                        </div>
-                    ))}
-                </Grid>
+                <Typography variant="h2">There are no present lessons, better get learning ;)</Typography>
             </div>
         </div>
-    )
+        )
+    } else {
+        return (
+            <div className="App">
+                <LeftDrawer />
+                <div className="mainWrapper">
+                    <Typography variant="h1">John Costa</Typography>
+                    <Grid container spacing={3} className={classes.lessonsWrapper}>
+                        {lessons.map(lesson => (
+                            <div style={{marginLeft: 10, marginRight: 10}}>
+                            <Grid item xs>
+                                <FullLesson 
+                                plan={lesson.plan} 
+                                date={lesson.date} 
+                                specPoints={lesson.specPoints} 
+                                specPointsAchieved={lesson.specPointsAchieved}
+                                report={lesson.report} />
+                            </Grid>
+                            </div>
+                        ))}
+                    </Grid>
+                </div>
+            </div>
+        )
+    }
 
 }
 

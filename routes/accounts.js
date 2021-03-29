@@ -250,7 +250,10 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
         
         const validation = await validateCookie(req.cookies.token);
         const account = await getAccount(req.query.studentid);
-        if (account.error != undefined) {
+
+        if (account == undefined) {
+            res.json({error: "Account was not found"});
+        } else if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
             if (!(validation >= 2 || (validation == 1 && account._id == req.params.studentid))) {
@@ -288,6 +291,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
         
         const validation = await validateCookie(req.cookies.token);
         const account = await getAccount(req.query.studentid);
+
         if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
@@ -345,7 +349,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 
         if (req.query.studentid == null) {
             res.json({ error: "Student ID is not present" });
-        } else if (!(await validateCookie(req.cookies.token) != 0)) {
+        } else if (await validateCookie(req.cookies.token) == 1 && (await AccountFromCookie(req.cookies.token)).id != req.query.studentid) {
             res.json({error: "Authentication failed"});
         } else {
 
@@ -366,6 +370,23 @@ accounts.get('/getstudentprogress', async (req, res) => {
     }
 
 });
+
+accounts.get('/auth', async (req, res) => {
+    if (req.cookies.token == undefined || req.query.studentid == undefined) {
+        res.json({error: "Auth failed"});
+    } else {
+
+        const auth = await AccountFromCookie(req.cookies.token);
+
+        if (auth.error != undefined) {
+            res.json({error: "Auth failed"});
+        } else if (String(auth._id) != String(req.query.studentid)) {
+            res.json({error: "Auth failed"});
+        } else {
+            res.json({success: "Auth successful"});
+        }
+    }
+})
 
 async function getAccount(id) {
     try {
@@ -405,7 +426,7 @@ async function getStudentLessons(studentID) {
     try {
         const lessons = await Lesson.find({ studentID: studentID });
         if (lessons.length == 0) {
-            return { error: "This student could not be found" };
+            return lessons;
         } else {
 
             for (let lesson of lessons) {
