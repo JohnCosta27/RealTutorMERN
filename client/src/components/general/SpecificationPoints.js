@@ -7,9 +7,10 @@ import Grid from '@material-ui/core/Grid';
 
 import SpecPoint from './SpecPoint';
 
-const SpecificationPoint = () => {
+const SpecificationPoint = (props) => {
 
     const [points, setPoints] = useState([]);
+    const [selectedPoints, setSelectedPoints] = useState({points: []});
 
     useEffect(() => {
         getSpecPoints();
@@ -30,6 +31,7 @@ const SpecificationPoint = () => {
         });
         
         const data = await response.json();
+        for (let d of data) d.clicked = false;
         setPoints(data);
         
     }
@@ -43,19 +45,28 @@ const SpecificationPoint = () => {
             maxHeight: 600,
             overflowY: "scroll"
         },
-        gridItem: {
-            marginTop: 2,
-            marginBottom: 2,
-            cursor: "pointer",
-        },
         clickedPaper: {
             backgroundColor: "#313131",
             color: '#FFFFFF'
         }
     }));
 
-    const classes = useStyles();
+    const handleClick = (id) => {
+        
+        let pointsArray = selectedPoints.points;
 
+        const index = pointsArray.indexOf(id);
+        if (index == -1) {
+            pointsArray.push(id);
+        } else {
+            pointsArray.splice(index, 1);
+        }
+
+        setSelectedPoints({points: pointsArray});
+
+    }
+
+    const classes = useStyles();
     if (points.length == 0 || points.error != undefined) {
         return (
             <Paper elevation={2} className={classes.inputBox}>
@@ -65,13 +76,11 @@ const SpecificationPoint = () => {
         );
     } else {
         return (
-            <Paper elevation={2} className={classes.inputBox}>
+            <Paper elevation={2} className={classes.inputBox} onClick={props.handleClick(selectedPoints)}>
             <Typography variant="h1">Specification points</Typography>
             <Grid container>
             {points.map(point => (
-                    <Grid item xs={12} className={classes.gridItem}>
-                    <SpecPoint content={point.content} />
-                    </Grid>
+                    <SpecPoint key={point.contentID} content={point.content} onClick={() => handleClick(point._id)}/>
                 ))}
             </Grid>
             </Paper>

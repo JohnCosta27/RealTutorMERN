@@ -184,20 +184,20 @@ accounts.post('/addlessonreport', async (req, res) => {
                 
                 let lesson;
                 try {
-
+                    
                     lesson = await Lesson.findById(req.body.lessonID);
                     lesson.report = req.body.report;
                     lesson.specPointsAchieved = req.body.specPointsAchieved;
-    
+                    
                     await addStudentPoints(lesson.studentID, req.body.specPointsAchieved);
                     await lesson.save();
-    
+                    
                     res.json({ success: "Lesson updated successfully" });
-
+                    
                 } catch (error) {
                     res.json({error: "Lesson not found"});
                 }
-
+                
             } else {
                 res.json({ error: "Specification points incorrect" });
             }
@@ -218,7 +218,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 */
 
 accounts.get('/getstudentlessons', async (req, res) => {
-
+    
     if (req.cookies.token == null) {
         res.json({ error: "Token not present" });
     } else if (req.query.studentid == null) {
@@ -250,7 +250,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
         
         const validation = await validateCookie(req.cookies.token);
         const account = await getAccount(req.query.studentid);
-
+        
         if (account == undefined) {
             res.json({error: "Account was not found"});
         } else if (account.error != undefined) {
@@ -291,7 +291,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
         
         const validation = await validateCookie(req.cookies.token);
         const account = await getAccount(req.query.studentid);
-
+        
         if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
@@ -326,7 +326,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 });
 
 accounts.post('/addspecpoins', async (req, res) => {
-
+    
     try {
         
         if (req.body.specPoints == null || req.body.studentID == null) {
@@ -336,23 +336,23 @@ accounts.post('/addspecpoins', async (req, res) => {
         } else {
             res.json(await addStudentPoints(req.body.studentID, req.body.specPoints));
         }
-
+        
     } catch (error) {
         res.json(error);
     }
-
+    
 });
 
 accounts.get('/getstudentprogress', async (req, res) => {
-
+    
     try {
-
+        
         if (req.query.studentid == null) {
             res.json({ error: "Student ID is not present" });
         } else if (await validateCookie(req.cookies.token) == 1 && (await AccountFromCookie(req.cookies.token)).id != req.query.studentid) {
             res.json({error: "Authentication failed"});
         } else {
-
+            
             const account = await getAccount(req.query.studentid);
             if (account.error != undefined) {
                 res.json({error: "This account was not found"});
@@ -361,29 +361,43 @@ accounts.get('/getstudentprogress', async (req, res) => {
                 const studentSpecPoints = account.specPoints.length;
                 res.json({progress: studentSpecPoints * 100 / specLength});
             }
-
-
+            
+            
         }
-
+        
     } catch (error) {
         res.json({error: error});
     }
+    
+});
 
+accounts.get('/getid', async (req, res) => {
+    
+    const validation = await validateCookie(req.cookies.token);
+    if (validation > 0) {
+        const account = await AccountFromCookie(req.cookies.token);
+        res.json({id: account._id});
+    } else {
+        res.json({error: "Cookie not valid"});
+    }
+    
 });
 
 accounts.get('/auth', async (req, res) => {
     if (req.cookies.token == undefined || req.query.studentid == undefined) {
         res.json({error: "Auth failed"});
     } else {
-
+        
         const auth = await AccountFromCookie(req.cookies.token);
+        
+        console.log(auth);
 
         if (auth.error != undefined) {
             res.json({error: "Auth failed"});
-        } else if (String(auth._id) != String(req.query.studentid)) {
+        } else if (String(auth._id) != String(req.query.studentid) && validateCookie(req.cookies.token) < 2) {
             res.json({error: "Auth failed"});
         } else {
-            res.json({success: "Auth successful"});
+            res.json({success: "Auth successful", name: auth.firstname + " " + auth.surname});
         }
     }
 })
@@ -397,28 +411,28 @@ async function getAccount(id) {
 }
 
 async function addStudentPoints(studentID, specPoints) {
-
+    
     try {
-
+        
         const account = await Account.findById(studentID);
         if (account.specPoints == undefined) {
             account.specPoints = [];
         }
-
+        
         const points = await getSpecPoints(specPoints);
         for (let point of points) {
             if (account.specPoints.filter(currentPoint => currentPoint._id + "" == point._id + "").length == 0) {
                 account.specPoints.push(point);
             }
         }
-
+        
         await account.save();
         return {success: "Specification points added"};
-
+        
     } catch (error) {
         return {error: error};
     }
-
+    
 }
 
 async function getStudentLessons(studentID) {
@@ -428,18 +442,18 @@ async function getStudentLessons(studentID) {
         if (lessons.length == 0) {
             return lessons;
         } else {
-
+            
             for (let lesson of lessons) {
                 const specPoints = await getSpecPoints(lesson.specPoints);
                 if (specPoints.error != undefined) res.json({error: specPoints.error});
                 lesson.specPoints = specPoints;
-
+                
                 const specPointsAchieved = await getSpecPoints(lesson.specPointsAchieved);
                 if (specPointsAchieved.error != undefined) res.json({error: specPointsAchieved.error});
                 lesson.specPointsAchieved = specPointsAchieved;
-
+                
             }
-
+            
             return lessons;
         }
     } catch (error) {
@@ -449,7 +463,7 @@ async function getStudentLessons(studentID) {
 }
 
 async function getSpecPoints(pointsArray) {
-
+    
     try {
         let points = [];
         for (let point of pointsArray) {
@@ -459,7 +473,7 @@ async function getSpecPoints(pointsArray) {
     } catch (error) {
         return { error: error };
     }
-
+    
 }
 
 async function getID(email) {
@@ -525,18 +539,18 @@ function randomString(length) {
 async function validateSpecPoint(specPoints) {
     
     for (let point of specPoints) {
-
+        
         try {
             let data = await SpecificationPoint.findById(point);
             if (data == null) return false;
         } catch (error) {
             return false;
         }
-
+        
     }
     
     return true;
-
+    
 }
 
 module.exports = accounts;
