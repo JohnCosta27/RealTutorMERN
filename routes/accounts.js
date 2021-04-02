@@ -267,7 +267,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
                     let date = 0;
                     let lessonReturn;
                     for (let lesson of lessons) {
-                        if (lesson.date > date) {
+                        if (lesson.date > date && lesson.report != undefined) {
                             date = lesson.date;
                             lessonReturn = lesson;
                         }
@@ -389,12 +389,10 @@ accounts.get('/auth', async (req, res) => {
     } else {
         
         const auth = await AccountFromCookie(req.cookies.token);
-        
-        console.log(auth);
 
         if (auth.error != undefined) {
             res.json({error: "Auth failed"});
-        } else if (String(auth._id) != String(req.query.studentid) && validateCookie(req.cookies.token) < 2) {
+        } else if (String(auth._id) != String(req.query.studentid) && await validateCookie(req.cookies.token) < 2) {
             res.json({error: "Auth failed"});
         } else {
             res.json({success: "Auth successful", name: auth.firstname + " " + auth.surname});

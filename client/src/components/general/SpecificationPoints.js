@@ -9,6 +9,8 @@ import SpecPoint from './SpecPoint';
 
 const SpecificationPoint = (props) => {
 
+    console.log("Rerender");
+
     const [points, setPoints] = useState([]);
     const [selectedPoints, setSelectedPoints] = useState({points: []});
 
@@ -17,7 +19,7 @@ const SpecificationPoint = (props) => {
     }, []);
 
     const getSpecPoints = async () => {
-        
+
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         
@@ -32,6 +34,13 @@ const SpecificationPoint = (props) => {
         
         const data = await response.json();
         for (let d of data) d.clicked = false;
+
+        for (let point of data) {
+            if (props.highlightedPoints.includes(point._id)) {
+                point.highlighted = true;
+            }
+        }
+
         setPoints(data);
         
     }
@@ -80,7 +89,7 @@ const SpecificationPoint = (props) => {
             <Typography variant="h1">Specification points</Typography>
             <Grid container>
             {points.map(point => (
-                    <SpecPoint key={point.contentID} content={point.content} onClick={() => handleClick(point._id)}/>
+                    <SpecPoint highlighted={point.highlighted} key={point.contentID} content={point.content} onClick={() => handleClick(point._id)}/>
                 ))}
             </Grid>
             </Paper>
