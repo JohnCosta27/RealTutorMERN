@@ -92,7 +92,7 @@ const Lessons = () => {
                     <Typography variant="h1">John Costa</Typography>
                     <Grid container spacing={3} className={classes.lessonsWrapper}>
                         {lessons.map(lesson => (
-                            <div style={{marginLeft: 10, marginRight: 10}}>
+                            <div style={{marginLeft: 10, marginRight: 10, marginBottom: 10, marginTop: 10}}>
                             <Grid item xs>
                                 <FullLesson 
                                 plan={lesson.plan} 

@@ -33,7 +33,7 @@ const FullLesson = (props) => {
     return (
         <Box className={classes.lessonBox}>
             <Paper elevation="2">
-            <Typography variant="h2">{new Date(props.date).toLocaleDateString("en-UK")}</Typography>
+            <Typography variant="h2">{new Date(props.date * 1000).toLocaleDateString("en-UK")}</Typography>
             <Typography variant="h5" align="left" className={classes.textContent}>Plan</Typography>
             <Typography variant="body1" align="left" className={classes.textContent}>{props.plan}</Typography>
             <Typography variant="h5" align="left" className={classes.textContent}>Planned Points</Typography>

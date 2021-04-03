@@ -189,7 +189,7 @@ accounts.post('/addlessonreport', async (req, res) => {
                     lesson.report = req.body.report;
                     lesson.specPointsAchieved = req.body.specPointsAchieved;
                     
-                    await addStudentPoints(lesson.studentID, req.body.specPointsAchieved);
+                    await addStudentPoints(lesson.studentID, req.body.specPointsAchieved, lesson.date);
                     await lesson.save();
                     
                     res.json({ success: "Lesson updated successfully" });
@@ -338,9 +338,30 @@ accounts.post('/addspecpoins', async (req, res) => {
         }
         
     } catch (error) {
-        res.json(error);
+        res.json({error: error});
     }
     
+});
+
+accounts.get('/getstudentpoints', async (req, res) => {
+
+    try {
+
+        if (req.query.studentid == null) {
+            res.json({ error: "Student ID is not present" });
+        } else if (await validateCookie(req.cookies.token) == 1 && (await AccountFromCookie(req.cookies.token)).id != req.query.studentid) {
+            res.json({error: "Authentication failed"});
+        } else {
+
+            const account = await getAccount(req.query.studentid);
+            res.json(account.specPoints);
+
+        }
+
+    } catch (error) {
+        res.json({error: error});
+    }
+
 });
 
 accounts.get('/getstudentprogress', async (req, res) => {
@@ -408,7 +429,7 @@ async function getAccount(id) {
     }
 }
 
-async function addStudentPoints(studentID, specPoints) {
+async function addStudentPoints(studentID, specPoints, date) {
     
     try {
         
@@ -420,6 +441,8 @@ async function addStudentPoints(studentID, specPoints) {
         const points = await getSpecPoints(specPoints);
         for (let point of points) {
             if (account.specPoints.filter(currentPoint => currentPoint._id + "" == point._id + "").length == 0) {
+                point.date = date;
+                console.log(point);
                 account.specPoints.push(point);
             }
         }

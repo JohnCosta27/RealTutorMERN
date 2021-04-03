@@ -219,7 +219,7 @@ const AddReport = () => {
                 value={selectedLesson.date} label="Select lesson" onChange={lessonSelect}>
     
                 {lessons.map(lesson => (
-                    <MenuItem key={lesson._id} value={lesson._id}>{new Date(lesson.date).toDateString()}</MenuItem>
+                    <MenuItem key={lesson._id} value={lesson._id}>{new Date(lesson.date * 1000).toDateString()}</MenuItem>
                 ))}
 
                 </Select>

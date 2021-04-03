@@ -24,6 +24,14 @@ const specificationPointsSchema = mongoose.Schema({
     specID: {
         type: Number,
         required: true
+    },
+    date: {
+        type: Number,
+        required: false
+    },
+    status: {
+        type: String,
+        required: false
     }
 
 });
