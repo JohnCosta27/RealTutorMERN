@@ -126,7 +126,8 @@ const StudentDashboard = () => {
                 <Lesson />
                 </Box>
                 <Box className={classes.cardAction}>
-                <Button className={classes.button} variant="contained" color="primary">Add report</Button>
+                <Button className={classes.button} variant="contained" color="primary"
+                onClick={() => {document.location.href = "addreport?studentid=" + urlParams.get("studentid")}}>Add report</Button>
                 <Button className={classes.button} variant="contained" color="primary"
                 onClick={() => {document.location.href = "lessons?studentid=" + urlParams.get("studentid")}}>View lessons</Button>
                 </Box>
@@ -141,8 +142,8 @@ const StudentDashboard = () => {
                 <UpcomingLesson />
                 </Box>
                 <Box className={classes.cardAction}>
-                <Button className={classes.button} variant="contained" color="primary">Schedule</Button>
-                <Button className={classes.button} variant="contained" color="primary">Plan lesson</Button>
+                <Button className={classes.button} variant="contained" color="primary"
+                onClick={() => {document.location.href = "planlesson?studentid=" + urlParams.get("studentid")}}>Plan lesson</Button>
                 </Box>
                 </Box>
                 </Card>

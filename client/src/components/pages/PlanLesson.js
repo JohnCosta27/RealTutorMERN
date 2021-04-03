@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 
 import SpecificationPoints from '../general/SpecificationPoints';
 
+import Select from 'react-select'
+
 import DateMomentUtils from '@date-io/date-fns';
 import {
   DatePicker,
@@ -25,11 +27,38 @@ const PlanLesson = () => {
     const [selectedDate, handleDateChange] = useState(new Date());
     const [points, setPoints] = useState([]);
     const [plan, setPlan] = useState("");
+    const [selectedPoints, setSelectedPoints] = useState([]);
 
     useEffect(() => {
+        getSpecPoints();
         getAuth();
     }, []);
     
+    const getSpecPoints = async () => {
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        const response = await fetch("/spec/getspecfromstudentid?studentid=" + urlParams.get('studentid'), {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+
+        let formattedPoints = [];
+        for (let point of data) {
+            formattedPoints.push({value: point._id, label: point.content});
+        }
+
+        setPoints(formattedPoints);
+        
+    }
+
     const getAuth = async () => {
         
         const queryString = window.location.search;
@@ -72,7 +101,10 @@ const PlanLesson = () => {
         const tutorid = data.id;
         const date = Math.floor(new Date(selectedDate).getTime() / 1000);
 
-        const body = {date: date, plan: plan, studentid: studentid, tutorid: tutorid, specPoints: points};
+        let formattedpoints = [];
+        for (let p of selectedPoints) formattedpoints.push(p.value);
+
+        const body = {date: date, plan: plan, studentid: studentid, tutorid: tutorid, specPoints: formattedpoints};
 
         const saveLesson = await fetch("/accounts/addlesson", {
             method: "POST",
@@ -85,7 +117,6 @@ const PlanLesson = () => {
         });
 
         const saveLessonResponse = await saveLesson.json();
-        console.log(saveLessonResponse);
 
         if (saveLessonResponse.error != undefined) {
             //something?
@@ -95,13 +126,8 @@ const PlanLesson = () => {
 
     }
 
-
     const planChange = (event) => {
         setPlan(event.target.value);
-    }
-
-    const handleClick = (points) => {
-        setPoints(points.points);
     }
 
     const useStyles = makeStyles(theme => ({
@@ -132,7 +158,19 @@ const PlanLesson = () => {
             width: "50%"
         }
     }));
-    
+
+    const customTheme = (theme) => {
+        return {
+            ...theme,
+            colors: {
+                ...theme.colors,
+                primary: '#009688',
+                primary25: '#b2dfdb',
+                primary50: '#80cbc4'
+            }
+        }
+    }
+
     const classes = useStyles();
     
     if (auth.error != undefined) {
@@ -173,7 +211,9 @@ const PlanLesson = () => {
                 </Paper>
                 </Grid>
                 <Grid item lg={4} md={12}>
-                <SpecificationPoints handleClick={handleClick} />
+                
+                <Select options={points} theme={customTheme} menuIsOpen={true} isMulti name="Specification points" onChange={setSelectedPoints}/>
+
                 </Grid>
                 </Grid>
                 </form>

@@ -33,14 +33,6 @@ const SpecificationPoint = (props) => {
         });
         
         const data = await response.json();
-        for (let d of data) d.clicked = false;
-
-        for (let point of data) {
-            if (props.highlightedPoints.includes(point._id)) {
-                point.highlighted = true;
-            }
-        }
-
         setPoints(data);
         
     }

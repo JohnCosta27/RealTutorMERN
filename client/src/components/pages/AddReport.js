@@ -13,6 +13,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
+import ReactSelect from 'react-select'
+
 import SpecificationPoints from '../general/SpecificationPoints';
 
 const AddReport = () => {
@@ -22,14 +24,40 @@ const AddReport = () => {
 
     const [auth, setAuth] = useState({empty: true});
     const [points, setPoints] = useState([]);
-    const [pointIDs, setPointIDs] = useState([]);
     const [report, setReport] = useState("");
+    const [selectedPoints, setSelectedPoints] = useState([]);
 
     useEffect(() => {
+        getSpecPoints();
         getLessons();
         getAuth();
     }, []);
     
+    const getSpecPoints = async () => {
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        const response = await fetch("/spec/getspecfromstudentid?studentid=" + urlParams.get('studentid'), {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        });
+        
+        const data = await response.json();
+
+        let formattedPoints = [];
+        for (let point of data) {
+            formattedPoints.push({value: point._id, label: point.content});
+        }
+
+        setPoints(formattedPoints);
+        
+    }
+
     const getAuth = async () => {
         
         const queryString = window.location.search;
@@ -85,8 +113,10 @@ const AddReport = () => {
 
         event.preventDefault();
         
-        const body = {lessonID: selectedLesson, report: report, specPointsAchieved: points};
-        console.log(body);
+        let formattedpoints = [];
+        for (let p of selectedPoints) formattedpoints.push(p.value);
+
+        const body = {lessonID: selectedLesson, report: report, specPointsAchieved: formattedpoints};
 
         const saveLesson = await fetch("/accounts/addlessonreport", {
             method: "POST",
@@ -108,25 +138,12 @@ const AddReport = () => {
         
     }
     
-    
     const reportChange = (event) => {
         setReport(event.target.value);
     }
     
-    const handleClick = (points) => {
-        setPoints(points.points);
-    }
-    
     const lessonSelect = (event) => {
         setSelectedLesson(event.target.value);
-        for (let lesson of lessons) {
-            if (lesson._id == event.target.value) {
-                let highlightedPoints = [];
-                for (let point of lesson.specPoints) highlightedPoints.push(point._id);
-                setPointIDs(highlightedPoints);
-                break;
-            }
-        }
     }
 
     const useStyles = makeStyles(theme => ({
@@ -161,6 +178,18 @@ const AddReport = () => {
         }
     }));
     
+    const customTheme = (theme) => {
+        return {
+            ...theme,
+            colors: {
+                ...theme.colors,
+                primary: '#009688',
+                primary25: '#b2dfdb',
+                primary50: '#80cbc4'
+            }
+        }
+    }
+
     const classes = useStyles();
     
     if (auth.error != undefined || lessons.length == 0) {
@@ -190,7 +219,7 @@ const AddReport = () => {
                 value={selectedLesson.date} label="Select lesson" onChange={lessonSelect}>
     
                 {lessons.map(lesson => (
-                    <MenuItem value={lesson._id}>{new Date(lesson.date).toDateString()}</MenuItem>
+                    <MenuItem key={lesson._id} value={lesson._id}>{new Date(lesson.date).toDateString()}</MenuItem>
                 ))}
 
                 </Select>
@@ -208,7 +237,7 @@ const AddReport = () => {
                 </Grid>
                 <Grid item lg={4} md={12}>
                 
-                <SpecificationPoints handleClick={handleClick} highlightedPoints={pointIDs}/> 
+                <ReactSelect options={points} theme={customTheme} menuIsOpen={true} isMulti name="Specification points" onChange={setSelectedPoints}/>
 
                 </Grid>
                 </Grid>
