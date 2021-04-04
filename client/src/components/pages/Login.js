@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 
-import CustomTextField from './general/CustomTextField';
+import CustomTextField from '../general/CustomTextField';
 
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';

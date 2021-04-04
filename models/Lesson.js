@@ -26,6 +26,9 @@ const LessonSchema = mongoose.Schema({
     tutorID: {
         type: String,
         required: true
+    },
+    title: {
+        type: String
     }
 
 });
