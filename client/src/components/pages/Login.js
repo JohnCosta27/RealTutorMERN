@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
 
-import CustomTextField from './general/CustomTextField';
+import CustomTextField from '../general/CustomTextField';
 
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -34,7 +34,7 @@ function Login() {
     event.preventDefault();
     const JSONdata = {email: email, password: password};
     
-    const response = await fetch('http://localhost:3000/accounts/login', {
+    const response = await fetch('/accounts/login', {
     method: "POST",
     headers: {
       'Accept': 'application/json',

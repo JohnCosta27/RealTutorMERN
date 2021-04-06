@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { grey, blueGrey, teal } from '@material-ui/core/colors';
+import { grey, teal } from '@material-ui/core/colors';
 // A custom theme for this app
 const theme = createMuiTheme({
     palette: {
@@ -15,6 +15,9 @@ const theme = createMuiTheme({
       h1: {
         fontSize: "5em",
         color: grey[900]
+      },
+      h3: {
+        fontWeight: "lighter"
       }
     }
 });
