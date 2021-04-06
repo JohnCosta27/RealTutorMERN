@@ -20,6 +20,7 @@ const PlanLesson = () => {
     
     const [selectedDate, handleDateChange] = useState(new Date());
     const [points, setPoints] = useState([]);
+    const [title, setTitle] = useState("");
     const [plan, setPlan] = useState("");
     const [selectedPoints, setSelectedPoints] = useState([]);
     
@@ -78,7 +79,7 @@ const PlanLesson = () => {
         let formattedpoints = [];
         for (let p of selectedPoints) formattedpoints.push(p.value);
         
-        const body = {date: date, plan: plan, studentid: studentid, tutorid: tutorid, specPoints: formattedpoints};
+        const body = {title: title, date: date, plan: plan, studentid: studentid, tutorid: tutorid, specPoints: formattedpoints};
         
         const saveLesson = await fetch("/accounts/addlesson", {
             method: "POST",
@@ -92,6 +93,8 @@ const PlanLesson = () => {
         
         const saveLessonResponse = await saveLesson.json();
         
+        console.log(saveLessonResponse);
+
         if (saveLessonResponse.error != undefined) {
             //something?
         } else {
@@ -104,6 +107,10 @@ const PlanLesson = () => {
         setPlan(event.target.value);
     }
     
+    const titleChange = (event) => {
+        setTitle(event.target.value);
+    }
+
     const useStyles = makeStyles(theme => ({
         lessonsWrapper: {
             width: "90%",
@@ -153,14 +160,18 @@ const PlanLesson = () => {
         <Grid item lg={8} md={12}>
         <Paper elevation={2} className={classes.inputBox}>
         
+        <Typography variant="h2">Lesson Title</Typography>
+        <TextField label="Title" placeholder="This is a title" variant="outlined" onBlur={titleChange} style={{width: "50%"}}/>
+        <Divider className={classes.gridItem} />
+
         <Typography variant="h2">Lesson Planning</Typography>
-        <TextField label="plan" placeholder="This is plan" multiline 
+        <TextField label="Plan" placeholder="This is plan" multiline 
         rows={3} variant="outlined" className={classes.multiLineInput} onBlur={planChange} />
         <Divider />
         
         <Typography variant="h2">Date and Time</Typography>
         <MuiPickersUtilsProvider utils={DateMomentUtils}>
-        <DateTimePicker onChange={handleDateChange} style={{width: "50%"}} inputVariant="outlined" />
+        <DateTimePicker onChange={handleDateChange} style={{width: "50%"}} inputVariant="outlined" value={selectedDate} />
         </ MuiPickersUtilsProvider>
         
         <Divider className={classes.gridItem} />

@@ -11,6 +11,9 @@ import StudentLessons from '../FeatureComponents/StudentLessons';
 
 const StudentDashboard = () => {
     
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
     const useStyles = makeStyles(theme => ({
         
         studentNameWrapper: {
@@ -66,10 +69,7 @@ const StudentDashboard = () => {
     
     const getAuth = async () => {
         
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        
-        const response = await fetch("/accounts/auth?studentid=" + urlParams.get('studentid'), {
+        const response = await fetch("/accounts/auth", {
             method: "GET",
             headers: {
                 'Accept': 'application/json',
@@ -79,19 +79,41 @@ const StudentDashboard = () => {
         });
         
         const data = await response.json();
+        console.log(data);
         setAuth(data);
         
     }
     
     const classes = useStyles();
     
-    if (auth.error !== undefined) {
+    if (auth.level < 1) {
         return (
             <div className="app">
-            <Typography variant="h1">Loading... (or you do not have a cookie)</Typography>
+            <Typography variant="h1">Back to the login</Typography>
             </div>
         );
-    } else {
+    } else if (auth.level == 1) {
+
+        return (
+            <div className="App">
+            <LeftDrawer changeState={setCurrent} level={auth.level} />
+            <div className={classes.content}>
+            
+            <div className={classes.studentNameWrapper}>
+            <Typography variant="h1">John Costa</Typography>
+            </div>
+            
+            {current === 0 ? <Dashboard level={auth.level} /> : <div></div>}
+            {current === 1 ? <StudentLessons level={auth.level} /> : <div></div>}
+            {current === 2 ? <Progress level={auth.level} /> : <div></div>}
+            {current === 3 ? <PlanLesson level={auth.level} /> : <div></div>}
+            {current === 4 ? <AddReport level={auth.level} /> : <div></div>}
+
+            </div>
+            </div> 
+        );
+
+    } else if (auth.level >= 2) {
             return (
                 <div className="App">
                 <LeftDrawer changeState={setCurrent} />
@@ -111,6 +133,10 @@ const StudentDashboard = () => {
                 </div>
                 
                 );
+            } else {
+                return (
+                    <div></div>
+                )
             }
     }
         export default StudentDashboard;

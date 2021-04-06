@@ -5,18 +5,6 @@ const Lesson = require('../models/Lesson');
 const SpecificationPoint = require('../models/SpecificationPoints');
 const sha256 = require('js-sha256');
 
-accounts.get('/readall', async (req, res) => {
-    
-    try {
-        const accounts = await Account.find();
-        res.json(accounts);
-    } catch (err) {
-        res.json({ error: err });
-        console.log(err);
-    }
-    
-});
-
 /*
 -> Register Account
 -> Recieves firstname, surname, email and a password.
@@ -120,7 +108,8 @@ accounts.post('/login', async (req, res) => {
 */
 accounts.post('/addlesson', async (req, res) => {
     
-    if (req.body.date == null || req.body.plan == null || req.body.studentid == null || req.body.specPoints == null || req.body.tutorid == null) {
+    if (req.body.date == null || req.body.plan == null || req.body.studentid == null || 
+        req.body.specPoints == null || req.body.tutorid == null || req.body.title == null) {
         res.json({ error: "One or more parameters missing from the request" });
     } else if (req.body.studentid == req.body.tutorid) {
         res.json({ error: "Student and tutor IDs cannot be the same" });
@@ -131,13 +120,19 @@ accounts.post('/addlesson', async (req, res) => {
         if (student.error != undefined || tutor.error != undefined) {
             res.json({error: "1 or more accounts were not found"});
         } else {
+
             if (!(student.error == null && tutor.error == null && await validateCookie(req.cookies.token) >= 2 && (tutor.type == "tutor" || tutor.type == "manager"))) {
                 res.json({ error: "Authentication failed" });
             } else {
                 
                 if (await validateSpecPoint(req.body.specPoints)) {
                     
-                    let lesson = new Lesson({ plan: req.body.plan, date: req.body.date, specPoints: req.body.specPoints, studentID: student._id, tutorID: tutor._id });
+                    let lesson = new Lesson({ title: req.body.title, 
+                        plan: req.body.plan, 
+                        date: req.body.date, 
+                        specPoints: req.body.specPoints, 
+                        studentID: student._id, 
+                        tutorID: tutor._id });
                     
                     try {
                         
@@ -227,10 +222,11 @@ accounts.get('/getstudentlessons', async (req, res) => {
         
         const validation = await validateCookie(req.cookies.token);
         const account = await getAccount(req.query.studentid);
+
         if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
-            if (!(validation >= 2 || (validation == 1 && account._id == req.query.studentid))) {
+            if (!(validation.level >= 2 || (validation.level == 1 && validation.id == req.query.studentid))) {
                 res.json({ error: "Validation not successful" });
             } else {
                 res.json(await getStudentLessons(req.query.studentid));
@@ -256,7 +252,8 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
         } else if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
-            if (!(validation >= 2 || (validation == 1 && account._id == req.params.studentid))) {
+
+            if (!(validation.level >= 2 || (validation.level == 1 && validation.id == req.query.studentid))) {
                 res.json({ error: "Validation not successful" });
             } else {
                 
@@ -295,7 +292,8 @@ accounts.get('/getstudentupcoming', async (req, res) => {
         if (account.error != undefined) {
             res.json({error: "This account was not found"});
         } else {
-            if (!(validation >= 2 || (validation == 1 && account._id == req.params.studentid))) {
+
+            if (!(validation.level >= 2 || (validation.level == 1 && validation.id == req.query.studentid))) {
                 res.json({ error: "Validation not successful" });
             } else {
                 
@@ -303,6 +301,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
                 if (lessons.error != null) {
                     res.json({ error: "This student could not be found" });
                 } else {
+
                     let date = 0;
                     let lessonReturn;
                     for (let lesson of lessons) {
@@ -311,7 +310,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
                             lessonReturn = lesson;
                         }
                     }
-                    
+
                     if (lessonReturn == undefined) {
                         res.json({ error: "No upcoming lesson" });
                     } else {
@@ -347,9 +346,11 @@ accounts.get('/getstudentpoints', async (req, res) => {
 
     try {
 
+        const validation = await validateCookie(req.cookies.token);
+
         if (req.query.studentid == null) {
             res.json({ error: "Student ID is not present" });
-        } else if (await validateCookie(req.cookies.token) == 1 && (await AccountFromCookie(req.cookies.token)).id != req.query.studentid) {
+        } else if (!(validation.level >= 2 || (validation.level == 1 && validation.id == req.query.studentid))) {
             res.json({error: "Authentication failed"});
         } else {
 
@@ -368,9 +369,11 @@ accounts.get('/getstudentprogress', async (req, res) => {
     
     try {
         
+        const validation = await validateCookie(req.cookies.token);
+
         if (req.query.studentid == null) {
             res.json({ error: "Student ID is not present" });
-        } else if (await validateCookie(req.cookies.token) == 1 && (await AccountFromCookie(req.cookies.token)).id != req.query.studentid) {
+        } else if (!(validation.level >= 2 || (validation.level == 1 && validation.id == req.query.studentid))) {
             res.json({error: "Authentication failed"});
         } else {
             
@@ -405,21 +408,11 @@ accounts.get('/getid', async (req, res) => {
 });
 
 accounts.get('/auth', async (req, res) => {
-    if (req.cookies.token == undefined || req.query.studentid == undefined) {
-        res.json({error: "Auth failed"});
-    } else {
-        
-        const auth = await AccountFromCookie(req.cookies.token);
 
-        if (auth.error != undefined) {
-            res.json({error: "Auth failed"});
-        } else if (String(auth._id) != String(req.query.studentid) && await validateCookie(req.cookies.token) < 2) {
-            res.json({error: "Auth failed"});
-        } else {
-            res.json({success: "Auth successful", name: auth.firstname + " " + auth.surname});
-        }
-    }
-})
+        const auth = await validateCookie(req.cookies.token);
+        res.json(auth);
+
+});
 
 async function getAccount(id) {
     try {
@@ -532,15 +525,15 @@ async function validateCookie(cookie) {
     
     const result = await Account.findOne({ cookie: cookie });
     if (result == undefined) {
-        return 0;
+        return {level: 0, id: ""};
     } else {
         
         if (result.type == "student") {
-            return 1;
+            return {level: 1, id: result._id};
         } else if (result.type == "tutor") {
-            return 2;
+            return {level: 2, id: result._id};
         } else if (result.type == "manager") {
-            return 3;
+            return {level: 3, id: result._id};
         }
         
     }

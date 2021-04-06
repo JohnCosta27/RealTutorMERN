@@ -34,7 +34,7 @@ function Login() {
     event.preventDefault();
     const JSONdata = {email: email, password: password};
     
-    const response = await fetch('http://localhost:3000/accounts/login', {
+    const response = await fetch('/accounts/login', {
     method: "POST",
     headers: {
       'Accept': 'application/json',

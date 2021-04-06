@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
 import Lesson from '../general/Lessons';
 import Progress from '../general/Progress';
+import UpcomingLesson from '../general/UpcomingLesson';
 
 const StudentDashboard = () => {
     
@@ -74,7 +75,7 @@ const StudentDashboard = () => {
         <Box display="flex" className={classes.cardsWrapper}>
         <Typography variant="h2">Upcoming</Typography>
         <Box className={classes.cardContent}>
-        {/*<UpcomingLesson />*/}
+        <UpcomingLesson />
         </Box>
         <Box className={classes.cardAction}>
         <Button className={classes.button} variant="contained" color="primary"

@@ -33,13 +33,16 @@ const Progress = () => {
         });
         
         const data = await response.json();
-        console.log(data);
         
-        let dataRows = [];
-        for (let point of data) {
-            dataRows.push(createData(point.content, new Date(point.date * 1000).toDateString("en-UK"), point._id));
+        if (data.error != undefined) {
+            //Error handling later? Probably redirect.
+        } else {
+            let dataRows = [];
+            for (let point of data) {
+                dataRows.push(createData(point.content, new Date(point.date * 1000).toDateString("en-UK"), point._id));
+            }
+            setRows(dataRows);
         }
-        setRows(dataRows);
         
     }
     

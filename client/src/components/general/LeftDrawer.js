@@ -49,57 +49,102 @@ const LeftDrawer = (props) => {
   
   const classes = useStyles();
 
-  return (
-    <div>
-    <AppBar position="fixed" className={classes.appBar}>
-    <Toolbar>
-    <Typography variant="h6" noWrap>
-    Real Tutor
-    </Typography>
-    </Toolbar>
-    </AppBar>
-    <Drawer
-    className={classes.drawer}
-    variant="permanent"
-    classes={{
-      paper: classes.drawerPaper,
-    }}
-    >
-    <Toolbar />
-    <div className={classes.drawerContainer}>
-    <List>
+  if (props.level == 1) {
+    return (
+      <div>
+      <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+      <Typography variant="h6" noWrap>
+      Real Tutor
+      </Typography>
+      </Toolbar>
+      </AppBar>
+      <Drawer
+      className={classes.drawer}
+      variant="permanent"
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      >
+      <Toolbar />
+      <div className={classes.drawerContainer}>
+      <List>
+  
+      <ListItem button key={0} onClick={() => props.changeState(0)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"Dashboard"} />
+      </ListItem>
+  
+      <ListItem button key={1} onClick={() => props.changeState(1)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"View lessons"} />
+      </ListItem>
+  
+      <ListItem button key={2} onClick={() => props.changeState(2)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"View progress"} />
+      </ListItem>
+  
+      </List>
+      
+      </div>
+      </Drawer>
+      </div>
+      );
+  } else if (props.level >= 2) {
+    return (
+      <div>
+      <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+      <Typography variant="h6" noWrap>
+      Real Tutor
+      </Typography>
+      </Toolbar>
+      </AppBar>
+      <Drawer
+      className={classes.drawer}
+      variant="permanent"
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+      >
+      <Toolbar />
+      <div className={classes.drawerContainer}>
+      <List>
+  
+      <ListItem button key={0} onClick={() => props.changeState(0)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"Dashboard"} />
+      </ListItem>
+  
+      <ListItem button key={1} onClick={() => props.changeState(1)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"View lessons"} />
+      </ListItem>
+  
+      <ListItem button key={2} onClick={() => props.changeState(2)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"View progress"} />
+      </ListItem>
+  
+      <ListItem button key={3} onClick={() => props.changeState(3)}>
+      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemText primary={"Plan lesson"} />
+      </ListItem>
+  
+      <ListItem button key={4} onClick={() => props.changeState(4)}>
+      <ListItemIcon><InboxIcon/></ListItemIcon>
+      <ListItemText primary={"Add report"} />
+      </ListItem>
+  
+      </List>
+      
+      </div>
+      </Drawer>
+      </div>
+      );
+  }
 
-    <ListItem button key={0} onClick={() => props.changeState(0)}>
-    <ListItemIcon><InboxIcon /></ListItemIcon>
-    <ListItemText primary={"Dashboard"} />
-    </ListItem>
-
-    <ListItem button key={1} onClick={() => props.changeState(1)}>
-    <ListItemIcon><InboxIcon /></ListItemIcon>
-    <ListItemText primary={"View lessons"} />
-    </ListItem>
-
-    <ListItem button key={2} onClick={() => props.changeState(2)}>
-    <ListItemIcon><InboxIcon /></ListItemIcon>
-    <ListItemText primary={"View progress"} />
-    </ListItem>
-
-    <ListItem button key={3} onClick={() => props.changeState(3)}>
-    <ListItemIcon><InboxIcon /></ListItemIcon>
-    <ListItemText primary={"Plan lesson"} />
-    </ListItem>
-
-    <ListItem button key={4} onClick={() => props.changeState(4)}>
-    <ListItemIcon><InboxIcon/></ListItemIcon>
-    <ListItemText primary={"Add report"} />
-    </ListItem>
-
-    </List>
-    
-    </div>
-    </Drawer>
-    </div>
-    );
     
   }
   
