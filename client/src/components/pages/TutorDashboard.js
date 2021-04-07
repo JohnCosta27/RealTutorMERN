@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 import LeftDrawer from '../general/LeftDrawer';
 
 import PlanLesson from '../FeatureComponents/PlanLesson';
-import Dashboard from '../FeatureComponents/Dashboard';
+import StudentList from '../FeatureComponents/StudentList';
 import AddReport from '../FeatureComponents/AddReport';
 import Progress from '../FeatureComponents/Progress';
 import StudentLessons from '../FeatureComponents/StudentLessons';
@@ -13,7 +13,7 @@ const StudentDashboard = () => {
     
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-
+    
     const useStyles = makeStyles(theme => ({
         
         studentNameWrapper: {
@@ -80,45 +80,20 @@ const StudentDashboard = () => {
         
         const data = await response.json();
         console.log(data);
-
-        if (data.level == 1 && urlParams.get("studentid") != data.id) {
-            document.location.href = "studentdashboard?studentid=" + data.id;
-        }
-
         setAuth(data);
-
+        
     }
     
     const classes = useStyles();
     
-    if (auth.level < 1) {
+    if (auth.level <= 1) {
         return (
             <div className="app">
             <Typography variant="h1">Back to the login</Typography>
             </div>
-        );
-    } else if (auth.level == 1) {
-
-        return (
-            <div className="App">
-            <LeftDrawer changeState={setCurrent} level={auth.level} />
-            <div className={classes.content}>
+            );
+        } else if (auth.level >= 2) {
             
-            <div className={classes.studentNameWrapper}>
-            <Typography variant="h1">John Costa</Typography>
-            </div>
-            
-            {current === 0 ? <Dashboard level={auth.level} /> : <div></div>}
-            {current === 1 ? <StudentLessons level={auth.level} /> : <div></div>}
-            {current === 2 ? <Progress level={auth.level} /> : <div></div>}
-            {current === 3 ? <PlanLesson level={auth.level} /> : <div></div>}
-            {current === 4 ? <AddReport level={auth.level} /> : <div></div>}
-
-            </div>
-            </div> 
-        );
-
-    } else if (auth.level >= 2) {
             return (
                 <div className="App">
                 <LeftDrawer changeState={setCurrent} level={auth.level} />
@@ -128,20 +103,20 @@ const StudentDashboard = () => {
                 <Typography variant="h1">John Costa</Typography>
                 </div>
                 
-                {current === 0 ? <Dashboard /> : <div></div>}
-                {current === 1 ? <StudentLessons /> : <div></div>}
-                {current === 2 ? <Progress /> : <div></div>}
-                {current === 3 ? <PlanLesson /> : <div></div>}
-                {current === 4 ? <AddReport /> : <div></div>}
-
-                </div>
-                </div>
+                {current === 0 ? <StudentList level={auth.level} /> : <div></div>}
+                {current === 1 ? <StudentLessons level={auth.level} /> : <div></div>}
+                {current === 2 ? <Progress level={auth.level} /> : <div></div>}
+                {current === 3 ? <PlanLesson level={auth.level} /> : <div></div>}
+                {current === 4 ? <AddReport level={auth.level} /> : <div></div>}
                 
+                </div>
+                </div> 
                 );
+                
             } else {
                 return (
                     <div></div>
-                )
+                    );
+                }
             }
-    }
-        export default StudentDashboard;
+            export default StudentDashboard;

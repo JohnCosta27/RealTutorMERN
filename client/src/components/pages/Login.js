@@ -44,13 +44,21 @@ function Login() {
   });
   
   const data = await response.json();
+
   if (data.error != null) {
     setError(true);
     setEmail("");
     setPassword("");
   } else {
     document.cookie = "token=" + data.cookie;
-    document.location.href = "studentdashboard";
+
+    if (data.level == 1) {
+      document.location.href = "studentdashboard?studentid=" + data.id;  
+    } else if (data.level >= 2) {
+      document.location.href = "/"
+    }
+
+    //document.location.href = "studentdashboard";
   }
   
 }

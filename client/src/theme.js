@@ -1,10 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { grey, teal } from '@material-ui/core/colors';
+import { grey, teal, deepOrange } from '@material-ui/core/colors';
 // A custom theme for this app
 const theme = createMuiTheme({
     palette: {
         primary: teal,
-        secondary: grey,
+        secondary: deepOrange,
         cards: '#FFFFFF',
         divBackground: "#009688",
         leftNav: '#313131',

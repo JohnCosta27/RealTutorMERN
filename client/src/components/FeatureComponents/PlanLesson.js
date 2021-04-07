@@ -80,7 +80,8 @@ const PlanLesson = () => {
         for (let p of selectedPoints) formattedpoints.push(p.value);
         
         const body = {title: title, date: date, plan: plan, studentid: studentid, tutorid: tutorid, specPoints: formattedpoints};
-        
+        console.log(body);
+
         const saveLesson = await fetch("/accounts/addlesson", {
             method: "POST",
             headers: {

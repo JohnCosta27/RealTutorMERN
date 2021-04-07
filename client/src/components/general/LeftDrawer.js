@@ -7,10 +7,15 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Typography } from '@material-ui/core';
+
+import AddIcon from '@material-ui/icons/Add';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import MenuBook from '@material-ui/icons/MenuBook';
+import Home from '@material-ui/icons/Home';
+import LessonIcon from '@material-ui/icons/FormatListBulleted';
 
 const LeftDrawer = (props) => {
   
@@ -71,17 +76,17 @@ const LeftDrawer = (props) => {
       <List>
   
       <ListItem button key={0} onClick={() => props.changeState(0)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><Home color="secondary"/></ListItemIcon>
       <ListItemText primary={"Dashboard"} />
       </ListItem>
   
       <ListItem button key={1} onClick={() => props.changeState(1)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><LessonIcon color="secondary" /></ListItemIcon>
       <ListItemText primary={"View lessons"} />
       </ListItem>
   
       <ListItem button key={2} onClick={() => props.changeState(2)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><AssessmentIcon color="secondary" /></ListItemIcon>
       <ListItemText primary={"View progress"} />
       </ListItem>
   
@@ -113,27 +118,27 @@ const LeftDrawer = (props) => {
       <List>
   
       <ListItem button key={0} onClick={() => props.changeState(0)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><Home /></ListItemIcon>
       <ListItemText primary={"Dashboard"} />
       </ListItem>
   
       <ListItem button key={1} onClick={() => props.changeState(1)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><LessonIcon /></ListItemIcon>
       <ListItemText primary={"View lessons"} />
       </ListItem>
   
       <ListItem button key={2} onClick={() => props.changeState(2)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><AssessmentIcon /></ListItemIcon>
       <ListItemText primary={"View progress"} />
       </ListItem>
   
       <ListItem button key={3} onClick={() => props.changeState(3)}>
-      <ListItemIcon><InboxIcon /></ListItemIcon>
+      <ListItemIcon><AddIcon /></ListItemIcon>
       <ListItemText primary={"Plan lesson"} />
       </ListItem>
   
       <ListItem button key={4} onClick={() => props.changeState(4)}>
-      <ListItemIcon><InboxIcon/></ListItemIcon>
+      <ListItemIcon><MenuBook/></ListItemIcon>
       <ListItemText primary={"Add report"} />
       </ListItem>
   
@@ -143,6 +148,10 @@ const LeftDrawer = (props) => {
       </Drawer>
       </div>
       );
+  } else {
+    return (
+      <div></div>
+    )
   }
 
     

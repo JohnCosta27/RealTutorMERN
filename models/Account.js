@@ -41,6 +41,9 @@ const AccountSchema = mongoose.Schema({
     },
     course: {
         type: Array
+    },
+    students: {
+        type: Array
     }
 
 });

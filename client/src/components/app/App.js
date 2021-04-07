@@ -3,6 +3,7 @@ import './App.css';
 //Pages
 import Login from '../pages/Login';
 import StudentDashboard from '../pages/StudentDashboard';
+import TutorDashboard from '../pages/TutorDashboard';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -16,6 +17,7 @@ function App() {
     <CssBaseline />
     <Router>
     <Switch>
+    <Route exact path="/" component={TutorDashboard} />
     <Route path="/login" component={Login} />
     <Route path="/studentdashboard" component={StudentDashboard} />
     </Switch>
