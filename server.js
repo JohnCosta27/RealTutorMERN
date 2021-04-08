@@ -38,6 +38,10 @@ app.use('/spec', specification);
 
 app.use(express.static(path.join(__dirname, "build")));
 
+app.get("/.well-known/acme-challenge/52__8BzvnmiOWzu60Hxz8F-UTZ3SEZArouNSG6PSnAs", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "file"));
+})
+
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build/index.html'))
 });
