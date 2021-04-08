@@ -36,7 +36,7 @@ const UpcomingLesson = () => {
         } else {
             return (
                 <div>
-                <Typography variant="h4" align="left">{upcomingLesson.plan}</Typography>
+                <Typography variant="h4" align="left">{upcomingLesson.title}</Typography>
                 <ul>
                 {upcomingLesson.specPoints.map(point => (
                     <li key={point}><Typography variant="body1" align="left">{point.content}</Typography></li>

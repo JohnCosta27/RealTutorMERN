@@ -6,6 +6,9 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser')
 const path = require("path");
 
+const https = require('https');
+const fs = require('fs');
+
 require('dotenv/config');
 
 mongoose.set('useFindAndModify', false);
@@ -15,7 +18,15 @@ app.use(cors());
 app.use(cookieParser());
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("Listening on port: " + port));
+
+https.createServer({
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem'),
+    passphrase: ''
+}, app)
+.listen(port);
+
+//app.listen(port, () => console.log("Listening on port: " + port));
 
 const accountsRoute = require('./routes/accounts.js');
 app.use('/accounts', accountsRoute);

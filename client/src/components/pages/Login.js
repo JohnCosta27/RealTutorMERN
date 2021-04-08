@@ -25,7 +25,7 @@ function Login() {
       minWidth: 400,
     },
     leftNavPaper: {
-      backgroundColor: theme.palette.secondary.main
+      backgroundColor: theme.palette.leftNav
     }
   }));
   
@@ -44,6 +44,7 @@ function Login() {
   });
   
   const data = await response.json();
+  console.log(data);
 
   if (data.error != null) {
     setError(true);
@@ -53,7 +54,8 @@ function Login() {
     document.cookie = "token=" + data.cookie;
 
     if (data.level == 1) {
-      document.location.href = "studentdashboard?studentid=" + data.id;  
+      let href = "studentdashboard?studentid=" + data.id + "&state=0";  
+      document.location.href = href;
     } else if (data.level >= 2) {
       document.location.href = "/"
     }

@@ -67,6 +67,10 @@ const StudentDashboard = () => {
         getAuth();
     }, []);
     
+    const handleStateChange = (state) => {
+        setCurrent(state);
+    }
+
     const getAuth = async () => {
         
         const response = await fetch("/accounts/auth", {
@@ -79,7 +83,6 @@ const StudentDashboard = () => {
         });
         
         const data = await response.json();
-        console.log(data);
 
         if (data.level == 1 && urlParams.get("studentid") != data.id) {
             document.location.href = "studentdashboard?studentid=" + data.id;
@@ -90,7 +93,7 @@ const StudentDashboard = () => {
     }
     
     const classes = useStyles();
-    
+
     if (auth.level < 1) {
         return (
             <div className="app">
@@ -101,7 +104,7 @@ const StudentDashboard = () => {
 
         return (
             <div className="App">
-            <LeftDrawer changeState={setCurrent} level={auth.level} />
+            <LeftDrawer changeState={handleStateChange} level={auth.level} />
             <div className={classes.content}>
             
             <div className={classes.studentNameWrapper}>
@@ -121,7 +124,7 @@ const StudentDashboard = () => {
     } else if (auth.level >= 2) {
             return (
                 <div className="App">
-                <LeftDrawer changeState={setCurrent} level={auth.level} />
+                <LeftDrawer changeState={handleStateChange} level={auth.level} />
                 <div className={classes.content}>
                 
                 <div className={classes.studentNameWrapper}>
