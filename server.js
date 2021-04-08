@@ -28,7 +28,7 @@ server.listen(port, () => {
   console.log("server starting on port : " + port)
 });
     
-//app.listen(port, () => console.log("Listening on port: " + port));
+app.listen(port, () => console.log("Listening on port: " + port));
 
 const accountsRoute = require('./routes/accounts.js');
 app.use('/accounts', accountsRoute);
