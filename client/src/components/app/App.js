@@ -4,26 +4,30 @@ import './App.css';
 import Login from '../pages/Login';
 import StudentDashboard from '../pages/StudentDashboard';
 import TutorDashboard from '../pages/TutorDashboard';
+import MainPage from '../pages/MainPage';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Router>
-    <Switch>
-    <Route exact path="/" component={TutorDashboard} />
-    <Route path="/login" component={Login} />
-    <Route path="/studentdashboard" component={StudentDashboard} />
-    </Switch>
-    </Router>
-    </ThemeProvider>
-    );
-  }
+	return (
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Router>
+				<Switch>
+					<Route exact path="/" component={MainPage} />
+					<Route path="/login" component={Login} />
+					<Route
+						path="/studentdashboard"
+						component={StudentDashboard}
+					/>
+					<Route path="/tutordashboard" component={TutorDashboard} />
+				</Switch>
+			</Router>
+		</ThemeProvider>
+	);
+}
 export default App;
-  

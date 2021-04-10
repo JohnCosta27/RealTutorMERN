@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const SimpleText = (title) => {
-    return (
-        <div>
-        <h1>{title}</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
+};
 
 export default SimpleText;

@@ -3,4 +3,4 @@ client/node_modules
 .env
 package-lock.json
 client/.eslintcache
-key.pem
+cert
