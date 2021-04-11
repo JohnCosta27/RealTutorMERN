@@ -122,7 +122,6 @@ const StudentDashboard = () => {
 			);
 
 			const name = await getName.json();
-			console.log(name);
 			setName(name.name);
 
 		}
