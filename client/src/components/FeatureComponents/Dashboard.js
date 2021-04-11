@@ -10,7 +10,7 @@ import Lesson from "../general/Lessons";
 import Progress from "../general/Progress";
 import UpcomingLesson from "../general/UpcomingLesson";
 
-const StudentDashboard = () => {
+const StudentDashboard = (props) => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
@@ -63,10 +63,7 @@ const StudentDashboard = () => {
                 className={classes.button}
                 variant="contained"
                 color="primary"
-                onClick={() => {
-                  document.location.href =
-                    "addreport?studentid=" + urlParams.get("studentid");
-                }}
+                onClick={() => {props.changeState(4)}}
               >
                 Add report
               </Button>
@@ -74,10 +71,7 @@ const StudentDashboard = () => {
                 className={classes.button}
                 variant="contained"
                 color="primary"
-                onClick={() => {
-                  document.location.href =
-                    "lessons?studentid=" + urlParams.get("studentid");
-                }}
+                onClick={() => {props.changeState(1)}}
               >
                 View lessons
               </Button>
@@ -97,10 +91,7 @@ const StudentDashboard = () => {
                 className={classes.button}
                 variant="contained"
                 color="primary"
-                onClick={() => {
-                  document.location.href =
-                    "planlesson?studentid=" + urlParams.get("studentid");
-                }}
+                onClick={() => {props.changeState(3)}}
               >
                 Plan lesson
               </Button>
@@ -119,10 +110,7 @@ const StudentDashboard = () => {
               <Button
                 variant="contained"
                 color="primary"
-                onClick={() => {
-                  document.location.href =
-                    "progress?studentid=" + urlParams.get("studentid");
-                }}
+                onClick={() => {props.changeState(2)}}
               >
                 View progress
               </Button>

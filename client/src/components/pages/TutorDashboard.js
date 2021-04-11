@@ -66,6 +66,7 @@ const StudentDashboard = () => {
 
 	const [auth, setAuth] = useState({ empty: true });
 	const [current, setCurrent] = useState(0);
+	const [name, setName] = useState("");
 
 	useEffect(() => {
 		getAuth();
@@ -82,13 +83,32 @@ const StudentDashboard = () => {
 		});
 
 		const data = await response.json();
-
 		console.log(data);
 
 		if (data.level == 2 && urlParams.get('tutorid') != data.id) {
 			document.location.href = 'tutordashboard?tutorid=' + data.id;
 		} else if (data.level == 1 && urlParams.get('studentid') != data.id) {
 			document.location.href = 'studentdashboard?studentid=' + data.id;
+		}
+
+		if (data.level == 2) {
+			setName(data.name);
+		} else {
+			const getName = await fetch(
+				'/accounts/getname?tutorid=' +
+					urlParams.get('tutorid'),
+				{
+					method: 'GET',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+					},
+					credentials: 'include',
+				}
+			);
+
+			const name = await getName.json();
+			setName(name.name);
 		}
 
 		setAuth(data);
@@ -105,10 +125,10 @@ const StudentDashboard = () => {
 	} else if (auth.level >= 2) {
 		return (
 			<div className="App">
-				<LeftDrawer changeState={setCurrent} level={auth.level} />
+				<LeftDrawer changeState={setCurrent} level={3} />
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
-						<Typography variant="h1">John Costa</Typography>
+						<Typography variant="h1">{name}</Typography>
 					</div>
 
 					<br></br>
@@ -120,7 +140,7 @@ const StudentDashboard = () => {
 							<div></div>
 						)}
 						{current === 1 ? (
-							<StudentLessons level={auth.level} />
+							<StudentLessons level={2} />
 						) : (
 							<div></div>
 						)}

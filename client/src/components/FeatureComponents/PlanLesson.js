@@ -19,6 +19,7 @@ const PlanLesson = () => {
 	const [title, setTitle] = useState('');
 	const [plan, setPlan] = useState('');
 	const [selectedPoints, setSelectedPoints] = useState([]);
+	const [clicked, setClicked] = useState(false);
 
 	useEffect(() => {
 		getSpecPoints();
@@ -60,6 +61,8 @@ const PlanLesson = () => {
 
 	const submitLesson = async (event) => {
 		//StudentID, TutorID, plan, specPoints, date
+
+		setClicked(true);
 
 		event.preventDefault();
 
@@ -208,6 +211,7 @@ const PlanLesson = () => {
 							variant="contained"
 							color="primary"
 							className={classes.button}
+							disabled={clicked}
 						>
 							Submit plan
 						</Button>

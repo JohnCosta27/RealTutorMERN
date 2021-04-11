@@ -53,6 +53,10 @@ const LeftDrawer = (props) => {
 
 	const classes = useStyles();
 
+	//Level 1 -> Student looking at student dashboard
+	//Level 2 -> Tutor looking at student dashboard
+	//Level 3 -> Tutor looking at tutor dashbgoard
+
 	if (props.level == 1) {
 		return (
 			<div>
@@ -110,7 +114,7 @@ const LeftDrawer = (props) => {
 				</Drawer>
 			</div>
 		);
-	} else if (props.level >= 2) {
+	} else if (props.level == 2) {
 		return (
 			<div>
 				<AppBar position="fixed" className={classes.appBar}>
@@ -189,8 +193,54 @@ const LeftDrawer = (props) => {
 				</Drawer>
 			</div>
 		);
+	} else if (props.level == 3) {
+		return (
+			<div>
+				<AppBar position="fixed" className={classes.appBar}>
+					<Toolbar>
+						<Typography variant="h6" noWrap>
+							Real Tutor
+						</Typography>
+					</Toolbar>
+				</AppBar>
+				<Drawer
+					className={classes.drawer}
+					variant="permanent"
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+				>
+					<Toolbar />
+					<div className={classes.drawerContainer}>
+						<List>
+							<ListItem
+								button
+								key={0}
+								onClick={() => props.changeState(0)}
+							>
+								<ListItemIcon>
+									<Home color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'Dashboard'} />
+							</ListItem>
+
+							<ListItem
+								button
+								key={1}
+								onClick={() => props.changeState(1)}
+							>
+								<ListItemIcon>
+									<LessonIcon color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'View lessons'} />
+							</ListItem>
+						</List>
+					</div>
+				</Drawer>
+			</div>
+		);
 	} else {
-		return <div></div>;
+		return (<div></div>);
 	}
 };
 

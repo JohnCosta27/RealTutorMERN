@@ -60,6 +60,7 @@ const StudentDashboard = () => {
 
 	const [auth, setAuth] = useState({ empty: true });
 	const [current, setCurrent] = useState(0);
+	const [name, setName] = useState("");
 
 	useEffect(() => {
 		getAuth();
@@ -84,20 +85,45 @@ const StudentDashboard = () => {
 		if (data.level == 1 && urlParams.get('studentid') != data.id) {
 			document.location.href = 'studentdashboard?studentid=' + data.id;
 		} else if (data.level == 2) {
-
-			const checkTutor = await fetch('/accounts/tutorstudent?studentid=' + urlParams.get('studentid'), {
-				method: 'GET',
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-				},
-				credentials: 'include',
-			});
+			const checkTutor = await fetch(
+				'/accounts/tutorstudent?studentid=' +
+					urlParams.get('studentid'),
+				{
+					method: 'GET',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+					},
+					credentials: 'include',
+				}
+			);
 
 			const checkTutorData = await checkTutor.json();
 			if (checkTutorData.contains == false) {
 				document.location.href = 'tutordashboard?tutorid=' + data.id;
 			}
+		}
+
+		if (data.level == 1) {
+			setName(data.name);
+		} else if (data.level >= 2) {
+
+			const getName = await fetch(
+				'/accounts/getname?studentid=' +
+					urlParams.get('studentid'),
+				{
+					method: 'GET',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+					},
+					credentials: 'include',
+				}
+			);
+
+			const name = await getName.json();
+			console.log(name);
+			setName(name.name);
 
 		}
 
@@ -117,7 +143,7 @@ const StudentDashboard = () => {
 			<div className="App">
 				<LeftDrawer
 					changeState={handleStateChange}
-					level={auth.level}
+					level={1}
 				/>
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
@@ -125,12 +151,12 @@ const StudentDashboard = () => {
 					</div>
 
 					{current === 0 ? (
-						<Dashboard level={auth.level} />
+						<Dashboard level={auth.level} changeState={setCurrent} />
 					) : (
 						<div></div>
 					)}
 					{current === 1 ? (
-						<StudentLessons level={auth.level} />
+						<StudentLessons level={1} />
 					) : (
 						<div></div>
 					)}
@@ -157,18 +183,38 @@ const StudentDashboard = () => {
 			<div className="App">
 				<LeftDrawer
 					changeState={handleStateChange}
-					level={auth.level}
+					level={2}
 				/>
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
-						<Typography variant="h1">John Costa</Typography>
+						<Typography variant="h1">{name}</Typography>
 					</div>
 
-					{current === 0 ? <Dashboard /> : <div></div>}
-					{current === 1 ? <StudentLessons /> : <div></div>}
-					{current === 2 ? <Progress /> : <div></div>}
-					{current === 3 ? <PlanLesson /> : <div></div>}
-					{current === 4 ? <AddReport /> : <div></div>}
+					{current === 0 ? (
+						<Dashboard level={auth.level} changeState={setCurrent} />
+					) : (
+						<div></div>
+					)}
+					{current === 1 ? (
+						<StudentLessons level={1} />
+					) : (
+						<div></div>
+					)}
+					{current === 2 ? (
+						<Progress level={auth.level} />
+					) : (
+						<div></div>
+					)}
+					{current === 3 ? (
+						<PlanLesson level={auth.level} />
+					) : (
+						<div></div>
+					)}
+					{current === 4 ? (
+						<AddReport level={auth.level} />
+					) : (
+						<div></div>
+					)}
 				</div>
 			</div>
 		);

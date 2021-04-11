@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 
 import BigLesson from '../general/BigLesson';
 
-const StudentLessons = () => {
+const StudentLessons = (props) => {
 	const [rows, setRows] = useState([]);
 
 	useEffect(() => {
@@ -22,9 +22,14 @@ const StudentLessons = () => {
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 
-		const response = await fetch(
-			'/accounts/getstudentlessons?studentid=' +
-				urlParams.get('studentid'),
+		let request = "";
+		if (props.level == 1) {
+			request = '/accounts/getstudentlessons?studentid=' + await urlParams.get('studentid');
+		} else if (props.level >= 2) {
+			request = '/accounts/gettutorlessons?tutorid=' + await urlParams.get('tutorid');
+		}
+
+		const response = await fetch(request,
 			{
 				method: 'GET',
 				headers: {
@@ -36,6 +41,8 @@ const StudentLessons = () => {
 		);
 
 		const data = await response.json();
+
+		console.log(data);
 
 		let lessons = [];
 		for (let lesson of data) {

@@ -247,7 +247,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 			) {
 				res.json({ error: 'Validation not successful' });
 			} else {
-				res.json(await getStudentLessons(req.query.studentid));
+				res.json(await getLessons(req.query.studentid, 1));
 			}
 		}
 	}
@@ -276,7 +276,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 			) {
 				res.json({ error: 'Validation not successful' });
 			} else {
-				const lessons = await getStudentLessons(req.query.studentid);
+				const lessons = await getLessons(req.query.studentid, 1);
 				if (lessons.error != null) {
 					res.json({ error: 'This student could not be found' });
 				} else {
@@ -317,9 +317,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 				) {
 					res.json({ error: 'Validation not successful' });
 				} else {
-					const lessons = await getStudentLessons(
-						req.query.studentid
-					);
+					const lessons = await getLessons(req.query.studentid, 1);
 					if (lessons.error != null) {
 						res.json({ error: 'This student could not be found' });
 					} else {
@@ -462,12 +460,69 @@ accounts.get('/auth', async (req, res) => {
 
 accounts.get('/tutorstudent', async (req, res) => {
 	try {
-	const validation = await validateCookie(req.cookies.token);
-	const contains = await studentToTutor(validation.id, req.query.studentid);
-	res.json({contains: contains})
+		const validation = await validateCookie(req.cookies.token);
+		const contains = await studentToTutor(
+			validation.id,
+			req.query.studentid
+		);
+		res.json({ contains: contains });
 	} catch (error) {
-		res.json({contains: false});
+		res.json({ contains: false });
 	}
+});
+
+accounts.get('/gettutorlessons', async (req, res) => {
+	try {
+		if (req.query.tutorid == null) {
+			res.json({ error: 'Tutor ID is not present' });
+		} else {
+			const validation = await validateCookie(req.cookies.token);
+			if (
+				!(
+					validation.level >= 3 ||
+					(validation.level == 2 &&
+						validation.id == req.query.tutorid)
+				)
+			) {
+				res.json({ error: 'Authentication error' });
+			} else {
+				res.json(await getLessons(req.query.tutorid, 2));
+			}
+		}
+	} catch (error) {
+		res.json({ error: error });
+	}
+});
+
+accounts.get('/getname', async (req, res) => {
+
+	try {
+
+		if (req.query.studentid == null && req.query.tutorid == null) {
+			res.json({error: "IDs were missing"});
+		} else {
+
+			const validation = await validateCookie(req.cookies.token);
+			if (!(validation.level >= 2 )) {
+				res.json({error: "Authentication error"});
+			} else {
+
+				if (req.query.studentid != null) {
+					const account = await Account.findById(req.query.studentid);
+					res.json({name: account.firstname + " " + account.surname});
+				} else {
+					const account = await Account.findById(req.query.tutorid);
+					res.json({name: account.firstname + " " + account.surname});
+				}
+
+			}
+
+		}
+
+	} catch (error) {
+		res.json({ error: error });
+	}
+
 });
 
 async function getAccount(id) {
@@ -505,9 +560,15 @@ async function addStudentPoints(studentID, specPoints, date) {
 	}
 }
 
-async function getStudentLessons(studentID) {
+async function getLessons(id, level) {
 	try {
-		const lessons = await Lesson.find({ studentID: studentID });
+		let lessons;
+		if (level == 1) {
+			lessons = await Lesson.find({ studentID: id });
+		} else if (level > 1) {
+			lessons = await Lesson.find({ tutorID: id });
+		}
+
 		if (lessons.length == 0) {
 			return lessons;
 		} else {
@@ -581,11 +642,11 @@ async function validateCookie(cookie) {
 		return { level: 0, id: '' };
 	} else {
 		if (result.type == 'student') {
-			return { level: 1, id: result._id };
+			return { level: 1, id: result._id, name: result.firstname + " " + result.surname };
 		} else if (result.type == 'tutor') {
-			return { level: 2, id: result._id };
+			return { level: 2, id: result._id, name: result.firstname + " " + result.surname };
 		} else if (result.type == 'manager') {
-			return { level: 3, id: result._id };
+			return { level: 3, id: result._id, name: result.firstname + " " + result.surname };
 		}
 	}
 }
@@ -626,7 +687,7 @@ async function studentToTutor(tutorid, studentid) {
 				break;
 			}
 		}
-	
+
 		return contains;
 	} catch (error) {
 		return false;

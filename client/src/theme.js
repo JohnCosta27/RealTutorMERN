@@ -17,12 +17,16 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
     h1: {
-      fontSize: "5em",
+      fontSize: "4em",
       color: grey[900],
     },
     h3: {
       fontWeight: "lighter",
     },
+    body2: {
+      fontWeight: "lighter",
+      fontSize: "16px"
+    }
   },
   breakpoints: {
     values: {

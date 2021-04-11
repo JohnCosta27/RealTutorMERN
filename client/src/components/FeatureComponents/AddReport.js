@@ -21,6 +21,7 @@ const AddReport = () => {
 	const [points, setPoints] = useState([]);
 	const [report, setReport] = useState('');
 	const [selectedPoints, setSelectedPoints] = useState([]);
+	const [clicked, setClicked] = useState(false);
 
 	useEffect(() => {
 		getSpecPoints();
@@ -92,6 +93,8 @@ const AddReport = () => {
 
 	const submitLesson = async (event) => {
 		//StudentID, TutorID, plan, specPoints, date
+
+		setClicked(true);
 
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
@@ -241,6 +244,7 @@ const AddReport = () => {
 							variant="contained"
 							color="primary"
 							className={classes.button}
+							disabled={clicked}
 						>
 							Submit Report
 						</Button>
