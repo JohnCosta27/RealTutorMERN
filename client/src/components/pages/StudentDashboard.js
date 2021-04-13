@@ -185,6 +185,7 @@ const StudentDashboard = () => {
 					level={2}
 				/>
 				<div className={classes.content}>
+					
 					<div className={classes.studentNameWrapper}>
 						<Typography variant="h1">{name}</Typography>
 					</div>

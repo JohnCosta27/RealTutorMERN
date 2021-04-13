@@ -542,19 +542,24 @@ async function addStudentPoints(studentID, specPoints, date) {
 
 		const points = await getSpecPoints(specPoints);
 		for (let point of points) {
+			//If the student does not contain this specification points, then push it
 			if (
 				account.specPoints.filter(
 					(currentPoint) => currentPoint._id + '' == point._id + ''
 				).length == 0
 			) {
 				point.date = date;
-				console.log(point);
 				account.specPoints.push(point);
+			} else {
+				//Else updating is needed, the date must be updated.
+				await Account.updateOne({"_id": account._id, "specPoints.contentID": point.contentID}, 
+				{$set: {"specPoints.$.date": date}});
 			}
 		}
 
 		await account.save();
 		return { success: 'Specification points added' };
+
 	} catch (error) {
 		return { error: error };
 	}

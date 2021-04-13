@@ -1,5 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import clsx from 'clsx';
 
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -7,6 +8,11 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Typography } from '@material-ui/core';
@@ -18,9 +24,25 @@ import Home from '@material-ui/icons/Home';
 import LessonIcon from '@material-ui/icons/FormatListBulleted';
 
 const LeftDrawer = (props) => {
+	const [open, setOpen] = useState(true);
+
+	const handleDrawerOpen = () => {
+		setOpen(true);
+	};
+
+	const handleDrawerClose = () => {
+		setOpen(false);
+	};
+
 	const drawerWidth = 300;
 
 	const useStyles = makeStyles((theme) => ({
+		leftNavWrapper: {
+			transition: theme.transitions.create('width', {
+				easing: theme.transitions.easing.easeOut,
+				duration: theme.transitions.duration.enteringScreen,
+			}),
+		},
 		leftNavPaper: {
 			backgroundColor: theme.palette.leftNav,
 			height: '100%',
@@ -44,14 +66,33 @@ const LeftDrawer = (props) => {
 			color: theme.palette.lightText,
 		},
 		appBar: {
+			transition: theme.transitions.create(['margin', 'width'], {
+				easing: theme.transitions.easing.sharp,
+				duration: theme.transitions.duration.leavingScreen,
+			}),
 			zIndex: theme.zIndex.drawer + 1,
+		},
+		appBarShift: {
+			width: `calc(100% - ${drawerWidth}px)`,
+			marginLeft: drawerWidth,
+			transition: theme.transitions.create(['margin', 'width'], {
+				easing: theme.transitions.easing.easeOut,
+				duration: theme.transitions.duration.enteringScreen,
+			}),
 		},
 		toolbar: {
 			overflow: 'auto',
 		},
+		menuButton: {
+			marginRight: theme.spacing(2),
+		},
+		hide: {
+			display: 'none',
+		},
 	}));
 
 	const classes = useStyles();
+	const theme = useTheme();
 
 	//Level 1 -> Student looking at student dashboard
 	//Level 2 -> Tutor looking at student dashboard
@@ -59,9 +100,25 @@ const LeftDrawer = (props) => {
 
 	if (props.level == 1) {
 		return (
-			<div>
-				<AppBar position="fixed" className={classes.appBar}>
+			<div
+				className={classes.leftNavWrapper}
+				style={open ? { width: drawerWidth } : { width: 0 }}
+			>
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open,
+					})}
+				>
 					<Toolbar>
+						<MenuIcon
+							onClick={handleDrawerOpen}
+							edge="start"
+							className={clsx(
+								classes.menuButton,
+								open && classes.hide
+							)}
+						/>
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
@@ -69,14 +126,22 @@ const LeftDrawer = (props) => {
 				</AppBar>
 				<Drawer
 					className={classes.drawer}
-					variant="permanent"
+					variant="persistent"
+					open={open}
+					anchor="left"
 					classes={{
 						paper: classes.drawerPaper,
 					}}
 				>
-					<Toolbar />
 					<div className={classes.drawerContainer}>
 						<List>
+							<IconButton onClick={handleDrawerClose}>
+								{theme.direction === 'ltr' ? (
+									<ChevronLeftIcon />
+								) : (
+									<ChevronRightIcon />
+								)}
+							</IconButton>
 							<ListItem
 								button
 								key={0}
@@ -116,9 +181,25 @@ const LeftDrawer = (props) => {
 		);
 	} else if (props.level == 2) {
 		return (
-			<div>
-				<AppBar position="fixed" className={classes.appBar}>
+			<div
+				className={classes.leftNavWrapper}
+				style={open ? { width: drawerWidth } : { width: 0 }}
+			>
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open,
+					})}
+				>
 					<Toolbar>
+						<MenuIcon
+							onClick={handleDrawerOpen}
+							edge="start"
+							className={clsx(
+								classes.menuButton,
+								open && classes.hide
+							)}
+						/>
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
@@ -126,14 +207,22 @@ const LeftDrawer = (props) => {
 				</AppBar>
 				<Drawer
 					className={classes.drawer}
-					variant="permanent"
+					variant="persistent"
+					open={open}
+					anchor="left"
 					classes={{
 						paper: classes.drawerPaper,
 					}}
 				>
-					<Toolbar />
 					<div className={classes.drawerContainer}>
 						<List>
+							<IconButton onClick={handleDrawerClose}>
+								{theme.direction === 'ltr' ? (
+									<ChevronLeftIcon />
+								) : (
+									<ChevronRightIcon />
+								)}
+							</IconButton>
 							<ListItem
 								button
 								key={0}
@@ -195,9 +284,25 @@ const LeftDrawer = (props) => {
 		);
 	} else if (props.level == 3) {
 		return (
-			<div>
-				<AppBar position="fixed" className={classes.appBar}>
+			<div
+				className={classes.leftNavWrapper}
+				style={open ? { width: drawerWidth } : { width: 0 }}
+			>
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open,
+					})}
+				>
 					<Toolbar>
+						<MenuIcon
+							onClick={handleDrawerOpen}
+							edge="start"
+							className={clsx(
+								classes.menuButton,
+								open && classes.hide
+							)}
+						/>
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
@@ -205,14 +310,22 @@ const LeftDrawer = (props) => {
 				</AppBar>
 				<Drawer
 					className={classes.drawer}
-					variant="permanent"
+					variant="persistent"
+					open={open}
+					anchor="left"
 					classes={{
 						paper: classes.drawerPaper,
 					}}
 				>
-					<Toolbar />
 					<div className={classes.drawerContainer}>
 						<List>
+							<IconButton onClick={handleDrawerClose}>
+								{theme.direction === 'ltr' ? (
+									<ChevronLeftIcon />
+								) : (
+									<ChevronRightIcon />
+								)}
+							</IconButton>
 							<ListItem
 								button
 								key={0}
@@ -240,7 +353,7 @@ const LeftDrawer = (props) => {
 			</div>
 		);
 	} else {
-		return (<div></div>);
+		return <div></div>;
 	}
 };
 
