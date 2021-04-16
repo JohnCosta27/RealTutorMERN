@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -14,15 +14,30 @@ const StudentDashboard = (props) => {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 
-	const buttonVisibility = (level) => {
-		if (props.level == 1) {
-			return {};
-		}
+	const [hours, setHours] = useState();
 
-		return {
-			display: 'none',
-		};
-	};
+	useEffect(() => {
+		getHours();
+	}, []);
+
+	const getHours = async () => {
+		const response = await fetch(
+			'/accounts/getremaininghours?id=' +
+				urlParams.get('studentid'),
+			{
+				method: 'GET',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				credentials: 'include',
+			}
+		);
+
+		const data = await response.json();
+		setHours(data.hours);
+
+	}
 
 	const useStyles = makeStyles((theme) => ({
 		paper: {
@@ -145,18 +160,11 @@ const StudentDashboard = (props) => {
 			<Grid item lg={6} md={12} sm={12} xs={12}>
 				<Card className={classes.paper}>
 					<Box display="flex" className={classes.cardsWrapper}>
-						<Typography variant="h2">Details</Typography>
-						<Box className={classes.cardContent}></Box>
+						<Typography variant="h2">Mixed</Typography>
+						<Box className={classes.cardContent}>
+						<Typography variant="h3">Remaining Hours: {hours}</Typography>
+						</Box>
 						<Box className={classes.cardAction}>
-							<Button
-								variant="contained"
-								color="primary"
-								style={
-									props.level == 1 ? { display: 'none' } : {}
-								}
-							>
-								Edit details
-							</Button>
 						</Box>
 					</Box>
 				</Card>

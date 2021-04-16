@@ -9,7 +9,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
-
+import Grid from '@material-ui/core/Grid';
 import { teal } from '@material-ui/core/colors';
 
 const MainPage = () => {
@@ -69,6 +69,19 @@ const MainPage = () => {
 		},
 		card: {
 			width: '100%',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'space-between',
+		},
+		subjectCard: {
+			[theme.breakpoints.down('xs')]: {
+				height: 150
+			},
+			height: 250,
+			width: '100%',
+			display: 'flex',
+			justifyContent: "center",
+			alignItems: "center"
 		},
 	}));
 
@@ -98,7 +111,7 @@ const MainPage = () => {
 			</AppBar>
 			<div className={classes.banner}>
 				<div className={classes.name}>
-					<Typography variant="h1" style={{ fontSize: 120 }}>
+					<Typography variant="h1">
 						A new approach to teaching
 					</Typography>
 				</div>
@@ -122,28 +135,61 @@ const MainPage = () => {
 					}}
 				>
 					<div className={classes.sectionPaper}>
-						<div className={classes.card} style={{ flex: 5 }}>
+						<div className={classes.card}>
 							<Typography variant="h2">
 								Our goal is to provide seriously good and
 								affordable tuition.
 							</Typography>
-							<br></br>
-							<Typography variant="body2">
-								This is some inspirational text to make
-								customers feel like they want to have us and
-								that we are really coolk or something.
+							<Typography variant="h3">
+								At Real Tutor, we mix software to aid education.
+							</Typography>
+							<Typography variant="h2">
+								It is time that education catches up with the
+								21st century.
 							</Typography>
 						</div>
 					</div>
 				</div>
-				<div
-					className={classes.sectionWrapper}
-					style={{
-						backgroundColor: teal[200],
-						backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
-						backgroundPositionY: "-100vh"
-					}}
-				></div>
+			</div>
+			<div
+				className={classes.sectionWrapper}
+				style={{
+					backgroundColor: teal[200],
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundPositionY: '-100vh',
+				}}
+			>
+				<div className={classes.sectionPaper} style={{flexDirection: 'column'}}>
+					<Typography variant="h2">Subjects we offer</Typography>
+					<br></br>
+					<Grid container spacing={3} justify="center" alignItems="center">
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+								<Typography variant="h3" align="center">A-level Maths</Typography>
+							</Paper>
+						</Grid>
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+							<Typography variant="h3" align="center">A-level Further Maths</Typography>
+							</Paper>
+						</Grid>
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+							<Typography variant="h3" align="center">GCSE Chemistry</Typography>
+							</Paper>
+						</Grid>
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+							<Typography variant="h3" align="center">GCSE Computer Science</Typography>
+							</Paper>
+						</Grid>
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+							<Typography variant="h3" align="center">A-level Computer Science</Typography>
+							</Paper>
+						</Grid>
+					</Grid>
+				</div>
 			</div>
 		</div>
 	);

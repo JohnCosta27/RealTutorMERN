@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { grey, teal, deepOrange, deepPurple, green, cyan } from "@material-ui/core/colors";
 // A custom theme for this app
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: grey[900]
@@ -26,7 +26,7 @@ const theme = createMuiTheme({
     body2: {
       fontWeight: "lighter",
       fontSize: "16px"
-    }
+    },
   },
   breakpoints: {
     values: {
@@ -38,4 +38,6 @@ const theme = createMuiTheme({
     }
   }
 });
+
+theme = responsiveFontSizes(theme);
 export default theme;

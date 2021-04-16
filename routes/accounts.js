@@ -5,68 +5,6 @@ const Lesson = require('../models/Lesson');
 const SpecificationPoint = require('../models/SpecificationPoints');
 const sha256 = require('js-sha256');
 
-/*
--> Register Account
--> Recieves firstname, surname, email and a password.
--> Validation: 
--> Password must be safe (Capital letter, number and symbol).
--> Valid email address
--> Firstname and surname longer than 1 letter.
-*/
-
-accounts.post('/register', async (req, res) => {
-	if (
-		req.body.firstname == null ||
-		req.body.surname == null ||
-		req.body.email == null ||
-		req.body.password == null ||
-		req.body.type == null
-	) {
-		res.json({ error: 'One or more parameters missing' });
-	} else {
-		try {
-			//First, we need to check if this email exists.
-			const accountExists = await Account.exists({
-				email: req.body.email,
-			});
-
-			if (accountExists) res.json({ error: 'This email already exists' });
-			else {
-				const passwordsalt = randomString(16);
-				const hashedPassword = sha256(req.body.password + passwordsalt);
-
-				const account = new Account({
-					firstname: req.body.firstname,
-					surname: req.body.surname,
-					email: req.body.email,
-					password: hashedPassword,
-					passwordsalt: passwordsalt,
-					cookie: randomString(32),
-					knowledgeTree: {},
-					type: req.body.type,
-				});
-
-				try {
-					const savedAccount = await account.save();
-					res.json(savedAccount);
-				} catch (err) {
-					res.json({ error: err });
-					console.log(err);
-				}
-			}
-		} catch (error) {
-			res.json({ error: error });
-			console.log(error);
-		}
-	}
-});
-
-/*
--> Log in to existing account
--> Looks in database for the email
--> Recieves: Email, 
-*/
-
 accounts.post('/login', async (req, res) => {
 	//Validation, make sure email and password are in the request (security and all that).
 	if (req.body.email == null || req.body.password == null) {
@@ -99,14 +37,6 @@ accounts.post('/login', async (req, res) => {
 	}
 });
 
-/*
- * Adds a lesson to the "lesson" array in an account
- * Recieves: Email (To identify account), date, plan, specPoints
- * Validation: Verify email is found, all fields are present, and that the specpoints provided are valid
- * Validation: Verifies that tutor & student emails are actually that given type.
- * Cookies: Session token is valid and from a tutor or manager.
- * Sends: Confirmation or error message
- */
 accounts.post('/addlesson', async (req, res) => {
 	if (
 		req.body.date == null ||
@@ -170,14 +100,6 @@ accounts.post('/addlesson', async (req, res) => {
 	}
 });
 
-/*
- * Adds the lesson report, achieved spec points to the lesson
- * Recieves: Report, achieved spec points and the lessonID
- * Validation: The achieved spec points must be valid specification points
- * LessonID must also be valid
- * Cookies: Session token must be from tutor or above
- * Sends: Confirmation
- */
 accounts.post('/addlessonreport', async (req, res) => {
 	if (
 		req.body.report == null ||
@@ -218,13 +140,6 @@ accounts.post('/addlessonreport', async (req, res) => {
 		}
 	}
 });
-
-/*
- * -> Gets the lessons from a particular studentID
- * Recieves: ID, this is the ID of the student you want to fetch the lessons from
- * Validation: Makes sure you are either a tutor or manager, or that you are fetching your own lessons as a student
- * Sends: Lessons or error message
- */
 
 accounts.get('/getstudentlessons', async (req, res) => {
 	if (req.cookies.token == null) {
@@ -495,34 +410,56 @@ accounts.get('/gettutorlessons', async (req, res) => {
 });
 
 accounts.get('/getname', async (req, res) => {
-
 	try {
-
 		if (req.query.studentid == null && req.query.tutorid == null) {
-			res.json({error: "IDs were missing"});
+			res.json({ error: 'IDs were missing' });
 		} else {
-
 			const validation = await validateCookie(req.cookies.token);
-			if (!(validation.level >= 2 )) {
-				res.json({error: "Authentication error"});
+			if (!(validation.level >= 2)) {
+				res.json({ error: 'Authentication error' });
 			} else {
-
 				if (req.query.studentid != null) {
 					const account = await Account.findById(req.query.studentid);
-					res.json({name: account.firstname + " " + account.surname});
+					res.json({
+						name: account.firstname + ' ' + account.surname,
+					});
 				} else {
 					const account = await Account.findById(req.query.tutorid);
-					res.json({name: account.firstname + " " + account.surname});
+					res.json({
+						name: account.firstname + ' ' + account.surname,
+					});
 				}
-
 			}
-
 		}
-
 	} catch (error) {
 		res.json({ error: error });
 	}
+});
 
+accounts.get('/getremaininghours', async (req, res) => {
+	if (req.query.id == null) {
+		res.json({ error: 'ID missing' });
+	} else {
+		const validation = await validateCookie(req.cookies.token);
+		if (
+			!(
+				validation.level == 3 ||
+				(validation.level == 2 &&
+					(await studentToTutor(validation.id, req.query.id) ||
+						validation.id == req.query.id)) ||
+				(validation.level == 1 && validation.id == req.query.id)
+			)
+		) {
+			res.json({error: "Authentication error"});
+		} else {
+			try {
+				const account = await Account.findById(req.query.id);
+				res.json({hours: account.remainingHours});
+			} catch (error) {
+				res.json({error: "Authentication error"});
+			}
+		}
+	}
 });
 
 async function getAccount(id) {
@@ -552,14 +489,18 @@ async function addStudentPoints(studentID, specPoints, date) {
 				account.specPoints.push(point);
 			} else {
 				//Else updating is needed, the date must be updated.
-				await Account.updateOne({"_id": account._id, "specPoints.contentID": point.contentID}, 
-				{$set: {"specPoints.$.date": date}});
+				await Account.updateOne(
+					{
+						_id: account._id,
+						'specPoints.contentID': point.contentID,
+					},
+					{ $set: { 'specPoints.$.date': date } }
+				);
 			}
 		}
 
 		await account.save();
 		return { success: 'Specification points added' };
-
 	} catch (error) {
 		return { error: error };
 	}
@@ -647,11 +588,23 @@ async function validateCookie(cookie) {
 		return { level: 0, id: '' };
 	} else {
 		if (result.type == 'student') {
-			return { level: 1, id: result._id, name: result.firstname + " " + result.surname };
+			return {
+				level: 1,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		} else if (result.type == 'tutor') {
-			return { level: 2, id: result._id, name: result.firstname + " " + result.surname };
+			return {
+				level: 2,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		} else if (result.type == 'manager') {
-			return { level: 3, id: result._id, name: result.firstname + " " + result.surname };
+			return {
+				level: 3,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		}
 	}
 }

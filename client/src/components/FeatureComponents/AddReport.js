@@ -210,6 +210,7 @@ const AddReport = () => {
 								value={selectedLesson.date}
 								label="Select lesson"
 								onChange={lessonSelect}
+								color="secondary"
 							>
 								{lessons.map((lesson) => (
 									<MenuItem
@@ -235,6 +236,7 @@ const AddReport = () => {
 							variant="outlined"
 							className={classes.multiLineInput}
 							onBlur={reportChange}
+							color="secondary"
 						/>
 
 						<Divider className={classes.gridItem} />

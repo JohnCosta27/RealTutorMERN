@@ -1,17 +1,15 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const cookieParser = require("cookie-parser");
-const path = require("path");
-
-const https = require("https");
-const fs = require("fs");
-
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const path = require('path');
+const Account = require('./models/Account');
+//const stripe = require('stripe')('pk_test_51IgsTHJwHQjcU66C8y8UboR4W0HtFEJJTQGkCMe58M4fmu5JG4vd768Cfim2QrRPVd17QGJ4J0VrAJKqHsZCGV0e00O6cEg9Mi');
 require("dotenv/config");
 
-mongoose.set("useFindAndModify", false);
+mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -19,33 +17,55 @@ app.use(cookieParser());
 
 const port = process.env.PORT || 3000;
 
-/*const server = sslServer = https.createServer({
-  key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
-  cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem"))
-}, app);
+app.listen(port, () => console.log('Listening on port: ' + port));
 
-server.listen(port, () => {
-  console.log("server starting on port : " + port)
-});*/
+const accountsRoute = require('./routes/accounts.js');
+app.use('/accounts', accountsRoute);
 
-app.listen(port, () => console.log("Listening on port: " + port));
+const specification = require('./routes/specification.js');
+app.use('/spec', specification);
 
-const accountsRoute = require("./routes/accounts.js");
-app.use("/accounts", accountsRoute);
+const admin = require('./routes/admin.js');
+app.use('/admin', async (req, res, next) => {
+	const validation = await validateCookie(req.cookies.token);
+	if (validation.level == 3) {
+		next();
+	} else {
+		res.json({error: "Validation error"});
+	}
+}, admin);
 
-const specification = require("./routes/specification.js");
-app.use("/spec", specification);
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build/index.html"));
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'build/index.html'));
 });
 
 mongoose.connect(
-  process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => {
-    console.log("Connected to MongoDB");
-  }
+	process.env.DB_CONNECTION,
+	{ useNewUrlParser: true, useUnifiedTopology: true },
+	() => {
+		console.log('Connected to MongoDB');
+	}
 );
+
+async function validateCookie(cookie) {
+	/*
+	 * Returns 0 -> Token not found
+	 * 1 -> Student account
+	 * 2 -> Tutor account
+	 * 3 -> Manager account
+	 */
+	const result = await Account.findOne({ cookie: cookie });
+	if (result == undefined) {
+		return { level: 0, id: '' };
+	} else {
+		if (result.type == 'student') {
+			return { level: 1, id: result._id };
+		} else if (result.type == 'tutor') {
+			return { level: 2, id: result._id };
+		} else if (result.type == 'manager') {
+			return { level: 3, id: result._id };
+		}
+	}
+}

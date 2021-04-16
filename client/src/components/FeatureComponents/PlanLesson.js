@@ -179,6 +179,7 @@ const PlanLesson = () => {
 							variant="outlined"
 							onBlur={titleChange}
 							style={{ width: '50%' }}
+							color="secondary"
 						/>
 						<Divider className={classes.gridItem} />
 
@@ -191,6 +192,7 @@ const PlanLesson = () => {
 							variant="outlined"
 							className={classes.multiLineInput}
 							onBlur={planChange}
+							color="secondary"
 						/>
 						<Divider />
 
@@ -201,6 +203,7 @@ const PlanLesson = () => {
 								style={{ width: '50%' }}
 								inputVariant="outlined"
 								value={selectedDate}
+								color="secondary"
 							/>
 						</MuiPickersUtilsProvider>
 
