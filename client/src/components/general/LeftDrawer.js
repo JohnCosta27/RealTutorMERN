@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -47,6 +48,9 @@ const LeftDrawer = (props) => {
 			backgroundColor: theme.palette.leftNav,
 			height: '100%',
 			width: drawerWidth,
+			[theme.breakpoints.down('sm')]: {
+				width: "100%"
+			}
 		},
 		button: {
 			marginLeft: 5,
@@ -54,10 +58,18 @@ const LeftDrawer = (props) => {
 		},
 		drawer: {
 			width: drawerWidth,
-			zIndex: 0,
+			[theme.breakpoints.down('sm')]: {
+				width: "100%"
+			},
+			flexShrink: 0,
+			zIndex: 10
 		},
 		drawerPaper: {
 			width: drawerWidth,
+			[theme.breakpoints.down('sm')]: {
+				width: "100%"
+			},
+			zIndex: 10
 		},
 		icon: {
 			color: theme.palette.divBackground,
@@ -74,6 +86,9 @@ const LeftDrawer = (props) => {
 		},
 		appBarShift: {
 			width: `calc(100% - ${drawerWidth}px)`,
+			[theme.breakpoints.down('sm')]: {
+				width: 0
+			},
 			marginLeft: drawerWidth,
 			transition: theme.transitions.create(['margin', 'width'], {
 				easing: theme.transitions.easing.easeOut,

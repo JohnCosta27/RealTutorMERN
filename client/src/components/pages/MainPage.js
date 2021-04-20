@@ -10,7 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import { teal } from '@material-ui/core/colors';
+import { teal, deepOrange } from '@material-ui/core/colors';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
@@ -75,13 +75,18 @@ const MainPage = () => {
 		},
 		subjectCard: {
 			[theme.breakpoints.down('xs')]: {
-				height: 150
+				height: 150,
 			},
 			height: 250,
 			width: '100%',
 			display: 'flex',
-			justifyContent: "center",
-			alignItems: "center"
+			justifyContent: 'center',
+			alignItems: 'center',
+			cursor: 'pointer',
+			transition: 'all 200ms',
+			'&:hover': {
+				transform: 'translateY(-3px) scale(1.1)',
+			},
 		},
 	}));
 
@@ -118,7 +123,10 @@ const MainPage = () => {
 				<Slide in={checked} timeout={1500} in={enter} direction="left">
 					<div className={classes.centeredWrapper}>
 						<Typography variant="h1" className={classes.bigText}>
-							£20 an hour
+							£20 an hour (GCSE)
+						</Typography>
+						<Typography variant="h1" className={classes.bigText}>
+							£30 an hour (A-level)
 						</Typography>
 						<Typography variant="h1">
 							The future is online
@@ -159,38 +167,95 @@ const MainPage = () => {
 					backgroundPositionY: '-100vh',
 				}}
 			>
-				<div className={classes.sectionPaper} style={{flexDirection: 'column'}}>
+				<div className={classes.sectionPaper} style={{flexDirection: "column"}}>
+					<Typography variant="h1">How it works?</Typography>
+					<br></br>
+					<Typography variant="h3">1. Contact us about tutoring</Typography>
+					<br></br>
+					<Typography variant="h3">2. We will arange a tutor who is super profund in the subject you are looking for</Typography>
+					<br></br>
+					<Typography variant="h3">3. Payment</Typography>
+					<br></br>
+					<Typography variant="h3">4. You can enjoy your weekly hourly session which will boost your proficiency in the subject massively</Typography>
+					<div></div>
+				</div>
+			</div>
+			<div className={classes.sectionWrapper} style={{backgroundColor: deepOrange[300]}}>
+				<div
+					className={classes.sectionPaper}
+					style={{ flexDirection: 'column' }}
+				>
 					<Typography variant="h2">Subjects we offer</Typography>
 					<br></br>
-					<Grid container spacing={3} justify="center" alignItems="center">
-						<Grid item lg={3} md={4} sm={6} xs={12}>
+					<Grid
+						container
+						spacing={3}
+						justify="center"
+						alignItems="center"
+					>
+						<Grid
+							item
+							lg={3}
+							md={4}
+							sm={6}
+							xs={12}
+							onClick={() =>
+								(document.location.href =
+									'/subjects/alevelmaths')
+							}
+						>
 							<Paper className={classes.subjectCard}>
-								<Typography variant="h3" align="center">A-level Maths</Typography>
+								<Typography variant="h3" align="center">
+									A-level Maths
+								</Typography>
 							</Paper>
 						</Grid>
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
-							<Typography variant="h3" align="center">A-level Further Maths</Typography>
+								<Typography variant="h3" align="center">
+									A-level Further Maths
+								</Typography>
 							</Paper>
 						</Grid>
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
-							<Typography variant="h3" align="center">GCSE Chemistry</Typography>
+								<Typography variant="h3" align="center">
+									GCSE Chemistry
+								</Typography>
 							</Paper>
 						</Grid>
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
-							<Typography variant="h3" align="center">GCSE Computer Science</Typography>
+								<Typography variant="h3" align="center">
+									GCSE Computer Science
+								</Typography>
 							</Paper>
 						</Grid>
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
-							<Typography variant="h3" align="center">A-level Computer Science</Typography>
+								<Typography variant="h3" align="center">
+									A-level Computer Science
+								</Typography>
 							</Paper>
 						</Grid>
 					</Grid>
 				</div>
 			</div>
+			<div
+					className={classes.sectionWrapper}
+					style={{
+						backgroundColor: '#FAFAFA',
+					}}
+				>
+					<div className={classes.sectionPaper}>
+						<div style={{flex: 1}}>
+					<Typography variant="h1">Contact us</Typography>
+					</div>
+					<div style={{flex: 1}}>
+					<Typography variant="h1">Socials and useful links</Typography>
+					</div>
+					</div>
+				</div>
 		</div>
 	);
 };

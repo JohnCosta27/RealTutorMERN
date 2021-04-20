@@ -101,10 +101,10 @@ async function addLessonMethod() {
 	 * Output: Sucess message
 	 */
 	request.post(
-		'http://localhost:3000/accounts/login',
+		'http://localhost:3000/accounts/addlesson',
 		{
 			headers: { 'content-type': 'application/json' },
-			body: { email: '1@tutor.com', password: 'dsadsadsa' },
+			body: { title: '1@tutor.com', password: 'dsadsadsa' },
 			json: true,
 		},
 		(error, response, body) => {
