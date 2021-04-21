@@ -601,6 +601,8 @@ async function validateCookie(cookie) {
 
 		if (!result.loggedIn) return 0;
 
+		refreshSession(cookie);
+
 		if (result.type == 'student') {
 			return {
 				level: 1,
@@ -686,8 +688,6 @@ let sessions = [];
 
 function addSession(cookie, id, date) {
 
-	console.log(date);
-
 	let found = false;
 	for (let session of sessions) {
 		if (String(session.id) == String(id)) {
@@ -704,12 +704,20 @@ function addSession(cookie, id, date) {
 
 }
 
+function refreshSession(cookie) {
+
+	for (let session of sessions) {
+		if (session.cookie == cookie) {
+			session.date = new Date().getTime();
+		}
+	}
+
+}
+
 setInterval(checkExpired, 5000);
 
 //After an hour the cookie expires
 async function checkExpired() {
-
-	console.log(sessions);
 
 	for (let i = 0; i < sessions.length; i++) {
 		let session = sessions[i];
