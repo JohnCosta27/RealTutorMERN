@@ -25,7 +25,7 @@ let theme = createMuiTheme({
 		},
 		body2: {
 			fontWeight: 'lighter',
-			fontSize: '16px',
+			fontSize: '20px',
 		},
 	},
 	breakpoints: {

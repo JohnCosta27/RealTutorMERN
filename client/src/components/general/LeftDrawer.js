@@ -25,7 +25,7 @@ import Home from '@material-ui/icons/Home';
 import LessonIcon from '@material-ui/icons/FormatListBulleted';
 
 const LeftDrawer = (props) => {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 
 	const handleDrawerOpen = () => {
 		setOpen(true);

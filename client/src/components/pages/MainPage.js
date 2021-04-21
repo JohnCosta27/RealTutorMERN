@@ -12,6 +12,8 @@ import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
 import { teal, deepOrange } from '@material-ui/core/colors';
 
+import TitleDescriptionCard from '../general/TitleDescriptionCard';
+
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
 
@@ -88,6 +90,18 @@ const MainPage = () => {
 				transform: 'translateY(-3px) scale(1.1)',
 			},
 		},
+		cardDisplay: {
+			display: 'flex',
+			justifyContent: 'space-between',
+			[theme.breakpoints.down('md')]: {
+				flexDirection: 'column',
+			},
+		},
+		smallSection: {
+			width: '100%',
+			display: 'flex',
+			height: 600,
+		},
 	}));
 
 	const classes = useStyles();
@@ -122,65 +136,83 @@ const MainPage = () => {
 				</div>
 				<Slide in={checked} timeout={1500} in={enter} direction="left">
 					<div className={classes.centeredWrapper}>
-						<Typography variant="h1" className={classes.bigText}>
-							£20 an hour (GCSE)
-						</Typography>
-						<Typography variant="h1" className={classes.bigText}>
+						<Typography variant="h2">£20 an hour (GCSE)</Typography>
+						<Typography variant="h2">
 							£30 an hour (A-level)
 						</Typography>
-						<Typography variant="h1">
+						<Typography variant="h3">
 							The future is online
 						</Typography>
 					</div>
 				</Slide>
 			</div>
-			<div>
+			<div
+				className={classes.smallSection}
+				style={{
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundColor: '#FAFAFA',
+				}}
+			>
 				<div
-					className={classes.sectionWrapper}
+					className={classes.sectionPaper}
 					style={{
-						backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
-						backgroundColor: '#FAFAFA',
+						flexDirection: 'column',
+						justifyContent: 'center',
 					}}
 				>
-					<div className={classes.sectionPaper}>
-						<div className={classes.card}>
-							<Typography variant="h2">
-								Our goal is to provide seriously good and
-								affordable tuition.
+					<div style={{ maxWidth: 750 }}>
+						<Typography variant="h1">
+							We are software driven
+						</Typography>
+						<Typography variant="body2">
+							This means we have custom built software, made by
+							our CEO, to keep track of student progress and help
+							lesson planning and reporting.
+						</Typography>
+						<br></br>
+						<br></br>
+					</div>
+				</div>
+			</div>
+
+			<div
+				className={classes.smallSection}
+				style={{
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundColor: teal[200],
+					backgroundPositionY: -600,
+				}}
+			>
+				<div
+					className={classes.sectionPaper}
+					style={{
+						flexDirection: 'column',
+						justifyContent: 'center',
+					}}
+				>
+					<div style={{ width: '100%' }}>
+						<div style={{ maxWidth: 800, float: 'right' }}>
+							<Typography variant="h1" align="right">
+								Close and experienced team
 							</Typography>
-							<Typography variant="h3">
-								At Real Tutor, we mix software to aid education.
+							<Typography variant="body2" align="right">
+								Our team is composed of cherry picked
+								individuals, and we all know each other and work
+								together to provide the best overall tutoring
+								experience, something not a lot of competitors
+								can say. Each member is also experienced and
+								well versed in the subject they teach.
 							</Typography>
-							<Typography variant="h2">
-								It is time that education catches up with the
-								21st century.
-							</Typography>
+							<br></br>
+							<br></br>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div
 				className={classes.sectionWrapper}
-				style={{
-					backgroundColor: teal[200],
-					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
-					backgroundPositionY: '-100vh',
-				}}
+				style={{ backgroundColor: deepOrange[300] }}
 			>
-				<div className={classes.sectionPaper} style={{flexDirection: "column"}}>
-					<Typography variant="h1">How it works?</Typography>
-					<br></br>
-					<Typography variant="h3">1. Contact us about tutoring</Typography>
-					<br></br>
-					<Typography variant="h3">2. We will arange a tutor who is super profund in the subject you are looking for</Typography>
-					<br></br>
-					<Typography variant="h3">3. Payment</Typography>
-					<br></br>
-					<Typography variant="h3">4. You can enjoy your weekly hourly session which will boost your proficiency in the subject massively</Typography>
-					<div></div>
-				</div>
-			</div>
-			<div className={classes.sectionWrapper} style={{backgroundColor: deepOrange[300]}}>
 				<div
 					className={classes.sectionPaper}
 					style={{ flexDirection: 'column' }}
@@ -242,20 +274,22 @@ const MainPage = () => {
 				</div>
 			</div>
 			<div
-					className={classes.sectionWrapper}
-					style={{
-						backgroundColor: '#FAFAFA',
-					}}
-				>
-					<div className={classes.sectionPaper}>
-						<div style={{flex: 1}}>
-					<Typography variant="h1">Contact us</Typography>
+				className={classes.sectionWrapper}
+				style={{
+					backgroundColor: '#FAFAFA',
+				}}
+			>
+				<div className={classes.sectionPaper}>
+					<div style={{ flex: 1 }}>
+						<Typography variant="h1">Contact us</Typography>
 					</div>
-					<div style={{flex: 1}}>
-					<Typography variant="h1">Socials and useful links</Typography>
-					</div>
+					<div style={{ flex: 1 }}>
+						<Typography variant="h1">
+							Socials and useful links
+						</Typography>
 					</div>
 				</div>
+			</div>
 		</div>
 	);
 };

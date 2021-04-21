@@ -43,7 +43,7 @@ const TitleDescriptionCard = (props) => {
 				</Typography>
 				<div className={classes.image}></div>
                 <div className={classes.descriptionWrapper}>
-                <Typography variant="body1">
+                <Typography variant="body2">
                     {props.description}
                 </Typography>
                 </div>
