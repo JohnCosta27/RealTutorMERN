@@ -11,24 +11,35 @@ accounts.post('/login', async (req, res) => {
 		res.json({ error: 'Email or password missing from request' });
 	} else {
 		try {
-			const account = await Account.find({ email: req.body.email });
+			const account = await Account.findOne({ email: req.body.email });
+
 			// If the result of the search is more than 1 (as in it found an account with that email)
-			if (account.length > 0) {
-				const hashedPassword = sha256(
-					req.body.password + account[0].passwordsalt
-				);
-				if (hashedPassword == account[0].password) {
-					const auth = await validateCookie(account[0].cookie);
-					res.json({
-						cookie: account[0].cookie,
-						level: auth.level,
-						id: auth.id,
-					});
-				} else {
-					res.json({ error: 'Incorrect password' });
-				}
+			if (account == undefined) {
+				res.json({ error: 'Incorrect password' });
 			} else {
-				res.json({ error: 'This account was not found' });
+				const hashedPassword = sha256(
+					req.body.password + account.passwordsalt
+				);
+				if (hashedPassword == account.password) {
+					const auth = await validateCookie(account.cookie);
+
+					let level;
+					if (account.type == 'student') level = 1;
+					else if (account.type == 'tutor') level = 2;
+					else if (account.type == 'manager') level = 3;
+					else level = 0;
+
+					account.cookie = randomString(32);
+					account.loggedIn = true;
+					addSession(account.cookie, account._id, new Date().getTime());
+					await account.save();
+
+					res.json({
+						cookie: account.cookie,
+						level: level,
+						id: account._id,
+					});
+				}
 			}
 		} catch (error) {
 			res.json({ error: error });
@@ -445,18 +456,18 @@ accounts.get('/getremaininghours', async (req, res) => {
 			!(
 				validation.level == 3 ||
 				(validation.level == 2 &&
-					(await studentToTutor(validation.id, req.query.id) ||
+					((await studentToTutor(validation.id, req.query.id)) ||
 						validation.id == req.query.id)) ||
 				(validation.level == 1 && validation.id == req.query.id)
 			)
 		) {
-			res.json({error: "Authentication error"});
+			res.json({ error: 'Authentication error' });
 		} else {
 			try {
 				const account = await Account.findById(req.query.id);
-				res.json({hours: account.remainingHours});
+				res.json({ hours: account.remainingHours });
 			} catch (error) {
-				res.json({error: "Authentication error"});
+				res.json({ error: 'Authentication error' });
 			}
 		}
 	}
@@ -587,6 +598,9 @@ async function validateCookie(cookie) {
 	if (result == undefined) {
 		return { level: 0, id: '' };
 	} else {
+
+		if (!result.loggedIn) return 0;
+
 		if (result.type == 'student') {
 			return {
 				level: 1,
@@ -666,6 +680,49 @@ async function tutorLesson(tutorid, lessonid) {
 	} catch (error) {
 		return false;
 	}
+}
+
+let sessions = [];
+
+function addSession(cookie, id, date) {
+
+	console.log(date);
+
+	let found = false;
+	for (let session of sessions) {
+		if (String(session.id) == String(id)) {
+			session.cookie = cookie;
+			session.date = date;
+			found = true;
+			break;
+		}
+	}
+
+	if (!found) {
+		sessions.push({id: id, cookie: cookie, date: date});
+	}
+
+}
+
+setInterval(checkExpired, 5000);
+
+//After an hour the cookie expires
+async function checkExpired() {
+
+	console.log(sessions);
+
+	for (let i = 0; i < sessions.length; i++) {
+		let session = sessions[i];
+		if (session.date + 3600000 < new Date().getTime()) {
+
+			sessions.splice(i, 1);
+			const account = await Account.findById(session.id);
+			account.loggedIn = 0;
+			await account.save();
+
+		}
+	}
+
 }
 
 module.exports = accounts;

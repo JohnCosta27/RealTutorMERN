@@ -45,6 +45,9 @@ const AccountSchema = mongoose.Schema({
 	},
 	remainingHours: {
 		type: Number
+	},
+	loggedIn: {
+		type: Boolean
 	}
 });
 
