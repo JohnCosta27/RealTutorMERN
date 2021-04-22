@@ -10,9 +10,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import { teal, deepOrange } from '@material-ui/core/colors';
+import { teal, grey } from '@material-ui/core/colors';
 
 import TitleDescriptionCard from '../general/TitleDescriptionCard';
+import transparentLogo from '../../images/TransparentLogo.png';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
@@ -68,6 +69,9 @@ const MainPage = () => {
 			paddingLeft: 20,
 			paddingBottom: 20,
 			paddingRight: 20,
+			[theme.breakpoints.down('md')]: {
+				flexDirection: "column"
+			}
 		},
 		card: {
 			width: '100%',
@@ -102,6 +106,12 @@ const MainPage = () => {
 			display: 'flex',
 			height: 600,
 		},
+		image: {
+			width: '40vw',
+			[theme.breakpoints.down('md')]: {
+				width: '60vw',
+			},
+		}
 	}));
 
 	const classes = useStyles();
@@ -123,9 +133,7 @@ const MainPage = () => {
 		<div>
 			<AppBar position="absolute" className={classes.appBar}>
 				<Toolbar>
-					<Typography variant="h6" noWrap>
-						Real Tutor
-					</Typography>
+					<Typography variant="h3">Real Tutor</Typography>
 				</Toolbar>
 			</AppBar>
 			<div className={classes.banner}>
@@ -156,19 +164,24 @@ const MainPage = () => {
 				<div
 					className={classes.sectionPaper}
 					style={{
-						flexDirection: 'column',
-						justifyContent: 'center',
+						alignItems: 'center',
+
 					}}
 				>
-					<div style={{ maxWidth: 750 }}>
+					<div style={{ maxWidth: 800 }}>
 						<Typography variant="h1">
-							We are software driven
+							Tuition meets the digital age
 						</Typography>
 						<Typography variant="body2">
 							This means we have custom built software, made by
 							our CEO, to keep track of student progress and help
 							lesson planning and reporting.
 						</Typography>
+						<br></br>
+						<br></br>
+					</div>
+					<div style={{ maxWidth: 800 }}>
+						<img src={transparentLogo} className={classes.image} />
 						<br></br>
 						<br></br>
 					</div>
@@ -211,7 +224,11 @@ const MainPage = () => {
 			</div>
 			<div
 				className={classes.sectionWrapper}
-				style={{ backgroundColor: deepOrange[300] }}
+				style={{
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundColor: grey[200],
+					backgroundPositionY: -1200,
+				}}
 			>
 				<div
 					className={classes.sectionPaper}
@@ -276,7 +293,9 @@ const MainPage = () => {
 			<div
 				className={classes.sectionWrapper}
 				style={{
-					backgroundColor: '#FAFAFA',
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundColor: teal[200],
+					backgroundPositionY: `calc(-1200px - 100vh)`,
 				}}
 			>
 				<div className={classes.sectionPaper}>
