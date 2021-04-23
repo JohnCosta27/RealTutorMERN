@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -26,6 +26,12 @@ import LessonIcon from '@material-ui/icons/FormatListBulleted';
 
 const LeftDrawer = (props) => {
 	const [open, setOpen] = useState(false);
+	const [width, setWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		window.addEventListener("resize", () => setWidth(window.innerWidth));
+		if (window.innerWidth >= 960) setOpen(true)
+	}, []);
 
 	const handleDrawerOpen = () => {
 		setOpen(true);
@@ -109,6 +115,13 @@ const LeftDrawer = (props) => {
 	const classes = useStyles();
 	const theme = useTheme();
 
+	const handleClick = (state) => {
+		if (width < 960) {
+			setOpen(false);
+		}
+		props.changeState(state);
+	}
+
 	//Level 1 -> Student looking at student dashboard
 	//Level 2 -> Tutor looking at student dashboard
 	//Level 3 -> Tutor looking at tutor dashbgoard
@@ -160,7 +173,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={0}
-								onClick={() => props.changeState(0)}
+								onClick={() => handleClick(0)}
 							>
 								<ListItemIcon>
 									<Home color="secondary" />
@@ -171,7 +184,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={1}
-								onClick={() => props.changeState(1)}
+								onClick={() => handleClick(1)}
 							>
 								<ListItemIcon>
 									<LessonIcon color="secondary" />
@@ -182,7 +195,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={2}
-								onClick={() => props.changeState(2)}
+								onClick={() => handleClick(2)}
 							>
 								<ListItemIcon>
 									<AssessmentIcon color="secondary" />
@@ -241,7 +254,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={0}
-								onClick={() => props.changeState(0)}
+								onClick={() => handleClick(0)}
 							>
 								<ListItemIcon>
 									<Home color="secondary" />
@@ -252,7 +265,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={1}
-								onClick={() => props.changeState(1)}
+								onClick={() => handleClick(1)}
 							>
 								<ListItemIcon>
 									<LessonIcon color="secondary" />
@@ -263,7 +276,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={2}
-								onClick={() => props.changeState(2)}
+								onClick={() => handleClick(2)}
 							>
 								<ListItemIcon>
 									<AssessmentIcon color="secondary" />
@@ -274,7 +287,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={3}
-								onClick={() => props.changeState(3)}
+								onClick={() => handleClick(3)}
 							>
 								<ListItemIcon>
 									<AddIcon color="secondary" />
@@ -285,7 +298,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={4}
-								onClick={() => props.changeState(4)}
+								onClick={() => handleClick(4)}
 							>
 								<ListItemIcon>
 									<MenuBook color="secondary" />
@@ -344,7 +357,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={0}
-								onClick={() => props.changeState(0)}
+								onClick={() => handleClick(0)}
 							>
 								<ListItemIcon>
 									<Home color="secondary" />
@@ -355,7 +368,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={1}
-								onClick={() => props.changeState(1)}
+								onClick={() => handleClick(1)}
 							>
 								<ListItemIcon>
 									<LessonIcon color="secondary" />

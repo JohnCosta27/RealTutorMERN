@@ -145,6 +145,10 @@ const AddReport = () => {
 			marginLeft: '5%',
 			display: 'flex',
 			justifyContent: 'center',
+			[theme.breakpoints.down('sm')]: {
+				width: '100%',
+				marginLeft: '0%'
+			}
 		},
 		multiLineInput: {
 			width: '90%',
@@ -163,14 +167,25 @@ const AddReport = () => {
 		},
 		button: {
 			width: '50%',
+			[theme.breakpoints.down('sm')]: {
+				width: '100%'
+			}
 		},
 		dropdown: {
 			width: '50%',
+			[theme.breakpoints.down('sm')]: {
+				width: '100%'
+			}
 		},
 		divider: {
 			marginTop: 10,
 			marginBottom: 10,
 		},
+		formWrapper: {
+			[theme.breakpoints.down('sm')]: {
+				width: '100%'
+			}
+		}
 	}));
 
 	const customTheme = (theme) => {
@@ -190,7 +205,7 @@ const AddReport = () => {
 	return (
 		<form onSubmit={submitLesson}>
 			<Grid container spacing={3} className={classes.lessonsWrapper}>
-				<Grid item lg={8} md={12}>
+				<Grid item lg={8} md={12} className={classes.formWrapper}>
 					<Paper elevation={2} className={classes.inputBox}>
 						<Typography variant="h2">Add report</Typography>
 						<Divider className={classes.divider} />

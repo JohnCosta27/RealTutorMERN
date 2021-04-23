@@ -150,6 +150,9 @@ const PlanLesson = () => {
 		},
 		button: {
 			width: '50%',
+			[theme.breakpoints.down('sm')]: {
+				width: '90%'
+			}
 		},
 	}));
 

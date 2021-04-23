@@ -13,9 +13,11 @@ import BigLesson from '../general/BigLesson';
 
 const StudentLessons = (props) => {
 	const [rows, setRows] = useState([]);
+	const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
 		getLessons();
+		window.addEventListener("resize", () => setWidth(window.innerWidth));
 	}, []);
 
 	const getLessons = async () => {
@@ -41,9 +43,6 @@ const StudentLessons = (props) => {
 		);
 
 		const data = await response.json();
-
-		console.log(data);
-
 		let lessons = [];
 		for (let lesson of data) {
 			let specPoints = [];
@@ -95,40 +94,75 @@ const StudentLessons = (props) => {
 	const useStyles = makeStyles((theme) => ({
 		table: {
 			minWidth: 650,
+			[theme.breakpoints.down('sm')]: {
+				minWidth: 0,
+				overflow: 'scroll'
+			}
 		},
 	}));
 
 	const classes = useStyles();
 
-	return (
-		<TableContainer component={Paper}>
-			<Table className={classes.table} aria-label="simple table">
-				<TableHead>
-					<TableRow>
-						<TableCell>Title</TableCell>
-						<TableCell>Specification Points</TableCell>
-						<TableCell>Achieved Specification Points</TableCell>
-						<TableCell style={{ width: 150 }}>Date</TableCell>
-						<TableCell>Expand</TableCell>
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					{rows.map((row) => (
-						<BigLesson
-							id={row._id}
-							_id={row._id}
-							title={row.title}
-							plan={row.plan}
-							specPoints={row.specPoints}
-							specPointsAchieved={row.specPointsAchieved}
-							report={row.report}
-							date={row.date}
-						/>
-					))}
-				</TableBody>
-			</Table>
-		</TableContainer>
-	);
+	if (width < 800) {
+		return (
+			<TableContainer component={Paper}>
+				<Table className={classes.table} aria-label="simple table">
+					<TableHead>
+						<TableRow>
+							<TableCell>Title</TableCell>
+							<TableCell>Expand</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody>
+						{rows.map((row) => (
+							<BigLesson
+								id={row._id}
+								_id={row._id}
+								title={row.title}
+								plan={row.plan}
+								specPoints={row.specPoints}
+								specPointsAchieved={row.specPointsAchieved}
+								report={row.report}
+								date={row.date}
+								mobile={true}
+							/>
+						))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+		);
+	} else {
+		return (
+			<TableContainer component={Paper}>
+				<Table className={classes.table} aria-label="simple table">
+					<TableHead>
+						<TableRow>
+							<TableCell>Title</TableCell>
+							<TableCell>Specification Points</TableCell>
+							<TableCell>Achieved Specification Points</TableCell>
+							<TableCell style={{ width: 150 }}>Date</TableCell>
+							<TableCell>Expand</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody>
+						{rows.map((row) => (
+							<BigLesson
+								id={row._id}
+								_id={row._id}
+								title={row.title}
+								plan={row.plan}
+								specPoints={row.specPoints}
+								specPointsAchieved={row.specPointsAchieved}
+								report={row.report}
+								date={row.date}
+								mobile={false}
+							/>
+						))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+		);
+	}
 };
 
 export default StudentLessons;

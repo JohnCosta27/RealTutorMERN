@@ -55,6 +55,10 @@ const StudentDashboard = () => {
 			backgroundColor: theme.palette.background.default,
 			padding: theme.spacing(3),
 			marginTop: 50,
+			[theme.breakpoints.down('sm')]: {
+				padding: 5,
+				paddingTop: 10
+			}
 		},
 	}));
 

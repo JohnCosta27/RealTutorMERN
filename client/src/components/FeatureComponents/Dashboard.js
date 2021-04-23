@@ -65,6 +65,10 @@ const StudentDashboard = (props) => {
 			flex: 1,
 			display: 'flex',
 			justifyContent: 'center',
+			[theme.breakpoints.down('sm')]: {
+				width: '90%',
+				marginLeft: '5%'
+			}
 		},
 		button: {
 			marginLeft: 5,

@@ -28,74 +28,131 @@ const BigLesson = (props) => {
 			paddingTop: 10,
 			paddingBottom: 10,
 		},
+		bigLessonWrapper: {
+			[theme.breakpoints.down('sm')]: {
+				width: "95%",
+				marginLeft: "2.5%"
+			}
+		}
 	}));
 	const classes = useStyles();
 
-	return (
-		<TableRow hover key={props._id}>
-			<TableCell component="th" scope="row">
-				{props.title}
-			</TableCell>
-			<TableCell>
-				<ul>
-					{props.specPoints.map((point) => (
-						<li key={point.contentID}>{point}</li>
-					))}
-				</ul>
-			</TableCell>
-			<TableCell>
-				<ul>
-					{props.specPointsAchieved.map((point) => (
-						<li key={point.contentID}>{point}</li>
-					))}
-				</ul>
-			</TableCell>
-			<TableCell>
-				{new Date(props.date * 1000).toDateString('en-UK')}
-			</TableCell>
-			<TableCell>
-				<Button color="secondary" onClick={handleClickOpen}>
-					Expand
-				</Button>
-			</TableCell>
-
-			<Dialog
-				open={open}
-				onClose={handleClose}
-				onClick={() => handleClickOpen}
-				className={classes.bigLessonWrapper}
-			>
-				<Typography variant="h3">{props.title}</Typography>
-				<Typography variant="h4">Date</Typography>
-				<Typography variant="body1">{new Date(props.date * 1000).toString()}</Typography>
-				<div className={classes.biglesson}>
-					<Typography variant="h4">Plan</Typography>
-					<Typography variant="body1">{props.plan}</Typography>
-					<Typography variant="h4">Spec points</Typography>
-					<ul>
-						{props.specPointsAchieved.map((point) => (
-							<li key={point.contentID}>{point}</li>
-						))}
-					</ul>
-					<Typography variant="h4">Report</Typography>
-					<Typography variant="body1">{props.report}</Typography>
-					<Typography variant="h4">Spec points achieved</Typography>
-					<ul>
-						{props.specPointsAchieved.map((point) => (
-							<li key={point.contentID}>{point}</li>
-						))}
-					</ul>
-					<Button
-						onClick={handleClose}
-						color="primary"
-						variant="contained"
-					>
-						Close
+	if (props.mobile) {
+		return (
+			<TableRow hover key={props._id}>
+				<TableCell component="th" scope="row">
+					{props.title}
+				</TableCell>
+				<TableCell>
+					<Button color="secondary" onClick={handleClickOpen}>
+						Expand
 					</Button>
-				</div>
-			</Dialog>
-		</TableRow>
-	);
+				</TableCell>
+	
+				<Dialog
+					open={open}
+					onClose={handleClose}
+					onClick={() => handleClickOpen}
+					className={classes.bigLessonWrapper}
+				>
+					<Typography variant="h3">{props.title}</Typography>
+					<Typography variant="h4">Date</Typography>
+					<Typography variant="body1">{new Date(props.date * 1000).toString()}</Typography>
+					<div className={classes.biglesson}>
+						<Typography variant="h4">Plan</Typography>
+						<Typography variant="body1">{props.plan}</Typography>
+						<Typography variant="h4">Spec points</Typography>
+						<ul>
+							{props.specPointsAchieved.map((point) => (
+								<li key={point.contentID}>{point}</li>
+							))}
+						</ul>
+						<Typography variant="h4">Report</Typography>
+						<Typography variant="body1">{props.report}</Typography>
+						<Typography variant="h4">Spec points achieved</Typography>
+						<ul>
+							{props.specPointsAchieved.map((point) => (
+								<li key={point.contentID}>{point}</li>
+							))}
+						</ul>
+						<Button
+							onClick={handleClose}
+							color="primary"
+							variant="contained"
+						>
+							Close
+						</Button>
+					</div>
+				</Dialog>
+			</TableRow>
+		);
+	} else {
+		return (
+			<TableRow hover key={props._id}>
+				<TableCell component="th" scope="row">
+					{props.title}
+				</TableCell>
+				<TableCell>
+					<ul>
+						{props.specPoints.map((point) => (
+							<li key={point.contentID}>{point}</li>
+						))}
+					</ul>
+				</TableCell>
+				<TableCell>
+					<ul>
+						{props.specPointsAchieved.map((point) => (
+							<li key={point.contentID}>{point}</li>
+						))}
+					</ul>
+				</TableCell>
+				<TableCell>
+					{new Date(props.date * 1000).toDateString('en-UK')}
+				</TableCell>
+				<TableCell>
+					<Button color="secondary" onClick={handleClickOpen}>
+						Expand
+					</Button>
+				</TableCell>
+	
+				<Dialog
+					open={open}
+					onClose={handleClose}
+					onClick={() => handleClickOpen}
+					className={classes.bigLessonWrapper}
+				>
+					<Typography variant="h3">{props.title}</Typography>
+					<Typography variant="h4">Date</Typography>
+					<Typography variant="body1">{new Date(props.date * 1000).toString()}</Typography>
+					<div className={classes.biglesson}>
+						<Typography variant="h4">Plan</Typography>
+						<Typography variant="body1">{props.plan}</Typography>
+						<Typography variant="h4">Spec points</Typography>
+						<ul>
+							{props.specPointsAchieved.map((point) => (
+								<li key={point.contentID}>{point}</li>
+							))}
+						</ul>
+						<Typography variant="h4">Report</Typography>
+						<Typography variant="body1">{props.report}</Typography>
+						<Typography variant="h4">Spec points achieved</Typography>
+						<ul>
+							{props.specPointsAchieved.map((point) => (
+								<li key={point.contentID}>{point}</li>
+							))}
+						</ul>
+						<Button
+							onClick={handleClose}
+							color="primary"
+							variant="contained"
+						>
+							Close
+						</Button>
+					</div>
+				</Dialog>
+			</TableRow>
+		);
+	}
 };
 
 export default BigLesson;

@@ -37,6 +37,9 @@ const StudentList = (props) => {
       display: "flex",
       flexDirection: "column",
       width: "50%",
+      [theme.breakpoints.down('sm')]: {
+        width: "90%"
+      }
     },
   }));
 
