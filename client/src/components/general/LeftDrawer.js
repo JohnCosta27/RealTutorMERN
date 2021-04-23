@@ -25,7 +25,10 @@ import Home from '@material-ui/icons/Home';
 import LessonIcon from '@material-ui/icons/FormatListBulleted';
 
 const LeftDrawer = (props) => {
-	const [open, setOpen] = useState(false);
+	let openStart;
+	if (window.innerWidth < 960) openStart = false;
+	else openStart = true;
+	const [open, setOpen] = useState(openStart);
 	const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
