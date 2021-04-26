@@ -10,10 +10,18 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import { teal, grey } from '@material-ui/core/colors';
+import { teal, grey, blue } from '@material-ui/core/colors';
+import List from '@material-ui/core/List';
+import Button from '@material-ui/core/Button';
+
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import EmailIcon from '@material-ui/icons/Email';
 
 import TitleDescriptionCard from '../general/TitleDescriptionCard';
 import transparentLogo from '../../images/TransparentLogo.png';
+import MainPageButtons from '../general/MainPageButtons';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
@@ -31,7 +39,7 @@ const MainPage = () => {
 			width: '80%',
 			marginLeft: '10%',
 			position: 'absolute',
-			bottom: 0,
+			bottom: 150,
 		},
 		bannerImage: {
 			width: '100%',
@@ -56,6 +64,12 @@ const MainPage = () => {
 			width: '100%',
 			display: 'flex',
 			height: '100vh',
+			[theme.breakpoints.down('md')]: {
+				height: '120vh'
+			},
+			[theme.breakpoints.down('sm')]: {
+				height: '140vh'
+			}
 		},
 		sectionPaper: {
 			width: '80%',
@@ -70,8 +84,8 @@ const MainPage = () => {
 			paddingBottom: 20,
 			paddingRight: 20,
 			[theme.breakpoints.down('md')]: {
-				flexDirection: "column"
-			}
+				flexDirection: 'column',
+			},
 		},
 		card: {
 			width: '100%',
@@ -105,13 +119,38 @@ const MainPage = () => {
 			width: '100%',
 			display: 'flex',
 			height: 600,
+			[theme.breakpoints.down('md')]: {
+				height: 800
+			},
+			[theme.breakpoints.down('sm')]: {
+				height: 1000
+			}
 		},
 		image: {
 			width: '40vw',
 			[theme.breakpoints.down('md')]: {
 				width: '60vw',
 			},
-		}
+			[theme.breakpoints.down('sm')]: {
+				width: '80vw'
+			},
+			[theme.breakpoints.down('xs')]: {
+				width: '90vw'
+			}
+		},
+		list: {
+			display: 'flex',
+			float: 'right',
+		},
+		listItem: {
+			marginLeft: 10,
+			marginRight: 10,
+		},
+		socialWrapper: {
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
 	}));
 
 	const classes = useStyles();
@@ -132,14 +171,19 @@ const MainPage = () => {
 	return (
 		<div>
 			<AppBar position="absolute" className={classes.appBar}>
-				<Toolbar>
+				<Toolbar
+					style={{ display: 'flex', justifyContent: 'space-between' }}
+				>
 					<Typography variant="h3">Real Tutor</Typography>
+					<MainPageButtons />
 				</Toolbar>
 			</AppBar>
 			<div className={classes.banner}>
 				<div className={classes.name}>
+					<br></br>
 					<Typography variant="h1">
-						A new approach to teaching
+						The Government stole your education. We're here to give
+						it back.
 					</Typography>
 				</div>
 				<Slide in={checked} timeout={1500} in={enter} direction="left">
@@ -165,17 +209,28 @@ const MainPage = () => {
 					className={classes.sectionPaper}
 					style={{
 						alignItems: 'center',
-
 					}}
 				>
 					<div style={{ maxWidth: 800 }}>
-						<Typography variant="h1">
+						<Typography variant="h1" color="secondary">
 							Tuition meets the digital age
 						</Typography>
 						<Typography variant="body2">
-							This means we have custom built software, made by
-							our CEO, to keep track of student progress and help
-							lesson planning and reporting.
+							We have custom built software, coded by our CEO, to
+							keep track of student progress and help lesson
+							planning and reporting.
+						</Typography>
+						<br></br>
+						<Typography variant="body2">
+							State of the art software.
+						</Typography>
+						<br></br>
+						<Typography variant="body2" style={{ marginLeft: 100 }}>
+							Flawless tutoring.
+						</Typography>
+						<br></br>
+						<Typography variant="body2" style={{ marginLeft: 200 }}>
+							The future of education is here.
 						</Typography>
 						<br></br>
 						<br></br>
@@ -206,18 +261,127 @@ const MainPage = () => {
 					<div style={{ width: '100%' }}>
 						<div style={{ maxWidth: 800, float: 'right' }}>
 							<Typography variant="h1" align="right">
-								Close and experienced team
+								The Experiment...
 							</Typography>
 							<Typography variant="body2" align="right">
-								Our team is composed of cherry picked
-								individuals, and we all know each other and work
-								together to provide the best overall tutoring
-								experience, something not a lot of competitors
-								can say. Each member is also experienced and
-								well versed in the subject they teach.
+								Other tutoring providers select teachers as
+								they're tutors. After extensive research, we
+								found that teachers are too far removed from the
+								exam procedures. This gave us an idea, We took a
+								select few University undergraduates, with top A
+								level grades, and ran some sample tutoring
+								sessions. We found the Tutees to be hugely more
+								engaged and learnt the syllabus noticeably
+								faster. We also noted that when an Undergraduate
+								was studying a related field, the students'
+								learning was optimized.
 							</Typography>
 							<br></br>
+							<Typography variant="h3" align="left">
+								The Conclusion...
+							</Typography>
+							<Typography variant="body2">
+								After the research we based our employment
+								process off our findings. Our cherry picked
+								Tutors will help our students achieve the best
+								grade they are possibile of, no matter your
+								current course progression.
+							</Typography>
 							<br></br>
+							<Typography
+								variant="body2"
+								align="right"
+							></Typography>
+							<br></br>
+							<br></br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				className={classes.smallSection}
+				style={{
+					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
+					backgroundColor: '#FAFAFA',
+					backgroundPositionY: -1200,
+				}}
+			>
+				<div
+					className={classes.sectionPaper}
+					style={{
+						alignItems: 'center',
+					}}
+				>
+					<div style={{ maxWidth: 700 }}>
+						<Typography variant="h1" color="secondary">
+							We. Really. Care
+						</Typography>
+						<Typography variant="body2">
+							Our 5% charity pleage is simply one example of how
+							much we care about the community and the world
+							around us.
+						</Typography>
+						<br></br>
+						<Typography variant="body2">
+							You won't just talk to your tutor. You will talk to
+							the CEO, COO and other members of staff, about your
+							own progress, and ways we could make your life
+							easier. All so you can achieve the best grade.
+						</Typography>
+						<br></br>
+						<Typography variant="body2">
+							Real Tutor offers you peace of mind. We will never turn away a student in need, and we promise to always deliver the best quality education. Period.
+						</Typography>
+						<br></br>
+						<br></br>
+					</div>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							width: '100%',
+						}}
+					>
+						<div>
+							<div style={{ display: 'flex' }}>
+								<Typography
+									variant="h3"
+									color="secondary"
+									style={{ marginRight: 10 }}
+								>
+									1.
+								</Typography>
+								<Typography variant="h3" color="primary">
+									5% charity pledge
+								</Typography>
+							</div>
+							<br></br>
+							<div style={{ display: 'flex' }}>
+								<Typography
+									variant="h3"
+									color="secondary"
+									style={{ marginRight: 10 }}
+								>
+									2.
+								</Typography>
+								<Typography variant="h3" color="primary">
+									Our personal approach
+								</Typography>
+							</div>
+							<br></br>
+							<div style={{ display: 'flex' }}>
+								<Typography
+									variant="h3"
+									color="secondary"
+									style={{ marginRight: 10 }}
+								>
+									3.
+								</Typography>
+								<Typography variant="h3" color="primary">
+									Market leading tutoring
+								</Typography>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -226,8 +390,8 @@ const MainPage = () => {
 				className={classes.sectionWrapper}
 				style={{
 					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
-					backgroundColor: grey[200],
-					backgroundPositionY: -1200,
+					backgroundColor: blue[200],
+					backgroundPositionY: -1800,
 				}}
 			>
 				<div
@@ -269,7 +433,7 @@ const MainPage = () => {
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
-									GCSE Chemistry
+									GCSE Sciences
 								</Typography>
 							</Paper>
 						</Grid>
@@ -287,6 +451,13 @@ const MainPage = () => {
 								</Typography>
 							</Paper>
 						</Grid>
+						<Grid item lg={3} md={4} sm={6} xs={12}>
+							<Paper className={classes.subjectCard}>
+								<Typography variant="h3" align="center">
+									View all
+								</Typography>
+							</Paper>
+						</Grid>
 					</Grid>
 				</div>
 			</div>
@@ -294,18 +465,56 @@ const MainPage = () => {
 				className={classes.sectionWrapper}
 				style={{
 					backgroundImage: `url("https://i.imgur.com/bdZ8fF6.png")`,
-					backgroundColor: teal[200],
-					backgroundPositionY: `calc(-1200px - 100vh)`,
+					backgroundColor: grey[200],
+					backgroundPositionY: 'calc(-1800px - 100vh)',
 				}}
 			>
 				<div className={classes.sectionPaper}>
 					<div style={{ flex: 1 }}>
-						<Typography variant="h1">Contact us</Typography>
+						<Typography variant="h1" align="center">
+							Contact us
+						</Typography>
 					</div>
 					<div style={{ flex: 1 }}>
-						<Typography variant="h1">
+						<Typography variant="h1" align="center">
 							Socials and useful links
 						</Typography>
+						<div
+							className={classes.sectionPaper}
+							style={{
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								height: '80%',
+							}}
+						>
+							<div className={classes.socialWrapper}>
+								<InstagramIcon
+									color="secondary"
+									style={{ fontSize: 100 }}
+								></InstagramIcon>
+								<Typography variant="h3">
+									Tis our instagram
+								</Typography>
+							</div>
+							<div className={classes.socialWrapper}>
+								<YouTubeIcon
+									color="secondary"
+									style={{ fontSize: 100 }}
+								></YouTubeIcon>
+								<Typography variant="h3">
+									Tis our Youtube
+								</Typography>
+							</div>
+							<div className={classes.socialWrapper}>
+								<FacebookIcon
+									color="secondary"
+									style={{ fontSize: 100 }}
+								></FacebookIcon>
+								<Typography variant="h3">
+									Tis our facebook
+								</Typography>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
