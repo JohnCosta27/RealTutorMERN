@@ -50,6 +50,11 @@ const MainPageButtons = (props) => {
 
 	const classes = useStyles();
 
+	const contactUsMobile = () => {
+		props.contactus();
+		setOpen(false);
+	}
+
 	if (width < 750) {
 		return (
 			<div>
@@ -60,6 +65,7 @@ const MainPageButtons = (props) => {
 					open={open}
 					onClose={handleDrawerClose}
 					onOpen={handleDrawerOpen}
+					disableRestoreFocus
 				>
 					<Button
 						variant="outlined"
@@ -86,6 +92,7 @@ const MainPageButtons = (props) => {
 						variant="contained"
 						color="secondary"
 						className={classes.drawerItem}
+						onClick={contactUsMobile}
 					>
 						Contact Us
 					</Button>
@@ -113,6 +120,7 @@ const MainPageButtons = (props) => {
 							variant="contained"
 							color="secondary"
 							className={classes.listItem}
+							onClick={props.contactus}
 						>
 							Contact Us
 						</Button>

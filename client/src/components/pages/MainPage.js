@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,20 +11,18 @@ import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
 import { teal, grey, blue } from '@material-ui/core/colors';
-import List from '@material-ui/core/List';
-import Button from '@material-ui/core/Button';
+import MailIcon from '@material-ui/icons/Mail';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import EmailIcon from '@material-ui/icons/Email';
-
-import TitleDescriptionCard from '../general/TitleDescriptionCard';
 import transparentLogo from '../../images/TransparentLogo.png';
 import MainPageButtons from '../general/MainPageButtons';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
+	const contactUsRef = useRef(null)
 
 	const useStyles = makeStyles((theme) => ({
 		banner: {
@@ -65,10 +63,13 @@ const MainPage = () => {
 			display: 'flex',
 			height: '100vh',
 			[theme.breakpoints.down('md')]: {
-				height: '120vh'
+				height: '120vh',
 			},
 			[theme.breakpoints.down('sm')]: {
-				height: '140vh'
+				height: '140vh',
+			},
+			[theme.breakpoints.down('xs')]: {
+				height: '160vh'
 			}
 		},
 		sectionPaper: {
@@ -95,7 +96,7 @@ const MainPage = () => {
 		},
 		subjectCard: {
 			[theme.breakpoints.down('xs')]: {
-				height: 150,
+				height: 100,
 			},
 			height: 250,
 			width: '100%',
@@ -120,10 +121,13 @@ const MainPage = () => {
 			display: 'flex',
 			height: 600,
 			[theme.breakpoints.down('md')]: {
-				height: 800
+				height: 800,
 			},
 			[theme.breakpoints.down('sm')]: {
-				height: 1000
+				height: 1000,
+			},
+			[theme.breakpoints.down('xs')]: {
+				height: 1200
 			}
 		},
 		image: {
@@ -132,11 +136,11 @@ const MainPage = () => {
 				width: '60vw',
 			},
 			[theme.breakpoints.down('sm')]: {
-				width: '80vw'
+				width: '80vw',
 			},
 			[theme.breakpoints.down('xs')]: {
-				width: '90vw'
-			}
+				width: '90vw',
+			},
 		},
 		list: {
 			display: 'flex',
@@ -150,7 +154,20 @@ const MainPage = () => {
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
+			cursor: 'pointer',
 		},
+		contactWrapper: {
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			cursor: 'pointer',
+		},
+		icons: {
+			fontSize: 100,
+			[theme.breakpoints.down('sm')]: {
+				fontSize: 50
+			}
+		}
 	}));
 
 	const classes = useStyles();
@@ -168,6 +185,11 @@ const MainPage = () => {
 		setChecked((prev) => !prev);
 	};
 
+	const contactUs = () => {
+		console.log("dsa")
+		contactUsRef.current.scrollIntoView();
+	}
+
 	return (
 		<div>
 			<AppBar position="absolute" className={classes.appBar}>
@@ -175,7 +197,7 @@ const MainPage = () => {
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
 					<Typography variant="h3">Real Tutor</Typography>
-					<MainPageButtons />
+					<MainPageButtons contactus={contactUs}/>
 				</Toolbar>
 			</AppBar>
 			<div className={classes.banner}>
@@ -330,7 +352,9 @@ const MainPage = () => {
 						</Typography>
 						<br></br>
 						<Typography variant="body2">
-							Real Tutor offers you peace of mind. We will never turn away a student in need, and we promise to always deliver the best quality education. Period.
+							Real Tutor offers you peace of mind. We will never
+							turn away a student in need, and we promise to
+							always deliver the best quality education. Period.
 						</Typography>
 						<br></br>
 						<br></br>
@@ -468,16 +492,62 @@ const MainPage = () => {
 					backgroundColor: grey[200],
 					backgroundPositionY: 'calc(-1800px - 100vh)',
 				}}
+				ref={contactUsRef}
 			>
 				<div className={classes.sectionPaper}>
 					<div style={{ flex: 1 }}>
 						<Typography variant="h1" align="center">
 							Contact us
 						</Typography>
+						<br></br>
+						<Typography variant="h2">Emails:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								john@realtutor.online (CEO)
+							</Typography>
+						</div>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								zach@realtutor.online (COO)
+							</Typography>
+						</div>
+						<br></br>
+						<Typography variant="h3">Phone numbers:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								+44 7443 494507 (Zach)
+							</Typography>
+						</div>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								+44 7576 870036 (John)
+							</Typography>
+						</div>
+						<br></br>
 					</div>
 					<div style={{ flex: 1 }}>
 						<Typography variant="h1" align="center">
-							Socials and useful links
+							Socials
 						</Typography>
 						<div
 							className={classes.sectionPaper}
@@ -487,32 +557,59 @@ const MainPage = () => {
 								height: '80%',
 							}}
 						>
-							<div className={classes.socialWrapper}>
+							<div
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.instagram.com/realtutor_online/',
+											'_blank'
+										)
+										.focus()
+								}
+							>
 								<InstagramIcon
 									color="secondary"
-									style={{ fontSize: 100 }}
+									className={classes.icons}
 								></InstagramIcon>
 								<Typography variant="h3">
-									Tis our instagram
+									@realtutor_online
 								</Typography>
 							</div>
-							<div className={classes.socialWrapper}>
+							<div
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.youtube.com/channel/UCDIjZ-wLxyCc9yB49pK-Pqw',
+											'_blank'
+										)
+										.focus()
+								}
+							>
 								<YouTubeIcon
 									color="secondary"
-									style={{ fontSize: 100 }}
+									className={classes.icons}
 								></YouTubeIcon>
-								<Typography variant="h3">
-									Tis our Youtube
-								</Typography>
+								<Typography variant="h3">Real Tutor</Typography>
 							</div>
-							<div className={classes.socialWrapper}>
+							<div
+								className={classes.socialWrapper}
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.facebook.com/real.tutor.509/',
+											'_blank'
+										)
+										.focus()
+								}
+							>
 								<FacebookIcon
 									color="secondary"
-									style={{ fontSize: 100 }}
+									className={classes.icons}
 								></FacebookIcon>
-								<Typography variant="h3">
-									Tis our facebook
-								</Typography>
+								<Typography variant="h3">Real Tutor</Typography>
 							</div>
 						</div>
 					</div>
