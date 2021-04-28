@@ -25,6 +25,9 @@ app.use('/accounts', accountsRoute);
 const specification = require('./routes/specification.js');
 app.use('/spec', specification);
 
+const formsRoute = require('./routes/forms.js');
+app.use('/forms', formsRoute);
+
 const admin = require('./routes/admin.js');
 app.use('/admin', async (req, res, next) => {
 	const validation = await validateCookie(req.cookies.token);

@@ -58,12 +58,25 @@ async function validateCookie(cookie) {
 	if (result == undefined) {
 		return { level: 0, id: '' };
 	} else {
+
 		if (result.type == 'student') {
-			return { level: 1, id: result._id };
+			return {
+				level: 1,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		} else if (result.type == 'tutor') {
-			return { level: 2, id: result._id };
+			return {
+				level: 2,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		} else if (result.type == 'manager') {
-			return { level: 3, id: result._id };
+			return {
+				level: 3,
+				id: result._id,
+				name: result.firstname + ' ' + result.surname,
+			};
 		}
 	}
 }

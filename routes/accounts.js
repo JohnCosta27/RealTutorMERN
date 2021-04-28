@@ -12,7 +12,6 @@ accounts.post('/login', async (req, res) => {
 	} else {
 		try {
 			const account = await Account.findOne({ email: req.body.email });
-
 			// If the result of the search is more than 1 (as in it found an account with that email)
 			if (account == undefined) {
 				res.json({ error: 'Incorrect password' });
@@ -726,6 +725,7 @@ async function checkExpired() {
 			sessions.splice(i, 1);
 			const account = await Account.findById(session.id);
 			account.loggedIn = 0;
+			account.cookie = "";
 			await account.save();
 
 		}

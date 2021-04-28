@@ -215,7 +215,7 @@ const MainPage = () => {
 							£30 an hour (A-level)
 						</Typography>
 						<Typography variant="h3">
-							The future is online
+							The future is online.
 						</Typography>
 					</div>
 				</Slide>
@@ -336,7 +336,7 @@ const MainPage = () => {
 				>
 					<div style={{ maxWidth: 700 }}>
 						<Typography variant="h1" color="secondary">
-							We. Really. Care
+							We. Really. Care.
 						</Typography>
 						<Typography variant="body2">
 							Our 5% charity pleage is simply one example of how
