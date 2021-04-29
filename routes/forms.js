@@ -28,7 +28,12 @@ forms.post('/studentfeedback', async (req, res) => {
 			});
 
 			const savedFeedback = await feedback.save();
+
+			const lesson = await Lesson.findById(req.body.lessonID);
+			lesson.studentFeedback = true;
+			await lesson.save();
 			res.json(savedFeedback);
+			
 		}
 	} catch (error) {
 		res.json(error);
