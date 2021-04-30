@@ -20,7 +20,6 @@ accounts.post('/login', async (req, res) => {
 					req.body.password + account.passwordsalt
 				);
 				if (hashedPassword == account.password) {
-					const auth = await validateCookie(account.cookie);
 
 					let level;
 					if (account.type == 'student') level = 1;
@@ -152,9 +151,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 });
 
 accounts.get('/getstudentlessons', async (req, res) => {
-	if (req.cookies.token == null) {
-		res.json({ error: 'Token not present' });
-	} else if (req.query.studentid == null) {
+	if (req.query.studentid == null) {
 		res.json({ error: 'Student ID is not present' });
 	} else {
 		const validation = await validateCookie(req.cookies.token);
