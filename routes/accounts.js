@@ -20,7 +20,6 @@ accounts.post('/login', async (req, res) => {
 					req.body.password + account.passwordsalt
 				);
 				if (hashedPassword == account.password) {
-
 					let level;
 					if (account.type == 'student') level = 1;
 					else if (account.type == 'tutor') level = 2;
@@ -29,7 +28,11 @@ accounts.post('/login', async (req, res) => {
 
 					account.cookie = randomString(32);
 					account.loggedIn = true;
-					addSession(account.cookie, account._id, new Date().getTime());
+					addSession(
+						account.cookie,
+						account._id,
+						new Date().getTime()
+					);
 					await account.save();
 
 					res.json({
@@ -151,69 +154,90 @@ accounts.post('/addlessonreport', async (req, res) => {
 });
 
 accounts.get('/getstudentlessons', async (req, res) => {
-	if (req.query.studentid == null) {
-		res.json({ error: 'Student ID is not present' });
-	} else {
-		const validation = await validateCookie(req.cookies.token);
-		const account = await getAccount(req.query.studentid);
-
-		if (account.error != undefined) {
-			res.json({ error: 'This account was not found' });
+	try {
+		if (req.query.studentid == null) {
+			res.json({ error: 'Student ID is not present' });
 		} else {
-			if (
-				!(
-					validation.level >= 2 ||
-					(validation.level == 1 &&
-						validation.id == req.query.studentid)
-				)
-			) {
-				res.json({ error: 'Validation not successful' });
+			const validation = await validateCookie(req.cookies.token);
+			const account = await getAccount(req.query.studentid);
+
+			if (account.error != undefined) {
+				res.json({ error: 'This account was not found' });
 			} else {
-				res.json(await getLessons(req.query.studentid, 1));
+				if (
+					!(
+						validation.level > 2 ||
+						(validation.level == 2 &&
+							(await studentToTutor(
+								validation.id,
+								req.query.studentid
+							))) ||
+						(validation.level == 1 &&
+							validation.id == req.query.studentid)
+					)
+				) {
+					res.json({ error: 'Validation not successful' });
+				} else {
+					res.json(await getLessons(req.query.studentid, 1));
+				}
 			}
 		}
+	} catch (error) {
+		res.json(error);
 	}
 });
 
 accounts.get('/getstudentlatestlesson', async (req, res) => {
-	if (req.cookies.token == null) {
-		res.json({ error: 'Token not present' });
-	} else if (req.query.studentid == null) {
-		res.json({ error: 'Student ID is not present' });
-	} else {
-		const validation = await validateCookie(req.cookies.token);
-		const account = await getAccount(req.query.studentid);
-
-		if (account == undefined) {
-			res.json({ error: 'Account was not found' });
-		} else if (account.error != undefined) {
-			res.json({ error: 'This account was not found' });
+	try {
+		if (req.cookies.token == null) {
+			res.json({ error: 'Token not present' });
+		} else if (req.query.studentid == null) {
+			res.json({ error: 'Student ID is not present' });
 		} else {
-			if (
-				!(
-					validation.level >= 2 ||
-					(validation.level == 1 &&
-						validation.id == req.query.studentid)
-				)
-			) {
-				res.json({ error: 'Validation not successful' });
+			const validation = await validateCookie(req.cookies.token);
+			const account = await getAccount(req.query.studentid);
+
+			if (account == undefined) {
+				res.json({ error: 'Account was not found' });
+			} else if (account.error != undefined) {
+				res.json({ error: 'This account was not found' });
 			} else {
-				const lessons = await getLessons(req.query.studentid, 1);
-				if (lessons.error != null) {
-					res.json({ error: 'This student could not be found' });
+				if (
+					!(
+						(account.error == null && validation.level > 2) ||
+						(validation.level == 2 &&
+							(await studentToTutor(
+								validation.id,
+								req.query.studentid
+							))) ||
+						(validation.level == 1 &&
+							validation.id == req.query.studentid)
+					)
+				) {
+					res.json({ error: 'Validation not successful' });
 				} else {
-					let date = 0;
-					let lessonReturn;
-					for (let lesson of lessons) {
-						if (lesson.date > date && lesson.report != undefined) {
-							date = lesson.date;
-							lessonReturn = lesson;
+					const lessons = await getLessons(req.query.studentid, 1);
+					if (lessons.error != null) {
+						res.json({ error: 'This student could not be found' });
+					} else {
+						let date = 0;
+						let lessonReturn;
+						for (let lesson of lessons) {
+							if (
+								lesson.date > date &&
+								lesson.report != undefined
+							) {
+								date = lesson.date;
+								lessonReturn = lesson;
+							}
 						}
+						res.json(lessonReturn);
 					}
-					res.json(lessonReturn);
 				}
 			}
 		}
+	} catch (error) {
+		res.json(error);
 	}
 });
 
@@ -232,7 +256,12 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 			} else {
 				if (
 					!(
-						validation.level >= 2 ||
+						(account.error == null && validation.level > 2) ||
+						(validation.level == 2 &&
+							(await studentToTutor(
+								validation.id,
+								req.query.studentid
+							))) ||
 						(validation.level == 1 &&
 							validation.id == req.query.studentid)
 					)
@@ -273,12 +302,26 @@ accounts.post('/addspecpoins', async (req, res) => {
 	try {
 		if (req.body.specPoints == null || req.body.studentID == null) {
 			res.json({ error: '1 or more specification points were invalid' });
-		} else if (!((await validateCookie(req.cookies.token)) >= 2)) {
-			res.json({ error: 'Authentication failed' });
 		} else {
-			res.json(
-				await addStudentPoints(req.body.studentID, req.body.specPoints)
-			);
+			if (
+				!(
+					validation.level > 2 ||
+					(validation.level == 2 &&
+						(await studentToTutor(
+							validation.id,
+							req.query.studentID
+						)))
+				)
+			) {
+				res.json({ error: 'Authentication failed' });
+			} else {
+				res.json(
+					await addStudentPoints(
+						req.body.studentID,
+						req.body.specPoints
+					)
+				);
+			}
 		}
 	} catch (error) {
 		res.json({ error: error });
@@ -293,7 +336,12 @@ accounts.get('/getstudentpoints', async (req, res) => {
 			res.json({ error: 'Student ID is not present' });
 		} else if (
 			!(
-				validation.level >= 2 ||
+				validation.level > 2 ||
+				(validation.level == 2 &&
+					(await studentToTutor(
+						validation.id,
+						req.query.studentid
+					))) ||
 				(validation.level == 1 && validation.id == req.query.studentid)
 			)
 		) {
@@ -315,7 +363,12 @@ accounts.get('/getstudentprogress', async (req, res) => {
 			res.json({ error: 'Student ID is not present' });
 		} else if (
 			!(
-				validation.level >= 2 ||
+				validation.level > 2 ||
+				(validation.level == 2 &&
+					(await studentToTutor(
+						validation.id,
+						req.query.studentid
+					))) ||
 				(validation.level == 1 && validation.id == req.query.studentid)
 			)
 		) {
@@ -444,7 +497,7 @@ accounts.get('/getname', async (req, res) => {
 });
 
 accounts.get('/getremaininghours', async (req, res) => {
-	if (req.query.id == null) {
+	if (req.query.studentid == null) {
 		res.json({ error: 'ID missing' });
 	} else {
 		const validation = await validateCookie(req.cookies.token);
@@ -452,9 +505,11 @@ accounts.get('/getremaininghours', async (req, res) => {
 			!(
 				validation.level == 3 ||
 				(validation.level == 2 &&
-					((await studentToTutor(validation.id, req.query.id)) ||
-						validation.id == req.query.id)) ||
-				(validation.level == 1 && validation.id == req.query.id)
+					(await studentToTutor(
+						validation.id,
+						req.query.studentid
+					))) ||
+				(validation.level == 1 && validation.id == req.query.studentid)
 			)
 		) {
 			res.json({ error: 'Authentication error' });
@@ -594,7 +649,6 @@ async function validateCookie(cookie) {
 	if (result == undefined) {
 		return { level: 0, id: '' };
 	} else {
-
 		if (!result.loggedIn) return 0;
 
 		refreshSession(cookie);
@@ -683,7 +737,6 @@ async function tutorLesson(tutorid, lessonid) {
 let sessions = [];
 
 function addSession(cookie, id, date) {
-
 	let found = false;
 	for (let session of sessions) {
 		if (String(session.id) == String(id)) {
@@ -695,39 +748,32 @@ function addSession(cookie, id, date) {
 	}
 
 	if (!found) {
-		sessions.push({id: id, cookie: cookie, date: date});
+		sessions.push({ id: id, cookie: cookie, date: date });
 	}
-
 }
 
 function refreshSession(cookie) {
-
 	for (let session of sessions) {
 		if (session.cookie == cookie) {
 			session.date = new Date().getTime();
 		}
 	}
-
 }
 
 setInterval(checkExpired, 5000);
 
 //After an hour the cookie expires
 async function checkExpired() {
-
 	for (let i = 0; i < sessions.length; i++) {
 		let session = sessions[i];
 		if (session.date + 3600000 < new Date().getTime()) {
-
 			sessions.splice(i, 1);
 			const account = await Account.findById(session.id);
 			account.loggedIn = 0;
-			account.cookie = "";
+			account.cookie = '';
 			await account.save();
-
 		}
 	}
-
 }
 
 module.exports = accounts;

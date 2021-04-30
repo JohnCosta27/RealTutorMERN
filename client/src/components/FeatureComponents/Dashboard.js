@@ -22,7 +22,7 @@ const StudentDashboard = (props) => {
 
 	const getHours = async () => {
 		const response = await fetch(
-			'/accounts/getremaininghours?id=' +
+			'/accounts/getremaininghours?studentid=' +
 				urlParams.get('studentid'),
 			{
 				method: 'GET',

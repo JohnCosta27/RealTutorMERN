@@ -1,13 +1,8 @@
 const express = require('express');
 const admin = express.Router();
-
 const Account = require('../models/Account');
 
 //No one can access this router except admins.
-
-admin.get('/', async (req, res) => {
-    res.json({success: "works"});
-});
 
 admin.post('/register', async (req, res) => {
 	if (
@@ -45,21 +40,19 @@ admin.post('/register', async (req, res) => {
 					res.json(savedAccount);
 				} catch (err) {
 					res.json({ error: err });
-					console.log(err);
 				}
 			}
 		} catch (error) {
 			res.json({ error: error });
-			console.log(error);
 		}
 	}
 });
 
 admin.post('/addhours', async (req, res) => {
-    if (req.body.hours == null || req.body.id == null) {
+    if (req.body.hours == null || req.body.studentid == null) {
         res.json({error: "1 or more parameters are missing"});
     } else {
-        const account = await Account.findById(req.body.id);
+        const account = await Account.findById(req.body.studentid);
         account.remainingHours += req.body.hours;
         await account.save();
         res.status(400).json({status: "OK"});
