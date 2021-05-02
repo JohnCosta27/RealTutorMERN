@@ -68,7 +68,11 @@ const StudentLessons = (props) => {
 			);
 		}
 
+		lessons.sort((a, b) => {
+			return b.date - a.date
+		});
 		setRows(lessons);
+
 	};
 
 	const createData = (

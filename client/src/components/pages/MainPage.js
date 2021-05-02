@@ -204,7 +204,7 @@ const MainPage = () => {
 				<div className={classes.name}>
 					<br></br>
 					<Typography variant="h1">
-						The Government stole your education. We're here to give
+						Covid stole your education. We're here to give
 						it back.
 					</Typography>
 				</div>
@@ -247,11 +247,11 @@ const MainPage = () => {
 							State of the art software.
 						</Typography>
 						<br></br>
-						<Typography variant="body2" style={{ marginLeft: 100 }}>
+						<Typography variant="body2">
 							Flawless tutoring.
 						</Typography>
 						<br></br>
-						<Typography variant="body2" style={{ marginLeft: 200 }}>
+						<Typography variant="body2">
 							The future of education is here.
 						</Typography>
 						<br></br>

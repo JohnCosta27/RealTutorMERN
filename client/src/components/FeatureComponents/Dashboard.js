@@ -4,11 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
 import { Typography } from '@material-ui/core';
 import Lesson from '../general/Lessons';
 import Progress from '../general/Progress';
 import UpcomingLesson from '../general/UpcomingLesson';
+import Paper from '@material-ui/core/Paper';
 
 const StudentDashboard = (props) => {
 	const queryString = window.location.search;
@@ -36,8 +36,7 @@ const StudentDashboard = (props) => {
 
 		const data = await response.json();
 		setHours(data.hours);
-
-	}
+	};
 
 	const useStyles = makeStyles((theme) => ({
 		paper: {
@@ -67,8 +66,8 @@ const StudentDashboard = (props) => {
 			justifyContent: 'center',
 			[theme.breakpoints.down('sm')]: {
 				width: '90%',
-				marginLeft: '5%'
-			}
+				marginLeft: '5%',
+			},
 		},
 		button: {
 			marginLeft: 5,
@@ -81,11 +80,11 @@ const StudentDashboard = (props) => {
 	return (
 		<Grid container>
 			<Grid item lg={6} md={12} sm={12} xs={12}>
-				<Card className={classes.paper}>
+				<Paper className={classes.paper} elevation={3}>
 					<Box display="flex" className={classes.cardsWrapper}>
 						<Typography variant="h2">Lessons</Typography>
 						<Box className={classes.cardContent}>
-							<Lesson />
+							<Lesson level={props.level} />
 						</Box>
 						<Box className={classes.cardAction}>
 							<Button
@@ -113,10 +112,10 @@ const StudentDashboard = (props) => {
 							</Button>
 						</Box>
 					</Box>
-				</Card>
+				</Paper>
 			</Grid>
 			<Grid item lg={6} md={12} sm={12} xs={12}>
-				<Card className={classes.paper}>
+				<Paper className={classes.paper} elevation={3}>
 					<Box display="flex" className={classes.cardsWrapper}>
 						<Typography variant="h2">Upcoming</Typography>
 						<Box className={classes.cardContent}>
@@ -138,10 +137,10 @@ const StudentDashboard = (props) => {
 							</Button>
 						</Box>
 					</Box>
-				</Card>
+				</Paper>
 			</Grid>
 			<Grid item lg={6} md={12} sm={12} xs={12}>
-				<Card className={classes.paper}>
+				<Paper className={classes.paper} elevation={3}>
 					<Box display="flex" className={classes.cardsWrapper}>
 						<Typography variant="h2">Progress</Typography>
 						<Box className={classes.cardContent}>
@@ -159,19 +158,20 @@ const StudentDashboard = (props) => {
 							</Button>
 						</Box>
 					</Box>
-				</Card>
+				</Paper>
 			</Grid>
 			<Grid item lg={6} md={12} sm={12} xs={12}>
-				<Card className={classes.paper}>
+				<Paper className={classes.paper} elevation={3}>
 					<Box display="flex" className={classes.cardsWrapper}>
 						<Typography variant="h2">Mixed</Typography>
 						<Box className={classes.cardContent}>
-						<Typography variant="h3">Remaining Hours: {hours}</Typography>
+							<Typography variant="h3">
+								Remaining Hours: {hours}
+							</Typography>
 						</Box>
-						<Box className={classes.cardAction}>
-						</Box>
+						<Box className={classes.cardAction}></Box>
 					</Box>
-				</Card>
+				</Paper>
 			</Grid>
 		</Grid>
 	);

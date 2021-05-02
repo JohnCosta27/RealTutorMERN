@@ -7,6 +7,11 @@ const Account = require('../models/Account');
 forms.post('/studentfeedback', async (req, res) => {
 	try {
 		const validation = await validateCookie(req.cookies.token);
+
+		console.log(validation.level);
+		console.log(await studentLesson(req.body.lessonID, validation.id));
+		console.log(!(await studentAnswered(req.body.lessonID)));
+
 		if (
 			!(
 				validation.level == 3 ||
@@ -32,6 +37,7 @@ forms.post('/studentfeedback', async (req, res) => {
 			const lesson = await Lesson.findById(req.body.lessonID);
 			lesson.studentFeedback = true;
 			await lesson.save();
+
 			res.json(savedFeedback);
 			
 		}
@@ -82,6 +88,7 @@ async function studentLesson(lessonID, studentID) {
 
 async function studentAnswered(lessonID) {
 	const feedback = await StudentFeedback.find({ lessonID: lessonID });
+	console.log(feedback);
 	if (feedback.length == 0) {
 		return false;
 	} else {

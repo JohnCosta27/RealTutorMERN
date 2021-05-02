@@ -1,51 +1,51 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 .App {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #f5f5f5;
 }
 
 .leftNav {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 400px;
+	flex: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 400px;
 }
 
 .mainWrapper {
-  flex: 4;
-  height: 100%;
-  display: flex;
-  margin-left: 10px;
-  flex-direction: column;
-  /*background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);*/
+	flex: 4;
+	height: 100%;
+	display: flex;
+	margin-left: 10px;
+	flex-direction: column;
+	/*background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);*/
 }
 
 .studentBoxWrapper {
-  width: 90%;
-  margin-left: 5%;
-  height: 80%;
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
+	width: 90%;
+	margin-left: 5%;
+	height: 80%;
+	margin-top: 10%;
+	display: flex;
+	flex-direction: column;
 }
 
 .loginWrapper {
-  width: 90%;
-  margin-left: 5px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	width: 90%;
+	margin-left: 5px;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .loginComponents {
-  margin-top: 20px;
-  margin-bottom: 2px;
+	margin-top: 20px;
+	margin-bottom: 2px;
 }

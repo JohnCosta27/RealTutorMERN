@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Slider from '@material-ui/core/Slider';
 import { makeStyles } from '@material-ui/core/styles';
 
-const Lesson = () => {
+const Lesson = (props) => {
 	const [lesson, setLesson] = useState({});
 	const [open, setOpen] = useState(false);
 
@@ -100,6 +100,8 @@ const Lesson = () => {
 			body: JSON.stringify(body),
 		});
 
+		const data = await submitFeedback.json();
+		
 		lesson.studentFeedback = true;
 		setLesson(lesson);
 		setOpen(false);
@@ -107,9 +109,13 @@ const Lesson = () => {
 	};
 
 	const getFeedbackButton = () => {
-		if (lesson == {}) return <div></div>;
 
-		if (!lesson.studentFeedback) {
+		if (Object.keys(lesson).length == 0) {
+			console.log("dsa")
+			return <div></div>;
+		}
+
+		if (!lesson.studentFeedback && props.level == 1) {
 			return (
 				<div style={{ float: 'left' }}>
 					<Button

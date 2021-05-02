@@ -509,13 +509,13 @@ accounts.get('/getremaininghours', async (req, res) => {
 						validation.id,
 						req.query.studentid
 					))) ||
-				(validation.level == 1 && validation.id == req.query.studentid)
+				(validation.level == 1 && String(validation.id) == String(req.query.studentid))
 			)
 		) {
 			res.json({ error: 'Authentication error' });
 		} else {
 			try {
-				const account = await Account.findById(req.query.id);
+				const account = await Account.findById(req.query.studentid);
 				res.json({ hours: account.remainingHours });
 			} catch (error) {
 				res.json({ error: 'Authentication error' });

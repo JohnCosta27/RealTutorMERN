@@ -136,11 +136,7 @@ const StudentDashboard = () => {
 	const classes = useStyles();
 
 	if (auth.level < 1) {
-		return (
-			<div className="app">
-				<Typography variant="h1">Back to the login</Typography>
-			</div>
-		);
+		document.location.href = "/login";
 	} else if (auth.level == 1) {
 		return (
 			<div className="App">
@@ -165,16 +161,6 @@ const StudentDashboard = () => {
 					)}
 					{current === 2 ? (
 						<Progress level={auth.level} />
-					) : (
-						<div></div>
-					)}
-					{current === 3 ? (
-						<PlanLesson level={auth.level} />
-					) : (
-						<div></div>
-					)}
-					{current === 4 ? (
-						<AddReport level={auth.level} />
 					) : (
 						<div></div>
 					)}
