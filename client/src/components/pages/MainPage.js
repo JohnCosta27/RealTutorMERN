@@ -174,10 +174,19 @@ const MainPage = () => {
 
 	useEffect(() => {
 		handleChange();
+		checkQuery();
 		setTimeout(() => {
 			setEnter(true);
 		}, 1000);
 	}, []);
+
+	const checkQuery = () => {
+		const urlParams = new URLSearchParams(window.location.search);
+		console.log(urlParams.get('section'));
+		if (urlParams.get('section') == 'contact-us') {
+			contactUs();
+		} 
+	}
 
 	const [checked, setChecked] = React.useState(false);
 
@@ -186,7 +195,6 @@ const MainPage = () => {
 	};
 
 	const contactUs = () => {
-		console.log("dsa")
 		contactUsRef.current.scrollIntoView();
 	}
 
