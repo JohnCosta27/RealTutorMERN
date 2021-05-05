@@ -16,6 +16,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import transparentLogo from '../../images/TransparentLogo.png';
 import DefaultAppBar from '../general/DefaultAppBar';
 
+import BannerBackground from '../../images/Banner.jpeg';
+
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
 	const contactUsRef = useRef(null);
@@ -24,7 +26,8 @@ const MainPage = () => {
 		banner: {
 			width: '100%',
 			height: 800,
-			backgroundImage: `url("https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg")`,
+			backgroundImage: `url(${BannerBackground})`,
+			backgroundSize: "cover",
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
@@ -199,17 +202,17 @@ const MainPage = () => {
 			<div className={classes.banner}>
 				<div className={classes.name}>
 					<br></br>
-					<Typography variant="h1">
+					<Typography variant="h1" style={{color: '#FAFAFA'}}>
 						Covid stole your education. We're here to give it back.
 					</Typography>
 				</div>
 				<Slide in={checked} timeout={1500} in={enter} direction="left">
 					<div className={classes.centeredWrapper}>
-						<Typography variant="h2">£20 an hour (GCSE)</Typography>
-						<Typography variant="h2">
+						<Typography variant="h2" style={{color: '#FAFAFA'}}>£20 an hour (GCSE)</Typography>
+						<Typography variant="h2" style={{color: '#FAFAFA'}}>
 							£30 an hour (A-level)
 						</Typography>
-						<Typography variant="h3">
+						<Typography variant="h3" color="secondary">
 							The future is online.
 						</Typography>
 					</div>

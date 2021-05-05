@@ -10,12 +10,16 @@ import Grid from '@material-ui/core/Grid';
 import DefaultAppBar from '../general/DefaultAppBar';
 import SubjectCard from '../general/SubjectCard';
 
+import BannerBackground from '../../images/Banner.jpeg';
+
 const SubjectPage = () => {
 	const useStyles = makeStyles((theme) => ({
 		banner: {
 			width: '100%',
-			height: 300,
-			backgroundImage: `url("https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg")`,
+			height: 500,
+			backgroundImage: `url(${BannerBackground})`,
+			backgroundSize: "cover",
+			backgroundPositionY: -100,
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
@@ -63,7 +67,7 @@ const SubjectPage = () => {
 			<DefaultAppBar contactus={contactUs} />
 			<div className={classes.banner}>
 				<br></br>
-				<Typography variant="h1" align="center">
+				<Typography variant="h1" align="center" style={{color: '#FAFAFA'}}>
 					Subject List
 				</Typography>
 			</div>
