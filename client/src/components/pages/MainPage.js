@@ -4,10 +4,6 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
 import { teal, grey, blue } from '@material-ui/core/colors';
@@ -18,11 +14,11 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import transparentLogo from '../../images/TransparentLogo.png';
-import MainPageButtons from '../general/MainPageButtons';
+import DefaultAppBar from '../general/DefaultAppBar';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
-	const contactUsRef = useRef(null)
+	const contactUsRef = useRef(null);
 
 	const useStyles = makeStyles((theme) => ({
 		banner: {
@@ -69,8 +65,8 @@ const MainPage = () => {
 				height: '140vh',
 			},
 			[theme.breakpoints.down('xs')]: {
-				height: '160vh'
-			}
+				height: '160vh',
+			},
 		},
 		sectionPaper: {
 			width: '80%',
@@ -127,8 +123,8 @@ const MainPage = () => {
 				height: 1000,
 			},
 			[theme.breakpoints.down('xs')]: {
-				height: 1200
-			}
+				height: 1200,
+			},
 		},
 		image: {
 			width: '40vw',
@@ -165,9 +161,9 @@ const MainPage = () => {
 		icons: {
 			fontSize: 100,
 			[theme.breakpoints.down('sm')]: {
-				fontSize: 50
-			}
-		}
+				fontSize: 50,
+			},
+		},
 	}));
 
 	const classes = useStyles();
@@ -182,11 +178,10 @@ const MainPage = () => {
 
 	const checkQuery = () => {
 		const urlParams = new URLSearchParams(window.location.search);
-		console.log(urlParams.get('section'));
 		if (urlParams.get('section') == 'contact-us') {
 			contactUs();
-		} 
-	}
+		}
+	};
 
 	const [checked, setChecked] = React.useState(false);
 
@@ -196,24 +191,16 @@ const MainPage = () => {
 
 	const contactUs = () => {
 		contactUsRef.current.scrollIntoView();
-	}
+	};
 
 	return (
 		<div>
-			<AppBar position="absolute" className={classes.appBar}>
-				<Toolbar
-					style={{ display: 'flex', justifyContent: 'space-between' }}
-				>
-					<Typography variant="h3">Real Tutor</Typography>
-					<MainPageButtons contactus={contactUs}/>
-				</Toolbar>
-			</AppBar>
+			<DefaultAppBar contactus={contactUs} />
 			<div className={classes.banner}>
 				<div className={classes.name}>
 					<br></br>
 					<Typography variant="h1">
-						Covid stole your education. We're here to give
-						it back.
+						Covid stole your education. We're here to give it back.
 					</Typography>
 				</div>
 				<Slide in={checked} timeout={1500} in={enter} direction="left">

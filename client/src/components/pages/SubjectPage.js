@@ -5,28 +5,102 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 
-import MainPageButtons from '../general/MainPageButtons';
+import DefaultAppBar from '../general/DefaultAppBar';
+import SubjectCard from '../general/SubjectCard';
 
 const SubjectPage = () => {
-	const useStyles = makeStyles((theme) => ({}));
+	const useStyles = makeStyles((theme) => ({
+		banner: {
+			width: '100%',
+			height: 300,
+			backgroundImage: `url("https://www.oxygenna.com/wp-content/uploads/2015/11/18.jpg")`,
+			display: 'flex',
+			flexDirection: 'column',
+			position: 'relative',
+			justifyContent: 'center',
+			alignItems: 'center',
+			paddingLeft: 10,
+			paddingRight: 10,
+		},
+		subjectListWrapper: {
+			width: '100%',
+			backgroundColor: '#FAFAFA',
+			height: 'auto',
+		},
+		subjectGridWrapper: {
+			paddingTop: 20,
+			paddingLeft: "5%",
+			paddingRight: "5%",
+			paddingBottom: 20,
+		},
+		subjectCard: {
+			[theme.breakpoints.down('xs')]: {
+				height: 100,
+			},
+			height: 250,
+			width: '100%',
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			cursor: 'pointer',
+			transition: 'all 200ms',
+			'&:hover': {
+				transform: 'translateY(-3px) scale(1.1)',
+			},
+		},
+	}));
 
 	const classes = useStyles();
 
-    const contactUs = () => {
-        document.location.href = "/?section=contact-us"
-    }
+	const contactUs = () => {
+		document.location.href = '/?section=contact-us';
+	};
 
 	return (
 		<div>
-			<AppBar position="absolute" className={classes.appBar}>
-				<Toolbar
-					style={{ display: 'flex', justifyContent: 'space-between' }}
-				>
-					<Typography variant="h3">Real Tutor</Typography>
-                    <MainPageButtons contactus={contactUs}/>
-				</Toolbar>
-			</AppBar>
+			<DefaultAppBar contactus={contactUs} />
+			<div className={classes.banner}>
+				<br></br>
+				<Typography variant="h1" align="center">
+					Subject List
+				</Typography>
+			</div>
+			<div className={classes.subjectListWrapper}>
+				<div className={classes.subjectGridWrapper}>
+					<Typography variant="h2">A-levels</Typography>
+					<Grid
+						container
+						spacing={3}
+						justify="center"
+						alignItems="center"
+						className={classes.subjectGrid}
+					>
+						<SubjectCard title="Maths" />
+						<SubjectCard title="Further Maths" />
+						<SubjectCard title="Computer Science" />
+						<SubjectCard title="Physics" />
+						<SubjectCard title="Economics" />
+						<SubjectCard title="Art" />
+					</Grid>
+				</div>
+				<div className={classes.subjectGridWrapper}>
+					<Typography variant="h2">GCSEs</Typography>
+					<Grid
+						container
+						spacing={3}
+						justify="center"
+						alignItems="center"
+						className={classes.subjectGrid}
+					>
+						<SubjectCard title="Physics" />
+						<SubjectCard title="Computer Science" />
+						<SubjectCard title="Art" />
+						<SubjectCard title="Graphics" />
+					</Grid>
+				</div>
+			</div>
 		</div>
 	);
 };

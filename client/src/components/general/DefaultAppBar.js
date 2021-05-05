@@ -11,7 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const MainPageButtons = (props) => {
+const DefaultAppBar = (props) => {
 	const [width, setWidth] = useState(window.innerWidth);
 	const [open, setOpen] = useState(false);
 
@@ -53,51 +53,56 @@ const MainPageButtons = (props) => {
 	const contactUsMobile = () => {
 		props.contactus();
 		setOpen(false);
-	}
+	};
 
 	if (width < 750) {
 		return (
-			<div>
-				<IconButton onClick={handleDrawerOpen}>
-					<MenuIcon color="secondary" />
-				</IconButton>
-				<SwipeableDrawer
-					open={open}
-					onClose={handleDrawerClose}
-					onOpen={handleDrawerOpen}
-					disableRestoreFocus
+			<AppBar position="absolute" className={classes.appBar}>
+				<Toolbar
+					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
-					<Button
-						variant="outlined"
-						color="secondary"
-						className={classes.drawerItem}
+					<Typography variant="h2">Real Tutor</Typography>
+					<IconButton onClick={handleDrawerOpen}>
+						<MenuIcon color="secondary" />
+					</IconButton>
+					<SwipeableDrawer
+						open={open}
+						onClose={handleDrawerClose}
+						onOpen={handleDrawerOpen}
+						disableRestoreFocus
 					>
-						About Us
-					</Button>
-					<Button
-						variant="outlined"
-						color="secondary"
-						className={classes.drawerItem}
-					>
-						Subjects
-					</Button>
-					<Button
-						variant="outlined"
-						color="secondary"
-						className={classes.drawerItem}
-					>
-						Our Team
-					</Button>
-					<Button
-						variant="contained"
-						color="secondary"
-						className={classes.drawerItem}
-						onClick={contactUsMobile}
-					>
-						Contact Us
-					</Button>
-				</SwipeableDrawer>
-			</div>
+						<Button
+							variant="outlined"
+							color="secondary"
+							className={classes.drawerItem}
+						>
+							About Us
+						</Button>
+						<Button
+							variant="outlined"
+							color="secondary"
+							className={classes.drawerItem}
+						>
+							Subjects
+						</Button>
+						<Button
+							variant="outlined"
+							color="secondary"
+							className={classes.drawerItem}
+						>
+							Our Team
+						</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							className={classes.drawerItem}
+							onClick={contactUsMobile}
+						>
+							Contact Us
+						</Button>
+					</SwipeableDrawer>
+				</Toolbar>
+			</AppBar>
 		);
 	} else {
 		return (
@@ -105,12 +110,23 @@ const MainPageButtons = (props) => {
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
-					<Typography variant="h3">Real Tutor</Typography>
+					<div
+						style={{ cursor: 'pointer' }}
+						onClick={() => (document.location.href = '/')}
+					>
+						<Typography variant="h3">Real Tutor</Typography>
+					</div>
 					<List className={classes.list}>
 						<Button color="secondary" className={classes.listItem}>
-							About Us
+							How it works
 						</Button>
-						<Button color="secondary" className={classes.listItem}>
+						<Button
+							color="secondary"
+							className={classes.listItem}
+							onClick={() =>
+								(document.location.href = '/subjects')
+							}
+						>
 							Subjects
 						</Button>
 						<Button color="secondary" className={classes.listItem}>
@@ -131,4 +147,4 @@ const MainPageButtons = (props) => {
 	}
 };
 
-export default MainPageButtons;
+export default DefaultAppBar;
