@@ -8,6 +8,8 @@ import CustomTextField from '../general/CustomTextField';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 
+import BannerBackground from '../../images/Banner.jpeg';
+
 function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -39,7 +41,8 @@ function Login() {
 				display: "flex",
 				marginLeft: 10,
 				flexDirection: "column",
-				/*background-image: url(https://damassets.autodesk.net/content/dam/mgs/mgs/brand-elements/patterns/smartpattern-principles-tessellation-680x400.jpg);*/
+				backgroundImage: `url(${BannerBackground})`,
+				backgroundSize: "cover",
 				[theme.breakpoints.down('xs')]: {
 					flex: 0,
 					marginLeft: 0
