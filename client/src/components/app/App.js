@@ -30,8 +30,8 @@ function App() {
 					/>
 					<Route path="/tutordashboard" component={TutorDashboard} />
 					<Route path="/stripe" component={StripeTest} />
-					<Route path="/subjects" component={SubjectPage} />
-					<Route path="/subjects/alevelmaths" component={ALevelMaths} />
+					<Route exact path="/subjects" component={SubjectPage} />
+					<Route exact path="/subjects/alevelmaths" component={ALevelMaths} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

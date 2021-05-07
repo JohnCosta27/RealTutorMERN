@@ -15,6 +15,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import transparentLogo from '../../images/TransparentLogo.png';
 import DefaultAppBar from '../general/DefaultAppBar';
+import Banner from '../StyledComponents/Banner';
 
 import BannerBackground from '../../images/Banner.jpeg';
 
@@ -194,25 +195,7 @@ const MainPage = () => {
 	return (
 		<div>
 			<DefaultAppBar contactus={contactUs} />
-			<div className={classes.banner}>
-				<div className={classes.name}>
-					<br></br>
-					<Typography variant="h1" style={{color: '#FAFAFA'}}>
-						Covid stole your education. We're here to give it back.
-					</Typography>
-				</div>
-				<Slide in={checked} timeout={1500} in={enter} direction="left">
-					<div className={classes.centeredWrapper}>
-						<Typography variant="h2" style={{color: '#FAFAFA'}}>£20 an hour (GCSE)</Typography>
-						<Typography variant="h2" style={{color: '#FAFAFA'}}>
-							£30 an hour (A-level)
-						</Typography>
-						<Typography variant="h3" color="secondary">
-							The future is online.
-						</Typography>
-					</div>
-				</Slide>
-			</div>
+			<Banner mainpage={true} />
 			<div
 				className={classes.smallSection}
 				style={{

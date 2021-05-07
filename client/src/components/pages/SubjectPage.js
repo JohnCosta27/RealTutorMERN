@@ -9,26 +9,12 @@ import Grid from '@material-ui/core/Grid';
 
 import DefaultAppBar from '../general/DefaultAppBar';
 import SubjectCard from '../general/SubjectCard';
+import Banner from '../StyledComponents/Banner';
 
 import BannerBackground from '../../images/Banner.jpeg';
 
 const SubjectPage = () => {
 	const useStyles = makeStyles((theme) => ({
-		banner: {
-			width: '100%',
-			height: 500,
-			backgroundImage: `url(${BannerBackground})`,
-			backgroundSize: "cover",
-			backgroundRepeat: "no-repeat",
-			backgroundPositionY: -100,
-			display: 'flex',
-			flexDirection: 'column',
-			position: 'relative',
-			justifyContent: 'center',
-			alignItems: 'center',
-			paddingLeft: 10,
-			paddingRight: 10,
-		},
 		subjectListWrapper: {
 			width: '100%',
 			backgroundColor: '#FAFAFA',
@@ -66,12 +52,7 @@ const SubjectPage = () => {
 	return (
 		<div>
 			<DefaultAppBar contactus={contactUs} />
-			<div className={classes.banner}>
-				<br></br>
-				<Typography variant="h1" align="center" style={{color: '#FAFAFA'}}>
-					Subject List
-				</Typography>
-			</div>
+			<Banner small={true} />
 			<div className={classes.subjectListWrapper}>
 				<div className={classes.subjectGridWrapper}>
 					<Typography variant="h2">A-levels</Typography>
