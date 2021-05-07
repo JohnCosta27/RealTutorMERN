@@ -61,7 +61,12 @@ const DefaultAppBar = (props) => {
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
-					<Typography variant="h2">Real Tutor</Typography>
+					<div
+						style={{ cursor: 'pointer' }}
+						onClick={() => (document.location.href = '/')}
+					>
+						<Typography variant="h3">Real Tutor</Typography>
+					</div>
 					<IconButton onClick={handleDrawerOpen}>
 						<MenuIcon color="secondary" />
 					</IconButton>

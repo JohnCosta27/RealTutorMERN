@@ -39,10 +39,10 @@ function Login() {
 				flex: 4,
 				height: "100%",
 				display: "flex",
-				marginLeft: 10,
 				flexDirection: "column",
 				backgroundImage: `url(${BannerBackground})`,
 				backgroundSize: "cover",
+				backgroundPositionX: -700,
 				[theme.breakpoints.down('xs')]: {
 					flex: 0,
 					marginLeft: 0

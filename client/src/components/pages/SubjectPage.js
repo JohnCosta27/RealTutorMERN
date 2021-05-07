@@ -19,6 +19,7 @@ const SubjectPage = () => {
 			height: 500,
 			backgroundImage: `url(${BannerBackground})`,
 			backgroundSize: "cover",
+			backgroundRepeat: "no-repeat",
 			backgroundPositionY: -100,
 			display: 'flex',
 			flexDirection: 'column',

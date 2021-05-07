@@ -31,6 +31,13 @@ const MainPage = () => {
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
+			backgroundPositionX: 'center',
+			[theme.breakpoints.down('sm')]: {
+				height: 600
+			},
+			[theme.breakpoints.down('xs')]: {
+				height: 800,
+			}
 		},
 		centeredWrapper: {
 			width: '80%',
@@ -63,12 +70,6 @@ const MainPage = () => {
 			height: '100vh',
 			[theme.breakpoints.down('md')]: {
 				height: '120vh',
-			},
-			[theme.breakpoints.down('sm')]: {
-				height: '140vh',
-			},
-			[theme.breakpoints.down('xs')]: {
-				height: '160vh',
 			},
 		},
 		sectionPaper: {
@@ -120,13 +121,7 @@ const MainPage = () => {
 			display: 'flex',
 			height: 600,
 			[theme.breakpoints.down('md')]: {
-				height: 800,
-			},
-			[theme.breakpoints.down('sm')]: {
-				height: 1000,
-			},
-			[theme.breakpoints.down('xs')]: {
-				height: 1200,
+				height: "auto",
 			},
 		},
 		image: {
@@ -473,7 +468,7 @@ const MainPage = () => {
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item lg={3} md={4} sm={6} xs={12}>
+						<Grid item lg={3} md={4} sm={6} xs={12} onClick={() => document.location.href="/subjects"}>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
 									View all
