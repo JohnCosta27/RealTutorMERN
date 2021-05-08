@@ -39,7 +39,7 @@ const Banner = (props) => {
 				height: 600,
 			},
 			[theme.breakpoints.down('xs')]: {
-				height: (props.mainpage) ? 800 : height,
+				height: props.mainpage ? 800 : height,
 			},
 		},
 		name: {
@@ -86,10 +86,9 @@ const Banner = (props) => {
 			<div
 				className={classes.banner}
 				style={{
-					backgroundPositionY: -100,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-					backgroundRepeat: 'no-repeat'
+					justifyContent: 'center',
+					alignItems: 'center',
+					backgroundRepeat: 'no-repeat',
 				}}
 			>
 				<br></br>
@@ -98,7 +97,14 @@ const Banner = (props) => {
 					align="center"
 					style={{ color: '#FAFAFA' }}
 				>
-					Subject List
+					{props.title}
+				</Typography>
+				<Typography
+					variant="h3"
+					align="center"
+					style={{ color: '#FAFAFA' }}
+				>
+					{props.subtitle}
 				</Typography>
 			</div>
 		);

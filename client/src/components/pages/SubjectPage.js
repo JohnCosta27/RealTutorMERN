@@ -52,7 +52,7 @@ const SubjectPage = () => {
 	return (
 		<div>
 			<DefaultAppBar contactus={contactUs} />
-			<Banner small={true} />
+			<Banner small={true} title="Subject list"/>
 			<div className={classes.subjectListWrapper}>
 				<div className={classes.subjectGridWrapper}>
 					<Typography variant="h2">A-levels</Typography>
