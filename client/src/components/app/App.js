@@ -7,6 +7,8 @@ import TutorDashboard from '../pages/TutorDashboard';
 import MainPage from '../pages/MainPage';
 import StripeTest from '../pages/StripeTest';
 import SubjectPage from '../pages/SubjectPage';
+import HowItWorks from '../pages/HowItWorks';
+import Team from '../pages/Team';
 
 import ALevelMaths from '../subjects/Alevelmaths';
 
@@ -30,6 +32,8 @@ function App() {
 					/>
 					<Route path="/tutordashboard" component={TutorDashboard} />
 					<Route path="/stripe" component={StripeTest} />
+					<Route path="/how-it-works" component={HowItWorks} />
+					<Route path="/team" component={Team} />
 					<Route exact path="/subjects" component={SubjectPage} />
 					<Route exact path="/subjects/alevelmaths" component={ALevelMaths} />
 				</Switch>

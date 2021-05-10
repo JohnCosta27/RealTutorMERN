@@ -18,6 +18,7 @@ const Banner = (props) => {
 
 	useEffect(() => {
 		if (props.small) {
+			console.log("Hello");
 			setHeight(600);
 		}
 		setTimeout(() => {
@@ -35,6 +36,7 @@ const Banner = (props) => {
 			flexDirection: 'column',
 			position: 'relative',
 			backgroundPositionX: 'center',
+			backgroundPositionY: 'center',
 			[theme.breakpoints.down('sm')]: {
 				height: 600,
 			},

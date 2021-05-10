@@ -45,13 +45,9 @@ const SubjectPage = () => {
 
 	const classes = useStyles();
 
-	const contactUs = () => {
-		document.location.href = '/?section=contact-us';
-	};
-
 	return (
 		<div>
-			<DefaultAppBar contactus={contactUs} />
+			<DefaultAppBar />
 			<Banner small={true} title="Subject list"/>
 			<div className={classes.subjectListWrapper}>
 				<div className={classes.subjectGridWrapper}>

@@ -50,6 +50,10 @@ const DefaultAppBar = (props) => {
 
 	const classes = useStyles();
 
+	const contactUs = () => {
+		document.location.href = '/?section=contact-us';
+	};
+
 	const contactUsMobile = () => {
 		props.contactus();
 		setOpen(false);
@@ -80,8 +84,11 @@ const DefaultAppBar = (props) => {
 							variant="outlined"
 							color="secondary"
 							className={classes.drawerItem}
+							onClick={() =>
+								(document.location.href = '/how-it-works')
+							}
 						>
-							About Us
+							How it works
 						</Button>
 						<Button
 							variant="outlined"
@@ -94,6 +101,9 @@ const DefaultAppBar = (props) => {
 							variant="outlined"
 							color="secondary"
 							className={classes.drawerItem}
+							onClick={() =>
+								(document.location.href = '/team')
+							}
 						>
 							Our Team
 						</Button>
@@ -122,7 +132,13 @@ const DefaultAppBar = (props) => {
 						<Typography variant="h3">Real Tutor</Typography>
 					</div>
 					<List className={classes.list}>
-						<Button color="secondary" className={classes.listItem}>
+						<Button
+							color="secondary"
+							className={classes.listItem}
+							onClick={() =>
+								(document.location.href = '/how-it-works')
+							}
+						>
 							How it works
 						</Button>
 						<Button
@@ -134,14 +150,20 @@ const DefaultAppBar = (props) => {
 						>
 							Subjects
 						</Button>
-						<Button color="secondary" className={classes.listItem}>
+						<Button
+							color="secondary"
+							className={classes.listItem}
+							onClick={() =>
+								(document.location.href = '/team')
+							}
+						>
 							Our Team
 						</Button>
 						<Button
 							variant="contained"
 							color="secondary"
 							className={classes.listItem}
-							onClick={props.contactus}
+							onClick={contactUs}
 						>
 							Contact Us
 						</Button>
