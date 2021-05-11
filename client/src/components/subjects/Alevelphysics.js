@@ -6,10 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
-import John from '../../images/People/john.jpg';
 import Ronnie from '../../images/People/ronnie.jpg';
 
-const Alevelmaths = () => {
+const Alevelphysics = () => {
 	const useStyles = makeStyles((theme) => ({
 		cardDisplay: {
 			display: 'flex',
@@ -49,29 +48,37 @@ const Alevelmaths = () => {
 		<div>
 			<DefaultAppBar />
 			<Banner
-				title="A-level Maths"
-				subtitle="One of the most important A-levels"
+				title="A-level Physics"
+				subtitle="Your next step to unlocking the universe, and all its secrets."
 			/>
 			<Section background="offwhite" centered={true} small={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>
 					<Typography variant="body2">
-						The only way you get better at maths is by doing maths.
-						Our Maths lessons are question based, which means as the
-						student learns new content we actively show them exam
-						questions with topics they just learnt, this way the
-						student can get accustomed to the type of questions as
-						well as reinforcing their knowledge.
+						Physics is often called one of the hardest A-levels,
+						next to Further Maths and Chemistry. However, it doesn’t
+						have to be. At Real Tutor, we offer physics tutoring
+						that sheds new light upon what can be a rather daunting
+						subject. Concepts that often seem counterintuitive and
+						backwards can be explained in a multitude of different
+						ways. Most students tend to struggle with the concepts
+						and the theory, as opposed to the mathematics. Despite
+						this, both will still be covered in the necessary detail
+						that fits the needs of the student.
 					</Typography>
 					<br></br>
 					<Typography variant="body2">
-						We also make sure to constantly revise what we have done
-						before, this will allow for reinforced learning to come
-						into play which means the student will not forgot
-						content, which so very often happens in colleges. This
-						is possible due to our custom made software which tracks
-						progress and can tell us exactly what the student knows.
+						At the end of each session, the student will be given a
+						worked example, and exam questions that cover the
+						content in that lesson. These will not be answered under
+						exam conditions however. The tutor will be there at all
+						times during the session to answer questions. Also,
+						depending on how the tutor feels the student is
+						progressing, the student may be given surprise questions
+						on previously covered topics, as a form of revision.
+						Speaking of which, constant revision will be a prime
+						aspect of ensuring a student’s growth in physics.
 					</Typography>
 					<br></br>
 					<br></br>
@@ -79,47 +86,47 @@ const Alevelmaths = () => {
 				<div>
 					<div style={{ display: 'flex' }}>
 						<Typography
-							variant="h4"
+							variant="h5"
 							color="secondary"
 							style={{ marginRight: 10 }}
 						>
 							1.
 						</Typography>
-						<Typography variant="h4" color="primary">
-							Question based learning
+						<Typography variant="h5" color="primary">
+							Tackling difficult theory on a conceptual level
 						</Typography>
 					</div>
 					<br></br>
 					<div style={{ display: 'flex' }}>
 						<Typography
-							variant="h4"
+							variant="h5"
 							color="secondary"
 							style={{ marginRight: 10 }}
 						>
 							2.
 						</Typography>
-						<Typography variant="h4" color="primary">
-							Progress tracking
+						<Typography variant="h5" color="primary">
+							Restating problems using analogy
 						</Typography>
 					</div>
 					<br></br>
 					<div style={{ display: 'flex' }}>
 						<Typography
-							variant="h4"
+							variant="h5"
 							color="secondary"
 							style={{ marginRight: 10 }}
 						>
 							3.
 						</Typography>
-						<Typography variant="h4" color="primary">
-							Constant revision
+						<Typography variant="h5" color="primary">
+							Surprise questions to test knowledge retention
 						</Typography>
 					</div>
 					<br></br>
 				</div>
 			</Section>
 
-			<Section background="lightteal" medium={true} centered={true}>
+			<Section background="lightteal" small={true}>
 				<div style={{ width: '100%' }}>
 					<div style={{ maxWidth: 800, float: 'left' }}>
 						<Typography variant="h1" align="left">
@@ -127,21 +134,9 @@ const Alevelmaths = () => {
 						</Typography>
 						<br></br>
 						<Typography variant="h3" align="left">
-							John
-						</Typography>
-						<Typography variant="body2" align="left">
-							I am taking a Computer Science degree at Royal
-							Holloway, I am also the CEO of Real Tutor. Maths has
-							been my favourite subject until I met computer
-							science but it still holds a crutial place in my
-							heart. I have an A* in A-level Maths, an A in
-							Further Maths and an A in Computer Science, as well
-							as years of tutoring experience.
-						</Typography>
-						<Typography variant="h3" align="right">
 							Ronnie
 						</Typography>
-						<Typography variant="body2" align="right">
+						<Typography variant="body2" align="left">
 							I am an undergraduate student at Southampton
 							University, a part of the Russell Group, and I am
 							working towards a Master’s Degree in Physics with
@@ -161,18 +156,11 @@ const Alevelmaths = () => {
 					</div>
 				</div>
 				<div className={classes.tutorPicturesWrapper}>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${John})` }}
-					></div>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Ronnie})` }}
-					></div>
+					<div className={classes.tutorPictures} style={{backgroundImage: `url(${Ronnie})`}}></div>
 				</div>
 			</Section>
 		</div>
 	);
 };
 
-export default Alevelmaths;
+export default Alevelphysics;

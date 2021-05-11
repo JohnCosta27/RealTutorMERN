@@ -9,7 +9,7 @@ import Banner from '../StyledComponents/Banner';
 import John from '../../images/People/john.jpg';
 import Ronnie from '../../images/People/ronnie.jpg';
 
-const Alevelmaths = () => {
+const Alevelfurthermaths = () => {
 	const useStyles = makeStyles((theme) => ({
 		cardDisplay: {
 			display: 'flex',
@@ -49,29 +49,32 @@ const Alevelmaths = () => {
 		<div>
 			<DefaultAppBar />
 			<Banner
-				title="A-level Maths"
-				subtitle="One of the most important A-levels"
+				title="A-level Further Maths"
+				subtitle="The most difficult A-level"
 			/>
 			<Section background="offwhite" centered={true} small={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>
 					<Typography variant="body2">
-						The only way you get better at maths is by doing maths.
-						Our Maths lessons are question based, which means as the
-						student learns new content we actively show them exam
-						questions with topics they just learnt, this way the
-						student can get accustomed to the type of questions as
-						well as reinforcing their knowledge.
+						A-level Further Maths is in a whole different league to
+						other A-levels, in fact it is so sought after that
+						students with it achieve on average £5000 more in their
+						salaries compared to their peers. It is a subject that
+						needs incredible ability and attention and we are here
+						to help you. We take a very similar approach to A-level
+						Maths, however we take a more theoretical approach, as
+						much of the content is incredibly dense, so
+						understanding what you are doing, before attempting
+						questions is extremely important.
 					</Typography>
 					<br></br>
 					<Typography variant="body2">
-						We also make sure to constantly revise what we have done
-						before, this will allow for reinforced learning to come
-						into play which means the student will not forgot
-						content, which so very often happens in colleges. This
-						is possible due to our custom made software which tracks
-						progress and can tell us exactly what the student knows.
+						We will make sure to constantly look at the A-level as a
+						whole and make sure that you know what you have to do
+						for each topic, by showing you relevant exam questions
+						and how you will break these down to solve the very
+						complex problems that can be presented to you.
 					</Typography>
 					<br></br>
 					<br></br>
@@ -86,7 +89,7 @@ const Alevelmaths = () => {
 							1.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Question based learning
+							Theoretical Approach
 						</Typography>
 					</div>
 					<br></br>
@@ -99,7 +102,7 @@ const Alevelmaths = () => {
 							2.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Progress tracking
+							Constant exam practice
 						</Typography>
 					</div>
 					<br></br>
@@ -112,7 +115,7 @@ const Alevelmaths = () => {
 							3.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Constant revision
+							Deep understanding
 						</Typography>
 					</div>
 					<br></br>
@@ -175,4 +178,4 @@ const Alevelmaths = () => {
 	);
 };
 
-export default Alevelmaths;
+export default Alevelfurthermaths;

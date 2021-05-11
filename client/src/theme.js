@@ -29,6 +29,12 @@ let theme = createMuiTheme({
 		h3: {
 			fontWeight: 'lighter',
 		},
+		h4: {
+			fontWeight: 'lighter'
+		},
+		h5: {
+			fontWeight: 'lighter'
+		},
 		body2: {
 			fontWeight: 'lighter',
 			fontSize: '20px',

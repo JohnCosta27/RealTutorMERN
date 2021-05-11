@@ -7,9 +7,8 @@ import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
 import John from '../../images/People/john.jpg';
-import Ronnie from '../../images/People/ronnie.jpg';
 
-const Alevelmaths = () => {
+const Alevelcomputerscience = () => {
 	const useStyles = makeStyles((theme) => ({
 		cardDisplay: {
 			display: 'flex',
@@ -49,34 +48,37 @@ const Alevelmaths = () => {
 		<div>
 			<DefaultAppBar />
 			<Banner
-				title="A-level Maths"
-				subtitle="One of the most important A-levels"
+				title="A-level Computer Science"
+				subtitle="A way to understand the digital world."
 			/>
 			<Section background="offwhite" centered={true} small={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>
 					<Typography variant="body2">
-						The only way you get better at maths is by doing maths.
-						Our Maths lessons are question based, which means as the
-						student learns new content we actively show them exam
-						questions with topics they just learnt, this way the
-						student can get accustomed to the type of questions as
-						well as reinforcing their knowledge.
+						We aim to make you understand computers and the
+						technology world, there is a lot of theory involved with
+						this A-level and a lot of things that you need to
+						remember, and to do this we will present information in
+						an interactive way that actually explains the world
+						around you, instead of just sitting you down and
+						lecturing you. We will show you how the internet works,
+						how you could create tiny networks, develop your own
+						project, and even a sneak peak at the code that makes up
+						our systems.
 					</Typography>
 					<br></br>
 					<Typography variant="body2">
-						We also make sure to constantly revise what we have done
-						before, this will allow for reinforced learning to come
-						into play which means the student will not forgot
-						content, which so very often happens in colleges. This
-						is possible due to our custom made software which tracks
-						progress and can tell us exactly what the student knows.
+						You will undertake your own tiny projects as you learn
+						as well as constantly looking at exam questions and
+						looking ahead in the specification to know what you need
+						to do next, so you really understand exactly what you
+						need to learn.
 					</Typography>
 					<br></br>
 					<br></br>
 				</div>
-				<div>
+				<div style={{minWidth: 400}}>
 					<div style={{ display: 'flex' }}>
 						<Typography
 							variant="h4"
@@ -86,7 +88,7 @@ const Alevelmaths = () => {
 							1.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Question based learning
+							Experiment based learning
 						</Typography>
 					</div>
 					<br></br>
@@ -99,7 +101,7 @@ const Alevelmaths = () => {
 							2.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Progress tracking
+							Taught by the CEO
 						</Typography>
 					</div>
 					<br></br>
@@ -112,7 +114,7 @@ const Alevelmaths = () => {
 							3.
 						</Typography>
 						<Typography variant="h4" color="primary">
-							Constant revision
+							Actual coding
 						</Typography>
 					</div>
 					<br></br>
@@ -138,26 +140,6 @@ const Alevelmaths = () => {
 							Further Maths and an A in Computer Science, as well
 							as years of tutoring experience.
 						</Typography>
-						<Typography variant="h3" align="right">
-							Ronnie
-						</Typography>
-						<Typography variant="body2" align="right">
-							I am an undergraduate student at Southampton
-							University, a part of the Russell Group, and I am
-							working towards a Master’s Degree in Physics with
-							Mathematics. I have an A* in Maths, an A in Physics
-							and a B in Further Maths, coupled with experience in
-							tutoring Physics and Maths. Physics was unlocked as
-							a passion of mine once I started my GCSE learning in
-							Year 10. I would research topics far beyond the
-							scope of the GCSE course. It lit a fire underneath
-							me, a burning passion to grow my knowledge, a
-							conquest in life that will never end. Mathematics
-							naturally followed on from my passion in physics,
-							for it is the language of the universe.
-						</Typography>
-						<br></br>
-						<br></br>
 					</div>
 				</div>
 				<div className={classes.tutorPicturesWrapper}>
@@ -165,14 +147,10 @@ const Alevelmaths = () => {
 						className={classes.tutorPictures}
 						style={{ backgroundImage: `url(${John})` }}
 					></div>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Ronnie})` }}
-					></div>
 				</div>
 			</Section>
 		</div>
 	);
 };
 
-export default Alevelmaths;
+export default Alevelcomputerscience;

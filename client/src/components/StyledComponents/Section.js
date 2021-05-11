@@ -1,9 +1,21 @@
-import react from 'react';
+import react, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import clsx from 'clsx';
 
 const Section = (props) => {
+
+	const [height, setHeight] = useState(600);
+
+	useEffect(() => {
+		if (props.small) {
+			setHeight(600)
+		} else if (props.medium) {
+			setHeight(800)
+		} else {
+			setHeight('100vh');
+		}
+	}, [])
 
 	const useStyles = makeStyles((theme) => ({
 		sectionPaper: {
@@ -27,7 +39,7 @@ const Section = (props) => {
 		smallSection: {
 			width: '100%',
 			display: 'flex',
-			height: ((props.small) ? 600 : '100vh'),
+			height: height,
 			[theme.breakpoints.down('md')]: {
 				height: 'auto',
 			},

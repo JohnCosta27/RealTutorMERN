@@ -11,6 +11,9 @@ import HowItWorks from '../pages/HowItWorks';
 import Team from '../pages/Team';
 
 import ALevelMaths from '../subjects/Alevelmaths';
+import ALevelFurtherMaths from '../subjects/Alevelfurthermaths';
+import ALevelPhysics from '../subjects/Alevelphysics';
+import ALevelComputerScience from '../subjects/Alevelcomputerscience';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -36,6 +39,9 @@ function App() {
 					<Route path="/team" component={Team} />
 					<Route exact path="/subjects" component={SubjectPage} />
 					<Route exact path="/alevelmaths" component={ALevelMaths} />
+					<Route exact path="/alevelfurthermaths" component={ALevelFurtherMaths} />
+					<Route exact path="/alevelphysics" component={ALevelPhysics} />
+					<Route exact path="/alevelcomputerscience" component={ALevelComputerScience} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

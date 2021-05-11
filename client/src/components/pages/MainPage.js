@@ -28,17 +28,17 @@ const MainPage = () => {
 			width: '100%',
 			height: 800,
 			backgroundImage: `url(${BannerBackground})`,
-			backgroundSize: "cover",
+			backgroundSize: 'cover',
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
 			backgroundPositionX: 'center',
 			[theme.breakpoints.down('sm')]: {
-				height: 600
+				height: 600,
 			},
 			[theme.breakpoints.down('xs')]: {
 				height: 800,
-			}
+			},
 		},
 		centeredWrapper: {
 			width: '80%',
@@ -122,7 +122,7 @@ const MainPage = () => {
 			display: 'flex',
 			height: 600,
 			[theme.breakpoints.down('md')]: {
-				height: "auto",
+				height: 'auto',
 			},
 		},
 		image: {
@@ -413,8 +413,7 @@ const MainPage = () => {
 							sm={6}
 							xs={12}
 							onClick={() =>
-								(document.location.href =
-									'/subjects/alevelmaths')
+								(document.location.href = '/alevelmaths')
 							}
 						>
 							<Paper className={classes.subjectCard}>
@@ -423,7 +422,17 @@ const MainPage = () => {
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item lg={3} md={4} sm={6} xs={12}>
+						<Grid
+							item
+							lg={3}
+							md={4}
+							sm={6}
+							xs={12}
+							onClick={() =>
+								(document.location.href =
+									'/alevelfurthermaths')
+							}
+						>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
 									A-level Further Maths
@@ -432,8 +441,15 @@ const MainPage = () => {
 						</Grid>
 						<Grid item lg={3} md={4} sm={6} xs={12}>
 							<Paper className={classes.subjectCard}>
-								<Typography variant="h3" align="center">
-									GCSE Sciences
+								<Typography
+									variant="h3"
+									align="center"
+									onClick={() =>
+										(document.location.href =
+											'/alevelphysics')
+									}
+								>
+									A-level Physics
 								</Typography>
 							</Paper>
 						</Grid>
@@ -444,14 +460,33 @@ const MainPage = () => {
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item lg={3} md={4} sm={6} xs={12}>
+						<Grid
+							item
+							lg={3}
+							md={4}
+							sm={6}
+							xs={12}
+							onClick={() =>
+								(document.location.href =
+									'/alevelcomputerscience')
+							}
+						>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
 									A-level Computer Science
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item lg={3} md={4} sm={6} xs={12} onClick={() => document.location.href="/subjects"}>
+						<Grid
+							item
+							lg={3}
+							md={4}
+							sm={6}
+							xs={12}
+							onClick={() =>
+								(document.location.href = '/subjects')
+							}
+						>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
 									View all

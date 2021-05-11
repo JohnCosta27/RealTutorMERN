@@ -28,7 +28,7 @@ const SubjectCard = (props) => {
 	const classes = useStyles();
 
 	return (
-			<Grid item lg={3} md={4} sm={6} xs={12}>
+			<Grid item lg={3} md={4} sm={6} xs={12} onClick={props.onClick}>
 				<Paper className={classes.subjectCard} elevation={4}>
 					<Typography variant="h3" align="center">{props.title}</Typography>
 				</Paper>

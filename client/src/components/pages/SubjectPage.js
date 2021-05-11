@@ -22,8 +22,8 @@ const SubjectPage = () => {
 		},
 		subjectGridWrapper: {
 			paddingTop: 20,
-			paddingLeft: "5%",
-			paddingRight: "5%",
+			paddingLeft: '5%',
+			paddingRight: '5%',
 			paddingBottom: 20,
 		},
 		subjectCard: {
@@ -48,7 +48,7 @@ const SubjectPage = () => {
 	return (
 		<div>
 			<DefaultAppBar />
-			<Banner small={true} title="Subject list"/>
+			<Banner small={true} title="Subject list" />
 			<div className={classes.subjectListWrapper}>
 				<div className={classes.subjectGridWrapper}>
 					<Typography variant="h2">A-levels</Typography>
@@ -59,10 +59,31 @@ const SubjectPage = () => {
 						alignItems="center"
 						className={classes.subjectGrid}
 					>
-						<SubjectCard title="Maths" />
-						<SubjectCard title="Further Maths" />
-						<SubjectCard title="Computer Science" />
-						<SubjectCard title="Physics" />
+						<SubjectCard
+							title="Maths"
+							onClick={() =>
+								(document.location.href = '/alevelmaths')
+							}
+						/>
+						<SubjectCard
+							title="Further Maths"
+							onClick={() =>
+								(document.location.href = '/alevelfurthermaths')
+							}
+						/>
+						<SubjectCard
+							title="Computer Science"
+							onClick={() =>
+								(document.location.href =
+									'/alevelcomputerscience')
+							}
+						/>
+						<SubjectCard
+							title="Physics"
+							onClick={() =>
+								(document.location.href = '/alevelphysics')
+							}
+						/>
 						<SubjectCard title="Economics" />
 						<SubjectCard title="Art" />
 					</Grid>
