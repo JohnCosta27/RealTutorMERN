@@ -9,6 +9,12 @@ let theme = createMuiTheme({
 		secondary: {
 			main: teal[500],
 		},
+		offWhite: {
+			main: '#FAFAFA'
+		},
+		lightTeal: {
+			main: teal[200]
+		},
 		cards: '#FFFFFF',
 		divBackground: '#009688',
 		leftNav: '#313131',
