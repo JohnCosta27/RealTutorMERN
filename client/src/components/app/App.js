@@ -35,7 +35,7 @@ function App() {
 					<Route path="/how-it-works" component={HowItWorks} />
 					<Route path="/team" component={Team} />
 					<Route exact path="/subjects" component={SubjectPage} />
-					<Route exact path="/subjects/alevelmaths" component={ALevelMaths} />
+					<Route exact path="/alevelmaths" component={ALevelMaths} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

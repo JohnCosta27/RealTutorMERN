@@ -2,8 +2,10 @@ const express = require('express');
 const accounts = express.Router();
 const Account = require('../models/Account');
 const Lesson = require('../models/Lesson');
+const Session = require('../models/Session');
 const SpecificationPoint = require('../models/SpecificationPoints');
 const sha256 = require('js-sha256');
+const { db } = require('../models/Account');
 
 accounts.post('/login', async (req, res) => {
 	//Validation, make sure email and password are in the request (security and all that).
@@ -20,31 +22,48 @@ accounts.post('/login', async (req, res) => {
 					req.body.password + account.passwordsalt
 				);
 				if (hashedPassword == account.password) {
+					let found = false;
+					for (let session of sessions) {
+						if (String(session.id) == String(account._id)) {
+							refreshSession(session.cookie);
+							found = true;
+							break;
+						}
+					}
+
 					let level;
 					if (account.type == 'student') level = 1;
 					else if (account.type == 'tutor') level = 2;
 					else if (account.type == 'manager') level = 3;
 					else level = 0;
 
-					account.cookie = randomString(32);
-					account.loggedIn = true;
-					addSession(
-						account.cookie,
-						account._id,
-						new Date().getTime()
-					);
-					await account.save();
+					if (found) {
+						res.json({
+							cookie: account.cookie,
+							level: level,
+							id: account._id,
+						});
+					} else {
+						account.cookie = randomString(32);
+						account.loggedIn = true;
+						addSession(
+							account.cookie,
+							account._id,
+							new Date().getTime()
+						);
 
-					res.json({
-						cookie: account.cookie,
-						level: level,
-						id: account._id,
-					});
+						await account.save();
+
+						res.json({
+							cookie: account.cookie,
+							level: level,
+							id: account._id,
+						});
+					}
 				}
 			}
 		} catch (error) {
 			res.json({ error: error });
-			console.log(error);
 		}
 	}
 });
@@ -100,7 +119,6 @@ accounts.post('/addlesson', async (req, res) => {
 						res.json({ lesson: 'Saved successfully' });
 					} catch (err) {
 						res.json({ error: err });
-						console.log(err);
 					}
 				} else {
 					res.json({
@@ -509,7 +527,8 @@ accounts.get('/getremaininghours', async (req, res) => {
 						validation.id,
 						req.query.studentid
 					))) ||
-				(validation.level == 1 && String(validation.id) == String(req.query.studentid))
+				(validation.level == 1 &&
+					String(validation.id) == String(req.query.studentid))
 			)
 		) {
 			res.json({ error: 'Authentication error' });
@@ -735,43 +754,87 @@ async function tutorLesson(tutorid, lessonid) {
 }
 
 let sessions = [];
+getDBsessions();
 
-function addSession(cookie, id, date) {
+async function getDBsessions() {
+	const sessionsdb = await Session.find({ endDate: null });
+	for (let s of sessionsdb) {
+		sessions.push({
+			id: s.id,
+			cookie: s.cookie,
+			date: s.date,
+			sessionid: s._id,
+		});
+	}
+}
+
+async function addSession(cookie, id, date) {
 	let found = false;
 	for (let session of sessions) {
 		if (String(session.id) == String(id)) {
+			const dbSession = await Session.findById(session.sessionid);
+			dbSession.date = date;
+			dbSession.save();
+
 			session.cookie = cookie;
 			session.date = date;
 			found = true;
+
 			break;
 		}
 	}
 
 	if (!found) {
-		sessions.push({ id: id, cookie: cookie, date: date });
+		const newdbSession = new Session({
+			id: id,
+			cookie: cookie,
+			date: date,
+		});
+		sessions.push({
+			id: id,
+			cookie: cookie,
+			date: date,
+			sessionid: newdbSession._id,
+		});
+		newdbSession.save();
 	}
 }
 
-function refreshSession(cookie) {
+async function refreshSession(cookie) {
 	for (let session of sessions) {
 		if (session.cookie == cookie) {
-			session.date = new Date().getTime();
+			let newDate = new Date().getTime();
+			session.date = newDate;
+
+			const dbSession = await Session.findById(session.sessionid);
+			dbSession.date = newDate;
+			dbSession.save();
+
+			break;
 		}
 	}
 }
 
-setInterval(checkExpired, 5000);
+setInterval(checkExpired, 1000);
 
 //After an hour the cookie expires
 async function checkExpired() {
 	for (let i = 0; i < sessions.length; i++) {
 		let session = sessions[i];
-		if (session.date + 3600000 < new Date().getTime()) {
+		let currentDate = new Date().getTime();
+		if (session.date + 3600000 < currentDate) {
+
+			const dbSession = await Session.findById(session.sessionid);
+
+			dbSession.endDate = currentDate;
+			dbSession.save();
+
 			sessions.splice(i, 1);
 			const account = await Account.findById(session.id);
 			account.loggedIn = 0;
 			account.cookie = '';
 			await account.save();
+
 		}
 	}
 }
