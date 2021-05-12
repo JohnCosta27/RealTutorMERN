@@ -146,7 +146,7 @@ const StudentDashboard = () => {
 				/>
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
-						<Typography variant="h1">John Costa</Typography>
+						<Typography variant="h1">{name}</Typography>
 					</div>
 
 					{current === 0 ? (
