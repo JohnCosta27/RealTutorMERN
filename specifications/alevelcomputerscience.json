@@ -1,576 +1,576 @@
 [
-  {
-    "contentID": 1,
-    "content": "The Arithmetic and Logic Unit",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 2,
-    "content": "ALU",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 3,
-    "content": "Control Unit",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 4,
-    "content": "Registers",
-    "sub_content": [
-      "Program Counter (PC)",
-      "Accumulator (ACC)",
-      "Memory Address Register (MAR)",
-      "Memory Data Register (MDR)",
-      "Current Instruction Register (CIR)",
-      "Data bus",
-      "Address bus",
-      "Control bus"
-    ],
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 5,
-    "content": "The Fetch-Decode-Execute Cycle, including its effects on registers",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 6,
-    "content": "The factors affecting the performance of the CPU",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 7,
-    "content": "The use of pipelining in a processor to improve efficiency",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 8,
-    "content": "Von Neumann, Harvard and contemporary processor architecture",
-    "section": "1.1.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 9,
-    "content": "The differences between and uses of CISC and RISC processors",
-    "section": "1.1.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 10,
-    "content": "GPUs and their uses including those not related to graphics",
-    "section": "1.1.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 11,
-    "content": "Multicore and Parallel systems",
-    "section": "1.1.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 12,
-    "content": "How different input, output and storage devices can be applied to the solution of different problems",
-    "section": "1.1.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 13,
-    "content": "The uses of magnetic, flash and optical storage devices",
-    "section": "1.1.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 14,
-    "content": "RAM and ROM",
-    "section": "1.1.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 15,
-    "content": "Virtual storage",
-    "section": "1.1.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 16,
-    "content": "The need for, function and purpose of operating systems",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 17,
-    "content": "Memory Management paging, segmentation and virtual memory",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 18,
-    "content": "Interrupts, the role of interrupts and Interrupt Service Routines",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 19,
-    "content": "Scheduling",
-    "sub_content": [
-      "Round robin",
-      "First come first served",
-      "multi-level feedback queues",
-      "shortest job first",
-      "shortest remaining time"
-    ],
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 20,
-    "content": "Types of operating systems",
-    "sub_content": [
-      "Distributed",
-      "Embedded",
-      "Multi-tasking",
-      "Multi-user",
-      "Real Time"
-    ],
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 21,
-    "content": "BIOS",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 22,
-    "content": "Device drivers",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 23,
-    "content": "Virtual machines",
-    "section": "1.2.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 24,
-    "content": "The nature of applications, justifying suitable applications for a specific purpose",
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 25,
-    "content": "Utilities",
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 26,
-    "content": "Open source vs closed source",
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 27,
-    "content": "Translators",
-    "sub_content": ["Interpreters", "Compilers", "Assemblers"],
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 28,
-    "content": "Stages of compilation lexical analysis, syntax analysis, code generation and optimisation",
-    "sub_content": [
-      "Lexical analysis",
-      "Syntax analysis",
-      "Code generation",
-      "Optimisation"
-    ],
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 29,
-    "content": "Linkers, loaders and use of libraries",
-    "section": "1.2.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 30,
-    "content": "Development Methodologies",
-    "sub_content": [
-      "Waterfall cycle",
-      "Agile methodologies",
-      "Extreme programming",
-      "The spiral model",
-      "Rapid application development"
-    ],
-    "section": "1.2.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 31,
-    "content": "The relative merits and drawbacks of different methodologies and when they might be used",
-    "section": "1.2.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 32,
-    "content": "Writing and following algorithms",
-    "section": "1.2.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 33,
-    "content": "Need for and characteristics of a variety of programming paradigms",
-    "section": "1.2.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 34,
-    "content": "Procedural languages",
-    "section": "1.2.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 35,
-    "content": "Assembly language [including following and writing simple programs with the Little Man Computer instruction set]",
-    "section": "1.2.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 36,
-    "content": "Modes of addressing memory [immediate, direct, indirect and indexed]",
-    "section": "1.2.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 37,
-    "content": "Object-orientated languages",
-    "sub_content": [
-      "Classes",
-      "Objects",
-      "Methods",
-      "Attributes",
-      "Inheritance",
-      "Encapsulation",
-      "Polymorphism"
-    ],
-    "section": "1.2.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 38,
-    "content": "Lossy vs Lossless compression",
-    "section": "1.3.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 39,
-    "content": "Run length encoding and dictionary coding for lossless compression",
-    "section": "1.3.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 40,
-    "content": "Symmetric and asymmetric encryption",
-    "section": "1.3.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 41,
-    "content": "Different uses of hashing",
-    "section": "1.3.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 42,
-    "content": "Flat files",
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 43,
-    "content": "Relational Databases",
-    "sub_content": [
-      "Primary key",
-      "Foreign key",
-      "Secondary key",
-      "Entity relationship modelling",
-      "Normalisation",
-      "Indexing"
-    ],
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 44,
-    "content": "Methods of capturing, selecting, managing and exchanging data",
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 45,
-    "content": "Normalisation to 3NF",
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 46,
-    "content": "SQL – Interpret and modify",
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 47,
-    "content": "Referential integrity",
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 48,
-    "content": "Transacticd on processing",
-    "sub_content": [
-      "ACID: Atomicity, Consistency, Isolation, Durability",
-      "Record locking",
-      "Redundancy"
-    ],
-    "section": "1.3.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 49,
-    "content": "Characteristics of networks and the importance of protocols and standards",
-    "section": "1.3.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 50,
-    "content": "The internet structure",
-    "sub_content": [
-      "The TCP/IP stack",
-      "DNS",
-      "Protocol layering",
-      "LANs and WANs",
-      "Packet and circuit switching"
-    ],
-    "section": "1.3.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 51,
-    "content": "Network security and threats, use of firewalls, proxies and encryption",
-    "section": "1.3.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 52,
-    "content": "Network hardware",
-    "section": "1.3.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 53,
-    "content": "Client-server and peer to peer",
-    "section": "1.3.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 54,
-    "content": "HTML, CSS and JavaScript",
-    "section": "1.3.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 55,
-    "content": "Search engine indexing",
-    "section": "1.3.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 56,
-    "content": "PageRank algorithm",
-    "section": "1.3.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 57,
-    "content": "Server and client side processing",
-    "section": "1.3.4",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 58,
-    "content": "Represent positive integers in binary",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 59,
-    "content": "Use of sign and magnitude and two’s complement to represent negative numbers in binary",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 60,
-    "content": "Addition and subtraction of binary integers",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 61,
-    "content": "Represent positive integers in hexadecimal",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 62,
-    "content": "Convert positive integers between binary hexadecimal and denary",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 63,
-    "content": "Representation and normalisation of floating point numbers in binary",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 64,
-    "content": "Floating point arithmetic, positive and negative numbers, addition and subtraction",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 65,
-    "content": "Bitwise manipulation and masks: shifts, combining with AND, OR, and XOR",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 66,
-    "content": "How character sets are used to represent text",
-    "section": "1.4.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 67,
-    "content": "Arrays, records, lists, tuples",
-    "section": "1.4.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 68,
-    "content": "Data structures",
-    "sub_content": [
-      "Linked lists",
-      "Graphs",
-      "Stacks",
-      "Queues",
-      "Trees",
-      "Binary search trees",
-      "Hash tables"
-    ],
-    "section": "1.4.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 69,
-    "content": "How to create, traverse, add and remove data from the above data structures",
-    "section": "1.4.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 70,
-    "content": "Define problems using Boolean logic",
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 71,
-    "content": "Manipulate Boolean expressions",
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 72,
-    "content": "The use of Karnaugh maps to simplify Boolean expressions",
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 73,
-    "content": "Algebra laws and how to use them",
-    "sub_content": [
-      "De Morgan’s Laws",
-      "Distribution",
-      "Association",
-      "Commutation",
-      "Double negation"
-    ],
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 74,
-    "content": "Using logic gate diagrams and truth tables",
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 75,
-    "content": "The logic associated with D type flip flops, half and full adders",
-    "section": "1.4.3",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 76,
-    "content": "The Data Protection Act 1998",
-    "section": "1.5.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 77,
-    "content": "The Computer Misuse Act 1990",
-    "section": "1.5.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 78,
-    "content": "The Copyright Design and Patents Act 1988",
-    "section": "1.5.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 79,
-    "content": "The Regulation of Investigatory Powers Act 2000",
-    "section": "1.5.1",
-    "specificationName": "A-level Computer Science (OCR)"
-  },
-  {
-    "contentID": 80,
-    "content": "The individual moral, social, ethical and cultural opportunities and risks of digital technology",
-    "sub_content": [
-      "Computers in the workforce",
-      "Automated decision making",
-      "Artificial intelligence",
-      "Environmental effects",
-      "Censorship and the Internet",
-      "Monitor behaviour",
-      "Analyse personal information",
-      "Piracy and offensive communications",
-      "Layout, colour paradigms and character sets"
-    ],
-    "section": "1.5.2",
-    "specificationName": "A-level Computer Science (OCR)"
-  }
+	{
+		"contentID": 1,
+		"content": "The Arithmetic and Logic Unit",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 2,
+		"content": "ALU",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 3,
+		"content": "Control Unit",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 4,
+		"content": "Registers",
+		"sub_content": [
+			"Program Counter (PC)",
+			"Accumulator (ACC)",
+			"Memory Address Register (MAR)",
+			"Memory Data Register (MDR)",
+			"Current Instruction Register (CIR)",
+			"Data bus",
+			"Address bus",
+			"Control bus"
+		],
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 5,
+		"content": "The Fetch-Decode-Execute Cycle, including its effects on registers",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 6,
+		"content": "The factors affecting the performance of the CPU",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 7,
+		"content": "The use of pipelining in a processor to improve efficiency",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 8,
+		"content": "Von Neumann, Harvard and contemporary processor architecture",
+		"section": "1.1.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 9,
+		"content": "The differences between and uses of CISC and RISC processors",
+		"section": "1.1.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 10,
+		"content": "GPUs and their uses including those not related to graphics",
+		"section": "1.1.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 11,
+		"content": "Multicore and Parallel systems",
+		"section": "1.1.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 12,
+		"content": "How different input, output and storage devices can be applied to the solution of different problems",
+		"section": "1.1.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 13,
+		"content": "The uses of magnetic, flash and optical storage devices",
+		"section": "1.1.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 14,
+		"content": "RAM and ROM",
+		"section": "1.1.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 15,
+		"content": "Virtual storage",
+		"section": "1.1.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 16,
+		"content": "The need for, function and purpose of operating systems",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 17,
+		"content": "Memory Management paging, segmentation and virtual memory",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 18,
+		"content": "Interrupts, the role of interrupts and Interrupt Service Routines",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 19,
+		"content": "Scheduling",
+		"sub_content": [
+			"Round robin",
+			"First come first served",
+			"multi-level feedback queues",
+			"shortest job first",
+			"shortest remaining time"
+		],
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 20,
+		"content": "Types of operating systems",
+		"sub_content": [
+			"Distributed",
+			"Embedded",
+			"Multi-tasking",
+			"Multi-user",
+			"Real Time"
+		],
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 21,
+		"content": "BIOS",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 22,
+		"content": "Device drivers",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 23,
+		"content": "Virtual machines",
+		"section": "1.2.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 24,
+		"content": "The nature of applications, justifying suitable applications for a specific purpose",
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 25,
+		"content": "Utilities",
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 26,
+		"content": "Open source vs closed source",
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 27,
+		"content": "Translators",
+		"sub_content": ["Interpreters", "Compilers", "Assemblers"],
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 28,
+		"content": "Stages of compilation lexical analysis, syntax analysis, code generation and optimisation",
+		"sub_content": [
+			"Lexical analysis",
+			"Syntax analysis",
+			"Code generation",
+			"Optimisation"
+		],
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 29,
+		"content": "Linkers, loaders and use of libraries",
+		"section": "1.2.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 30,
+		"content": "Development Methodologies",
+		"sub_content": [
+			"Waterfall cycle",
+			"Agile methodologies",
+			"Extreme programming",
+			"The spiral model",
+			"Rapid application development"
+		],
+		"section": "1.2.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 31,
+		"content": "The relative merits and drawbacks of different methodologies and when they might be used",
+		"section": "1.2.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 32,
+		"content": "Writing and following algorithms",
+		"section": "1.2.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 33,
+		"content": "Need for and characteristics of a variety of programming paradigms",
+		"section": "1.2.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 34,
+		"content": "Procedural languages",
+		"section": "1.2.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 35,
+		"content": "Assembly language [including following and writing simple programs with the Little Man Computer instruction set]",
+		"section": "1.2.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 36,
+		"content": "Modes of addressing memory [immediate, direct, indirect and indexed]",
+		"section": "1.2.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 37,
+		"content": "Object-orientated languages",
+		"sub_content": [
+			"Classes",
+			"Objects",
+			"Methods",
+			"Attributes",
+			"Inheritance",
+			"Encapsulation",
+			"Polymorphism"
+		],
+		"section": "1.2.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 38,
+		"content": "Lossy vs Lossless compression",
+		"section": "1.3.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 39,
+		"content": "Run length encoding and dictionary coding for lossless compression",
+		"section": "1.3.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 40,
+		"content": "Symmetric and asymmetric encryption",
+		"section": "1.3.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 41,
+		"content": "Different uses of hashing",
+		"section": "1.3.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 42,
+		"content": "Flat files",
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 43,
+		"content": "Relational Databases",
+		"sub_content": [
+			"Primary key",
+			"Foreign key",
+			"Secondary key",
+			"Entity relationship modelling",
+			"Normalisation",
+			"Indexing"
+		],
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 44,
+		"content": "Methods of capturing, selecting, managing and exchanging data",
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 45,
+		"content": "Normalisation to 3NF",
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 46,
+		"content": "SQL – Interpret and modify",
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 47,
+		"content": "Referential integrity",
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 48,
+		"content": "Transacticd on processing",
+		"sub_content": [
+			"ACID: Atomicity, Consistency, Isolation, Durability",
+			"Record locking",
+			"Redundancy"
+		],
+		"section": "1.3.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 49,
+		"content": "Characteristics of networks and the importance of protocols and standards",
+		"section": "1.3.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 50,
+		"content": "The internet structure",
+		"sub_content": [
+			"The TCP/IP stack",
+			"DNS",
+			"Protocol layering",
+			"LANs and WANs",
+			"Packet and circuit switching"
+		],
+		"section": "1.3.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 51,
+		"content": "Network security and threats, use of firewalls, proxies and encryption",
+		"section": "1.3.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 52,
+		"content": "Network hardware",
+		"section": "1.3.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 53,
+		"content": "Client-server and peer to peer",
+		"section": "1.3.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 54,
+		"content": "HTML, CSS and JavaScript",
+		"section": "1.3.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 55,
+		"content": "Search engine indexing",
+		"section": "1.3.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 56,
+		"content": "PageRank algorithm",
+		"section": "1.3.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 57,
+		"content": "Server and client side processing",
+		"section": "1.3.4",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 58,
+		"content": "Represent positive integers in binary",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 59,
+		"content": "Use of sign and magnitude and two’s complement to represent negative numbers in binary",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 60,
+		"content": "Addition and subtraction of binary integers",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 61,
+		"content": "Represent positive integers in hexadecimal",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 62,
+		"content": "Convert positive integers between binary hexadecimal and denary",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 63,
+		"content": "Representation and normalisation of floating point numbers in binary",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 64,
+		"content": "Floating point arithmetic, positive and negative numbers, addition and subtraction",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 65,
+		"content": "Bitwise manipulation and masks: shifts, combining with AND, OR, and XOR",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 66,
+		"content": "How character sets are used to represent text",
+		"section": "1.4.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 67,
+		"content": "Arrays, records, lists, tuples",
+		"section": "1.4.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 68,
+		"content": "Data structures",
+		"sub_content": [
+			"Linked lists",
+			"Graphs",
+			"Stacks",
+			"Queues",
+			"Trees",
+			"Binary search trees",
+			"Hash tables"
+		],
+		"section": "1.4.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 69,
+		"content": "How to create, traverse, add and remove data from the above data structures",
+		"section": "1.4.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 70,
+		"content": "Define problems using Boolean logic",
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 71,
+		"content": "Manipulate Boolean expressions",
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 72,
+		"content": "The use of Karnaugh maps to simplify Boolean expressions",
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 73,
+		"content": "Algebra laws and how to use them",
+		"sub_content": [
+			"De Morgan’s Laws",
+			"Distribution",
+			"Association",
+			"Commutation",
+			"Double negation"
+		],
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 74,
+		"content": "Using logic gate diagrams and truth tables",
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 75,
+		"content": "The logic associated with D type flip flops, half and full adders",
+		"section": "1.4.3",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 76,
+		"content": "The Data Protection Act 1998",
+		"section": "1.5.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 77,
+		"content": "The Computer Misuse Act 1990",
+		"section": "1.5.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 78,
+		"content": "The Copyright Design and Patents Act 1988",
+		"section": "1.5.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 79,
+		"content": "The Regulation of Investigatory Powers Act 2000",
+		"section": "1.5.1",
+		"specificationName": "A-level Computer Science (OCR)"
+	},
+	{
+		"contentID": 80,
+		"content": "The individual moral, social, ethical and cultural opportunities and risks of digital technology",
+		"sub_content": [
+			"Computers in the workforce",
+			"Automated decision making",
+			"Artificial intelligence",
+			"Environmental effects",
+			"Censorship and the Internet",
+			"Monitor behaviour",
+			"Analyse personal information",
+			"Piracy and offensive communications",
+			"Layout, colour paradigms and character sets"
+		],
+		"section": "1.5.2",
+		"specificationName": "A-level Computer Science (OCR)"
+	}
 ]

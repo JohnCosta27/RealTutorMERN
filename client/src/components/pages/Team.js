@@ -13,42 +13,6 @@ import Ronnie from '../../images/People/ronnie.jpg';
 
 const Team = () => {
 	const useStyles = makeStyles((theme) => ({
-		sectionWrapper: {
-			backgroundColor: '#fafafa',
-			width: '100%',
-			display: 'flex',
-			height: '100vh',
-		},
-		sectionPaper: {
-			width: '80%',
-			height: '97.5%',
-			marginTop: '1.25%',
-			marginBottom: '1.25%',
-			marginLeft: '10%',
-			marginRight: '10%',
-			display: 'flex',
-			paddingTop: 100,
-			paddingLeft: 100,
-			paddingBottom: 100,
-			paddingRight: 100,
-			justifyContent: 'space-between',
-			[theme.breakpoints.down('md')]: {
-				flexDirection: 'column',
-				justifyContent: 'center',
-				paddingTop: 20,
-				paddingLeft: 20,
-				paddingBottom: 20,
-				paddingRight: 20,
-			},
-		},
-		smallSection: {
-			width: '100%',
-			display: 'flex',
-			height: 600,
-			[theme.breakpoints.down('md')]: {
-				height: 'auto',
-			},
-		},
 		tutorPicturesWrapper: {
 			width: '100%',
 			height: 500,

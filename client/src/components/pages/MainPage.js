@@ -429,8 +429,7 @@ const MainPage = () => {
 							sm={6}
 							xs={12}
 							onClick={() =>
-								(document.location.href =
-									'/alevelfurthermaths')
+								(document.location.href = '/alevelfurthermaths')
 							}
 						>
 							<Paper className={classes.subjectCard}>
@@ -453,7 +452,17 @@ const MainPage = () => {
 								</Typography>
 							</Paper>
 						</Grid>
-						<Grid item lg={3} md={4} sm={6} xs={12}>
+						<Grid
+							item
+							lg={3}
+							md={4}
+							sm={6}
+							xs={12}
+							onClick={() =>
+								(document.location.href =
+									'/gcsecomputerscience')
+							}
+						>
 							<Paper className={classes.subjectCard}>
 								<Typography variant="h3" align="center">
 									GCSE Computer Science

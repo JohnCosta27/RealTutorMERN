@@ -1,0 +1,116 @@
+[
+    {
+        "contentID": 81,
+        "content": "Fundamental (base) units.",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 82,
+        "content": "Use of mass, length, time, amount of substance, temperature, electric current and their associated SI units.",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 83,
+        "content": "SI units derived.",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 84,
+        "content": "Knowledge and use of the SI prefixes, values and standard form.",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 85,
+        "content": "Students should be able to use the prefixes:T, G, M, k, c, m, μ, n, p, f",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 86,
+        "content": "Students should be able to convert between different units of the same quantity",
+        "sub_content": [
+            "J and eV",
+            "J and kW h"
+        ],
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 88,
+        "content": "Knowledge and use of the SI prefixes, values and standard form.",
+        "section": "3.1.1",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 89,
+        "content": "Random and systematic errors.",
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 90,
+        "content": "Precision, repeatability, reproducibility, resolution and accuracy.",
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 91,
+        "content": "Uncertainty ",
+        "sub_content": [
+            "Absolute",
+            "Fractional",
+            "Percentage uncertainties"
+        ],
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 92,
+        "content": "Combination of absolute and percentage uncertainties.",
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 93,
+        "content": "Represent uncertainty in a data point on a graph using error bars.",
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 94,
+        "content": "Determine the uncertainties in the gradient and intercept of a straight-line graph.",
+        "section": "3.1.2",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 95,
+        "content": "Orders of magnitude.",
+        "section": "3.1.3",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    },
+    {
+        "contentID": 96,
+        "content": "Estimation of approximate values of physical quantities.",
+        "section": "3.1.3",
+        "specificationName": "A-level Physics (AQA)",
+        "specID": 2
+    }
+]

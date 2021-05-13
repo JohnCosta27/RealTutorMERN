@@ -13,7 +13,10 @@ import Team from '../pages/Team';
 import ALevelMaths from '../subjects/Alevelmaths';
 import ALevelFurtherMaths from '../subjects/Alevelfurthermaths';
 import ALevelPhysics from '../subjects/Alevelphysics';
+import ALevelArt from '../subjects/Alevelart';
+import AlevelEconomics from '../subjects/AlevelEconomics';
 import ALevelComputerScience from '../subjects/Alevelcomputerscience';
+import GCSEComputerScience from '../subjects/GCSEcomputerscience';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -41,7 +44,10 @@ function App() {
 					<Route exact path="/alevelmaths" component={ALevelMaths} />
 					<Route exact path="/alevelfurthermaths" component={ALevelFurtherMaths} />
 					<Route exact path="/alevelphysics" component={ALevelPhysics} />
+					<Route exact path="/alevelart" component={ALevelArt} />
+					<Route exact path="/aleveleconomics" component={AlevelEconomics} />
 					<Route exact path="/alevelcomputerscience" component={ALevelComputerScience} />
+					<Route exact path="/gcsecomputerscience" component={GCSEComputerScience} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

@@ -1,6 +1,7 @@
 const express = require('express');
 const admin = express.Router();
 const Account = require('../models/Account');
+const SpecificationPoints = require('../models/SpecificationPoints');
 
 //No one can access this router except admins.
 
@@ -57,6 +58,24 @@ admin.post('/addhours', async (req, res) => {
         await account.save();
         res.status(400).json({status: "OK"});
     }
+});
+
+admin.post('/addspec', async (req, res) => {
+
+	for (let point of req.body.points) {
+		const newPoint = new SpecificationPoints({
+			contentID: point.contentID,
+			content: point.content,
+			section: point.section,
+			specificationName: point.specificationName,
+			sub_content: point.sub_content,
+			specID: point.specID
+		});
+		await newPoint.save();
+	}
+
+	res.json({"status": 200});
+
 });
 
 module.exports = admin;

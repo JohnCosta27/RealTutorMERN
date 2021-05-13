@@ -84,8 +84,18 @@ const SubjectPage = () => {
 								(document.location.href = '/alevelphysics')
 							}
 						/>
-						<SubjectCard title="Economics" />
-						<SubjectCard title="Art" />
+						<SubjectCard
+							title="Economics"
+							onClick={() =>
+								(document.location.href = '/aleveleconomics')
+							}
+						/>
+						<SubjectCard
+							title="Art and Design"
+							onClick={() =>
+								(document.location.href = '/alevelart')
+							}
+						/>
 					</Grid>
 				</div>
 				<div className={classes.subjectGridWrapper}>
@@ -98,8 +108,13 @@ const SubjectPage = () => {
 						className={classes.subjectGrid}
 					>
 						<SubjectCard title="Physics" />
-						<SubjectCard title="Computer Science" />
-						<SubjectCard title="Art" />
+						<SubjectCard
+							title="Computer Science"
+							onClick={() =>
+								(document.location.href =
+									'/gcsecomputerscience')
+							}
+						/>
 						<SubjectCard title="Graphics" />
 					</Grid>
 				</div>
