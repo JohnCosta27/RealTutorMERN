@@ -12,9 +12,12 @@ const Section = (props) => {
 			setHeight(600)
 		} else if (props.medium) {
 			setHeight(800)
+		} else if (props.large) {
+			setHeight(1000);
 		} else {
 			setHeight('100vh');
 		}
+
 	}, [])
 
 	const useStyles = makeStyles((theme) => ({
@@ -40,7 +43,9 @@ const Section = (props) => {
 			width: '100%',
 			display: 'flex',
 			height: height,
-			[theme.breakpoints.down('md')]: {
+			backgroundPositionY: props.offsetY,
+			backgroundImage: props.backgroundimage,
+			[theme.breakpoints.down('xs')]: {
 				height: 'auto',
 			},
 		},
@@ -50,9 +55,15 @@ const Section = (props) => {
 		lightteal: {
 			backgroundColor: theme.palette.lightTeal.main,
 		},
+		lightblue: {
+			backgroundColor: theme.palette.lightBlue.main,
+		},
 		alignCenter: {
 			alignItems: 'center',
 		},
+		column: {
+			flexDirection: 'column',
+		}
 	}));
 
 	const classes = useStyles();
@@ -64,14 +75,20 @@ const Section = (props) => {
 		WrapperList = clsx(classes.smallSection, classes.offwhite);
 	} else if (props.background == 'lightteal') {
 		WrapperList = clsx(classes.smallSection, classes.lightteal);
+	} else if (props.background == 'lightblue') {
+		WrapperList = clsx(classes.smallSection, classes.lightblue);
 	}
 
-	if (props.centered == true) {
+	if (props.centered) {
 		ChildList = clsx(classes.sectionPaper, classes.alignCenter);
 	}
 
+	if (props.column) {
+		ChildList = clsx(ChildList, classes.column);
+	}
+
 	return (
-		<div className={WrapperList}>
+		<div className={WrapperList} id={props.id}>
 			<div className={ChildList}>{props.children}</div>
 		</div>
 	);

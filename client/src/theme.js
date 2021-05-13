@@ -1,5 +1,5 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
-import { grey, teal } from '@material-ui/core/colors';
+import { grey, teal, blue } from '@material-ui/core/colors';
 // A custom theme for this app
 let theme = createMuiTheme({
 	palette: {
@@ -14,6 +14,9 @@ let theme = createMuiTheme({
 		},
 		lightTeal: {
 			main: teal[200]
+		},
+		lightBlue: {
+			main: blue[200]
 		},
 		cards: '#FFFFFF',
 		divBackground: '#009688',

@@ -14,7 +14,6 @@ const StudentList = (props) => {
   const classes = useStyles();
 
   const handleClick = (id) => {
-    console.log(id);
     document.location.href = "studentdashboard?studentid=" + id;
   };
 

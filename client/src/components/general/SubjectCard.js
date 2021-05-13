@@ -12,7 +12,10 @@ const SubjectCard = (props) => {
 			[theme.breakpoints.down('xs')]: {
 				height: 100,
 			},
-			height: 250,
+			[theme.breakpoints.down('md')]: {
+				height: 150,
+			},
+			height: 200,
 			width: '100%',
 			display: 'flex',
 			justifyContent: 'center',
@@ -30,7 +33,7 @@ const SubjectCard = (props) => {
 	return (
 			<Grid item lg={3} md={4} sm={6} xs={12} onClick={props.onClick}>
 				<Paper className={classes.subjectCard} elevation={4}>
-					<Typography variant="h3" align="center">{props.title}</Typography>
+					<Typography variant="h4" align="center">{props.title}</Typography>
 				</Paper>
 			</Grid>
 	);
