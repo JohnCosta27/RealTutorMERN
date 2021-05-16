@@ -206,108 +206,79 @@ const MainPage = () => {
 		<div>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
-			<div
-				className={classes.smallSection}
-				style={{
-					backgroundColor: '#FAFAFA',
-				}}
-			>
-				<div
-					className={classes.sectionPaper}
-					style={{
-						alignItems: 'center',
-					}}
-				>
-					<div style={{ maxWidth: 800 }}>
-						<Typography variant="h1" color="secondary">
-							Tuition meets the digital age
-						</Typography>
-						<Typography variant="body2">
-							We have custom built software, coded by our CEO, to
-							keep track of student progress and help lesson
-							planning and reporting.
-						</Typography>
-						<br></br>
-						<Typography variant="body2">
-							State of the art software.
-						</Typography>
-						<br></br>
-						<Typography variant="body2">
-							Flawless tutoring.
-						</Typography>
-						<br></br>
-						<Typography variant="body2">
-							The future of education is here.
-						</Typography>
-						<br></br>
-						<br></br>
-					</div>
-					<div style={{ maxWidth: 800 }}>
-						<img src={transparentLogo} className={classes.image} />
-						<br></br>
-						<br></br>
-					</div>
+			<Section background="offwhite" medium={true} centered={true}>
+				<div style={{ maxWidth: 800 }}>
+					<Typography variant="h1" color="secondary">
+						Tuition meets the digital age
+					</Typography>
+					<br></br>
+					<Typography variant="body2">
+						We have custom built software, coded by our CEO, to keep
+						track of student progress and help lesson planning and
+						reporting.
+					</Typography>
+					<br></br>
+					<Typography variant="body2">
+						State of the art software.
+					</Typography>
+					<Typography variant="body2">Flawless tutoring.</Typography>
+					<Typography variant="body2">
+						The future of education is here.
+					</Typography>
+					<br></br>
+					<br></br>
 				</div>
-			</div>
+				<div style={{ maxWidth: 800 }}>
+					<img src={transparentLogo} className={classes.image} />
+					<br></br>
+					<br></br>
+				</div>
+			</Section>
 
-			<div
-				className={classes.smallSection}
-				style={{
-					backgroundColor: teal[200],
-				}}
-			>
-				<div
-					className={classes.sectionPaper}
-					style={{
-						flexDirection: 'column',
-						justifyContent: 'center',
-					}}
-				>
-					<div style={{ width: '100%' }}>
-						<div style={{ maxWidth: 800, float: 'right' }}>
-							<Typography variant="h1" align="right">
-								The Experiment...
-							</Typography>
-							<Typography variant="body2" align="right">
-								Other tutoring providers select teachers as
-								they're tutors. After extensive research, we
-								found that teachers are too far removed from the
-								exam procedures. This gave us an idea, We took a
-								select few University undergraduates, with top A
-								level grades, and ran some sample tutoring
-								sessions. We found the Tutees to be hugely more
-								engaged and learnt the syllabus noticeably
-								faster. We also noted that when an Undergraduate
-								was studying a related field, the students'
-								learning was optimized.
-							</Typography>
-							<br></br>
-							<Typography variant="h3" align="left">
-								The Conclusion...
-							</Typography>
-							<Typography variant="body2">
-								After the research we based our employment
-								process off our findings. Our cherry picked
-								Tutors will help our students achieve the best
-								grade they are possibile of, no matter your
-								current course progression.
-							</Typography>
-							<br></br>
-							<Typography
-								variant="body2"
-								align="right"
-							></Typography>
-							<br></br>
-							<br></br>
-						</div>
+			<Section background="lightteal" medium={true} centered={true}>
+				<div style={{ width: '100%' }}>
+					<div style={{ maxWidth: 800, float: 'right' }}>
+						<Typography variant="h1" align="right">
+							The Experiment...
+						</Typography>
+						<br></br>
+						<Typography variant="body2" align="right">
+							Other tutoring providers select teachers as they're
+							tutors. After extensive research, we found that
+							teachers are too far removed from the exam
+							procedures. This gave us an idea, We took a select
+							few University undergraduates, with top A level
+							grades, and ran some sample tutoring sessions. We
+							found the Tutees to be hugely more engaged and
+							learnt the syllabus noticeably faster. We also noted
+							that when an Undergraduate was studying a related
+							field, the students' learning was optimized.
+						</Typography>
+						<br></br>
+						<Typography variant="h3" align="left">
+							The Conclusion...
+						</Typography>
+						<br></br>
+						<Typography variant="body2">
+							After the research we based our employment process
+							off our findings. Our cherry picked Tutors will help
+							our students achieve the best grade they are
+							possibile of, no matter your current course
+							progression.
+						</Typography>
+						<br></br>
+						<Typography variant="body2" align="right"></Typography>
+						<br></br>
+						<br></br>
 					</div>
 				</div>
-			</div>
-			<Section small={true} centered={true}>
+			</Section>
+			<Section medium={true} centered={true}>
 				<div className={classes.wrappingText}>
 					<Typography variant="h1" color="secondary">
 						We. Really. Care.
 					</Typography>
+					<br></br>
 					<Typography variant="body2">
 						Our 5% charity pleage is simply one example of how much
 						we care about the community and the world around us.
@@ -429,10 +400,7 @@ const MainPage = () => {
 					</Grid>
 				</div>
 			</Section>
-			<Section
-				background="offwhite"
-				medium={true}
-			>
+			<Section background="offwhite" large={true}>
 				<div style={{ flex: 1 }} id="contactSection">
 					<Typography variant="h1" align="center">
 						Contact us

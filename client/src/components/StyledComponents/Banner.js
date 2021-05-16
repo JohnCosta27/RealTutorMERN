@@ -5,6 +5,8 @@ import { Typography } from '@material-ui/core';
 import Slide from '@material-ui/core/Slide';
 
 import BannerBackground from '../../images/Banner.jpeg';
+import SmallBannerBackground from '../../images/SmallBanner.jpeg';
+import SmallerBannerBackground from '../../images/SmallerBanner.jpeg';
 
 /*
 Component props:
@@ -15,15 +17,22 @@ differently when on the main page than on other pages.
 const Banner = (props) => {
 	const [enter, setEnter] = useState(false);
 	const [height, setHeight] = useState(800);
+	const [width, setWidth] = useState(window.innerWidth);
+
+	const updateWidth = () => {
+		setWidth(window.innerWidth);
+	}
 
 	useEffect(() => {
 		if (props.small) {
-			console.log("Hello");
 			setHeight(600);
 		}
 		setTimeout(() => {
 			setEnter(true);
 		}, 1000);
+
+		window.addEventListener("resize", updateWidth);
+
 	}, []);
 
 	const useStyles = makeStyles((theme) => ({
@@ -35,13 +44,16 @@ const Banner = (props) => {
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
-			backgroundPositionX: 'center',
+			backgroundPositionX: 'right',
 			backgroundPositionY: 'center',
-			[theme.breakpoints.down('sm')]: {
-				height: 600,
+			[theme.breakpoints.down('md')]: {
+				height: 725,
+				backgroundImage: `url(${SmallBannerBackground})`,
+				backgroundPositionX: 'center',
 			},
 			[theme.breakpoints.down('xs')]: {
 				height: props.mainpage ? 800 : height,
+				backgroundImage: `url(${SmallerBannerBackground})`,
 			},
 		},
 		name: {
@@ -53,7 +65,10 @@ const Banner = (props) => {
 			width: '80%',
 			marginLeft: '10%',
 			position: 'absolute',
-			bottom: 150,
+			bottom: 100,
+			[theme.breakpoints.down('sm')]: {
+				bottom: 50,
+			},
 		},
 	}));
 
@@ -63,23 +78,55 @@ const Banner = (props) => {
 		return (
 			<div className={classes.banner}>
 				<div className={classes.name}>
-					<Typography variant="h1" style={{ color: '#FAFAFA' }}>
+					<Typography variant="h3" style={{ color: '#FAFAFA' }}>
 						Covid stole your education. We're here to give it back.
 					</Typography>
 					<br></br>
 				</div>
 				<Slide timeout={1500} in={enter} direction="left">
-					<div className={classes.centeredWrapper}>
-						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
-							£20 an hour (GCSE)
-						</Typography>
-						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
-							£30 an hour (A-level)
-						</Typography>
-						<Typography variant="h3" color="secondary">
-							The future is online.
-						</Typography>
-					</div>
+					{width < 440 ? (
+						<div className={classes.centeredWrapper}>
+							<Typography
+								variant="h4"
+								style={{ color: '#FAFAFA' }}
+							>
+								£20 an hour (GCSE)
+							</Typography>
+							<Typography
+								variant="h4"
+								style={{ color: '#FAFAFA' }}
+							>
+								£30 an hour (A-level)
+							</Typography>
+							<Typography
+								variant="h4"
+								style={{ color: '#FAFAFA' }}
+							>
+								The future is online.
+							</Typography>
+						</div>
+					) : (
+						<div className={classes.centeredWrapper}>
+							<Typography
+								variant="h2"
+								style={{ color: '#FAFAFA' }}
+							>
+								£20 an hour (GCSE)
+							</Typography>
+							<Typography
+								variant="h2"
+								style={{ color: '#FAFAFA' }}
+							>
+								£30 an hour (A-level)
+							</Typography>
+							<Typography
+								variant="h3"
+								style={{ color: '#FAFAFA' }}
+							>
+								The future is online.
+							</Typography>
+						</div>
+					)}
 				</Slide>
 			</div>
 		);

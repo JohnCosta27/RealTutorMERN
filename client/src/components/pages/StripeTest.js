@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import {loadStripe} from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(
-    'pk_test_51IgsTHJwHQjcU66C8y8UboR4W0HtFEJJTQGkCMe58M4fmu5JG4vd768Cfim2QrRPVd17QGJ4J0VrAJKqHsZCGV0e00O6cEg9Mi'
+    'pk_live_51IgsTHJwHQjcU66CgZtNbj7hpXzxLlnlk9V2rqRp1M110TAUe4V4XCmPnpXrhFRCYuySROcq4UU1UXMTSAaeISnq002CgxVgr8'
 );
 
 const StripeTest = () => {
@@ -17,8 +17,8 @@ const StripeTest = () => {
         const {error} = await stripe.redirectToCheckout({
             lineItems: [
                 {
-                    price: 'price_1IgsjzJwHQjcU66CAqzudVUI',
-                    quantity: 100
+                    price: 'price_1Irrj0JwHQjcU66CGQTbReDq',
+                    quantity: 1
                 }
             ],
             mode: "payment",

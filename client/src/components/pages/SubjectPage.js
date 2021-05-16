@@ -107,7 +107,13 @@ const SubjectPage = () => {
 						alignItems="center"
 						className={classes.subjectGrid}
 					>
-						<SubjectCard title="Physics" />
+						<SubjectCard
+							title="Physics"
+							onClick={() =>
+								(document.location.href =
+									'/gcsephysics')
+							}
+						/>
 						<SubjectCard
 							title="Computer Science"
 							onClick={() =>
