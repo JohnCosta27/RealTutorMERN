@@ -27,7 +27,7 @@ const Payment = () => {
 			lineItems: [
 				{
 					price: 'price_1Irrj0JwHQjcU66CGQTbReDq',
-					quantity: alevelNum,
+					quantity: Number(alevelNum),
 				},
 			],
 			mode: 'payment',
@@ -48,7 +48,7 @@ const Payment = () => {
 			lineItems: [
 				{
 					price: 'price_1IrriQJwHQjcU66CDQzLXrbh',
-					quantity: gcseNum,
+					quantity: Number(gcseNum),
 				},
 			],
 			mode: 'payment',

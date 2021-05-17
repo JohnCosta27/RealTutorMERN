@@ -203,7 +203,7 @@ const MainPage = () => {
 	};
 
 	return (
-		<div>
+		<div style={{overflow: 'hidden'}}>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
 			<Section background="offwhite" medium={true} centered={true}>
