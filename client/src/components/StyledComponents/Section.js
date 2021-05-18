@@ -48,7 +48,7 @@ const Section = (props) => {
 			height: height,
 			backgroundPositionY: props.offsetY,
 			backgroundImage: props.backgroundimage,
-			[theme.breakpoints.down('xs')]: {
+			[theme.breakpoints.down('sm')]: {
 				height: 'auto',
 			},
 		},

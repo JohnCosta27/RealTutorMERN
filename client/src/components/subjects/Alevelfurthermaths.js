@@ -52,7 +52,7 @@ const Alevelfurthermaths = () => {
 				title="A-level Further Maths"
 				subtitle="The most difficult A-level"
 			/>
-			<Section background="offwhite" centered={true} small={true}>
+			<Section background="offwhite" centered={true} medium={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>

@@ -51,7 +51,7 @@ const GCSEphysics = () => {
 				title="GCSE Physics"
 				subtitle="A welcome challenge, made easier."
 			/>
-			<Section background="offwhite" centered={true} small={true}>
+			<Section background="offwhite" centered={true} medium={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>
