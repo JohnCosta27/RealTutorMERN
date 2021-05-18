@@ -137,7 +137,7 @@ const Payment = () => {
 					></TextField>
 					<br></br>
 					<br></br>
-					<Button variant="contained" style={{ width: '100%' }}>
+					<Button variant="contained" style={{ width: '100%' }} onClick={gcseClick}>
 						Payment
 					</Button>
 				</div>

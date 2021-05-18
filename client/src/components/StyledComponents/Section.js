@@ -37,6 +37,9 @@ const Section = (props) => {
 			[theme.breakpoints.down('md')]: {
 				flexDirection: 'column',
 				justifyContent: 'center',
+				width: '90%',
+				marginLeft: '5%',
+				marginRight: '5%',
 			},
 		},
 		smallSection: {

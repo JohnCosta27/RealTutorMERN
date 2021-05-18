@@ -5,7 +5,6 @@ import Login from '../pages/Login';
 import StudentDashboard from '../pages/StudentDashboard';
 import TutorDashboard from '../pages/TutorDashboard';
 import MainPage from '../pages/MainPage';
-import StripeTest from '../pages/StripeTest';
 import SubjectPage from '../pages/SubjectPage';
 import HowItWorks from '../pages/HowItWorks';
 import Team from '../pages/Team';
@@ -39,7 +38,6 @@ function App() {
 						component={StudentDashboard}
 					/>
 					<Route path="/tutordashboard" component={TutorDashboard} />
-					<Route path="/stripe" component={StripeTest} />
 					<Route path="/payment" component={Payment} />
 					<Route path="/how-it-works" component={HowItWorks} />
 					<Route path="/team" component={Team} />
