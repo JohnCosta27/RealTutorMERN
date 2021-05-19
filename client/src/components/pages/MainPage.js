@@ -268,7 +268,7 @@ const MainPage = () => {
 								}}
 							>
 								<ReactPlayer
-									url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+									url="https://www.youtube.com/watch?v=-UAWRH0-h8A""
 									style={{
 										position: 'absolute',
 										top: 0,
