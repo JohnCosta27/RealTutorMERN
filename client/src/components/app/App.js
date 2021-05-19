@@ -13,11 +13,15 @@ import Payment from '../pages/Payment';
 import ALevelMaths from '../subjects/Alevelmaths';
 import ALevelFurtherMaths from '../subjects/Alevelfurthermaths';
 import ALevelPhysics from '../subjects/Alevelphysics';
+import ALevelChemistry from '../subjects/Alevelchemistry';
+import ALevelBiology from '../subjects/Alevelbiology';
 import ALevelArt from '../subjects/Alevelart';
 import AlevelEconomics from '../subjects/AlevelEconomics';
 import ALevelComputerScience from '../subjects/Alevelcomputerscience';
 import GCSEComputerScience from '../subjects/GCSEcomputerscience';
 import GCSEPhysics from '../subjects/GCSEphysics';
+import GCSEChemistry from '../subjects/GCSEchemistry';
+import GCSEBiology from '../subjects/GCSEbiology';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -45,11 +49,15 @@ function App() {
 					<Route exact path="/alevelmaths" component={ALevelMaths} />
 					<Route exact path="/alevelfurthermaths" component={ALevelFurtherMaths} />
 					<Route exact path="/alevelphysics" component={ALevelPhysics} />
+					<Route exact path="/alevelchemistry" component={ALevelChemistry} />
+					<Route exact path="/alevelbiology" component={ALevelBiology} />
 					<Route exact path="/alevelart" component={ALevelArt} />
 					<Route exact path="/aleveleconomics" component={AlevelEconomics} />
 					<Route exact path="/alevelcomputerscience" component={ALevelComputerScience} />
 					<Route exact path="/gcsecomputerscience" component={GCSEComputerScience} />
 					<Route exact path="/gcsephysics" component={GCSEPhysics} />
+					<Route exact path="/gcsechemistry" component={GCSEChemistry} />
+					<Route exact path="/gcsebiology" component={GCSEBiology} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

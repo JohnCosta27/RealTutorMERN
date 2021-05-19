@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import {
+	Link,
+	DirectLink,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from 'react-scroll';
 
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -205,7 +213,7 @@ const MainPage = () => {
 	};
 
 	const contactUs = () => {
-		scroll.scrollToBottom()
+		scroll.scrollToBottom();
 	};
 
 	const TheExperiment = () => {
@@ -458,6 +466,20 @@ const MainPage = () => {
 							}
 						/>
 						<SubjectCard
+							title="A-level Chemistry"
+							onClick={() =>
+								(document.location.href =
+									'/alevelchemistry')
+							}
+						/>
+						<SubjectCard
+							title="A-level Biology"
+							onClick={() =>
+								(document.location.href =
+									'/alevelbiology')
+							}
+						/>
+						<SubjectCard
 							title="GCSE Computer Science"
 							onClick={() =>
 								(document.location.href =
@@ -581,7 +603,7 @@ const MainPage = () => {
 								></YouTubeIcon>
 								<Typography variant="h3">Real Tutor</Typography>
 							</div>
-							<div
+							{/*<div
 								className={classes.socialWrapper}
 								className={classes.socialWrapper}
 								onClick={() =>
@@ -598,7 +620,7 @@ const MainPage = () => {
 									className={classes.icons}
 								></FacebookIcon>
 								<Typography variant="h3">Real Tutor</Typography>
-							</div>
+							</div>*/}
 						</div>
 					</div>
 				</Section>

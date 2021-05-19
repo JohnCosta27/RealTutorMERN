@@ -85,6 +85,18 @@ const SubjectPage = () => {
 							}
 						/>
 						<SubjectCard
+							title="Chemistry"
+							onClick={() =>
+								(document.location.href = '/alevelchemistry')
+							}
+						/>
+						<SubjectCard
+							title="Biology"
+							onClick={() =>
+								(document.location.href = '/alevelbiology')
+							}
+						/>
+						<SubjectCard
 							title="Economics"
 							onClick={() =>
 								(document.location.href = '/aleveleconomics')
@@ -110,8 +122,31 @@ const SubjectPage = () => {
 						<SubjectCard
 							title="Physics"
 							onClick={() =>
-								(document.location.href =
-									'/gcsephysics')
+								(document.location.href = '/gcsephysics')
+							}
+						/>
+						<SubjectCard
+							title="Chemistry"
+							onClick={() =>
+								(document.location.href = '/gcsechemistry')
+							}
+						/>
+						<SubjectCard
+							title="Biology"
+							onClick={() =>
+								(document.location.href = '/gcsebiology')
+							}
+						/>
+						<SubjectCard
+							title="A-level Chemistry"
+							onClick={() =>
+								(document.location.href = '/alevelchemistry')
+							}
+						/>
+						<SubjectCard
+							title="A-level Biology"
+							onClick={() =>
+								(document.location.href = '/alevelbiology')
 							}
 						/>
 						<SubjectCard
