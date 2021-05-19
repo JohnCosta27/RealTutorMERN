@@ -21,7 +21,7 @@ const Banner = (props) => {
 
 	const updateWidth = () => {
 		setWidth(window.innerWidth);
-	}
+	};
 
 	useEffect(() => {
 		if (props.small) {
@@ -31,8 +31,7 @@ const Banner = (props) => {
 			setEnter(true);
 		}, 1000);
 
-		window.addEventListener("resize", updateWidth);
-
+		window.addEventListener('resize', updateWidth);
 	}, []);
 
 	const useStyles = makeStyles((theme) => ({
@@ -46,16 +45,20 @@ const Banner = (props) => {
 			position: 'relative',
 			backgroundPositionX: 'right',
 			backgroundPositionY: 'center',
+			justifyContent: 'center',
+			alignItems: 'center',
+			backgroundRepeat: 'no-repeat',
 			[theme.breakpoints.down('md')]: {
 				height: 725,
 				backgroundImage: `url(${SmallBannerBackground})`,
 				backgroundPositionX: 'center',
+				justifyContent: 'flex-end'
 			},
 			[theme.breakpoints.down('xs')]: {
 				height: props.mainpage ? 500 : height,
 				backgroundImage: `url(${SmallerBannerBackground})`,
 				backgroundSize: 'cover',
-				backgroundPositionY: 50
+				backgroundPositionY: 0,
 			},
 		},
 		name: {
@@ -134,14 +137,7 @@ const Banner = (props) => {
 		);
 	} else {
 		return (
-			<div
-				className={classes.banner}
-				style={{
-					justifyContent: 'center',
-					alignItems: 'center',
-					backgroundRepeat: 'no-repeat',
-				}}
-			>
+			<div className={classes.banner}>
 				<br></br>
 				<Typography
 					variant="h1"
