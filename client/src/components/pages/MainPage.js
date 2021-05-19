@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Paper from '@material-ui/core/Paper';
-import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import { teal, grey, blue } from '@material-ui/core/colors';
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIcon from '@material-ui/icons/Phone';
 
+import ReactPlayer from 'react-player';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -23,6 +23,13 @@ import Section from '../StyledComponents/Section';
 
 const MainPage = () => {
 	const [enter, setEnter] = useState(false);
+	const [width, setWidth] = useState(window.innerWidth);
+
+	const updateWidth = () => {
+		setWidth(window.innerWidth);
+	};
+
+	const myRef = useRef(null);
 
 	const useStyles = makeStyles((theme) => ({
 		banner: {
@@ -178,6 +185,7 @@ const MainPage = () => {
 	useEffect(() => {
 		handleChange();
 		checkQuery();
+		window.addEventListener('resize', updateWidth);
 		setTimeout(() => {
 			setEnter(true);
 		}, 1000);
@@ -197,13 +205,123 @@ const MainPage = () => {
 	};
 
 	const contactUs = () => {
-		document
-			.getElementById('contactSection')
-			.scrollIntoView({ behavior: 'smooth' });
+		scroll.scrollToBottom()
+	};
+
+	const TheExperiment = () => {
+		if (width < 1600) {
+			return (
+				<Section background="lightteal" large={true} centered={true}>
+					<div
+						style={{
+							width: '100%',
+							display: 'flex',
+							justifyContent: 'center',
+						}}
+					>
+						<div style={{ maxWidth: 800 }}>
+							<Typography variant="h1" align="right">
+								The Experiment...
+							</Typography>
+							<br></br>
+							<Typography variant="body2">
+								Other tutoring providers select teachers as
+								they're tutors. After extensive research, we
+								found that teachers are too far removed from the
+								exam procedures. This gave us an idea, We took a
+								select few University undergraduates, with top A
+								level grades, and ran some sample tutoring
+								sessions. We found the Tutees to be hugely more
+								engaged and learnt the syllabus noticeably
+								faster. We also noted that when an Undergraduate
+								was studying a related field, the students'
+								learning was optimized.
+							</Typography>
+							<br></br>
+							<Typography variant="h3" align="left">
+								The Conclusion...
+							</Typography>
+							<br></br>
+							<Typography variant="body2">
+								After the research we based our employment
+								process off our findings. Our cherry picked
+								Tutors will help our students achieve the best
+								grade they are possibile of, no matter your
+								current course progression.
+							</Typography>
+							<br></br>
+							<div
+								style={{
+									width: 'auto',
+									display: 'flex',
+									justifyContent: 'center',
+									position: 'relative',
+									paddingTop: '56.25%',
+								}}
+							>
+								<ReactPlayer
+									url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+									style={{
+										position: 'absolute',
+										top: 0,
+										left: 0,
+									}}
+									width="100%"
+									height="100%"
+									controls={true}
+								/>
+							</div>
+						</div>
+					</div>
+				</Section>
+			);
+		} else {
+			return (
+				<Section background="lightteal" medium={true} centered={true}>
+					<div style={{ width: '100%', marginRight: 20 }}>
+						<ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+					</div>
+					<div style={{ width: '100%' }}>
+						<div style={{ maxWidth: 800, float: 'right' }}>
+							<Typography variant="h1" align="right">
+								The Experiment...
+							</Typography>
+							<br></br>
+							<Typography variant="body2" align="right">
+								Other tutoring providers select teachers as
+								they're tutors. After extensive research, we
+								found that teachers are too far removed from the
+								exam procedures. This gave us an idea, We took a
+								select few University undergraduates, with top A
+								level grades, and ran some sample tutoring
+								sessions. We found the Tutees to be hugely more
+								engaged and learnt the syllabus noticeably
+								faster. We also noted that when an Undergraduate
+								was studying a related field, the students'
+								learning was optimized.
+							</Typography>
+							<br></br>
+							<Typography variant="h3" align="left">
+								The Conclusion...
+							</Typography>
+							<br></br>
+							<Typography variant="body2">
+								After the research we based our employment
+								process off our findings. Our cherry picked
+								Tutors will help our students achieve the best
+								grade they are possibile of, no matter your
+								current course progression.
+							</Typography>
+							<br></br>
+						</div>
+					</div>
+				</Section>
+			);
+		}
 	};
 
 	return (
-		<div style={{overflow: 'hidden'}}>
+		<div style={{ overflow: 'hidden' }}>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
 			<Section background="offwhite" medium={true} centered={true}>
@@ -234,45 +352,7 @@ const MainPage = () => {
 					<br></br>
 				</div>
 			</Section>
-
-			<Section background="lightteal" medium={true} centered={true}>
-				<div style={{ width: '100%' }}>
-					<div style={{ maxWidth: 800, float: 'right' }}>
-						<Typography variant="h1" align="right">
-							The Experiment...
-						</Typography>
-						<br></br>
-						<Typography variant="body2" align="right">
-							Other tutoring providers select teachers as they're
-							tutors. After extensive research, we found that
-							teachers are too far removed from the exam
-							procedures. This gave us an idea, We took a select
-							few University undergraduates, with top A level
-							grades, and ran some sample tutoring sessions. We
-							found the Tutees to be hugely more engaged and
-							learnt the syllabus noticeably faster. We also noted
-							that when an Undergraduate was studying a related
-							field, the students' learning was optimized.
-						</Typography>
-						<br></br>
-						<Typography variant="h3" align="left">
-							The Conclusion...
-						</Typography>
-						<br></br>
-						<Typography variant="body2">
-							After the research we based our employment process
-							off our findings. Our cherry picked Tutors will help
-							our students achieve the best grade they are
-							possibile of, no matter your current course
-							progression.
-						</Typography>
-						<br></br>
-						<Typography variant="body2" align="right"></Typography>
-						<br></br>
-						<br></br>
-					</div>
-				</div>
-			</Section>
+			{TheExperiment()}
 			<Section medium={true} centered={true}>
 				<div className={classes.wrappingText}>
 					<Typography variant="h1" color="secondary">
@@ -400,118 +480,129 @@ const MainPage = () => {
 					</Grid>
 				</div>
 			</Section>
-			<Section background="offwhite" large={true}>
-				<div style={{ flex: 1 }} id="contactSection">
-					<Typography variant="h1" align="center">
-						Contact us
-					</Typography>
-					<br></br>
-					<Typography variant="h2">Emails:</Typography>
-					<br></br>
-					<div className={classes.contactWrapper}>
-						<MailIcon
-							color="primary"
-							className={classes.icons}
-							fontSize="large"
-						/>
-						<Typography variant="h4" align="center">
-							john@realtutor.online (CEO)
+			<div ref={myRef}>
+				<Section background="offwhite" large={true}>
+					<div style={{ flex: 1 }} id="contactSection">
+						<Typography variant="h1" align="center">
+							Contact us
 						</Typography>
-					</div>
-					<br></br>
-					<div className={classes.contactWrapper}>
-						<MailIcon color="primary" className={classes.icons} />
-						<Typography variant="h4" align="center">
-							zach@realtutor.online (COO)
-						</Typography>
-					</div>
-					<br></br>
-					<Typography variant="h3">Phone numbers:</Typography>
-					<br></br>
-					<div className={classes.contactWrapper}>
-						<PhoneIcon color="primary" className={classes.icons} />
-						<Typography variant="h4" align="center">
-							+44 7443 494507 (Zach)
-						</Typography>
-					</div>
-					<br></br>
-					<div className={classes.contactWrapper}>
-						<PhoneIcon color="primary" className={classes.icons} />
-						<Typography variant="h4" align="center">
-							+44 7576 870036 (John)
-						</Typography>
-					</div>
-					<br></br>
-				</div>
-				<div style={{ flex: 1 }}>
-					<Typography variant="h1" align="center">
-						Socials
-					</Typography>
-					<div
-						className={classes.sectionPaper}
-						style={{
-							flexDirection: 'column',
-							justifyContent: 'space-between',
-							height: '80%',
-						}}
-					>
-						<div
-							className={classes.socialWrapper}
-							onClick={() =>
-								window
-									.open(
-										'https://www.instagram.com/realtutor_online/',
-										'_blank'
-									)
-									.focus()
-							}
-						>
-							<InstagramIcon
-								color="secondary"
+						<br></br>
+						<Typography variant="h2">Emails:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
 								className={classes.icons}
-							></InstagramIcon>
-							<Typography variant="h3">
-								@realtutor_online
+								fontSize="large"
+							/>
+							<Typography variant="h4" align="center">
+								john@realtutor.online (CEO)
 							</Typography>
 						</div>
-						<div
-							className={classes.socialWrapper}
-							onClick={() =>
-								window
-									.open(
-										'https://www.youtube.com/channel/UCDIjZ-wLxyCc9yB49pK-Pqw',
-										'_blank'
-									)
-									.focus()
-							}
-						>
-							<YouTubeIcon
-								color="secondary"
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
 								className={classes.icons}
-							></YouTubeIcon>
-							<Typography variant="h3">Real Tutor</Typography>
+							/>
+							<Typography variant="h4" align="center">
+								zach@realtutor.online (COO)
+							</Typography>
 						</div>
-						<div
-							className={classes.socialWrapper}
-							className={classes.socialWrapper}
-							onClick={() =>
-								window
-									.open(
-										'https://www.facebook.com/real.tutor.509/',
-										'_blank'
-									)
-									.focus()
-							}
-						>
-							<FacebookIcon
-								color="secondary"
+						<br></br>
+						<Typography variant="h3">Phone numbers:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
 								className={classes.icons}
-							></FacebookIcon>
-							<Typography variant="h3">Real Tutor</Typography>
+							/>
+							<Typography variant="h4" align="center">
+								+44 7443 494507 (Zach)
+							</Typography>
+						</div>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								+44 7576 870036 (John)
+							</Typography>
+						</div>
+						<br></br>
+					</div>
+					<div style={{ flex: 1 }}>
+						<Typography variant="h1" align="center">
+							Socials
+						</Typography>
+						<div
+							className={classes.sectionPaper}
+							style={{
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								height: '80%',
+							}}
+						>
+							<div
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.instagram.com/realtutor_online/',
+											'_blank'
+										)
+										.focus()
+								}
+							>
+								<InstagramIcon
+									color="secondary"
+									className={classes.icons}
+								></InstagramIcon>
+								<Typography variant="h3">
+									@realtutor_online
+								</Typography>
+							</div>
+							<div
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.youtube.com/channel/UCDIjZ-wLxyCc9yB49pK-Pqw',
+											'_blank'
+										)
+										.focus()
+								}
+							>
+								<YouTubeIcon
+									color="secondary"
+									className={classes.icons}
+								></YouTubeIcon>
+								<Typography variant="h3">Real Tutor</Typography>
+							</div>
+							<div
+								className={classes.socialWrapper}
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.facebook.com/real.tutor.509/',
+											'_blank'
+										)
+										.focus()
+								}
+							>
+								<FacebookIcon
+									color="secondary"
+									className={classes.icons}
+								></FacebookIcon>
+								<Typography variant="h3">Real Tutor</Typography>
+							</div>
 						</div>
 					</div>
-				</div>
-			</Section>
+				</Section>
+			</div>
 		</div>
 	);
 };

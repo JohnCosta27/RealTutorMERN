@@ -52,8 +52,10 @@ const Banner = (props) => {
 				backgroundPositionX: 'center',
 			},
 			[theme.breakpoints.down('xs')]: {
-				height: props.mainpage ? 800 : height,
+				height: props.mainpage ? 500 : height,
 				backgroundImage: `url(${SmallerBannerBackground})`,
+				backgroundSize: 'cover',
+				backgroundPositionY: 50
 			},
 		},
 		name: {
