@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
-import Ronnie from '../../images/People/ronnie.jpg';
+import Alex from '../../images/People/alex.jpg';
 
 const Alevelbiology = () => {
 	const useStyles = makeStyles((theme) => ({
@@ -154,7 +154,7 @@ const Alevelbiology = () => {
 				<div className={classes.tutorPicturesWrapper}>
 					<div
 						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Ronnie})` }}
+						style={{ backgroundImage: `url(${Alex})` }}
 					></div>
 				</div>
 			</Section>

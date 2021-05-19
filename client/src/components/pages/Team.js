@@ -11,6 +11,7 @@ import Section from '../StyledComponents/Section';
 import John from '../../images/People/john.jpg';
 import Zach from '../../images/People/zach.jpg';
 import Ronnie from '../../images/People/ronnie.jpg';
+import Alex from '../../images/People/alex.jpg';
 import Rio from '../../images/People/rio.jpg';
 
 const Team = () => {
@@ -171,7 +172,7 @@ const Team = () => {
 					<div className={classes.tutorPicturesWrapper}>
 						<div
 							className={classes.tutorPictures}
-							style={{ backgroundImage: `url(${Ronnie})` }}
+							style={{ backgroundImage: `url(${Alex})` }}
 						></div>
 					</div>
 				</div>
