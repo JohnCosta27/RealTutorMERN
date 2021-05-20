@@ -81,7 +81,7 @@ const Banner = (props) => {
 
 	if (props.mainpage) {
 		return (
-			<div className={classes.banner}>
+			<div className={classes.banner} style={{height: 600}}>
 				<div className={classes.name}>
 					<Typography variant="h3" style={{ color: '#FAFAFA' }}>
 						Covid stole your education. We're here to give it back.
