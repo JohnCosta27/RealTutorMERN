@@ -45,7 +45,7 @@ const Section = (props) => {
 		smallSection: {
 			width: '100%',
 			display: 'flex',
-			height: height,
+			height: props.auto ? 'auto' : height,
 			backgroundPositionY: props.offsetY,
 			backgroundImage: props.backgroundimage,
 			[theme.breakpoints.down('sm')]: {

@@ -45,14 +45,14 @@ const Banner = (props) => {
 			position: 'relative',
 			backgroundPositionX: 'right',
 			backgroundPositionY: 'center',
-			justifyContent: 'center',
+			justifyContent: props.mainpage ? 'start' : 'center',
 			alignItems: 'center',
 			backgroundRepeat: 'no-repeat',
 			[theme.breakpoints.down('md')]: {
 				height: 725,
 				backgroundImage: `url(${SmallBannerBackground})`,
 				backgroundPositionX: 'center',
-				justifyContent: 'flex-end'
+				justifyContent: props.mainpage ? 'start' : 'flex-end',
 			},
 			[theme.breakpoints.down('xs')]: {
 				height: props.mainpage ? 500 : height,

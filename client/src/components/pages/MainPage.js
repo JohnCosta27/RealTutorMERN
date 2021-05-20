@@ -219,7 +219,7 @@ const MainPage = () => {
 	const TheExperiment = () => {
 		if (width < 1600) {
 			return (
-				<Section background="lightteal" large={true} centered={true}>
+				<Section background="lightteal" auto={true} centered={true}>
 					<div
 						style={{
 							width: '100%',
