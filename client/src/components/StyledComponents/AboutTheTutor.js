@@ -36,7 +36,12 @@ const AboutTheTutor = (props) => {
 			[theme.breakpoints.down('md')]: {
 				overflow: 'auto',
 				justifyContent: 'center',
-                marginLeft: '12.5%',
+                marginLeft: '20%',
+			},
+			[theme.breakpoints.down('xs')]: {
+				width: "95%",
+				height: 500,
+				marginLeft: "2.5%"
 			},
 		},
 		tutorWrapper: {
