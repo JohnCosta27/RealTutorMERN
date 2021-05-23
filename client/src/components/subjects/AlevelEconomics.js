@@ -3,6 +3,7 @@ import react from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import AboutTheTutor from '../StyledComponents/AboutTheTutor';
 import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
@@ -129,28 +130,27 @@ const AlevelEconomics = () => {
 				</div>
 			</Section>
 
-			<Section background="lightteal" medium={true} centered={true}>
-				<div style={{ width: '100%' }}>
-					<div style={{ maxWidth: 800, float: 'left' }}>
-						<Typography variant="h1" align="left">
-							About the tutor
-						</Typography>
-						<br></br>
-						<Typography variant="h3" align="left">
-							Zach Seth
-						</Typography>
-						<Typography variant="body2" align="left">
-							Zach is cute
-						</Typography>
-					</div>
-				</div>
-				<div className={classes.tutorPicturesWrapper}>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Zach})` }}
-					></div>
-				</div>
+			<Section auto={true} background="lightteal">
+				<Typography variant="h1">About the tutors</Typography>
 			</Section>
+
+			<AboutTheTutor
+				background="lightteal"
+				person={Zach}
+				name="Zach Seth"
+				aboutme="I currently work as a Risk Analyst in the financial
+				sector. I am the COO of Real tutor, a company I
+				co-founded with John. We noticed a gap in the market for
+				high quality tutoring and didn't hesitate to take the
+				opportunity. My business mindset came from my love of
+				Economics, in which I achieved an A at Farnborough
+				Sixth-form college. I enjoyed reading beyond the
+				curriculum and continue to read about finance and
+				economics now. I would like to share my mindset with
+				students by developing their understanding of the world
+				of finance."
+			/>
+
 		</div>
 	);
 };

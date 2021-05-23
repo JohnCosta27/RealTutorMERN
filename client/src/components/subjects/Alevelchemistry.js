@@ -3,6 +3,7 @@ import react from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import AboutTheTutor from '../StyledComponents/AboutTheTutor';
 import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
@@ -124,40 +125,26 @@ const Alevelchemistry = () => {
 				</div>
 			</Section>
 
-			<Section background="lightteal" small={true}>
-				<div style={{ width: '100%' }}>
-					<div style={{ maxWidth: 800, float: 'left' }}>
-						<Typography variant="h1" align="left">
-							About the tutors
-						</Typography>
-						<br></br>
-						<Typography variant="h3" align="left">
-							Alex
-						</Typography>
-						<Typography variant="body2" align="left">
-							I am an undergraduate studying medical biosciences
-							at Imperial College London. I studied Biology,
-							Chemistry and maths at A level achieving an A* in
-							Maths and an A grade in biology and chemistry. I
-							have always had a strong passion for the biological
-							sciences and often researched topics beyond the
-							spectrum of what was necessary for the course. I
-							have always had a strong ability in the sciences and
-							achieved the top grades at GCSE level and am
-							continuing to show great ability after being
-							accepted into Imperial College.
-						</Typography>
-						<br></br>
-						<br></br>
-					</div>
-				</div>
-				<div className={classes.tutorPicturesWrapper}>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Alex})` }}
-					></div>
-				</div>
+			<Section auto={true} background="lightteal">
+				<Typography variant="h1">About the tutors</Typography>
 			</Section>
+
+			<AboutTheTutor
+				background="lightteal"
+				person={Alex}
+				name="Alex Field"
+				aboutme="I am an undergraduate studying medical biosciences at
+				Imperial College London. I studied Biology, Chemistry
+				and maths at A level achieving an A* in Maths and an A
+				grade in biology and chemistry. I have always had a
+				strong passion for the biological sciences and often
+				researched topics beyond the spectrum of what was
+				necessary for the course. I have always had a strong
+				ability in the sciences and achieved the top grades at
+				GCSE level and am continuing to show great ability after
+				being accepted into Imperial College."
+			/>
+
 		</div>
 	);
 };

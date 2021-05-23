@@ -3,6 +3,7 @@ import react from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import AboutTheTutor from '../StyledComponents/AboutTheTutor';
 import Section from '../StyledComponents/Section';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
@@ -128,28 +129,27 @@ const Alevelart = () => {
 				</div>
 			</Section>
 
-			<Section background="lightteal" medium={true} centered={true}>
-				<div style={{ width: '100%' }}>
-					<div style={{ maxWidth: 800, float: 'left' }}>
-						<Typography variant="h1" align="left">
-							About the tutor
-						</Typography>
-						<br></br>
-						<Typography variant="h3" align="left">
-							Rio
-						</Typography>
-						<Typography variant="body2" align="left">
-							Rio is cute
-						</Typography>
-					</div>
-				</div>
-				<div className={classes.tutorPicturesWrapper}>
-					<div
-						className={classes.tutorPictures}
-						style={{ backgroundImage: `url(${Rio})` }}
-					></div>
-				</div>
+			<Section auto={true} background="lightteal">
+				<Typography variant="h1">About the tutors</Typography>
 			</Section>
+
+			<AboutTheTutor
+				background="lightteal"
+				person={Rio}
+				name="Rio Keefe"
+				aboutme="I am a student of Illustration at UCA Farnham. I also
+				studied Art and Graphics in school and Sixth Form,
+				achieving an A in Art and Design at A-Level and an A* in
+				Graphic Products at GCSE. I used my gap year to develop
+				my portfolio and grow my online presence; I started my
+				small business on Etsy where I sell illustration prints
+				and hand-made stickers. I have always taken art
+				seriously, despite its reputation as an ‘easy’ subject,
+				and use it to express myself. I strongly believe art
+				cannot be filtered and should fully represent you and
+				your vision for it, embrace your individuality in every
+				aspect of your life - especially in your artwork."
+			/>
 		</div>
 	);
 };

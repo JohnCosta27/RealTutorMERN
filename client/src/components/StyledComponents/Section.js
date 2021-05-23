@@ -6,6 +6,11 @@ import clsx from 'clsx';
 const Section = (props) => {
 
 	const [height, setHeight] = useState(600);
+	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+	const updateHeight = () => {
+		setWindowHeight(window.innerHeight);
+	}
 
 	useEffect(() => {
 		if (props.small) {
@@ -17,6 +22,8 @@ const Section = (props) => {
 		} else {
 			setHeight('100vh');
 		}
+
+		window.addEventListener('resize', updateHeight);
 
 	}, [])
 
