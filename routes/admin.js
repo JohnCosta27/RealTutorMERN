@@ -2,6 +2,7 @@ const express = require('express');
 const admin = express.Router();
 const Account = require('../models/Account');
 const SpecificationPoints = require('../models/SpecificationPoints');
+const sha256 = require('js-sha256');
 
 //No one can access this router except admins.
 
@@ -77,5 +78,18 @@ admin.post('/addspec', async (req, res) => {
 	res.json({"status": 200});
 
 });
+
+function randomString(length) {
+	var result = '';
+	var characters =
+		'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	var charactersLength = characters.length;
+	for (var i = 0; i < length; i++) {
+		result += characters.charAt(
+			Math.floor(Math.random() * charactersLength)
+		);
+	}
+	return result + new Date().getTime();
+}
 
 module.exports = admin;
