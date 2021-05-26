@@ -57,14 +57,14 @@ const StudentDashboard = () => {
 			marginTop: 50,
 			[theme.breakpoints.down('sm')]: {
 				padding: 5,
-				paddingTop: 10
-			}
+				paddingTop: 10,
+			},
 		},
 	}));
 
 	const [auth, setAuth] = useState({ empty: true });
 	const [current, setCurrent] = useState(0);
-	const [name, setName] = useState("");
+	const [name, setName] = useState('');
 
 	useEffect(() => {
 		getAuth();
@@ -111,10 +111,8 @@ const StudentDashboard = () => {
 		if (data.level == 1) {
 			setName(data.name);
 		} else if (data.level >= 2) {
-
 			const getName = await fetch(
-				'/accounts/getname?studentid=' +
-					urlParams.get('studentid'),
+				'/accounts/getname?studentid=' + urlParams.get('studentid'),
 				{
 					method: 'GET',
 					headers: {
@@ -127,38 +125,48 @@ const StudentDashboard = () => {
 
 			const name = await getName.json();
 			setName(name.name);
-
 		}
 
 		setAuth(data);
 	};
 
+	const logout = async () => {
+		const response = await fetch('/accounts/logout', {
+			method: 'GET',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			credentials: 'include',
+		});
+
+		const data = await response.json();
+		document.location.href = '/';
+		document.cookie = '';
+	}
+
 	const classes = useStyles();
 
 	if (auth.level < 1) {
-		document.location.href = "/login";
+		document.location.href = '/login';
 	} else if (auth.level == 1) {
 		return (
 			<div className="App">
-				<LeftDrawer
-					changeState={handleStateChange}
-					level={1}
-				/>
+				<LeftDrawer changeState={handleStateChange} level={1} />
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
 						<Typography variant="h1">{name}</Typography>
 					</div>
 
 					{current === 0 ? (
-						<Dashboard level={auth.level} changeState={setCurrent} />
+						<Dashboard
+							level={auth.level}
+							changeState={setCurrent}
+						/>
 					) : (
 						<div></div>
 					)}
-					{current === 1 ? (
-						<StudentLessons level={1} />
-					) : (
-						<div></div>
-					)}
+					{current === 1 ? <StudentLessons level={1} /> : <div></div>}
 					{current === 2 ? (
 						<Progress level={auth.level} />
 					) : (
@@ -170,26 +178,21 @@ const StudentDashboard = () => {
 	} else if (auth.level >= 2) {
 		return (
 			<div className="App">
-				<LeftDrawer
-					changeState={handleStateChange}
-					level={2}
-				/>
+				<LeftDrawer changeState={handleStateChange} level={2} logout={logout} />
 				<div className={classes.content}>
-					
 					<div className={classes.studentNameWrapper}>
 						<Typography variant="h1">{name}</Typography>
 					</div>
 
 					{current === 0 ? (
-						<Dashboard level={auth.level} changeState={setCurrent} />
+						<Dashboard
+							level={auth.level}
+							changeState={setCurrent}
+						/>
 					) : (
 						<div></div>
 					)}
-					{current === 1 ? (
-						<StudentLessons level={1} />
-					) : (
-						<div></div>
-					)}
+					{current === 1 ? <StudentLessons level={1} /> : <div></div>}
 					{current === 2 ? (
 						<Progress level={auth.level} />
 					) : (

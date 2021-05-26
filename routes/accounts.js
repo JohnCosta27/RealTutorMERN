@@ -15,7 +15,7 @@ accounts.post('/login', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 400,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: 'Email or password missing from request' });
 	} else {
@@ -29,7 +29,7 @@ accounts.post('/login', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 401,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Incorrect password' });
 			} else {
@@ -59,7 +59,7 @@ accounts.post('/login', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 200,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({
 							cookie: account.cookie,
@@ -83,7 +83,7 @@ accounts.post('/login', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 200,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({
 							cookie: account.cookie,
@@ -99,10 +99,41 @@ accounts.post('/login', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 500,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: error });
 		}
+	}
+});
+
+accounts.get('/logout', async (req, res) => {
+	try {
+		const validation = await validateCookie(req.cookies.token);
+		if (validation.id != '') {
+			const account = await getAccount(validation.id);
+			account.cookie = '';
+			account.loggedIn = false;
+			account.save();
+
+			for (let i = 0; i < sessions.length; i++) {
+				if (String(sessions[i].id) == String(account._id)) {
+					endSession(sessions[i], i);
+					break;
+				}
+			}
+
+			res.json({ status: 'Logged out successfully' });
+		} else {
+			res.json({ error: 'Account is not logged in' });
+		}
+	} catch (error) {
+		createStats({
+			cookie: req.cookies.token,
+			route: 'accounts',
+			request: req.path,
+			outcome: 500,
+			date: new Date().getTime(),
+		});
 	}
 });
 
@@ -120,7 +151,7 @@ accounts.post('/addlesson', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 400,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: 'One or more parameters missing from the request' });
 	} else if (req.body.studentid == req.body.tutorid) {
@@ -129,7 +160,7 @@ accounts.post('/addlesson', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 401,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: 'Student and tutor IDs cannot be the same' });
 	} else {
@@ -141,7 +172,7 @@ accounts.post('/addlesson', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: '1 or more accounts were not found' });
 		} else {
@@ -162,7 +193,7 @@ accounts.post('/addlesson', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 400,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication failed' });
 			} else {
@@ -189,7 +220,7 @@ accounts.post('/addlesson', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 200,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({ lesson: 'Saved successfully' });
 					} catch (err) {
@@ -199,7 +230,7 @@ accounts.post('/addlesson', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 500,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({ error: err });
 					}
@@ -210,7 +241,7 @@ accounts.post('/addlesson', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 400,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({
 						error: '1 or more specification points are invalid',
@@ -232,7 +263,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 400,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: '1 or more specification points were invalid' });
 	} else {
@@ -255,14 +286,14 @@ accounts.post('/addlessonreport', async (req, res) => {
 						lesson.date
 					);
 					await lesson.save();
-					
+
 					createStats({
 						id: validation.id,
 						cookie: validation.cookie,
 						route: 'accounts',
 						request: req.path,
 						outcome: 200,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({ success: 'Lesson updated successfully' });
 				} catch (error) {
@@ -272,7 +303,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 404,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({ error: 'Lesson not found' });
 				}
@@ -283,7 +314,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 400,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Specification points incorrect' });
 			}
@@ -293,7 +324,7 @@ accounts.post('/addlessonreport', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 401,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Token invalid' });
 		}
@@ -308,7 +339,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Student ID is not present' });
 		} else {
@@ -322,7 +353,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 404,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'This account was not found' });
 			} else {
@@ -344,7 +375,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 401,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({ error: 'Validation not successful' });
 				} else {
@@ -354,7 +385,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 200,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json(await getLessons(req.query.studentid, 1));
 				}
@@ -366,7 +397,7 @@ accounts.get('/getstudentlessons', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json(error);
 	}
@@ -380,7 +411,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: '1 or more parameters were not present' });
 		} else {
@@ -394,7 +425,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 404,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Account was not found' });
 			} else {
@@ -416,7 +447,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 401,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({ error: 'Validation not successful' });
 				} else {
@@ -428,7 +459,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 404,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({ error: 'This student could not be found' });
 					} else {
@@ -449,7 +480,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 200,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json(lessonReturn);
 					}
@@ -462,7 +493,7 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json(error);
 	}
@@ -476,7 +507,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: '1 or more parameters were not found' });
 		} else {
@@ -490,7 +521,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 404,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'This account was not found' });
 			} else {
@@ -512,7 +543,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 401,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({ error: 'Validation not successful' });
 				} else {
@@ -524,7 +555,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 							route: 'accounts',
 							request: req.path,
 							outcome: 404,
-							date: new Date().getTime()
+							date: new Date().getTime(),
 						});
 						res.json({ error: 'This student could not be found' });
 					} else {
@@ -547,7 +578,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 								route: 'accounts',
 								request: req.path,
 								outcome: 200,
-								date: new Date().getTime()
+								date: new Date().getTime(),
 							});
 							res.json({ error: 'No upcoming lesson' });
 						} else {
@@ -557,7 +588,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 								route: 'accounts',
 								request: req.path,
 								outcome: 200,
-								date: new Date().getTime()
+								date: new Date().getTime(),
 							});
 							res.json(lessonReturn);
 						}
@@ -571,7 +602,7 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -585,7 +616,7 @@ accounts.post('/addspecpoins', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: '1 or more specification points were invalid' });
 		} else {
@@ -606,7 +637,7 @@ accounts.post('/addspecpoins', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 401,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication failed' });
 			} else {
@@ -616,7 +647,7 @@ accounts.post('/addspecpoins', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 200,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json(
 					await addStudentPoints(
@@ -632,7 +663,7 @@ accounts.post('/addspecpoins', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -649,7 +680,7 @@ accounts.get('/getstudentpoints', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Student ID is not present' });
 		} else if (
@@ -669,7 +700,7 @@ accounts.get('/getstudentpoints', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 401,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Authentication failed' });
 		} else {
@@ -680,7 +711,7 @@ accounts.get('/getstudentpoints', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 200,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json(account.specPoints);
 		}
@@ -690,7 +721,7 @@ accounts.get('/getstudentpoints', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -707,7 +738,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Student ID is not present' });
 		} else if (
@@ -727,7 +758,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 401,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Authentication failed' });
 		} else {
@@ -739,7 +770,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 404,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'This account was not found' });
 			} else {
@@ -751,7 +782,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 200,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({
 					progress: Math.round(
@@ -766,7 +797,7 @@ accounts.get('/getstudentprogress', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -780,7 +811,7 @@ accounts.get('/gettutorstudents', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Tutor ID is not present' });
 		} else {
@@ -799,7 +830,7 @@ accounts.get('/gettutorstudents', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 400,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication error' });
 			} else {
@@ -814,7 +845,7 @@ accounts.get('/gettutorstudents', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 200,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ students: students });
 			}
@@ -825,7 +856,7 @@ accounts.get('/gettutorstudents', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -841,7 +872,7 @@ accounts.get('/getid', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 200,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ id: account._id });
 	} else {
@@ -850,7 +881,7 @@ accounts.get('/getid', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 401,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: 'Cookie not valid' });
 	}
@@ -864,7 +895,7 @@ accounts.get('/auth', async (req, res) => {
 		route: 'accounts',
 		request: req.path,
 		outcome: 200,
-		date: new Date().getTime()
+		date: new Date().getTime(),
 	});
 	res.json(auth);
 });
@@ -882,7 +913,7 @@ accounts.get('/tutorstudent', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 200,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ contains: contains });
 	} catch (error) {
@@ -891,7 +922,7 @@ accounts.get('/tutorstudent', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 200,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ contains: false });
 	}
@@ -905,7 +936,7 @@ accounts.get('/gettutorlessons', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Tutor ID is not present' });
 		} else {
@@ -923,7 +954,7 @@ accounts.get('/gettutorlessons', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 401,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication error' });
 			} else {
@@ -933,7 +964,7 @@ accounts.get('/gettutorlessons', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 200,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json(await getLessons(req.query.tutorid, 2));
 			}
@@ -944,7 +975,7 @@ accounts.get('/gettutorlessons', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -958,7 +989,7 @@ accounts.get('/getname', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 400,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'IDs were missing' });
 		} else {
@@ -970,7 +1001,7 @@ accounts.get('/getname', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 401,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication error' });
 			} else {
@@ -982,7 +1013,7 @@ accounts.get('/getname', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 200,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({
 						name: account.firstname + ' ' + account.surname,
@@ -995,7 +1026,7 @@ accounts.get('/getname', async (req, res) => {
 						route: 'accounts',
 						request: req.path,
 						outcome: 200,
-						date: new Date().getTime()
+						date: new Date().getTime(),
 					});
 					res.json({
 						name: account.firstname + ' ' + account.surname,
@@ -1009,7 +1040,7 @@ accounts.get('/getname', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 500,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: error });
 	}
@@ -1022,7 +1053,7 @@ accounts.get('/getremaininghours', async (req, res) => {
 			route: 'accounts',
 			request: req.path,
 			outcome: 400,
-			date: new Date().getTime()
+			date: new Date().getTime(),
 		});
 		res.json({ error: 'ID missing' });
 	} else {
@@ -1045,7 +1076,7 @@ accounts.get('/getremaininghours', async (req, res) => {
 				route: 'accounts',
 				request: req.path,
 				outcome: 401,
-				date: new Date().getTime()
+				date: new Date().getTime(),
 			});
 			res.json({ error: 'Authentication error' });
 		} else {
@@ -1057,7 +1088,7 @@ accounts.get('/getremaininghours', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 200,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ hours: account.remainingHours });
 			} catch (error) {
@@ -1067,7 +1098,7 @@ accounts.get('/getremaininghours', async (req, res) => {
 					route: 'accounts',
 					request: req.path,
 					outcome: 500,
-					date: new Date().getTime()
+					date: new Date().getTime(),
 				});
 				res.json({ error: 'Authentication error' });
 			}
@@ -1196,27 +1227,32 @@ async function validateCookie(cookie) {
 	 * 3 -> Manager account
 	 */
 
+	if (cookie == '') {
+		return { level: 0, id: '' };
+	}
+
 	const result = await Account.findOne({ cookie: cookie });
 	if (result == undefined) {
 		return { level: 0, id: '' };
 	} else {
 		if (!result.loggedIn) return 0;
 
-		refreshSession(cookie);
-
 		if (result.type == 'student') {
+			refreshSession(cookie);
 			return {
 				level: 1,
 				id: result._id,
 				name: result.firstname + ' ' + result.surname,
 			};
 		} else if (result.type == 'tutor') {
+			refreshSession(cookie);
 			return {
 				level: 2,
 				id: result._id,
 				name: result.firstname + ' ' + result.surname,
 			};
 		} else if (result.type == 'manager') {
+			refreshSession(cookie);
 			return {
 				level: 3,
 				id: result._id,
@@ -1353,25 +1389,27 @@ setInterval(checkExpired, 1000);
 async function checkExpired() {
 	for (let i = 0; i < sessions.length; i++) {
 		let session = sessions[i];
-		let currentDate = new Date().getTime();
-		if (session.date + 3600000 < currentDate) {
-			const dbSession = await Session.findById(session.sessionid);
-
-			dbSession.endDate = currentDate;
-			dbSession.save();
-
-			sessions.splice(i, 1);
-			const account = await Account.findById(session.id);
-			account.loggedIn = 0;
-			account.cookie = '';
-			await account.save();
+		if (session.date + 3600000 < new Date().getTime()) {
+			endSession(session, i);
 		}
 	}
 }
 
+async function endSession(session, i) {
+	const dbSession = await Session.findById(session.sessionid);
+	dbSession.endDate = new Date().getTime();
+	dbSession.save();
+	sessions.splice(i, 1);
+
+	const account = await Account.findById(session.id);
+	account.loggedIn = 0;
+	account.cookie = '';
+	await account.save();
+}
+
 async function createStats(json) {
 	let stats = new Stats(json);
-	stats.date = new Date().getTime()
+	stats.date = new Date().getTime();
 	stats.save();
 }
 

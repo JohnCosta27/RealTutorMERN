@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -32,8 +31,8 @@ const LeftDrawer = (props) => {
 	const [width, setWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
-		window.addEventListener("resize", () => setWidth(window.innerWidth));
-		if (window.innerWidth >= 960) setOpen(true)
+		window.addEventListener('resize', () => setWidth(window.innerWidth));
+		if (window.innerWidth >= 960) setOpen(true);
 	}, []);
 
 	const handleDrawerOpen = () => {
@@ -58,8 +57,8 @@ const LeftDrawer = (props) => {
 			height: '100%',
 			width: drawerWidth,
 			[theme.breakpoints.down('sm')]: {
-				width: "100%"
-			}
+				width: '100%',
+			},
 		},
 		button: {
 			marginLeft: 5,
@@ -68,17 +67,17 @@ const LeftDrawer = (props) => {
 		drawer: {
 			width: drawerWidth,
 			[theme.breakpoints.down('sm')]: {
-				width: "100%"
+				width: '100%',
 			},
 			flexShrink: 0,
-			zIndex: 10
+			zIndex: 10,
 		},
 		drawerPaper: {
 			width: drawerWidth,
 			[theme.breakpoints.down('sm')]: {
-				width: "100%"
+				width: '100%',
 			},
-			zIndex: 10
+			zIndex: 10,
 		},
 		icon: {
 			color: theme.palette.divBackground,
@@ -96,7 +95,7 @@ const LeftDrawer = (props) => {
 		appBarShift: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			[theme.breakpoints.down('sm')]: {
-				width: 0
+				width: 0,
 			},
 			marginLeft: drawerWidth,
 			transition: theme.transitions.create(['margin', 'width'], {
@@ -123,8 +122,8 @@ const LeftDrawer = (props) => {
 			setOpen(false);
 		}
 		props.changeState(state);
-	}
-
+	};
+	console.log(props.level);
 	//Level 1 -> Student looking at student dashboard
 	//Level 2 -> Tutor looking at student dashboard
 	//Level 3 -> Tutor looking at tutor dashbgoard
@@ -153,6 +152,7 @@ const LeftDrawer = (props) => {
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
+						<Button variant="outlined">Log out</Button>
 					</Toolbar>
 				</AppBar>
 				<Drawer
@@ -234,6 +234,17 @@ const LeftDrawer = (props) => {
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
+						<Button
+							variant="contained"
+							color="secondary"
+							style={{ marginLeft: 'auto' }}
+							onClick={() => {
+								console.log("Hello");
+								props.logout();
+							}}
+						>
+							Log out
+						</Button>
 					</Toolbar>
 				</AppBar>
 				<Drawer
@@ -337,6 +348,7 @@ const LeftDrawer = (props) => {
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
+						<Button variant="outlined">Log out</Button>
 					</Toolbar>
 				</AppBar>
 				<Drawer

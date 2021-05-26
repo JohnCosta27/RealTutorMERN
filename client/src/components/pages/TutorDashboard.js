@@ -113,14 +113,30 @@ const StudentDashboard = () => {
 		setAuth(data);
 	};
 
+	const logout = async () => {
+		const response = await fetch('/accounts/logout', {
+			method: 'GET',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			credentials: 'include',
+		});
+
+		const data = await response.json();
+		document.location.href = '/';
+		document.cookie = '';
+
+	}
+
 	const classes = useStyles();
 
 	if (auth.level <= 1) {
 		document.location.href = "/login";
-	} else if (auth.level >= 2) {
+	} else if (auth.level == 2) {
 		return (
 			<div className="App">
-				<LeftDrawer changeState={setCurrent} level={3} />
+				<LeftDrawer changeState={setCurrent} level={3} logout={logout}/>
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
 						<Typography variant="h1">{name}</Typography>

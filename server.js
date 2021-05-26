@@ -38,9 +38,17 @@ app.use('/admin', async (req, res, next) => {
 	}
 }, admin);
 
-app.use(express.static(path.join(__dirname, 'build')));
+//Displays the front page
+app.use('/', (req, res, next) => {
+	if (req.path == '/') {
+		//Someone visited
+	}
+	next();
+}, express.static(path.join(__dirname, 'build')));
 
+//Takes the others
 app.get('*', (req, res) => {
+	console.log(req.path);
 	res.sendFile(path.resolve(__dirname, 'build/index.html'));
 });
 
