@@ -75,15 +75,15 @@ const Lesson = (props) => {
 		let body = {
 			answers: [
 				{
-					question: 'Test 1',
+					question: 'How good was your lesson?',
 					answer: q1,
 				},
 				{
-					question: 'Test 2',
+					question: 'Did the tutor do well?',
 					answer: q2,
 				},
 				{
-					question: 'Test 3',
+					question: 'Would you recommend it to a friend?',
 					answer: q3,
 				},
 			],
@@ -156,7 +156,7 @@ const Lesson = (props) => {
 						</Typography>
 						<br></br>
 						<Typography variant="h3">
-							How was your lesson?
+							How good was your lesson?
 						</Typography>
 						<Slider
 							value={q1}
@@ -169,7 +169,7 @@ const Lesson = (props) => {
 							style={{ width: '95%', marginLeft: '2.5%' }}
 						/>
 						<Typography variant="h3">
-							How was your lesson?
+							Did the tutor do well?
 						</Typography>
 						<Slider
 							value={q2}
@@ -182,7 +182,7 @@ const Lesson = (props) => {
 							style={{ width: '95%', marginLeft: '2.5%' }}
 						/>
 						<Typography variant="h3">
-							How was your lesson?
+							Would you recommend it to a friend?
 						</Typography>
 						<Slider
 							value={q3}

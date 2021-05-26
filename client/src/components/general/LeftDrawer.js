@@ -152,7 +152,17 @@ const LeftDrawer = (props) => {
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
-						<Button variant="outlined">Log out</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							style={{ marginLeft: 'auto' }}
+							onClick={() => {
+								console.log("Hello");
+								props.logout();
+							}}
+						>
+							Log out
+						</Button>
 					</Toolbar>
 				</AppBar>
 				<Drawer
@@ -348,7 +358,17 @@ const LeftDrawer = (props) => {
 						<Typography variant="h6" noWrap>
 							Real Tutor
 						</Typography>
-						<Button variant="outlined">Log out</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							style={{ marginLeft: 'auto' }}
+							onClick={() => {
+								console.log("Hello");
+								props.logout();
+							}}
+						>
+							Log out
+						</Button>
 					</Toolbar>
 				</AppBar>
 				<Drawer

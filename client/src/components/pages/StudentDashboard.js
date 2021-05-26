@@ -152,7 +152,7 @@ const StudentDashboard = () => {
 	} else if (auth.level == 1) {
 		return (
 			<div className="App">
-				<LeftDrawer changeState={handleStateChange} level={1} />
+				<LeftDrawer changeState={handleStateChange} level={1} logout={logout} />
 				<div className={classes.content}>
 					<div className={classes.studentNameWrapper}>
 						<Typography variant="h1">{name}</Typography>
