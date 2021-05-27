@@ -59,7 +59,7 @@ const DefaultAppBar = (props) => {
 		setOpen(false);
 	};
 
-	if (width < 750) {
+	if (width < 850) {
 		return (
 			<AppBar position="absolute" className={classes.appBar}>
 				<Toolbar
@@ -115,6 +115,14 @@ const DefaultAppBar = (props) => {
 						>
 							Contact Us
 						</Button>
+						<Button
+							variant="outlined"
+							color="secondary"
+							className={classes.drawerItem}
+							onClick={() => document.location.href = '/login'}
+						>
+							Login
+						</Button>
 					</SwipeableDrawer>
 				</Toolbar>
 			</AppBar>
@@ -166,6 +174,14 @@ const DefaultAppBar = (props) => {
 							onClick={contactUs}
 						>
 							Contact Us
+						</Button>
+						<Button
+							variant="outlined"
+							color="secondary"
+							className={classes.listItem}
+							onClick={() => document.location.href = '/login'}
+						>
+							Login
 						</Button>
 					</List>
 				</Toolbar>
