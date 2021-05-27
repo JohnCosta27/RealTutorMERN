@@ -43,6 +43,7 @@ const StudentLessons = (props) => {
 		);
 
 		const data = await response.json();
+		console.log(data);
 		let lessons = [];
 		for (let lesson of data) {
 			let specPoints = [];
@@ -63,7 +64,9 @@ const StudentLessons = (props) => {
 					specPoints,
 					lesson.report,
 					specPointsAchieved,
-					lesson.date
+					lesson.date,
+					lesson.student,
+					lesson.tutor
 				)
 			);
 		}
@@ -82,7 +85,9 @@ const StudentLessons = (props) => {
 		specPoints,
 		report,
 		specPointsAchieved,
-		date
+		date,
+		student,
+		tutor
 	) => {
 		return {
 			_id,
@@ -92,6 +97,8 @@ const StudentLessons = (props) => {
 			report,
 			specPointsAchieved,
 			date,
+			student,
+			tutor
 		};
 	};
 
@@ -107,65 +114,135 @@ const StudentLessons = (props) => {
 
 	const classes = useStyles();
 
-	if (width < 800) {
-		return (
-			<TableContainer component={Paper}>
-				<Table className={classes.table} aria-label="simple table">
-					<TableHead>
-						<TableRow>
-							<TableCell>Title</TableCell>
-							<TableCell>Expand</TableCell>
-						</TableRow>
-					</TableHead>
-					<TableBody>
-						{rows.map((row) => (
-							<BigLesson
-								id={row._id}
-								_id={row._id}
-								title={row.title}
-								plan={row.plan}
-								specPoints={row.specPoints}
-								specPointsAchieved={row.specPointsAchieved}
-								report={row.report}
-								date={row.date}
-								mobile={true}
-							/>
-						))}
-					</TableBody>
-				</Table>
-			</TableContainer>
-		);
+	if (width < 1000 || (width < 1300 && props.level == 2)) {
+		if (props.level == 1) {
+			return (
+				<TableContainer component={Paper}>
+					<Table className={classes.table} aria-label="simple table">
+						<TableHead>
+							<TableRow>
+								<TableCell>Title</TableCell>
+								<TableCell>Expand</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{rows.map((row) => (
+								<BigLesson
+									id={row._id}
+									_id={row._id}
+									title={row.title}
+									plan={row.plan}
+									specPoints={row.specPoints}
+									specPointsAchieved={row.specPointsAchieved}
+									report={row.report}
+									date={row.date}
+									mobile={true}
+									level={1}
+								/>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
+			);
+		} else if (props.level == 2) {
+			return (
+				<TableContainer component={Paper}>
+					<Table className={classes.table} aria-label="simple table">
+						<TableHead>
+							<TableRow>
+								<TableCell>Title</TableCell>
+								<TableCell>Expand</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{rows.map((row) => (
+								<BigLesson
+									id={row._id}
+									_id={row._id}
+									title={row.title}
+									student={row.student}
+									plan={row.plan}
+									specPoints={row.specPoints}
+									specPointsAchieved={row.specPointsAchieved}
+									report={row.report}
+									date={row.date}
+									mobile={true}
+									level={2}
+								/>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
+			);
+		}
 	} else {
-		return (
-			<TableContainer component={Paper}>
-				<Table className={classes.table} aria-label="simple table">
-					<TableHead>
-						<TableRow>
-							<TableCell>Title</TableCell>
-							<TableCell>Specification Points</TableCell>
-							<TableCell>Achieved Specification Points</TableCell>
-							<TableCell style={{ width: 150 }}>Date</TableCell>
-							<TableCell>Expand</TableCell>
-						</TableRow>
-					</TableHead>
-					<TableBody>
-						{rows.map((row) => (
-							<BigLesson
-								id={row._id}
-								_id={row._id}
-								title={row.title}
-								plan={row.plan}
-								specPoints={row.specPoints}
-								specPointsAchieved={row.specPointsAchieved}
-								report={row.report}
-								date={row.date}
-								mobile={false}
-							/>
-						))}
-					</TableBody>
-				</Table>
-			</TableContainer>
-		);
+		if (props.level == 1) {
+			return (
+				<TableContainer component={Paper}>
+					<Table className={classes.table} aria-label="simple table">
+						<TableHead>
+							<TableRow>
+								<TableCell>Title</TableCell>
+								<TableCell>Specification Points</TableCell>
+								<TableCell>Achieved Specification Points</TableCell>
+								<TableCell style={{ width: 150 }}>Date</TableCell>
+								<TableCell>Expand</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{rows.map((row) => (
+								<BigLesson
+									id={row._id}
+									_id={row._id}
+									title={row.title}
+									plan={row.plan}
+									specPoints={row.specPoints}
+									specPointsAchieved={row.specPointsAchieved}
+									report={row.report}
+									date={row.date}
+									mobile={false}
+									level={1}
+								/>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
+			);
+		} else if (props.level == 2) {
+			return (
+				<TableContainer component={Paper}>
+					<Table className={classes.table} aria-label="simple table">
+						<TableHead>
+							<TableRow>
+								<TableCell>Student</TableCell>
+								<TableCell>Title</TableCell>
+								<TableCell>Specification Points</TableCell>
+								<TableCell>Achieved Specification Points</TableCell>
+								<TableCell style={{ width: 150 }}>Date</TableCell>
+								<TableCell>Expand</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{rows.map((row) => (
+								<BigLesson
+									id={row._id}
+									_id={row._id}
+									student={row.student}
+									title={row.title}
+									plan={row.plan}
+									specPoints={row.specPoints}
+									specPointsAchieved={row.specPointsAchieved}
+									report={row.report}
+									date={row.date}
+									mobile={false}
+									level={2}
+								/>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
+			);
+		}
 	}
 };
 

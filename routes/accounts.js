@@ -1174,8 +1174,14 @@ async function getLessons(id, level) {
 				if (specPointsAchieved.error != undefined)
 					res.json({ error: specPointsAchieved.error });
 				lesson.specPointsAchieved = specPointsAchieved;
-			}
 
+				let tutor =  (await Account.findById(lesson.tutorID, 'firstname surname'));
+				let student =  (await Account.findById(lesson.studentID, 'firstname surname'));
+				
+				lesson.tutor = tutor.firstname + " " + tutor.surname;
+				lesson.student = student.firstname + " " + student.surname;
+
+			}
 			return lessons;
 		}
 	} catch (error) {

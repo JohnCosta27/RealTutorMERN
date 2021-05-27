@@ -26,6 +26,14 @@ const LessonSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	student: {
+		type: String,
+		required: false
+	},
+	tutor: {
+		type: String,
+		required: false
+	},
 	title: {
 		type: String,
 		required: true,
