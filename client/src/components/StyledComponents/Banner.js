@@ -43,7 +43,7 @@ const Banner = (props) => {
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
-			backgroundPositionX: 'right',
+			backgroundPositionX: 0,
 			backgroundPositionY: 'center',
 			justifyContent: props.mainpage ? 'start' : 'center',
 			alignItems: 'center',
@@ -75,84 +75,71 @@ const Banner = (props) => {
 				bottom: 50,
 			},
 		},
+		titles: {
+		},
+		spacer: {
+			width: "100%",
+			height: 500,
+		}
 	}));
 
 	const classes = useStyles();
 
 	if (props.mainpage) {
 		return (
-			<div className={classes.banner} style={{height: 600}}>
+			<div className={classes.banner} style={{ height: 800 }}>
 				<div className={classes.name}>
 					<Typography variant="h3" style={{ color: '#FAFAFA' }}>
 						Covid stole your education. We're here to give it back.
 					</Typography>
 					<br></br>
 				</div>
-				<Slide timeout={1500} in={enter} direction="left">
-					{width < 440 ? (
-						<div className={classes.centeredWrapper}>
-							<Typography
-								variant="h4"
-								style={{ color: '#FAFAFA' }}
-							>
-								£20 an hour (GCSE)
-							</Typography>
-							<Typography
-								variant="h4"
-								style={{ color: '#FAFAFA' }}
-							>
-								£30 an hour (A-level)
-							</Typography>
-							<Typography
-								variant="h4"
-								style={{ color: '#FAFAFA' }}
-							>
-								The future is online.
-							</Typography>
-						</div>
-					) : (
-						<div className={classes.centeredWrapper}>
-							<Typography
-								variant="h2"
-								style={{ color: '#FAFAFA' }}
-							>
-								£20 an hour (GCSE)
-							</Typography>
-							<Typography
-								variant="h2"
-								style={{ color: '#FAFAFA' }}
-							>
-								£30 an hour (A-level)
-							</Typography>
-							<Typography
-								variant="h3"
-								style={{ color: '#FAFAFA' }}
-							>
-								The future is online.
-							</Typography>
-						</div>
-					)}
-				</Slide>
+				{width < 440 ? (
+					<div className={classes.centeredWrapper}>
+						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+							£20 an hour (GCSE)
+						</Typography>
+						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+							£30 an hour (A-level)
+						</Typography>
+						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+							The future is online.
+						</Typography>
+					</div>
+				) : (
+					<div className={classes.centeredWrapper}>
+						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
+							£20 an hour (GCSE)
+						</Typography>
+						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
+							£30 an hour (A-level)
+						</Typography>
+						<Typography variant="h3" style={{ color: '#FAFAFA' }}>
+							The future is online.
+						</Typography>
+					</div>
+				)}
 			</div>
 		);
 	} else {
 		return (
 			<div className={classes.banner}>
-				<br></br>
-				<Typography
-					variant="h1"
-					align="center"
-					style={{ color: '#FAFAFA' }}
-				>
-					{props.title}
-				</Typography>
-				<Typography
-					variant="h3"
-					align="center"
-					style={{ color: '#FAFAFA' }}
-				>
-					{props.subtitle}
-				</Typography>
+				<div className={classes.titles}>
+					<Typography
+						variant="h1"
+						align="center"
+						style={{ color: '#FAFAFA' }}
+					>
+						{props.title}
+					</Typography>
+					<Typography
+						variant="h3"
+						align="center"
+						style={{ color: '#FAFAFA' }}
+					>
+						{props.subtitle}
+					</Typography>
+				</div>
 			</div>
 		);
 	}

@@ -287,7 +287,7 @@ const MainPage = () => {
 			return (
 				<Section background="lightteal" medium={true} centered={true}>
 					<div style={{ width: '100%', marginRight: 20 }}>
-						<ReactPlayer url="https://www.youtube.com/watch?v=-UAWRH0-h8A" />
+						<ReactPlayer url="https://www.youtube.com/watch?v=-UAWRH0-h8A" controls={true}/>
 					</div>
 					<div style={{ width: '100%' }}>
 						<div style={{ maxWidth: 800, float: 'right' }}>
