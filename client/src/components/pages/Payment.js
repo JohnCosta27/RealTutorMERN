@@ -6,8 +6,14 @@ import { Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { loadStripe } from '@stripe/stripe-js';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 import Section from '../StyledComponents/Section';
+import Stripe from '../../images/stripe.png';
 
 const stripePromise = loadStripe(
 	'pk_live_51IgsTHJwHQjcU66CgZtNbj7hpXzxLlnlk9V2rqRp1M110TAUe4V4XCmPnpXrhFRCYuySROcq4UU1UXMTSAaeISnq002CgxVgr8'
@@ -17,58 +23,68 @@ const Payment = () => {
 	const [stripeError, setStripeError] = useState();
 	const [loading, setLoading] = useState(false);
 
-	const [alevelNum, setalevelnum] = useState(0);
-	const [gcseNum, setgcsenum] = useState(0);
+	const [name, setName] = useState("");
+	const [nameError, setNameError] = useState(false);
+	const [sessions, setSessions] = useState(0);
+	const [selectedLevel, setSelectedLevel] = useState("A-level");
 
-	const alevelClick = async () => {
-		setLoading(true);
-		const stripe = await stripePromise;
-		const { error } = await stripe.redirectToCheckout({
-			lineItems: [
-				{
-					price: 'price_1Irrj0JwHQjcU66CGQTbReDq',
-					quantity: Number(alevelNum),
-				},
-			],
-			mode: 'payment',
-			cancelUrl: window.location.origin,
-			successUrl: `${window.location.origin}/login`,
-		});
-
-		if (error) {
-			setLoading(false);
-			setStripeError(error);
-		}
+	const handleSession = (event) => {
+		setSessions(event.target.value);
 	};
 
-    const gcseClick = async () => {
-		setLoading(true);
-		const stripe = await stripePromise;
-		const { error } = await stripe.redirectToCheckout({
-			lineItems: [
-				{
-					price: 'price_1IrriQJwHQjcU66CDQzLXrbh',
-					quantity: Number(gcseNum),
-				},
-			],
-			mode: 'payment',
-			cancelUrl: window.location.origin,
-			successUrl: `${window.location.origin}/login`,
-		});
-
-		if (error) {
-			setLoading(false);
-			setStripeError(error);
-		}
+	const handleChange = (event) => {
+		setSelectedLevel(event.target.value);
 	};
 
-    const alevelchange = (event) => {
-        setalevelnum(event.target.value)
-    }
+	const buttonClick = async () => {
 
-    const gcsechange = (event) => {
-        setgcsenum(event.target.value)
-    }
+		if (name.length < 3) {
+			setNameError(true);
+			return;
+		}
+
+		if (selectedLevel == "A-level") {
+			setLoading(true);
+			const stripe = await stripePromise;
+			const { error } = await stripe.redirectToCheckout({
+				lineItems: [
+					{
+						price: 'price_1Irrj0JwHQjcU66CGQTbReDq',
+						quantity: Number(sessions),
+					},
+				],
+				mode: 'payment',
+				cancelUrl: window.location.origin,
+				clientReferenceId: name,
+				successUrl: `${window.location.origin}/login`,
+			});
+	
+			if (error) {
+				setLoading(false);
+				setStripeError(error);
+			}
+		} else if (selectedLevel == "GCSE") {
+			setLoading(true);
+			const stripe = await stripePromise;
+			const { error } = await stripe.redirectToCheckout({
+				lineItems: [
+					{
+						price: 'price_1IrriQJwHQjcU66CDQzLXrbh',
+						quantity: Number(sessions),
+					},
+				],
+				mode: 'payment',
+				cancelUrl: window.location.origin,
+				clientReferenceId: name,
+				successUrl: `${window.location.origin}/login`,
+			});
+	
+			if (error) {
+				setLoading(false);
+				setStripeError(error);
+			}
+		}
+	}
 
 	return (
 		<div>
@@ -98,49 +114,58 @@ const Payment = () => {
 				</div>
 			</Section>
 			<Section small={true} centered={true} background="lightteal">
-				<div>
+				<div style={{ marginRight: 20 }}>
 					<Typography variant="h1" align="center">
-						A-level Sessions
+						Real Tutor Sessions
 					</Typography>
 					<br></br>
+
+					<RadioGroup
+						aria-label="level"
+						name="Students Level"
+						value={selectedLevel}
+						onChange={handleChange}
+					>
+						<FormControlLabel
+							value="A-level"
+							control={<Radio color="primary" />}
+							label="A-level"
+						/>
+						<FormControlLabel
+							value="GCSE"
+							control={<Radio color="primary" />}
+							label="GCSE"
+						/>
+					</RadioGroup>
+
+					<Typography variant="h3">Students name</Typography>
+					<TextField
+						variant="outlined"
+						style={{ width: '100%' }}
+						error={nameError}
+						onFocus={() => setNameError(false)}
+						onChange={(event) => setName(event.target.value)}
+						value={name}
+					></TextField>
 					<Typography variant="h3">Number of sessions</Typography>
 					<TextField
 						type="number"
 						label="Number"
 						variant="outlined"
 						style={{ width: '100%' }}
-						onChange={alevelchange}
+						onChange={handleSession}
 					></TextField>
 					<br></br>
 					<br></br>
 					<Button
 						variant="contained"
 						style={{ width: '100%' }}
-						onClick={alevelClick}
+						onClick={buttonClick}
 					>
 						Payment
 					</Button>
 				</div>
-				<br></br>
-				<div>
-					<Typography variant="h1" align="center">
-						GCSE Sessions
-					</Typography>
-					<br></br>
-					<Typography variant="h3">Number of sessions</Typography>
-					<TextField
-						type="number"
-						label="Number"
-						variant="outlined"
-						style={{ width: '100%' }}
-                        onChange={gcsechange}
-					></TextField>
-					<br></br>
-					<br></br>
-					<Button variant="contained" style={{ width: '100%' }} onClick={gcseClick}>
-						Payment
-					</Button>
-				</div>
+				<img src={Stripe}></img>
 			</Section>
 		</div>
 	);
