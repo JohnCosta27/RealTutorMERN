@@ -4,6 +4,7 @@ import './App.css';
 import Login from '../pages/Login';
 import StudentDashboard from '../pages/StudentDashboard';
 import TutorDashboard from '../pages/TutorDashboard';
+import ManagerDashboard from '../pages/ManagerDashboard';
 import MainPage from '../pages/MainPage';
 import SubjectPage from '../pages/SubjectPage';
 import HowItWorks from '../pages/HowItWorks';
@@ -42,6 +43,7 @@ function App() {
 						component={StudentDashboard}
 					/>
 					<Route path="/tutordashboard" component={TutorDashboard} />
+					<Route path="/managerdashboard" component={ManagerDashboard} />
 					<Route path="/payment" component={Payment} />
 					<Route path="/how-it-works" component={HowItWorks} />
 					<Route path="/team" component={Team} />

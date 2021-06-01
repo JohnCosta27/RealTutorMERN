@@ -12,6 +12,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import GroupIcon from '@material-ui/icons/Group';
+import TableChartIcon from '@material-ui/icons/TableChart';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -123,10 +125,11 @@ const LeftDrawer = (props) => {
 		}
 		props.changeState(state);
 	};
-	console.log(props.level);
+
 	//Level 1 -> Student looking at student dashboard
 	//Level 2 -> Tutor looking at student dashboard
-	//Level 3 -> Tutor looking at tutor dashbgoard
+	//Level 3 -> Tutor looking at tutor dashboard
+	//Level 4 -> Manager looking at manager dashboard
 
 	if (props.level == 1) {
 		return (
@@ -157,7 +160,7 @@ const LeftDrawer = (props) => {
 							color="secondary"
 							style={{ marginLeft: 'auto' }}
 							onClick={() => {
-								console.log("Hello");
+								console.log('Hello');
 								props.logout();
 							}}
 						>
@@ -249,7 +252,7 @@ const LeftDrawer = (props) => {
 							color="secondary"
 							style={{ marginLeft: 'auto' }}
 							onClick={() => {
-								console.log("Hello");
+								console.log('Hello');
 								props.logout();
 							}}
 						>
@@ -363,7 +366,7 @@ const LeftDrawer = (props) => {
 							color="secondary"
 							style={{ marginLeft: 'auto' }}
 							onClick={() => {
-								console.log("Hello");
+								console.log('Hello');
 								props.logout();
 							}}
 						>
@@ -410,6 +413,109 @@ const LeftDrawer = (props) => {
 								</ListItemIcon>
 								<ListItemText primary={'View lessons'} />
 							</ListItem>
+						</List>
+					</div>
+				</Drawer>
+			</div>
+		);
+	} else if (props.level == 4) {
+		return (
+			<div
+				className={classes.leftNavWrapper}
+				style={open ? { width: drawerWidth } : { width: 0 }}
+			>
+				<AppBar
+					position="fixed"
+					className={clsx(classes.appBar, {
+						[classes.appBarShift]: open,
+					})}
+				>
+					<Toolbar>
+						<MenuIcon
+							onClick={handleDrawerOpen}
+							edge="start"
+							className={clsx(
+								classes.menuButton,
+								open && classes.hide
+							)}
+						/>
+						<Typography variant="h6" noWrap>
+							Real Tutor
+						</Typography>
+						<Button
+							variant="contained"
+							color="secondary"
+							style={{ marginLeft: 'auto' }}
+							onClick={() => {
+								props.logout();
+							}}
+						>
+							Log out
+						</Button>
+					</Toolbar>
+				</AppBar>
+				<Drawer
+					className={classes.drawer}
+					variant="persistent"
+					open={open}
+					anchor="left"
+					classes={{
+						paper: classes.drawerPaper,
+					}}
+				>
+					<div className={classes.drawerContainer}>
+						<List>
+							<IconButton onClick={handleDrawerClose}>
+								{theme.direction === 'ltr' ? (
+									<ChevronLeftIcon />
+								) : (
+									<ChevronRightIcon />
+								)}
+							</IconButton>
+							<ListItem
+								button
+								key={0}
+								onClick={() => handleClick(0)}
+							>
+								<ListItemIcon>
+									<LessonIcon color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'View Tutors'} />
+							</ListItem>
+
+							<ListItem
+								button
+								key={1}
+								onClick={() => handleClick(1)}
+							>
+								<ListItemIcon>
+									<GroupIcon color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'View Students'} />
+							</ListItem>
+
+							<ListItem
+								button
+								key={2}
+								onClick={() => handleClick(2)}
+							>
+								<ListItemIcon>
+									<Home color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'Tutor Dashboard'} />
+							</ListItem>
+
+							<ListItem
+								button
+								key={3}
+								onClick={() => handleClick(3)}
+							>
+								<ListItemIcon>
+									<TableChartIcon color="secondary" />
+								</ListItemIcon>
+								<ListItemText primary={'Stats'} />
+							</ListItem>
+
 						</List>
 					</div>
 				</Drawer>

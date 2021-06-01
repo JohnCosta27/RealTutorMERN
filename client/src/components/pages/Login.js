@@ -78,6 +78,8 @@ function Login() {
 					'studentdashboard?studentid=' + data.id;
 			} else if (data.level == 2) {
 				document.location.href = 'tutordashboard?tutorid=' + data.id;
+			} else if (data.level == 3) {
+				document.location.href = 'managerdashboard?managerid=' + data.id;
 			}
 
 		}
