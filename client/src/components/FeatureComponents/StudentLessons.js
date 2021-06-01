@@ -8,9 +8,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 import BigLesson from '../general/BigLesson';
+import LoadingDisk from '../general/LoadingDisk';
 
 const StudentLessons = (props) => {
 	const [rows, setRows] = useState([]);
@@ -115,21 +115,6 @@ const StudentLessons = (props) => {
 		},
 	}));
 
-	const getLoading = () => {
-		if (loading) {
-			return (
-				<div style={{marginTop: 20}}>
-					<CircularProgress color="secondary" />
-				</div>
-			)
-		} else {
-			return (
-				<div>
-				</div>
-			)
-		}
-	}
-
 	const classes = useStyles();
 
 	if (width < 1000 || (width < 1300 && props.level == 2)) {
@@ -162,10 +147,11 @@ const StudentLessons = (props) => {
 						</TableBody>
 					</Table>
 				</TableContainer>
-				{getLoading()}
+				<LoadingDisk loading={loading} />
 				</div>
 			);
 		} else if (props.level == 2) {
+			console.log("Hello")
 			return (
 				<div>
 					<TableContainer component={Paper}>
@@ -200,7 +186,7 @@ const StudentLessons = (props) => {
 							</TableBody>
 						</Table>
 					</TableContainer>
-					{getLoading()}
+					<LoadingDisk loading={loading} />
 				</div>
 			);
 		}
@@ -246,10 +232,11 @@ const StudentLessons = (props) => {
 							</TableBody>
 						</Table>
 					</TableContainer>
-					{getLoading()}
+					<LoadingDisk loading={loading} />
 				</div>
 			);
 		} else if (props.level == 2) {
+			console.log("Hello")
 			return (
 				<div>
 					<TableContainer component={Paper}>
@@ -292,7 +279,7 @@ const StudentLessons = (props) => {
 							</TableBody>
 						</Table>
 					</TableContainer>
-					{getLoading()}
+					<LoadingDisk loading={loading} />
 				</div>
 			);
 		}
