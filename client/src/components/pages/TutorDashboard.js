@@ -84,7 +84,7 @@ const StudentDashboard = () => {
 
 		const data = await response.json();
 
-		if (data.level == 2 && urlParams.get('tutorid') != data.id) {
+		if (data.level >= 2 && urlParams.get('tutorid') != data.id) {
 			document.location.href = 'tutordashboard?tutorid=' + data.id;
 		} else if (data.level == 1 && urlParams.get('studentid') != data.id) {
 			document.location.href = 'studentdashboard?studentid=' + data.id;
@@ -133,7 +133,7 @@ const StudentDashboard = () => {
 
 	if (auth.level <= 1) {
 		document.location.href = "/login";
-	} else if (auth.level == 2) {
+	} else if (auth.level >= 2) {
 		return (
 			<div className="App">
 				<LeftDrawer changeState={setCurrent} level={3} logout={logout}/>

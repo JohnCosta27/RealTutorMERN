@@ -472,10 +472,22 @@ const LeftDrawer = (props) => {
 									<ChevronRightIcon />
 								)}
 							</IconButton>
+
 							<ListItem
 								button
 								key={0}
 								onClick={() => handleClick(0)}
+							>
+								<ListItemIcon>
+									<Home color="primary" />
+								</ListItemIcon>
+								<ListItemText primary={'Manager dashboard'} />
+							</ListItem>
+
+							<ListItem
+								button
+								key={0}
+								onClick={() => handleClick(1)}
 							>
 								<ListItemIcon>
 									<LessonIcon color="secondary" />
@@ -486,7 +498,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={1}
-								onClick={() => handleClick(1)}
+								onClick={() => handleClick(2)}
 							>
 								<ListItemIcon>
 									<GroupIcon color="secondary" />
@@ -497,7 +509,7 @@ const LeftDrawer = (props) => {
 							<ListItem
 								button
 								key={2}
-								onClick={() => handleClick(2)}
+								onClick={() => document.location.href = '/tutordashboard'}
 							>
 								<ListItemIcon>
 									<Home color="secondary" />

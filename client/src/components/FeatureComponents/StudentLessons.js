@@ -151,7 +151,6 @@ const StudentLessons = (props) => {
 				</div>
 			);
 		} else if (props.level == 2) {
-			console.log("Hello")
 			return (
 				<div>
 					<TableContainer component={Paper}>

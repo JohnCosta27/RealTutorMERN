@@ -8,6 +8,10 @@ const AccountSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	tutor: {
+		type: String,
+		required: true
+	},
 	email: {
 		type: String,
 		required: true,

@@ -3,6 +3,7 @@ const admin = express.Router();
 const Account = require('../models/Account');
 const SpecificationPoints = require('../models/SpecificationPoints');
 const sha256 = require('js-sha256');
+const Course = require('../models/Course');
 
 //No one can access this router except admins.
 
@@ -51,18 +52,17 @@ admin.post('/register', async (req, res) => {
 });
 
 admin.post('/addhours', async (req, res) => {
-    if (req.body.hours == null || req.body.studentid == null) {
-        res.json({error: "1 or more parameters are missing"});
-    } else {
-        const account = await Account.findById(req.body.studentid);
-        account.remainingHours += req.body.hours;
-        await account.save();
-        res.status(400).json({status: "OK"});
-    }
+	if (req.body.hours == null || req.body.studentid == null) {
+		res.json({ error: '1 or more parameters are missing' });
+	} else {
+		const account = await Account.findById(req.body.studentid);
+		account.remainingHours += req.body.hours;
+		await account.save();
+		res.status(400).json({ status: 'OK' });
+	}
 });
 
 admin.post('/addspec', async (req, res) => {
-
 	for (let point of req.body.points) {
 		const newPoint = new SpecificationPoints({
 			contentID: point.contentID,
@@ -70,13 +70,42 @@ admin.post('/addspec', async (req, res) => {
 			section: point.section,
 			specificationName: point.specificationName,
 			sub_content: point.sub_content,
-			specID: point.specID
+			specID: point.specID,
 		});
 		await newPoint.save();
 	}
 
-	res.json({"status": 200});
+	res.json({ status: 200 });
+});
 
+admin.get('/getstudents', async (req, res) => {
+	const accounts = await Account.find();
+	let response = [];
+	for (let account of accounts) {
+		if (account.type == 'student') {
+			let tutorName = '';
+			for (let searchAccount of accounts) {
+				if (String(searchAccount._id) == String(account.tutor)) {
+					tutorName =
+						searchAccount.firstname + ' ' + searchAccount.surname;
+					break;
+				}
+			}
+
+			let subjects = await Course.find({specID: { $in: account.course}});
+
+			response.push({
+				_id: account._id,
+				name: account.firstname + ' ' + account.surname,
+				tutor: tutorName,
+				tutorid: account.tutor,
+				subjects: subjects,
+				remainingHours: account.remainingHours,
+				hours: account.hours
+			});
+		}
+	}
+	res.json(response);
 });
 
 function randomString(length) {

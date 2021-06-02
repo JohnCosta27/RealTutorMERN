@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core';
 
 import LeftDrawer from '../general/LeftDrawer';
 import ManagerDashboardComponent from '../FeatureComponents/ManagerDashboardComponent';
+import ManagerStudentList from '../FeatureComponents/ManagerStudentList';
 
 const ManagerDashboard = () => {
 
@@ -118,6 +119,12 @@ const ManagerDashboard = () => {
                         ) : (
                             <div></div>
                         )}
+
+						{current === 1 ? (
+							<ManagerStudentList />
+						) : (
+							<div></div>	
+						)}
 
 					</div>
 				</div>

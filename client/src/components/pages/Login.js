@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Button from '@material-ui/core/Button';
@@ -14,6 +14,8 @@ function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(false);
+
+	const [checkLoggedIn, setCheckLoggedIn] = useState(true);
 
 	const useStyles = makeStyles((theme) => ({
 		leftNav: {
@@ -49,6 +51,34 @@ function Login() {
 				}
 		}
 	}));
+
+    useEffect(() => {
+        getAuth();
+    }, []);
+
+	const getAuth = async () => {
+		const response = await fetch('/accounts/auth', {
+			method: 'GET',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			credentials: 'include',
+		});
+
+		const data = await response.json();
+
+		if (data.level == 1) {
+			document.location.href = 'studentdashboard?studentid=' + data.id;
+		} else if (data.level == 2) {
+			document.location.href = 'tutordashboard?tutorid=' + data.id;
+		} else if (data.level == 3) {
+			document.location.href = 'managerdashboard?managerid=' + data.id;
+		}
+
+		setCheckLoggedIn(false);
+
+	}
 
 	const submitLogin = async (event) => {
 		event.preventDefault();
@@ -99,40 +129,47 @@ function Login() {
 
 	const classes = useStyles();
 
-	return (
-		<div className="App">
-			<Paper className={classes.leftNavPaper} square>
-				<Box className={classes.leftNav}>
-					<form className="loginWrapper">
-						<CustomTextField
-							label="Email"
-							onChange={emailChange}
-							error={error}
-							onFocus={setErrorFalse}
-						/>
-						<CustomTextField
-							label="Password"
-							onChange={passwordChange}
-							error={error}
-							onFocus={setErrorFalse}
-							type="password"
-						/>
-						<Button
-							variant="contained"
-							color="secondary"
-							type="submit"
-							value="submit"
-							onClick={submitLogin}
-						>
-							Login
-						</Button>
-					</form>
-				</Box>
-			</Paper>
+	if (checkLoggedIn) {
+		return (
+			<div></div>
+		)
+	} else {
+		return (
+			<div className="App">
+				<Paper className={classes.leftNavPaper} square>
+					<Box className={classes.leftNav}>
+						<form className="loginWrapper">
+							<CustomTextField
+								label="Email"
+								onChange={emailChange}
+								error={error}
+								onFocus={setErrorFalse}
+							/>
+							<CustomTextField
+								label="Password"
+								onChange={passwordChange}
+								error={error}
+								onFocus={setErrorFalse}
+								type="password"
+							/>
+							<Button
+								variant="contained"
+								color="secondary"
+								type="submit"
+								value="submit"
+								onClick={submitLogin}
+							>
+								Login
+							</Button>
+						</form>
+					</Box>
+				</Paper>
+	
+				<div className={classes.mainWrapper}></div>
+			</div>
+		);
+	}
 
-			<div className={classes.mainWrapper}></div>
-		</div>
-	);
 }
 
 export default Login;
