@@ -84,6 +84,8 @@ function Login() {
 		event.preventDefault();
 		const JSONdata = { email: email, password: password };
 
+		console.log(JSONdata);
+
 		const response = await fetch('/accounts/login', {
 			method: 'POST',
 			headers: {
@@ -94,7 +96,6 @@ function Login() {
 		});
 
 		const data = await response.json();
-		console.log(data);
 
 		if (data.error != null) {
 			setError(true);

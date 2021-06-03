@@ -6,9 +6,13 @@ import Paper from '@material-ui/core/Paper';
 import Slider from '@material-ui/core/Slider';
 import { makeStyles } from '@material-ui/core/styles';
 
+import LoadingDisk from '../general/LoadingDisk';
+
 const Lesson = (props) => {
 	const [lesson, setLesson] = useState({});
 	const [open, setOpen] = useState(false);
+
+	const [loading, setLoading] = useState(true);
 
 	const [q1, setq1] = useState(50);
 	const [q2, setq2] = useState(50);
@@ -37,6 +41,8 @@ const Lesson = (props) => {
 
 		const data = await response.json();
 		setLesson(data);
+		setLoading(false);
+
 	};
 
 	const useStyles = makeStyles((theme) => ({
@@ -205,6 +211,7 @@ const Lesson = (props) => {
 						</Button>
 					</div>
 				</Dialog>
+				<LoadingDisk loading={loading} />
 			</div>
 		);
 	}

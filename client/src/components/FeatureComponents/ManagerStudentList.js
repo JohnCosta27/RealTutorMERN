@@ -112,7 +112,6 @@ const ManagerStudentList = () => {
 					</TableHead>
 					<TableBody>
                         {students.map((student) => {
-                            console.log(student);
                             return (
                             <TableRow hover key={student._id}>
                                 <TableCell component="th" scope="row">

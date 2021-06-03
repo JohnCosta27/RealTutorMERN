@@ -8,6 +8,7 @@ import { Typography } from '@material-ui/core';
 import Lesson from '../general/Lessons';
 import Progress from '../general/Progress';
 import UpcomingLesson from '../general/UpcomingLesson';
+import LoadingDisk from '../general/LoadingDisk';
 import Paper from '@material-ui/core/Paper';
 
 const StudentDashboard = (props) => {
