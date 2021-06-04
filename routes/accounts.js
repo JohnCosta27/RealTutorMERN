@@ -1128,16 +1128,19 @@ async function addStudentPoints(studentID, specPoints, date) {
 					(currentPoint) => currentPoint._id + '' == point._id + ''
 				).length == 0
 			) {
-				point.date = date;
+
+				point.date = [date];
 				account.specPoints.push(point);
+
 			} else {
 				//Else updating is needed, the date must be updated.
+
 				await Account.updateOne(
 					{
 						_id: account._id,
 						'specPoints.contentID': point.contentID,
 					},
-					{ $set: { 'specPoints.$.date': date } }
+					{ $push: { 'specPoints.$.date': date } }
 				);
 			}
 		}
@@ -1200,28 +1203,9 @@ async function getSpecPoints(pointsArray) {
 	}
 }
 
-async function getID(email) {
-	const result = await Account.findOne({ email: email });
-	if (result == undefined) return result;
-	return result;
-}
-
 async function AccountFromCookie(cookie) {
 	const result = await Account.findOne({ cookie: cookie });
 	return result;
-}
-
-async function AccountFromID(id) {
-	try {
-		const result = await Account.findById(id);
-		if (result.error == null) {
-			return result;
-		} else {
-			return { error: 'Account not found' };
-		}
-	} catch (error) {
-		return { error: 'Account not found' };
-	}
 }
 
 async function validateCookie(cookie) {
@@ -1257,6 +1241,7 @@ async function validateCookie(cookie) {
 				name: result.firstname + ' ' + result.surname,
 			};
 		} else if (result.type == 'manager') {
+			console.log("HLEOLODS");
 			refreshSession(cookie);
 			return {
 				level: 3,

@@ -25,7 +25,7 @@ const specificationPointsSchema = mongoose.Schema({
     required: true,
   },
   date: {
-    type: Number,
+    type: JSON,
     required: false,
   },
   status: {

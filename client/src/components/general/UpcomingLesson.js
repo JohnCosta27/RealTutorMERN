@@ -29,9 +29,14 @@ const UpcomingLesson = () => {
 		);
 
 		const data = await response.json();
-		setUpcomingLesson(data);
+		console.log(data);
+		if (data.error != "No upcoming lesson") {
+			setUpcomingLesson(data);
+		}
 		setLoading(false);
 	};
+
+	console.log(upcomingLesson.empty);
 
 	if (upcomingLesson.empty) {
 		return (
@@ -39,24 +44,24 @@ const UpcomingLesson = () => {
 				<LoadingDisk loading={loading} />
 			</div>
 		)
+	} else {
+		return (
+			<div>
+				<Typography variant="h4" align="left">
+					{upcomingLesson.title}
+				</Typography>
+				<ul>
+					{upcomingLesson.specPoints.map((point) => (
+						<li key={point.contentID}>
+							<Typography variant="body1" align="left">
+								{point.content}
+							</Typography>
+						</li>
+					))}
+				</ul>
+			</div>
+		);
 	}
-
-	return (
-		<div>
-			<Typography variant="h4" align="left">
-				{upcomingLesson.title}
-			</Typography>
-			<ul>
-				{upcomingLesson.specPoints.map((point) => (
-					<li key={point.contentID}>
-						<Typography variant="body1" align="left">
-							{point.content}
-						</Typography>
-					</li>
-				))}
-			</ul>
-		</div>
-	);
 };
 
 export default UpcomingLesson;

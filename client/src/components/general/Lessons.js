@@ -117,7 +117,6 @@ const Lesson = (props) => {
 	const getFeedbackButton = () => {
 
 		if (Object.keys(lesson).length == 0) {
-			console.log("dsa")
 			return <div></div>;
 		}
 
