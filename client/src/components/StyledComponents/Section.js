@@ -68,6 +68,9 @@ const Section = (props) => {
 		lightblue: {
 			backgroundColor: theme.palette.lightBlue.main,
 		},
+		grey: {
+			backgroundColor: theme.palette.grey.main,
+		},
 		alignCenter: {
 			alignItems: 'center',
 		},
@@ -87,6 +90,8 @@ const Section = (props) => {
 		WrapperList = clsx(classes.smallSection, classes.lightteal);
 	} else if (props.background == 'lightblue') {
 		WrapperList = clsx(classes.smallSection, classes.lightblue);
+	} else if (props.background == 'grey') {
+		WrapperList = clsx(classes.smallSection, classes.grey);
 	}
 
 	if (props.centered) {

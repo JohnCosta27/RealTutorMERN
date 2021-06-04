@@ -25,6 +25,7 @@ import transparentLogo from '../../images/TransparentLogo.png';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
 import SubjectCard from '../general/SubjectCard';
+import Divider from '@material-ui/core/Divider';
 
 import BannerBackground from '../../images/Banner.jpeg';
 import Section from '../StyledComponents/Section';
@@ -285,9 +286,12 @@ const MainPage = () => {
 			);
 		} else {
 			return (
-				<Section background="lightteal" medium={true} centered={true}>
+				<Section background="lightteal" auto={true} centered={true}>
 					<div style={{ width: '100%', marginRight: 20 }}>
-						<ReactPlayer url="https://www.youtube.com/watch?v=-UAWRH0-h8A" controls={true}/>
+						<ReactPlayer
+							url="https://www.youtube.com/watch?v=-UAWRH0-h8A"
+							controls={true}
+						/>
 					</div>
 					<div style={{ width: '100%' }}>
 						<div style={{ maxWidth: 800, float: 'right' }}>
@@ -332,7 +336,7 @@ const MainPage = () => {
 		<div style={{ overflow: 'hidden' }}>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
-			<Section background="offwhite" medium={true} centered={true}>
+			<Section background="offwhite" auto={true} centered={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1" color="secondary">
 						Tuition meets the digital age
@@ -358,6 +362,86 @@ const MainPage = () => {
 					<img src={transparentLogo} className={classes.image} />
 					<br></br>
 					<br></br>
+				</div>
+			</Section>
+			<Section background="offwhite" auto={true} centered={true}>
+				<div style={{ width: '100%' }}>
+					<Typography variant="h1" align="left" color="secondary">
+						Powered by software
+					</Typography>
+					<br></br>
+					<Typography variant="body2" align="left">
+						So what is this software that we keep talking about? We
+						call it Odin. It is a centralised place which keeps
+						track of every lesson, every report and every topic the
+						student has practiced. This data will help the student
+						and tutor tremendously, as it provides up to date
+						information on what the student really needs.
+					</Typography>
+					<br></br>
+					<Typography variant="h3" align="left">
+						Plenty of features
+					</Typography>
+					<br></br>
+					<Typography variant="body2">
+						Our software is feature rich to help you learn. There
+						are a variety of tools which tutors will use to help
+						you, and you will be able to view everything, from what
+						happened in a lesson 3 months ago, or give us feedback
+						on how the lesson went. There simply isn’t anything like
+						it.
+					</Typography>
+					<br></br>
+				</div>
+				<div
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						width: '100%',
+						marginLeft: 50,
+					}}
+				>
+					<div>
+						<div style={{ display: 'flex' }}>
+							<Typography
+								variant="h4"
+								color="secondary"
+								style={{ marginRight: 10 }}
+							>
+								1.
+							</Typography>
+							<Typography variant="h4" color="primary">
+								Keeps track of all lessons
+							</Typography>
+						</div>
+						<br></br>
+						<div style={{ display: 'flex' }}>
+							<Typography
+								variant="h4"
+								color="secondary"
+								style={{ marginRight: 10 }}
+							>
+								2.
+							</Typography>
+							<Typography variant="h4" color="primary">
+								Easily view your progress
+							</Typography>
+						</div>
+						<br></br>
+						<div style={{ display: 'flex' }}>
+							<Typography
+								variant="h4"
+								color="secondary"
+								style={{ marginRight: 10 }}
+							>
+								3.
+							</Typography>
+							<Typography variant="h4" color="primary">
+								View tutor feedback
+							</Typography>
+						</div>
+					</div>
 				</div>
 			</Section>
 			{TheExperiment()}
@@ -468,15 +552,13 @@ const MainPage = () => {
 						<SubjectCard
 							title="A-level Chemistry"
 							onClick={() =>
-								(document.location.href =
-									'/alevelchemistry')
+								(document.location.href = '/alevelchemistry')
 							}
 						/>
 						<SubjectCard
 							title="A-level Biology"
 							onClick={() =>
-								(document.location.href =
-									'/alevelbiology')
+								(document.location.href = '/alevelbiology')
 							}
 						/>
 						<SubjectCard
@@ -563,7 +645,6 @@ const MainPage = () => {
 							className={classes.sectionPaper}
 							style={{
 								flexDirection: 'column',
-								justifyContent: 'space-between',
 								height: '80%',
 							}}
 						>
@@ -586,6 +667,8 @@ const MainPage = () => {
 									@realtutor_online
 								</Typography>
 							</div>
+							<br></br>
+							<br></br>
 							<div
 								className={classes.socialWrapper}
 								onClick={() =>

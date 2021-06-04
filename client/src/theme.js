@@ -18,6 +18,9 @@ let theme = createMuiTheme({
 		lightBlue: {
 			main: blue[200]
 		},
+		grey: {
+			main: '#333333'
+		},
 		cards: '#FFFFFF',
 		divBackground: '#009688',
 		leftNav: '#313131',

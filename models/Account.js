@@ -10,7 +10,7 @@ const AccountSchema = mongoose.Schema({
 	},
 	tutor: {
 		type: String,
-		required: true
+		required: false
 	},
 	email: {
 		type: String,

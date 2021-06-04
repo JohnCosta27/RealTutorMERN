@@ -24,7 +24,6 @@ accounts.post('/login', async (req, res) => {
 			// If the result of the search is more than 1 (as in it found an account with that email)
 			if (account == undefined) {
 				createStats({
-					id: account._id,
 					cookie: req.cookies.token,
 					route: 'accounts',
 					request: req.path,
