@@ -336,7 +336,7 @@ const MainPage = () => {
 		<div style={{ overflow: 'hidden' }}>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
-			<Section background="offwhite" auto={true} centered={true}>
+			<Section background="offwhite" auto={true} centered={true} marginBottom={0} paddingBottom={0}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1" color="secondary">
 						Tuition meets the digital age
@@ -364,7 +364,7 @@ const MainPage = () => {
 					<br></br>
 				</div>
 			</Section>
-			<Section background="offwhite" auto={true} centered={true}>
+			<Section background="offwhite" auto={true} centered={true} marginTop={0} paddingTop={0}>
 				<div style={{ width: '100%' }}>
 					<Typography variant="h1" align="left" color="secondary">
 						Powered by software

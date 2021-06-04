@@ -4,19 +4,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
 const Section = (props) => {
-
 	const [height, setHeight] = useState(600);
 	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
 	const updateHeight = () => {
 		setWindowHeight(window.innerHeight);
-	}
+	};
 
 	useEffect(() => {
 		if (props.small) {
-			setHeight(600)
+			setHeight(600);
 		} else if (props.medium) {
-			setHeight(800)
+			setHeight(800);
 		} else if (props.large) {
 			setHeight(1000);
 		} else {
@@ -24,8 +23,7 @@ const Section = (props) => {
 		}
 
 		window.addEventListener('resize', updateHeight);
-
-	}, [])
+	}, []);
 
 	const useStyles = makeStyles((theme) => ({
 		sectionPaper: {
@@ -76,7 +74,7 @@ const Section = (props) => {
 		},
 		column: {
 			flexDirection: 'column',
-		}
+		},
 	}));
 
 	const classes = useStyles();
@@ -104,7 +102,17 @@ const Section = (props) => {
 
 	return (
 		<div className={WrapperList} id={props.id}>
-			<div className={ChildList}>{props.children}</div>
+			<div
+				className={ChildList}
+				style={{
+					marginTop: props.marginTop,
+					marginBottom: props.marginBottom,
+					paddingTop: props.paddingTop,
+					paddingBottom: props.paddingBottom
+				}}
+			>
+				{props.children}
+			</div>
 		</div>
 	);
 };

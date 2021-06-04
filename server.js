@@ -6,6 +6,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const Account = require('./models/Account');
+const request = require('request');
 //const stripe = require('stripe')('pk_test_51IgsTHJwHQjcU66C8y8UboR4W0HtFEJJTQGkCMe58M4fmu5JG4vd768Cfim2QrRPVd17QGJ4J0VrAJKqHsZCGV0e00O6cEg9Mi');
 require("dotenv/config");
 
@@ -67,6 +68,7 @@ async function validateCookie(cookie) {
 	 * 2 -> Tutor account
 	 * 3 -> Manager account
 	 */
+
 	const result = await Account.findOne({ cookie: cookie });
 	if (result == undefined) {
 		return { level: 0, id: '' };
