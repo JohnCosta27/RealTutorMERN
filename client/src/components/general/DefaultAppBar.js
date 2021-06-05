@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
@@ -54,11 +54,6 @@ const DefaultAppBar = (props) => {
 		document.location.href = '/?section=contact-us';
 	};
 
-	const contactUsMobile = () => {
-		props.contactus();
-		setOpen(false);
-	};
-
 	if (width < 850) {
 		return (
 			<AppBar position="absolute" className={classes.appBar}>
@@ -94,6 +89,9 @@ const DefaultAppBar = (props) => {
 							variant="outlined"
 							color="secondary"
 							className={classes.drawerItem}
+							onClick={() =>
+								(document.location.href = '/subjects')
+							}
 						>
 							Subjects
 						</Button>
@@ -111,7 +109,7 @@ const DefaultAppBar = (props) => {
 							variant="contained"
 							color="secondary"
 							className={classes.drawerItem}
-							onClick={contactUsMobile}
+							onClick={contactUs}
 						>
 							Contact Us
 						</Button>

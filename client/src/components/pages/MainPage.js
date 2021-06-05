@@ -10,6 +10,8 @@ import {
 	scroller,
 } from 'react-scroll';
 
+import Fade from 'react-reveal/Fade';
+
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -220,6 +222,7 @@ const MainPage = () => {
 	const TheExperiment = () => {
 		if (width < 1600) {
 			return (
+				<Fade>
 				<Section background="lightteal" auto={true} centered={true}>
 					<div
 						style={{
@@ -283,9 +286,11 @@ const MainPage = () => {
 						</div>
 					</div>
 				</Section>
+				</Fade>
 			);
 		} else {
 			return (
+				<Fade>
 				<Section background="lightteal" auto={true} centered={true}>
 					<div style={{ width: '100%', marginRight: 20 }}>
 						<ReactPlayer
@@ -328,6 +333,7 @@ const MainPage = () => {
 						</div>
 					</div>
 				</Section>
+				</Fade>
 			);
 		}
 	};
@@ -336,6 +342,7 @@ const MainPage = () => {
 		<div style={{ overflow: 'hidden' }}>
 			<DefaultAppBar contactus={contactUs} />
 			<Banner mainpage={true} />
+			<Fade>
 			<Section background="offwhite" auto={true} centered={true} marginBottom={0} paddingBottom={0}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1" color="secondary">
@@ -364,6 +371,8 @@ const MainPage = () => {
 					<br></br>
 				</div>
 			</Section>
+			</Fade>
+			<Fade>
 			<Section background="offwhite" auto={true} centered={true} marginTop={0} paddingTop={0}>
 				<div style={{ width: '100%' }}>
 					<Typography variant="h1" align="left" color="secondary">
@@ -444,7 +453,9 @@ const MainPage = () => {
 					</div>
 				</div>
 			</Section>
+			</Fade>
 			{TheExperiment()}
+			<Fade>
 			<Section medium={true} centered={true}>
 				<div className={classes.wrappingText}>
 					<Typography variant="h1" color="secondary">
@@ -521,6 +532,8 @@ const MainPage = () => {
 					</div>
 				</div>
 			</Section>
+			</Fade>
+			<Fade>
 			<Section medium={true} column={true} background="lightblue">
 				<div>
 					<Typography variant="h2">Subjects we offer</Typography>
@@ -584,6 +597,8 @@ const MainPage = () => {
 					</Grid>
 				</div>
 			</Section>
+			</Fade>
+			<Fade>
 			<div ref={myRef}>
 				<Section background="offwhite" large={true}>
 					<div style={{ flex: 1 }} id="contactSection">
@@ -708,6 +723,7 @@ const MainPage = () => {
 					</div>
 				</Section>
 			</div>
+			</Fade>
 		</div>
 	);
 };
