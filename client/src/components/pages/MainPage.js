@@ -30,7 +30,7 @@ import transparentLogo from '../../images/TransparentLogo.png';
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
 import SubjectCard from '../general/SubjectCard';
-import LinkMaterial from '@material-ui/core/Link';
+import LegalInfo from '../StyledComponents/LegalInfo';
 
 import BannerBackground from '../../images/Banner.jpeg';
 import Section from '../StyledComponents/Section';
@@ -753,41 +753,7 @@ const MainPage = () => {
 					</Section>
 				</div>
 			</FadeIn>
-			<Section auto={true} background="grey">
-				<div>
-					<Typography variant="h6" style={{color: '#bbbbbb'}}>Legal information</Typography>
-					<br></br>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						Company Name: Real Tutor Ltd
-					</Typography>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						Company Number: 13320915
-					</Typography>
-					<br></br>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						<LinkMaterial href="#" color="inherit">
-							Our mission
-						</LinkMaterial>
-					</Typography>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						<LinkMaterial href="#" color="inherit">
-							Company information
-						</LinkMaterial>
-					</Typography>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						<LinkMaterial href="#" color="inherit">
-							Privacy Policy
-						</LinkMaterial>
-					</Typography>
-					<Typography variant="body2" style={{color: '#bbbbbb'}}>
-						<LinkMaterial href="#" color="inherit">
-							Cookie Usage
-						</LinkMaterial>
-					</Typography>
-				</div>
-				<div style={{maxWidth: 500}}>
-				</div>
-			</Section>
+			<LegalInfo />
 		</div>
 	);
 };
