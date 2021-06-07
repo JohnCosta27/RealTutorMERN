@@ -9,8 +9,6 @@ import { loadStripe } from '@stripe/stripe-js';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 
 import Section from '../StyledComponents/Section';
 import Stripe from '../../images/stripe.png';
@@ -94,7 +92,7 @@ const Payment = () => {
 				title="Payment"
 				subtitle="The final step, you won't regret it!"
 			/>
-			<Section small={true} centered={true} background="offwhite">
+			<Section auto={true} centered={true} background="offwhite" narrow={true}>
 				<div>
 					<Typography variant="h1">You are nearly there</Typography>
 					<br></br>
@@ -113,7 +111,7 @@ const Payment = () => {
 					</Typography>
 				</div>
 			</Section>
-			<Section small={true} centered={true} background="lightteal">
+			<Section auto={true} centered={true} background="lightteal" narrow={true}>
 				<div style={{ marginRight: 20 }}>
 					<Typography variant="h1" align="center">
 						Real Tutor Sessions

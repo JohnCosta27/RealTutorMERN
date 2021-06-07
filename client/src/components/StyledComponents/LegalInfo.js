@@ -20,7 +20,7 @@ const LegalInfo = () => {
 				</Typography>
 				<br></br>
 				<Typography variant="body2" style={{ color: '#bbbbbb' }}>
-					<LinkMaterial href="#" color="inherit">
+					<LinkMaterial href="/manifesto" color="inherit">
 						Manifesto
 					</LinkMaterial>
 				</Typography>
