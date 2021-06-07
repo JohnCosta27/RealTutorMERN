@@ -52,7 +52,7 @@ const Alevelart = () => {
 				title="A-level Art and Design"
 				subtitle="Realising your unique creativity"
 			/>
-			<Section background="offwhite" centered={true} medium={true}>
+			<Section background="offwhite" centered={true} auto={true} narrow={true} column={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>

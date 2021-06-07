@@ -220,7 +220,11 @@ const MainPage = () => {
 	};
 
 	const contactUs = () => {
-		scroll.scrollToBottom();
+		scroller.scrollTo('contactus', {
+			duration: 800,
+			delay: 0,
+			smooth: 'easeInOutQuart'
+		  })
 	};
 
 	const TheExperiment = () => {
@@ -365,7 +369,7 @@ const MainPage = () => {
 						</Typography>
 						<br></br>
 						<Typography variant="body2">
-							We have custom built software, coded by our CEO, to
+							We have custom built software, to
 							keep track of student progress and help lesson
 							planning and reporting.
 						</Typography>
@@ -480,7 +484,7 @@ const MainPage = () => {
 			</FadeIn>
 			{TheExperiment()}
 			<FadeIn right>
-				<Section medium={true} centered={true}>
+				<Section medium={true} centered={true} narrow={true}>
 					<div className={classes.wrappingText}>
 						<Typography variant="h1" color="secondary">
 							We. Really. Care.
@@ -626,8 +630,8 @@ const MainPage = () => {
 				</Section>
 			</Slide>
 			<FadeIn>
-				<div ref={myRef}>
-					<Section background="offwhite" auto={true}>
+				<div ref={myRef} id='contactus'>
+					<Section background="offwhite" auto={true} narrow={true}>
 						<div style={{ flex: 1 }} id="contactSection">
 							<Typography variant="h1" align="center">
 								Contact us

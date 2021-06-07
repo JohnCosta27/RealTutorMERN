@@ -24,6 +24,8 @@ import GCSEPhysics from '../subjects/GCSEphysics';
 import GCSEChemistry from '../subjects/GCSEchemistry';
 import GCSEBiology from '../subjects/GCSEbiology';
 
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
@@ -60,6 +62,7 @@ function App() {
 					<Route exact path="/gcsephysics" component={GCSEPhysics} />
 					<Route exact path="/gcsechemistry" component={GCSEChemistry} />
 					<Route exact path="/gcsebiology" component={GCSEBiology} />
+					<Route exact path="/privacypolicy" component={PrivacyPolicy} />
 				</Switch>
 			</Router>
 		</ThemeProvider>
