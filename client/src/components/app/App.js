@@ -25,6 +25,7 @@ import GCSEChemistry from '../subjects/GCSEchemistry';
 import GCSEBiology from '../subjects/GCSEbiology';
 
 import PrivacyPolicy from '../pages/PrivacyPolicy';
+import Manifesto from '../pages/Manifesto';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -40,10 +41,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={MainPage} />
 					<Route path="/login" component={Login} />
-					<Route
-						path="/studentdashboard"
-						component={StudentDashboard}
-					/>
+					<Route path="/studentdashboard" component={StudentDashboard} />
 					<Route path="/tutordashboard" component={TutorDashboard} />
 					<Route path="/managerdashboard" component={ManagerDashboard} />
 					<Route path="/payment" component={Payment} />
@@ -63,6 +61,7 @@ function App() {
 					<Route exact path="/gcsechemistry" component={GCSEChemistry} />
 					<Route exact path="/gcsebiology" component={GCSEBiology} />
 					<Route exact path="/privacypolicy" component={PrivacyPolicy} />
+					<Route exact path="/manifesto" component={Manifesto} />
 				</Switch>
 			</Router>
 		</ThemeProvider>

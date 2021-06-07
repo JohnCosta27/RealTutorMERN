@@ -734,7 +734,9 @@ const MainPage = () => {
 										Real Tutor
 									</Typography>
 								</div>
-								{/*<div
+								<br></br>
+								<br></br>
+								<div
 								className={classes.socialWrapper}
 								className={classes.socialWrapper}
 								onClick={() =>
@@ -751,7 +753,7 @@ const MainPage = () => {
 									className={classes.icons}
 								></FacebookIcon>
 								<Typography variant="h3">Real Tutor</Typography>
-							</div>*/}
+							</div>
 							</div>
 						</div>
 					</Section>
