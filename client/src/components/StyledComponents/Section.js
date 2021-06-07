@@ -27,12 +27,12 @@ const Section = (props) => {
 
 	const useStyles = makeStyles((theme) => ({
 		sectionPaper: {
-			width: '80%',
+			width: props.narrow ? '60%': '80%',
 			height: '97.5%',
 			marginTop: '1.25%',
 			marginBottom: '1.25%',
-			marginLeft: '10%',
-			marginRight: '10%',
+			marginLeft: props.narrow ? '20%': '10%',
+			marginRight: props.narrow ? '20%': '10%',
 			display: 'flex',
 			paddingTop: 20,
 			paddingLeft: 20,

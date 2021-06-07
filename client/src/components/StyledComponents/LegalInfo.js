@@ -21,22 +21,17 @@ const LegalInfo = () => {
 				<br></br>
 				<Typography variant="body2" style={{ color: '#bbbbbb' }}>
 					<LinkMaterial href="#" color="inherit">
-						Our mission
+						Manifesto
 					</LinkMaterial>
 				</Typography>
 				<Typography variant="body2" style={{ color: '#bbbbbb' }}>
-					<LinkMaterial href="#" color="inherit">
+					<LinkMaterial style={{cursor: 'pointer'}} onClick={() => window.open("https://find-and-update.company-information.service.gov.uk/company/13320915")} color="inherit">
 						Company information
 					</LinkMaterial>
 				</Typography>
 				<Typography variant="body2" style={{ color: '#bbbbbb' }}>
-					<LinkMaterial href="#" color="inherit">
+					<LinkMaterial href="/privacypolicy" color="inherit">
 						Privacy Policy
-					</LinkMaterial>
-				</Typography>
-				<Typography variant="body2" style={{ color: '#bbbbbb' }}>
-					<LinkMaterial href="#" color="inherit">
-						Cookie Usage
 					</LinkMaterial>
 				</Typography>
 			</div>
