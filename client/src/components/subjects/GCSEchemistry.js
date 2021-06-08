@@ -52,7 +52,7 @@ const GCSEchemistry = () => {
 				title="GCSE Chemistry"
 				subtitle="Learning about the properties of chemicals and how they interact."
 			/>
-			<Section background="offwhite" centered={true} medium={true}>
+			<Section background="offwhite" centered={true} auto={true} narrow={true} column={true}>
 				<div style={{ maxWidth: 800 }}>
 					<Typography variant="h1">How we teach it</Typography>
 					<br></br>

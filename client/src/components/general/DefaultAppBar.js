@@ -45,7 +45,11 @@ const DefaultAppBar = (props) => {
 			marginButtom: 20,
 			marginLeft: 10,
 			marginRight: 10,
+			color: '#bbbbbb'
 		},
+		paper: {
+			background: theme.palette.grey.main
+		}
 	}));
 
 	const classes = useStyles();
@@ -56,7 +60,11 @@ const DefaultAppBar = (props) => {
 
 	if (width < 850) {
 		return (
-			<AppBar position="absolute" className={classes.appBar}>
+			<AppBar
+				position="fixed"
+				className={classes.appBar}
+				style={{ position: 'fixed !important' }}
+			>
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
@@ -74,10 +82,17 @@ const DefaultAppBar = (props) => {
 						onClose={handleDrawerClose}
 						onOpen={handleDrawerOpen}
 						disableRestoreFocus
+						classes={{ paper: classes.paper }}
 					>
 						<Button
-							variant="outlined"
-							color="secondary"
+							className={classes.drawerItem}
+							onClick={() =>
+								(document.location.href = '/')
+							}
+						>
+							Home
+						</Button>
+						<Button
 							className={classes.drawerItem}
 							onClick={() =>
 								(document.location.href = '/how-it-works')
@@ -86,8 +101,6 @@ const DefaultAppBar = (props) => {
 							How it works
 						</Button>
 						<Button
-							variant="outlined"
-							color="secondary"
 							className={classes.drawerItem}
 							onClick={() =>
 								(document.location.href = '/subjects')
@@ -96,28 +109,20 @@ const DefaultAppBar = (props) => {
 							Subjects
 						</Button>
 						<Button
-							variant="outlined"
-							color="secondary"
 							className={classes.drawerItem}
-							onClick={() =>
-								(document.location.href = '/team')
-							}
+							onClick={() => (document.location.href = '/team')}
 						>
 							Our Team
 						</Button>
 						<Button
-							variant="contained"
-							color="secondary"
 							className={classes.drawerItem}
-							onClick={contactUs}
+							onClick={() => (document.location.href = '/contactus')}
 						>
 							Contact Us
 						</Button>
 						<Button
-							variant="outlined"
-							color="secondary"
 							className={classes.drawerItem}
-							onClick={() => document.location.href = '/login'}
+							onClick={() => (document.location.href = '/login')}
 						>
 							Login
 						</Button>
@@ -127,7 +132,7 @@ const DefaultAppBar = (props) => {
 		);
 	} else {
 		return (
-			<AppBar position="absolute" className={classes.appBar}>
+			<AppBar position="fixed" className={classes.appBar}>
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
@@ -159,9 +164,7 @@ const DefaultAppBar = (props) => {
 						<Button
 							color="secondary"
 							className={classes.listItem}
-							onClick={() =>
-								(document.location.href = '/team')
-							}
+							onClick={() => (document.location.href = '/team')}
 						>
 							Our Team
 						</Button>
@@ -169,7 +172,7 @@ const DefaultAppBar = (props) => {
 							variant="contained"
 							color="secondary"
 							className={classes.listItem}
-							onClick={contactUs}
+							onClick={() => (document.location.href = '/contactus')}
 						>
 							Contact Us
 						</Button>
@@ -177,7 +180,7 @@ const DefaultAppBar = (props) => {
 							variant="outlined"
 							color="secondary"
 							className={classes.listItem}
-							onClick={() => document.location.href = '/login'}
+							onClick={() => (document.location.href = '/login')}
 						>
 							Login
 						</Button>
