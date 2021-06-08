@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
 	Link,
@@ -43,8 +43,6 @@ const MainPage = () => {
 	const updateWidth = () => {
 		setWidth(window.innerWidth);
 	};
-
-	const myRef = useRef(null);
 
 	const useStyles = makeStyles((theme) => ({
 		banner: {
@@ -198,7 +196,6 @@ const MainPage = () => {
 	const classes = useStyles();
 
 	useEffect(() => {
-		handleChange();
 		checkQuery();
 		window.addEventListener('resize', updateWidth);
 		setTimeout(() => {
@@ -213,18 +210,12 @@ const MainPage = () => {
 		}
 	};
 
-	const [checked, setChecked] = React.useState(false);
-
-	const handleChange = () => {
-		setChecked((prev) => !prev);
-	};
-
 	const contactUs = () => {
 		scroller.scrollTo('contactus', {
 			duration: 800,
 			delay: 0,
-			smooth: 'easeInOutQuart'
-		  })
+			smooth: 'easeInOutQuart',
+		});
 	};
 
 	const TheExperiment = () => {
@@ -369,9 +360,9 @@ const MainPage = () => {
 						</Typography>
 						<br></br>
 						<Typography variant="body2">
-							We have custom built software, to
-							keep track of student progress and help lesson
-							planning and reporting.
+							We have custom built software, to keep track of
+							student progress and help lesson planning and
+							reporting.
 						</Typography>
 						<br></br>
 						<Typography variant="body2">
@@ -630,113 +621,110 @@ const MainPage = () => {
 				</Section>
 			</Slide>
 			<FadeIn>
-				<div ref={myRef} id='contactus'>
-					<Section background="offwhite" auto={true} narrow={true}>
-						<div style={{ flex: 1 }} id="contactSection">
-							<Typography variant="h1" align="center">
-								Contact us
+				<Section background="offwhite" auto={true} narrow={true}>
+					<div style={{ flex: 1 }} id="contactSection">
+						<Typography variant="h1" align="center">
+							Contact us
+						</Typography>
+						<br></br>
+						<Typography variant="h2">Emails:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
+								className={classes.icons}
+								fontSize="large"
+							/>
+							<Typography variant="h4" align="center">
+								john@realtutor.online (CEO)
 							</Typography>
-							<br></br>
-							<Typography variant="h2">Emails:</Typography>
-							<br></br>
-							<div className={classes.contactWrapper}>
-								<MailIcon
-									color="primary"
-									className={classes.icons}
-									fontSize="large"
-								/>
-								<Typography variant="h4" align="center">
-									john@realtutor.online (CEO)
-								</Typography>
-							</div>
-							<br></br>
-							<div className={classes.contactWrapper}>
-								<MailIcon
-									color="primary"
-									className={classes.icons}
-								/>
-								<Typography variant="h4" align="center">
-									zach@realtutor.online (COO)
-								</Typography>
-							</div>
-							<br></br>
-							<Typography variant="h3">Phone numbers:</Typography>
-							<br></br>
-							<div className={classes.contactWrapper}>
-								<PhoneIcon
-									color="primary"
-									className={classes.icons}
-								/>
-								<Typography variant="h4" align="center">
-									+44 7443 494507 (Zach)
-								</Typography>
-							</div>
-							<br></br>
-							<div className={classes.contactWrapper}>
-								<PhoneIcon
-									color="primary"
-									className={classes.icons}
-								/>
-								<Typography variant="h4" align="center">
-									+44 7576 870036 (John)
-								</Typography>
-							</div>
-							<br></br>
 						</div>
-						<div style={{ flex: 1 }}>
-							<Typography variant="h1" align="center">
-								Socials
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<MailIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								zach@realtutor.online (COO)
 							</Typography>
+						</div>
+						<br></br>
+						<Typography variant="h3">Phone numbers:</Typography>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								+44 7443 494507 (Zach)
+							</Typography>
+						</div>
+						<br></br>
+						<div className={classes.contactWrapper}>
+							<PhoneIcon
+								color="primary"
+								className={classes.icons}
+							/>
+							<Typography variant="h4" align="center">
+								+44 7576 870036 (John)
+							</Typography>
+						</div>
+						<br></br>
+					</div>
+					<div style={{ flex: 1 }}>
+						<Typography variant="h1" align="center">
+							Socials
+						</Typography>
+						<div
+							className={classes.sectionPaper}
+							style={{
+								flexDirection: 'column',
+								height: '80%',
+							}}
+						>
 							<div
-								className={classes.sectionPaper}
-								style={{
-									flexDirection: 'column',
-									height: '80%',
-								}}
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.instagram.com/realtutor_online/',
+											'_blank'
+										)
+										.focus()
+								}
 							>
-								<div
-									className={classes.socialWrapper}
-									onClick={() =>
-										window
-											.open(
-												'https://www.instagram.com/realtutor_online/',
-												'_blank'
-											)
-											.focus()
-									}
-								>
-									<InstagramIcon
-										color="secondary"
-										className={classes.icons}
-									></InstagramIcon>
-									<Typography variant="h3">
-										@realtutor_online
-									</Typography>
-								</div>
-								<br></br>
-								<br></br>
-								<div
-									className={classes.socialWrapper}
-									onClick={() =>
-										window
-											.open(
-												'https://www.youtube.com/channel/UCDIjZ-wLxyCc9yB49pK-Pqw',
-												'_blank'
-											)
-											.focus()
-									}
-								>
-									<YouTubeIcon
-										color="secondary"
-										className={classes.icons}
-									></YouTubeIcon>
-									<Typography variant="h3">
-										Real Tutor
-									</Typography>
-								</div>
-								<br></br>
-								<br></br>
-								<div
+								<InstagramIcon
+									color="secondary"
+									className={classes.icons}
+								></InstagramIcon>
+								<Typography variant="h3">
+									@realtutor_online
+								</Typography>
+							</div>
+							<br></br>
+							<br></br>
+							<div
+								className={classes.socialWrapper}
+								onClick={() =>
+									window
+										.open(
+											'https://www.youtube.com/channel/UCDIjZ-wLxyCc9yB49pK-Pqw',
+											'_blank'
+										)
+										.focus()
+								}
+							>
+								<YouTubeIcon
+									color="secondary"
+									className={classes.icons}
+								></YouTubeIcon>
+								<Typography variant="h3">Real Tutor</Typography>
+							</div>
+							<br></br>
+							<br></br>
+							<div
 								className={classes.socialWrapper}
 								className={classes.socialWrapper}
 								onClick={() =>
@@ -754,10 +742,9 @@ const MainPage = () => {
 								></FacebookIcon>
 								<Typography variant="h3">Real Tutor</Typography>
 							</div>
-							</div>
 						</div>
-					</Section>
-				</div>
+					</div>
+				</Section>
 			</FadeIn>
 			<LegalInfo />
 		</div>

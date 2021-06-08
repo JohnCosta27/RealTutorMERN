@@ -1,55 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
-import { teal, grey } from '@material-ui/core/colors';
 
 import DefaultAppBar from '../general/DefaultAppBar';
 import Banner from '../StyledComponents/Banner';
 import Section from '../StyledComponents/Section';
 
 const HowItWorks = () => {
-	const useStyles = makeStyles((theme) => ({
-		sectionWrapper: {
-			backgroundColor: '#fafafa',
-			width: '100%',
-			display: 'flex',
-			height: '100vh',
-		},
-		sectionPaper: {
-			width: '80%',
-			height: '97.5%',
-			marginTop: '1.25%',
-			marginBottom: '1.25%',
-			marginLeft: '10%',
-			marginRight: '10%',
-			display: 'flex',
-			paddingTop: 20,
-			paddingLeft: 20,
-			paddingBottom: 20,
-			paddingRight: 20,
-			justifyContent: 'space-between',
-			[theme.breakpoints.down('md')]: {
-				flexDirection: 'column',
-				justifyContent: 'center',
-			},
-		},
-		smallSection: {
-			width: '100%',
-			display: 'flex',
-			height: 600,
-			[theme.breakpoints.down('md')]: {
-				height: 'auto',
-			},
-		},
-		background: {
-			backgroundColor: theme.palette.primary.main,
-		},
-	}));
-
-	const classes = useStyles();
 
 	return (
-		<div className={classes.background}>
+		<div>
 			<DefaultAppBar />
 			<Banner
 				small={true}
