@@ -121,7 +121,7 @@ const DefaultAppBar = (props) => {
 						</Button>
 						<Button
 							className={classes.drawerItem}
-							onClick={contactUsMobile}
+							onClick={() => (document.location.href = '/contactus')}
 						>
 							Contact Us
 						</Button>
@@ -177,7 +177,7 @@ const DefaultAppBar = (props) => {
 							variant="contained"
 							color="secondary"
 							className={classes.listItem}
-							onClick={contactUs}
+							onClick={() => (document.location.href = '/contactus')}
 						>
 							Contact Us
 						</Button>

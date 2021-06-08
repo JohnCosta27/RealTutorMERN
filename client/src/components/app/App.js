@@ -26,6 +26,7 @@ import GCSEBiology from '../subjects/GCSEbiology';
 
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Manifesto from '../pages/Manifesto';
+import ContactUs from '../pages/ContactUs';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -47,6 +48,7 @@ function App() {
 					<Route path="/payment" component={Payment} />
 					<Route path="/how-it-works" component={HowItWorks} />
 					<Route path="/team" component={Team} />
+					<Route path="/contactus" component={ContactUs} />
 					<Route exact path="/subjects" component={SubjectPage} />
 					<Route exact path="/alevelmaths" component={ALevelMaths} />
 					<Route exact path="/alevelfurthermaths" component={ALevelFurtherMaths} />
