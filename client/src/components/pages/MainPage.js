@@ -221,7 +221,7 @@ const MainPage = () => {
 	const TheExperiment = () => {
 		if (width < 1600) {
 			return (
-				<FadeIn right cascade>
+				<FadeIn right>
 					<Section background="lightteal" auto={true} centered={true}>
 						<div
 							style={{
@@ -553,7 +553,7 @@ const MainPage = () => {
 					</div>
 				</Section>
 			</FadeIn>
-			<Slide left>
+			<FadeIn left>
 				<Section medium={true} column={true} background="lightblue">
 					<div>
 						<Typography variant="h2">Subjects we offer</Typography>
@@ -619,7 +619,7 @@ const MainPage = () => {
 						</Grid>
 					</div>
 				</Section>
-			</Slide>
+			</FadeIn>
 			<FadeIn>
 				<Section background="offwhite" auto={true} narrow={true}>
 					<div style={{ flex: 1 }} id="contactSection">

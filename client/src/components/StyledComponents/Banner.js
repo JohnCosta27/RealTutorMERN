@@ -7,12 +7,16 @@ import Slide from '@material-ui/core/Slide';
 import BannerBackground from '../../images/Banner.jpeg';
 import SmallBannerBackground from '../../images/SmallBanner.jpeg';
 import SmallerBannerBackground from '../../images/SmallerBanner.jpeg';
+import BannerWithoutLogo from '../../images/BannerWithoutLogo.jpg';
+import Logo from '../../images/TransparentWhiteText.png';
 
 /*
 Component props:
 MainPage: Boolean, perhaps inefficient, but this component will render 
 differently when on the main page than on other pages.
 */
+
+//{//<div style={{width: '100%', height: "62.5%", backgroundImage: `url(${Logo})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>//}
 
 const Banner = (props) => {
 	const [enter, setEnter] = useState(false);
@@ -56,7 +60,7 @@ const Banner = (props) => {
 			},
 			[theme.breakpoints.down('xs')]: {
 				height: props.mainpage ? 500 : height,
-				backgroundImage: `url(${SmallerBannerBackground})`,
+				backgroundImage: `url(${BannerWithoutLogo})`,
 				backgroundSize: 'cover',
 				backgroundPositionY: 0,
 			},
@@ -72,14 +76,23 @@ const Banner = (props) => {
 			position: 'absolute',
 			bottom: 100,
 			[theme.breakpoints.down('sm')]: {
+				width: '80%',
+				marginLeft: '10%',
 				bottom: 50,
 			},
+			[theme.breakpoints.down('xs')]: {
+				width: '100%',
+				marginLeft: 0,
+				bottom: 100
+			}
 		},
-		titles: {
-		},
+		titles: {},
 		spacer: {
-			width: "100%",
+			width: '100%',
 			height: 500,
+		},
+		logoMobile: {
+			width: '100%'
 		}
 	}));
 
@@ -94,17 +107,20 @@ const Banner = (props) => {
 					</Typography>
 					<br></br>
 				</div>
-				{width < 440 ? (
+				{width < 601 ? (
+					<div style={{width: '100%', height: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+						<img src={Logo} className={classes.logoMobile} />
 					<div className={classes.centeredWrapper}>
-						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+						<Typography variant="h3" align="center" style={{ color: '#FAFAFA' }}>
 							£20 an hour (GCSE)
 						</Typography>
-						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+						<Typography variant="h3" align="center" style={{ color: '#FAFAFA' }}>
 							£30 an hour (A-level)
 						</Typography>
-						<Typography variant="h4" style={{ color: '#FAFAFA' }}>
+						<Typography variant="h4" align="center" style={{ color: '#FAFAFA' }}>
 							The future is online.
 						</Typography>
+					</div>
 					</div>
 				) : (
 					<div className={classes.centeredWrapper}>
