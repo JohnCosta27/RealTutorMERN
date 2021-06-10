@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 //Pages
 import Login from '../pages/Login';
@@ -28,45 +28,68 @@ import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Manifesto from '../pages/Manifesto';
 import ContactUs from '../pages/ContactUs';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
-import theme from '../../theme';
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	useLocation,
+} from 'react-router-dom';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ReactGA from 'react-ga';
+
+function usePageViews() {
+	let location = useLocation();
+	useEffect(() => {
+		if (!window.GA_INITIALIZED) {
+			ReactGA.initialize('UA-169952657-1');
+			window.GA_INITIALIZED = true;
+		}
+		ReactGA.set({ page: location.pathname });
+		ReactGA.pageview(location.pathname);
+	}, [location]);
+}
 
 function App() {
+	usePageViews();
 	return (
-		<ThemeProvider theme={theme}>
-			<CssBaseline />
-			<Router>
-				<Switch>
-					<Route exact path="/" component={MainPage} />
-					<Route path="/login" component={Login} />
-					<Route path="/studentdashboard" component={StudentDashboard} />
-					<Route path="/tutordashboard" component={TutorDashboard} />
-					<Route path="/managerdashboard" component={ManagerDashboard} />
-					<Route path="/payment" component={Payment} />
-					<Route path="/how-it-works" component={HowItWorks} />
-					<Route path="/team" component={Team} />
-					<Route path="/contactus" component={ContactUs} />
-					<Route exact path="/subjects" component={SubjectPage} />
-					<Route exact path="/alevelmaths" component={ALevelMaths} />
-					<Route exact path="/alevelfurthermaths" component={ALevelFurtherMaths} />
-					<Route exact path="/alevelphysics" component={ALevelPhysics} />
-					<Route exact path="/alevelchemistry" component={ALevelChemistry} />
-					<Route exact path="/alevelbiology" component={ALevelBiology} />
-					<Route exact path="/alevelart" component={ALevelArt} />
-					<Route exact path="/aleveleconomics" component={AlevelEconomics} />
-					<Route exact path="/alevelcomputerscience" component={ALevelComputerScience} />
-					<Route exact path="/gcsecomputerscience" component={GCSEComputerScience} />
-					<Route exact path="/gcsephysics" component={GCSEPhysics} />
-					<Route exact path="/gcsechemistry" component={GCSEChemistry} />
-					<Route exact path="/gcsebiology" component={GCSEBiology} />
-					<Route exact path="/privacypolicy" component={PrivacyPolicy} />
-					<Route exact path="/manifesto" component={Manifesto} />
-				</Switch>
-			</Router>
-		</ThemeProvider>
+		<Switch>
+			<Route exact path="/" component={MainPage} />
+			<Route path="/login" component={Login} />
+			<Route path="/studentdashboard" component={StudentDashboard} />
+			<Route path="/tutordashboard" component={TutorDashboard} />
+			<Route path="/managerdashboard" component={ManagerDashboard} />
+			<Route path="/payment" component={Payment} />
+			<Route path="/how-it-works" component={HowItWorks} />
+			<Route path="/team" component={Team} />
+			<Route path="/contactus" component={ContactUs} />
+			<Route exact path="/subjects" component={SubjectPage} />
+			<Route exact path="/alevelmaths" component={ALevelMaths} />
+			<Route
+				exact
+				path="/alevelfurthermaths"
+				component={ALevelFurtherMaths}
+			/>
+			<Route exact path="/alevelphysics" component={ALevelPhysics} />
+			<Route exact path="/alevelchemistry" component={ALevelChemistry} />
+			<Route exact path="/alevelbiology" component={ALevelBiology} />
+			<Route exact path="/alevelart" component={ALevelArt} />
+			<Route exact path="/aleveleconomics" component={AlevelEconomics} />
+			<Route
+				exact
+				path="/alevelcomputerscience"
+				component={ALevelComputerScience}
+			/>
+			<Route
+				exact
+				path="/gcsecomputerscience"
+				component={GCSEComputerScience}
+			/>
+			<Route exact path="/gcsephysics" component={GCSEPhysics} />
+			<Route exact path="/gcsechemistry" component={GCSEChemistry} />
+			<Route exact path="/gcsebiology" component={GCSEBiology} />
+			<Route exact path="/privacypolicy" component={PrivacyPolicy} />
+			<Route exact path="/manifesto" component={Manifesto} />
+		</Switch>
 	);
 }
 export default App;

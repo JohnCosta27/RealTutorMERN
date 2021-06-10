@@ -43,7 +43,7 @@ const Banner = (props) => {
 			display: 'flex',
 			flexDirection: 'column',
 			position: 'relative',
-			backgroundPositionX: 0,
+			backgroundPositionX: 'right',
 			backgroundPositionY: 'center',
 			justifyContent: props.mainpage ? 'start' : 'center',
 			alignItems: 'center',

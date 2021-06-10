@@ -3,9 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
+
+import theme from './theme';
+
 ReactDOM.render(
 	<React.StrictMode>
-			<App />
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Router>
+				<App />
+			</Router>
+		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
