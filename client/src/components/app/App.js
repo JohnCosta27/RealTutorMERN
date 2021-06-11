@@ -50,6 +50,7 @@ function usePageViews() {
 }
 
 function App() {
+	console.log("dsa")
 	usePageViews();
 	return (
 		<Switch>

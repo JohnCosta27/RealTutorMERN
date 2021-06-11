@@ -83,8 +83,8 @@ const Banner = (props) => {
 			[theme.breakpoints.down('xs')]: {
 				width: '100%',
 				marginLeft: 0,
-				bottom: 100
-			}
+				bottom: 100,
+			},
 		},
 		titles: {},
 		spacer: {
@@ -92,8 +92,8 @@ const Banner = (props) => {
 			height: 500,
 		},
 		logoMobile: {
-			width: '100%'
-		}
+			width: '100%',
+		},
 	}));
 
 	const classes = useStyles();
@@ -108,19 +108,40 @@ const Banner = (props) => {
 					<br></br>
 				</div>
 				{width < 601 ? (
-					<div style={{width: '100%', height: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+					<div
+						style={{
+							width: '100%',
+							height: '50%',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
 						<img src={Logo} className={classes.logoMobile} />
-					<div className={classes.centeredWrapper}>
-						<Typography variant="h3" align="center" style={{ color: '#FAFAFA' }}>
-							£20 an hour (GCSE)
-						</Typography>
-						<Typography variant="h3" align="center" style={{ color: '#FAFAFA' }}>
-							£30 an hour (A-level)
-						</Typography>
-						<Typography variant="h4" align="center" style={{ color: '#FAFAFA' }}>
-							The future is online.
-						</Typography>
-					</div>
+						<div className={classes.centeredWrapper}>
+							<Typography
+								variant="h3"
+								align="center"
+								style={{ color: '#FAFAFA' }}
+							>
+								£20 an hour (GCSE)
+							</Typography>
+							<Typography
+								variant="h3"
+								align="center"
+								style={{ color: '#FAFAFA' }}
+							>
+								£30 an hour (A-level)
+							</Typography>
+							<Typography
+								variant="h4"
+								align="center"
+								style={{ color: '#FAFAFA' }}
+							>
+								The future is online.
+							</Typography>
+						</div>
 					</div>
 				) : (
 					<div className={classes.centeredWrapper}>
@@ -140,6 +161,22 @@ const Banner = (props) => {
 	} else {
 		return (
 			<div className={classes.banner}>
+				{width < 601 ? (
+					<div
+						style={{
+							width: '100%',
+							height: '75%',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<img src={Logo} className={classes.logoMobile} />
+					</div>
+				) : (
+					<div></div>
+				)}
 				<div className={classes.titles}>
 					<Typography
 						variant="h1"
