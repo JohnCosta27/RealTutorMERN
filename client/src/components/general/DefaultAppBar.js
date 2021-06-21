@@ -10,6 +10,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Logo from '../../images/logo.png';
 
 const DefaultAppBar = (props) => {
 	const [width, setWidth] = useState(window.innerWidth);
@@ -45,11 +46,18 @@ const DefaultAppBar = (props) => {
 			marginButtom: 20,
 			marginLeft: 10,
 			marginRight: 10,
-			color: '#bbbbbb'
+			color: '#bbbbbb',
 		},
 		paper: {
-			background: theme.palette.grey.main
-		}
+			background: theme.palette.grey.main,
+		},
+		appbarLogo: {
+			width: 50,
+			height: 50,
+			marginRight: 10,
+			backgroundImage: `url(${Logo})`,
+			backgroundSize: 'contain',
+		},
 	}));
 
 	const classes = useStyles();
@@ -68,11 +76,14 @@ const DefaultAppBar = (props) => {
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
-					<div
-						style={{ cursor: 'pointer' }}
-						onClick={() => (document.location.href = '/')}
-					>
-						<Typography variant="h3">Real Tutor</Typography>
+					<div style={{ display: 'flex' }}>
+						<div className={classes.appbarLogo}></div>
+						<div
+							style={{ cursor: 'pointer' }}
+							onClick={() => (document.location.href = '/')}
+						>
+							<Typography variant="h3">Real Tutor</Typography>
+						</div>
 					</div>
 					<IconButton onClick={handleDrawerOpen}>
 						<MenuIcon color="secondary" />
@@ -86,9 +97,7 @@ const DefaultAppBar = (props) => {
 					>
 						<Button
 							className={classes.drawerItem}
-							onClick={() =>
-								(document.location.href = '/')
-							}
+							onClick={() => (document.location.href = '/')}
 						>
 							Home
 						</Button>
@@ -116,7 +125,9 @@ const DefaultAppBar = (props) => {
 						</Button>
 						<Button
 							className={classes.drawerItem}
-							onClick={() => (document.location.href = '/contactus')}
+							onClick={() =>
+								(document.location.href = '/contactus')
+							}
 						>
 							Contact Us
 						</Button>
@@ -136,11 +147,14 @@ const DefaultAppBar = (props) => {
 				<Toolbar
 					style={{ display: 'flex', justifyContent: 'space-between' }}
 				>
-					<div
-						style={{ cursor: 'pointer' }}
-						onClick={() => (document.location.href = '/')}
-					>
-						<Typography variant="h3">Real Tutor</Typography>
+					<div style={{ display: 'flex' }}>
+						<div className={classes.appbarLogo}></div>
+						<div
+							style={{ cursor: 'pointer' }}
+							onClick={() => (document.location.href = '/')}
+						>
+							<Typography variant="h3">Real Tutor</Typography>
+						</div>
 					</div>
 					<List className={classes.list}>
 						<Button
@@ -172,7 +186,9 @@ const DefaultAppBar = (props) => {
 							variant="contained"
 							color="secondary"
 							className={classes.listItem}
-							onClick={() => (document.location.href = '/contactus')}
+							onClick={() =>
+								(document.location.href = '/contactus')
+							}
 						>
 							Contact Us
 						</Button>

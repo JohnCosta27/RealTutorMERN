@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import Slide from '@material-ui/core/Slide';
+import FadeIn from 'react-reveal/Fade';
 
 import BannerBackground from '../../images/Banner.jpeg';
 import SmallBannerBackground from '../../images/SmallBanner.jpeg';
 import SmallerBannerBackground from '../../images/SmallerBanner.jpeg';
 import BannerWithoutLogo from '../../images/BannerWithoutLogo.jpg';
 import Logo from '../../images/TransparentWhiteText.png';
+import TextLoop from 'react-text-loop';
 
 /*
 Component props:
@@ -103,7 +104,11 @@ const Banner = (props) => {
 			<div className={classes.banner} style={{ height: 800 }}>
 				<div className={classes.name}>
 					<Typography variant="h3" style={{ color: '#FAFAFA' }}>
-						Covid stole your education. We're here to give it back.
+						<TextLoop interval={4000}>
+							<span>Covid stole your education. <div style={{display: 'inline', color: '#009688'}}>We're here to give it back.</div></span>
+							<span>We are the future of <div style={{display: 'inline', color: '#009688'}}>online learning.</div></span>
+							<span>Results within <div style={{display: 'inline', color: '#009688'}}>2</div> sessions.</span>
+						</TextLoop>
 					</Typography>
 					<br></br>
 				</div>
@@ -144,6 +149,7 @@ const Banner = (props) => {
 						</div>
 					</div>
 				) : (
+					<FadeIn right duration={3000}>
 					<div className={classes.centeredWrapper}>
 						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
 							£20 an hour (GCSE)
@@ -155,6 +161,7 @@ const Banner = (props) => {
 							The future is online.
 						</Typography>
 					</div>
+					</FadeIn>
 				)}
 			</div>
 		);
