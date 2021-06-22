@@ -70,6 +70,7 @@ const Banner = (props) => {
 			width: '80%',
 			marginLeft: '10%',
 			marginTop: 75,
+			height: 200
 		},
 		centeredWrapper: {
 			width: '80%',
@@ -104,10 +105,10 @@ const Banner = (props) => {
 			<div className={classes.banner} style={{ height: 800 }}>
 				<div className={classes.name}>
 					<Typography variant="h3" style={{ color: '#FAFAFA' }}>
-						<TextLoop interval={4000}>
-							<span>Covid stole your education. <div style={{display: 'inline', color: '#009688'}}>We're here to give it back.</div></span>
-							<span>We are the future of <div style={{display: 'inline', color: '#009688'}}>online learning.</div></span>
-							<span>Results within <div style={{display: 'inline', color: '#009688'}}>2</div> sessions.</span>
+						<TextLoop interval={4000} noWrap={false}>
+							<span>Covid stole your education. We're here to give it back.</span>
+							<span>We are the future of online learning.</span>
+							<span>Results within 2 sessions.</span>
 						</TextLoop>
 					</Typography>
 					<br></br>
@@ -119,7 +120,6 @@ const Banner = (props) => {
 							height: '50%',
 							display: 'flex',
 							flexDirection: 'column',
-							justifyContent: 'center',
 							alignItems: 'center',
 						}}
 					>
@@ -150,17 +150,17 @@ const Banner = (props) => {
 					</div>
 				) : (
 					<FadeIn right duration={3000}>
-					<div className={classes.centeredWrapper}>
-						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
-							£20 an hour (GCSE)
-						</Typography>
-						<Typography variant="h2" style={{ color: '#FAFAFA' }}>
-							£30 an hour (A-level)
-						</Typography>
-						<Typography variant="h3" style={{ color: '#FAFAFA' }}>
-							The future is online.
-						</Typography>
-					</div>
+						<div className={classes.centeredWrapper}>
+							<Typography variant="h2" style={{ color: '#FAFAFA' }}>
+								£20 an hour (GCSE)
+							</Typography>
+							<Typography variant="h2" style={{ color: '#FAFAFA' }}>
+								£30 an hour (A-level)
+							</Typography>
+							<Typography variant="h3" style={{ color: '#FAFAFA' }}>
+								The future is online.
+							</Typography>
+						</div>
 					</FadeIn>
 				)}
 			</div>
