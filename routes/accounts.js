@@ -10,26 +10,12 @@ const sha256 = require('js-sha256');
 accounts.post('/login', async (req, res) => {
 	//Validation, make sure email and password are in the request (security and all that).
 	if (req.body.email == null || req.body.password == null) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 400,
-			date: new Date().getTime(),
-		});
 		res.json({ error: 'Email or password missing from request' });
 	} else {
 		try {
 			const account = await Account.findOne({ email: req.body.email });
 			// If the result of the search is more than 1 (as in it found an account with that email)
 			if (account == undefined) {
-				createStats({
-					cookie: req.cookies.token,
-					route: 'accounts',
-					request: req.path,
-					outcome: 401,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Incorrect password' });
 			} else {
 				const hashedPassword = sha256(
@@ -52,14 +38,6 @@ accounts.post('/login', async (req, res) => {
 					else level = 0;
 
 					if (found) {
-						createStats({
-							id: account._id,
-							cookie: account.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 200,
-							date: new Date().getTime(),
-						});
 						res.json({
 							cookie: account.cookie,
 							level: level,
@@ -75,15 +53,6 @@ accounts.post('/login', async (req, res) => {
 						);
 
 						await account.save();
-
-						createStats({
-							id: account._id,
-							cookie: account.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 200,
-							date: new Date().getTime(),
-						});
 						res.json({
 							cookie: account.cookie,
 							level: level,
@@ -126,13 +95,6 @@ accounts.get('/logout', async (req, res) => {
 			res.json({ error: 'Account is not logged in' });
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 	}
 });
 
@@ -145,34 +107,13 @@ accounts.post('/addlesson', async (req, res) => {
 		req.body.tutorid == null ||
 		req.body.title == null
 	) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 400,
-			date: new Date().getTime(),
-		});
 		res.json({ error: 'One or more parameters missing from the request' });
 	} else if (req.body.studentid == req.body.tutorid) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 401,
-			date: new Date().getTime(),
-		});
 		res.json({ error: 'Student and tutor IDs cannot be the same' });
 	} else {
 		const student = await getAccount(req.body.studentid);
 		const tutor = await getAccount(req.body.tutorid);
 		if (student.error != undefined || tutor.error != undefined) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: '1 or more accounts were not found' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
@@ -186,14 +127,6 @@ accounts.post('/addlesson', async (req, res) => {
 							(await studentToTutor(tutor._id, student._id))))
 				)
 			) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 400,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication failed' });
 			} else {
 				if (await validateSpecPoint(req.body.specPoints)) {
@@ -213,35 +146,11 @@ accounts.post('/addlesson', async (req, res) => {
 						tutor.lessons.push(lesson._id);
 						await student.save();
 						await tutor.save();
-						createStats({
-							id: validation.id,
-							cookie: validation.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 200,
-							date: new Date().getTime(),
-						});
 						res.json({ lesson: 'Saved successfully' });
 					} catch (err) {
-						createStats({
-							id: validation.id,
-							cookie: validation.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 500,
-							date: new Date().getTime(),
-						});
 						res.json({ error: err });
 					}
 				} else {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 400,
-						date: new Date().getTime(),
-					});
 					res.json({
 						error: '1 or more specification points are invalid',
 					});
@@ -257,13 +166,6 @@ accounts.post('/addlessonreport', async (req, res) => {
 		req.body.specPointsAchieved == null ||
 		req.body.lessonID == null
 	) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 400,
-			date: new Date().getTime(),
-		});
 		res.json({ error: '1 or more specification points were invalid' });
 	} else {
 		const validation = await validateCookie(req.cookies.token);
@@ -285,46 +187,14 @@ accounts.post('/addlessonreport', async (req, res) => {
 						lesson.date
 					);
 					await lesson.save();
-
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 200,
-						date: new Date().getTime(),
-					});
 					res.json({ success: 'Lesson updated successfully' });
 				} catch (error) {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 404,
-						date: new Date().getTime(),
-					});
 					res.json({ error: 'Lesson not found' });
 				}
 			} else {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 400,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Specification points incorrect' });
 			}
 		} else {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 401,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Token invalid' });
 		}
 	}
@@ -333,27 +203,12 @@ accounts.post('/addlessonreport', async (req, res) => {
 accounts.get('/getstudentlessons', async (req, res) => {
 	try {
 		if (req.query.studentid == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Student ID is not present' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
 			const account = await getAccount(req.query.studentid);
 
 			if (account.error != undefined) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 404,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'This account was not found' });
 			} else {
 				if (
@@ -368,36 +223,13 @@ accounts.get('/getstudentlessons', async (req, res) => {
 							validation.id == req.query.studentid)
 					)
 				) {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 401,
-						date: new Date().getTime(),
-					});
 					res.json({ error: 'Validation not successful' });
 				} else {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 200,
-						date: new Date().getTime(),
-					});
 					res.json(await getLessons(req.query.studentid, 1));
 				}
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json(error);
 	}
 });
@@ -405,27 +237,12 @@ accounts.get('/getstudentlessons', async (req, res) => {
 accounts.get('/getstudentlatestlesson', async (req, res) => {
 	try {
 		if (req.cookies.token == null || req.query.studentid == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: '1 or more parameters were not present' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
 			const account = await getAccount(req.query.studentid);
 
 			if (account == undefined || account.error != undefined) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 404,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Account was not found' });
 			} else {
 				if (
@@ -440,26 +257,10 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 							validation.id == req.query.studentid)
 					)
 				) {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 401,
-						date: new Date().getTime(),
-					});
 					res.json({ error: 'Validation not successful' });
 				} else {
 					const lessons = await getLessons(req.query.studentid, 1);
 					if (lessons.error != null) {
-						createStats({
-							id: validation.id,
-							cookie: validation.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 404,
-							date: new Date().getTime(),
-						});
 						res.json({ error: 'This student could not be found' });
 					} else {
 						let date = 0;
@@ -473,27 +274,16 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 								lessonReturn = lesson;
 							}
 						}
-						createStats({
-							id: validation.id,
-							cookie: validation.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 200,
-							date: new Date().getTime(),
-						});
-						res.json(lessonReturn);
+						if (lessonReturn == undefined) {
+							res.json({error: "No lessons found"});
+						} else {
+							res.json(lessonReturn);
+						}
 					}
 				}
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json(error);
 	}
 });
@@ -501,27 +291,12 @@ accounts.get('/getstudentlatestlesson', async (req, res) => {
 accounts.get('/getstudentupcoming', async (req, res) => {
 	try {
 		if (req.cookies.token == null || req.query.studentid == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: '1 or more parameters were not found' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
 			const account = await getAccount(req.query.studentid);
 
 			if (account.error != undefined) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 404,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'This account was not found' });
 			} else {
 				if (
@@ -536,26 +311,10 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 							validation.id == req.query.studentid)
 					)
 				) {
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 401,
-						date: new Date().getTime(),
-					});
 					res.json({ error: 'Validation not successful' });
 				} else {
 					const lessons = await getLessons(req.query.studentid, 1);
 					if (lessons.error != null) {
-						createStats({
-							id: validation.id,
-							cookie: validation.cookie,
-							route: 'accounts',
-							request: req.path,
-							outcome: 404,
-							date: new Date().getTime(),
-						});
 						res.json({ error: 'This student could not be found' });
 					} else {
 						let date = 0;
@@ -571,24 +330,8 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 						}
 
 						if (lessonReturn == undefined) {
-							createStats({
-								id: validation.id,
-								cookie: validation.cookie,
-								route: 'accounts',
-								request: req.path,
-								outcome: 200,
-								date: new Date().getTime(),
-							});
 							res.json({ error: 'No upcoming lesson' });
 						} else {
-							createStats({
-								id: validation.id,
-								cookie: validation.cookie,
-								route: 'accounts',
-								request: req.path,
-								outcome: 200,
-								date: new Date().getTime(),
-							});
 							res.json(lessonReturn);
 						}
 					}
@@ -596,13 +339,6 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -610,13 +346,6 @@ accounts.get('/getstudentupcoming', async (req, res) => {
 accounts.post('/addspecpoins', async (req, res) => {
 	try {
 		if (req.body.specPoints == null || req.body.studentID == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: '1 or more specification points were invalid' });
 		} else {
 			let validation = await validateCookie(req.cookies.token);
@@ -630,24 +359,8 @@ accounts.post('/addspecpoins', async (req, res) => {
 						)))
 				)
 			) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 401,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication failed' });
 			} else {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 200,
-					date: new Date().getTime(),
-				});
 				res.json(
 					await addStudentPoints(
 						req.body.studentID,
@@ -657,13 +370,6 @@ accounts.post('/addspecpoins', async (req, res) => {
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -673,14 +379,6 @@ accounts.get('/getstudentpoints', async (req, res) => {
 		const validation = await validateCookie(req.cookies.token);
 
 		if (req.query.studentid == null) {
-			createStats({
-				id: validation.id,
-				cookie: validation.cookie,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Student ID is not present' });
 		} else if (
 			!(
@@ -693,35 +391,12 @@ accounts.get('/getstudentpoints', async (req, res) => {
 				(validation.level == 1 && validation.id == req.query.studentid)
 			)
 		) {
-			createStats({
-				id: validation.id,
-				cookie: validation.cookie,
-				route: 'accounts',
-				request: req.path,
-				outcome: 401,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Authentication failed' });
 		} else {
 			const account = await getAccount(req.query.studentid);
-			createStats({
-				id: validation.id,
-				cookie: validation.cookie,
-				route: 'accounts',
-				request: req.path,
-				outcome: 200,
-				date: new Date().getTime(),
-			});
 			res.json(account.specPoints);
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -731,14 +406,6 @@ accounts.get('/getstudentprogress', async (req, res) => {
 		const validation = await validateCookie(req.cookies.token);
 
 		if (req.query.studentid == null) {
-			createStats({
-				id: validation.id,
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Student ID is not present' });
 		} else if (
 			!(
@@ -751,38 +418,14 @@ accounts.get('/getstudentprogress', async (req, res) => {
 				(validation.level == 1 && validation.id == req.query.studentid)
 			)
 		) {
-			createStats({
-				id: validation.id,
-				cookie: validation.cookie,
-				route: 'accounts',
-				request: req.path,
-				outcome: 401,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Authentication failed' });
 		} else {
 			const account = await getAccount(req.query.studentid);
 			if (account.error != undefined) {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 404,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'This account was not found' });
 			} else {
 				const specLength = await SpecificationPoint.countDocuments();
 				const studentSpecPoints = account.specPoints.length;
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 200,
-					date: new Date().getTime(),
-				});
 				res.json({
 					progress: Math.round(
 						(studentSpecPoints * 100) / specLength
@@ -791,13 +434,6 @@ accounts.get('/getstudentprogress', async (req, res) => {
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -805,13 +441,6 @@ accounts.get('/getstudentprogress', async (req, res) => {
 accounts.get('/gettutorstudents', async (req, res) => {
 	try {
 		if (req.query.tutorid == 'null') {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Tutor ID is not present' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
@@ -823,14 +452,6 @@ accounts.get('/gettutorstudents', async (req, res) => {
 						validation.id == req.query.tutorid)
 				)
 			) {
-				createStats({
-					id: validation.id,
-					cookie: req.cookies.token,
-					route: 'accounts',
-					request: req.path,
-					outcome: 400,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication error' });
 			} else {
 				const tutor = await getAccount(validation.id);
@@ -838,25 +459,10 @@ accounts.get('/gettutorstudents', async (req, res) => {
 					{ _id: { $in: tutor.students } },
 					{ firstname: 1, surname: 1 }
 				);
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 200,
-					date: new Date().getTime(),
-				});
 				res.json({ students: students });
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -865,37 +471,14 @@ accounts.get('/getid', async (req, res) => {
 	const validation = await validateCookie(req.cookies.token);
 	if (validation.level > 0) {
 		const account = await AccountFromCookie(req.cookies.token);
-		createStats({
-			id: validation.id,
-			cookie: validation.cookie,
-			route: 'accounts',
-			request: req.path,
-			outcome: 200,
-			date: new Date().getTime(),
-		});
 		res.json({ id: account._id });
 	} else {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 401,
-			date: new Date().getTime(),
-		});
 		res.json({ error: 'Cookie not valid' });
 	}
 });
 
 accounts.get('/auth', async (req, res) => {
 	const auth = await validateCookie(req.cookies.token);
-	createStats({
-		id: auth.id,
-		cookie: req.cookies.token,
-		route: 'accounts',
-		request: req.path,
-		outcome: 200,
-		date: new Date().getTime(),
-	});
 	res.json(auth);
 });
 
@@ -906,23 +489,8 @@ accounts.get('/tutorstudent', async (req, res) => {
 			validation.id,
 			req.query.studentid
 		);
-		createStats({
-			id: validation.id,
-			cookie: validation.cookie,
-			route: 'accounts',
-			request: req.path,
-			outcome: 200,
-			date: new Date().getTime(),
-		});
 		res.json({ contains: contains });
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 200,
-			date: new Date().getTime(),
-		});
 		res.json({ contains: false });
 	}
 });
@@ -930,13 +498,6 @@ accounts.get('/tutorstudent', async (req, res) => {
 accounts.get('/gettutorlessons', async (req, res) => {
 	try {
 		if (req.query.tutorid == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Tutor ID is not present' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
@@ -947,35 +508,12 @@ accounts.get('/gettutorlessons', async (req, res) => {
 						validation.id == req.query.tutorid)
 				)
 			) {
-				createStats({
-					id: validation.id,
-					cookie: req.cookies.token,
-					route: 'accounts',
-					request: req.path,
-					outcome: 401,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication error' });
 			} else {
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 200,
-					date: new Date().getTime(),
-				});
 				res.json(await getLessons(req.query.tutorid, 2));
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
@@ -983,50 +521,19 @@ accounts.get('/gettutorlessons', async (req, res) => {
 accounts.get('/getname', async (req, res) => {
 	try {
 		if (req.query.studentid == null && req.query.tutorid == null) {
-			createStats({
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 400,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'IDs were missing' });
 		} else {
 			const validation = await validateCookie(req.cookies.token);
 			if (!(validation.level >= 2)) {
-				createStats({
-					id: validation.id,
-					cookie: req.cookies.token,
-					route: 'accounts',
-					request: req.path,
-					outcome: 401,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication error' });
 			} else {
 				if (req.query.studentid != null) {
 					const account = await Account.findById(req.query.studentid);
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 200,
-						date: new Date().getTime(),
-					});
 					res.json({
 						name: account.firstname + ' ' + account.surname,
 					});
 				} else {
 					const account = await Account.findById(req.query.tutorid);
-					createStats({
-						id: validation.id,
-						cookie: validation.cookie,
-						route: 'accounts',
-						request: req.path,
-						outcome: 200,
-						date: new Date().getTime(),
-					});
 					res.json({
 						name: account.firstname + ' ' + account.surname,
 					});
@@ -1034,26 +541,12 @@ accounts.get('/getname', async (req, res) => {
 			}
 		}
 	} catch (error) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 500,
-			date: new Date().getTime(),
-		});
 		res.json({ error: error });
 	}
 });
 
 accounts.get('/getremaininghours', async (req, res) => {
 	if (req.query.studentid == null) {
-		createStats({
-			cookie: req.cookies.token,
-			route: 'accounts',
-			request: req.path,
-			outcome: 400,
-			date: new Date().getTime(),
-		});
 		res.json({ error: 'ID missing' });
 	} else {
 		const validation = await validateCookie(req.cookies.token);
@@ -1069,36 +562,12 @@ accounts.get('/getremaininghours', async (req, res) => {
 					String(validation.id) == String(req.query.studentid))
 			)
 		) {
-			createStats({
-				id: validation.id,
-				cookie: req.cookies.token,
-				route: 'accounts',
-				request: req.path,
-				outcome: 401,
-				date: new Date().getTime(),
-			});
 			res.json({ error: 'Authentication error' });
 		} else {
 			try {
 				const account = await Account.findById(req.query.studentid);
-				createStats({
-					id: validation.id,
-					cookie: validation.cookie,
-					route: 'accounts',
-					request: req.path,
-					outcome: 200,
-					date: new Date().getTime(),
-				});
 				res.json({ hours: account.remainingHours });
 			} catch (error) {
-				createStats({
-					id: validation.id,
-					cookie: req.cookies.token,
-					route: 'accounts',
-					request: req.path,
-					outcome: 500,
-					date: new Date().getTime(),
-				});
 				res.json({ error: 'Authentication error' });
 			}
 		}

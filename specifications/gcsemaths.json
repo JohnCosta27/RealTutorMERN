@@ -1,0 +1,625 @@
+[
+	{
+		"section": "1.1.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 402,
+		"content": "Types of Number and BODMAS",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 403,
+		"content": "Multiples, Factors and Prime Factors",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 404,
+		"content": "LCM and HCF",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 405,
+		"content": "Fractions",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 406,
+		"content": "Fractions, Decimals and Percentages",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 407,
+		"content": "Fractions and Recurring Decimals",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 408,
+		"content": "Rounding Numbers",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.8",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 409,
+		"content": "Estimating",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.9",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 410,
+		"content": "Bounds",
+		"sub_content": []
+	},
+	{
+		"section": "1.1.10",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 411,
+		"content": "Standard Form",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 413,
+		"content": "Algebra Basics",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 414,
+		"content": "Powers and Roots",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 415,
+		"content": "Multiplying Out Brackets",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 416,
+		"content": "Factorising",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 417,
+		"content": "Manipulating Surds",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 418,
+		"content": "Solving Equations",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 419,
+		"content": "Rearranging Formulas",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.8",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 420,
+		"content": "Factorising Quadratics",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.9",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 421,
+		"content": "The Quadratic Formula",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.10",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 422,
+		"content": "Completing the Square",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.11",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 423,
+		"content": "Algebraic Fractions",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.12",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 424,
+		"content": "Sequences",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.13",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 425,
+		"content": "Inequalities",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.14",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 426,
+		"content": "Graphical Inequalities",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.15",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 427,
+		"content": "Iterative Methods",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.16",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 428,
+		"content": "Simultaneous Equations",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.17",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 429,
+		"content": "Proof",
+		"sub_content": []
+	},
+	{
+		"section": "1.2.18",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 430,
+		"content": "Functions",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 432,
+		"content": "Straight Lines and Gradients",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 433,
+		"content": "y = mx + c",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 434,
+		"content": "Drawing Straight Line Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 435,
+		"content": "Coordinates and Ratio",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 436,
+		"content": "Parallel and Perpendicular Lines",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 437,
+		"content": "Quadratic Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 438,
+		"content": "Harder Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.8",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 439,
+		"content": "Solving Equations Using Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.9",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 440,
+		"content": "Graph Transformations",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.10",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 441,
+		"content": "Real Life Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.11",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 442,
+		"content": "Distance Time Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.12",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 443,
+		"content": "Velocity-Time Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.3.13",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 444,
+		"content": "Gradients of Real-Life Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.0",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 445,
+		"content": "nnnn",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 446,
+		"content": "Ratios",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 447,
+		"content": "Direct and Inverse Proportion",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 448,
+		"content": "Percentages",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 449,
+		"content": "Compound Growth and Decay",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 450,
+		"content": "Unit Conversions",
+		"sub_content": []
+	},
+	{
+		"section": "1.4.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 451,
+		"content": "Speed, Density and Pressure",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 453,
+		"content": "Geometry",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 454,
+		"content": "Parallel Lines",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 455,
+		"content": "Geometry Problems",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 456,
+		"content": "Polygons",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 457,
+		"content": "Triangles and Quadrilaterals",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 458,
+		"content": "Circle Geometry",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 459,
+		"content": "Congruent Shapes",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.8",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 460,
+		"content": "Similar Shapes",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.9",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 461,
+		"content": "The Four Transformations",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.10",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 462,
+		"content": "Area - Triangles and Quadrilaterals",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.11",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 463,
+		"content": "Area - Circles",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.12",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 464,
+		"content": "3D Shapes - Surface Area",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.13",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 465,
+		"content": "3D Shapes – Volume",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.14",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 466,
+		"content": "Enlargements and Projections",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.15",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 467,
+		"content": "Triangle Construction",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.16",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 468,
+		"content": "Loci and Construction",
+		"sub_content": []
+	},
+	{
+		"section": "1.5.17",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 469,
+		"content": "Bearings",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 471,
+		"content": "Pythagoras' Theorem",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 472,
+		"content": "Trigonometry - Sin, Cos, Tan",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 473,
+		"content": "Trigonometry - Common Values",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 474,
+		"content": "The Sine and Cosine Rules",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 475,
+		"content": "3D Pythagoras",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 476,
+		"content": "3D Trigonometry",
+		"sub_content": []
+	},
+	{
+		"section": "1.6.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 477,
+		"content": "Vectors",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.1",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 479,
+		"content": "Probability Basics",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.2",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 480,
+		"content": "Counting Outcomes",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.3",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 481,
+		"content": "Probability Experiments",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.4",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 482,
+		"content": "The AND / OR Rules",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.5",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 483,
+		"content": "Tree Diagrams",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.6",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 484,
+		"content": "Conditional Probability",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.7",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 485,
+		"content": "Sets and Venn Diagrams",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.8",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 486,
+		"content": "Sampling and Data Collection",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.9",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 487,
+		"content": "Mean, Median, Mode and Range",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.10",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 488,
+		"content": "Frequency Tables - Finding Averages",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.11",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 489,
+		"content": "Grouped Frequency Tables",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.12",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 490,
+		"content": "Box Plots",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.13",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 491,
+		"content": "Cumulative Frequency",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.14",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 492,
+		"content": "Histograms and Frequency Density",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.15",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 493,
+		"content": "Scatter Graphs",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.16",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 494,
+		"content": "Other Graphs and Charts",
+		"sub_content": []
+	},
+	{
+		"section": "1.7.17",
+		"specificationName": "GCSE Maths (Pearson)",
+		"contentID": 495,
+		"content": "Comparing Data Sets",
+		"sub_content": []
+	}
+]

@@ -70,12 +70,65 @@ admin.post('/addspec', async (req, res) => {
 			section: point.section,
 			specificationName: point.specificationName,
 			sub_content: point.sub_content,
-			specID: point.specID,
+			specID: "4",
 		});
 		await newPoint.save();
 	}
 
 	res.json({ status: 200 });
+});
+
+let contentID = 600;
+const fs = require('fs');
+admin.get('/addspecfromtext', async (req, res) => {
+
+	fs.readFile('./specifications/gcsemaths.txt', 'utf-8', (err, data) => {
+
+		if (err) return console.log(err);
+
+		let lines = data.split('\n');
+
+		let spec = [];
+
+		let section = "";
+		let specificationName = "GCSE Maths (Pearson)"
+		let content = "";
+		let subcontent = [];
+		let sectionCounter = 0;
+
+		let currentContent = {};
+		let starting = true;
+
+		for (let line of lines) {
+
+			if (!isNaN(line.charAt(0))) {
+				section = line.substring(0, 3);
+				sectionCounter = 0;
+			} else if (line.charAt(0) == "-") {
+
+
+				if (content != "") {
+					spec.push({ section: section + "." + sectionCounter, specificationName: specificationName, contentID: contentID, content: content, sub_content: subcontent });
+				}
+				contentID++;
+				subcontent = [];
+
+				sectionCounter++;
+				content = line.substring(2);
+			} else if (line.charAt(0) == "=") {
+				subcontent.push(line.substring(2));
+			} else if (line == "nnnn") {
+				spec.push({ section: section + "." + sectionCounter, specificationName: specificationName, contentID: contentID, content: content, sub_content: subcontent });
+				contentID++;
+				subcontent = [];
+				content = "";
+			}
+
+		}
+		fs.writeFileSync('./specifications/gcsemaths.json', JSON.stringify(spec));
+
+	});
+
 });
 
 admin.get('/getstudents', async (req, res) => {
@@ -92,7 +145,7 @@ admin.get('/getstudents', async (req, res) => {
 				}
 			}
 
-			let subjects = await Course.find({specID: { $in: account.course}});
+			let subjects = await Course.find({ specID: { $in: account.course } });
 
 			response.push({
 				_id: account._id,

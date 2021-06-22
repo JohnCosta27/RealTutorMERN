@@ -31,6 +31,7 @@
     "react-scroll": "^1.8.2",
     "react-select": "^4.3.0",
     "react-tex": "^1.5.0",
+    "react-text-loop": "^2.3.0",
     "react-typical": "^0.1.3",
     "reactjs-percentage-circle": "^1.0.0",
     "stripe": "^8.143.0",

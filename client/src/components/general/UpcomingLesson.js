@@ -29,14 +29,11 @@ const UpcomingLesson = () => {
 		);
 
 		const data = await response.json();
-		console.log(data);
 		if (data.error != "No upcoming lesson") {
 			setUpcomingLesson(data);
 		}
 		setLoading(false);
 	};
-
-	console.log(upcomingLesson.empty);
 
 	if (upcomingLesson.empty) {
 		return (
