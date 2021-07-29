@@ -47,6 +47,9 @@ const StudentLessons = (props) => {
 		});
 
 		const data = await response.json();
+		data.sort(function(a, b) {
+			return a.datetime - b.datetime;
+		});
 		let lessons = [];
 		for (let lesson of data) {
 			let specPoints = [];
