@@ -1,0 +1,482 @@
+[
+	{
+		"section": "1.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2500,
+		"content": "Periodic Table"
+	},
+	{
+		"section": "1.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2501,
+		"content": "Atoms"
+	},
+	{
+		"section": "1.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2502,
+		"content": "Elements"
+	},
+	{
+		"section": "1.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2503,
+		"content": "Compounds"
+	},
+	{
+		"section": "1.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2504,
+		"content": "Chemical Equations"
+	},
+	{
+		"section": "1.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2505,
+		"content": "Mixtures and Chromatography"
+	},
+	{
+		"section": "1.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2506,
+		"content": "More Separation Techniques"
+	},
+	{
+		"section": "1.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2507,
+		"content": "Distillation"
+	},
+	{
+		"section": "1.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2508,
+		"content": "Electronic Structure"
+	},
+	{
+		"section": "1.10",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2509,
+		"content": "Development of the Periodic Table"
+	},
+	{
+		"section": "1.11",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2510,
+		"content": "The Modern Periodic Table"
+	},
+	{
+		"section": "1.12",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2511,
+		"content": "Metals and Non-Metals"
+	},
+	{
+		"section": "1.13",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2512,
+		"content": "Group 1 Elements"
+	},
+	{
+		"section": "1.14",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2513,
+		"content": "Group 7 Elements"
+	},
+	{
+		"section": "1.15",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2514,
+		"content": "Group O Elements"
+	},
+	{
+		"section": "2.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2515,
+		"content": "Properties of Matter"
+	},
+	{
+		"section": "2.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2516,
+		"content": "Formation of lons"
+	},
+	{
+		"section": "2.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2517,
+		"content": "Ionic Bonding"
+	},
+	{
+		"section": "2.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2518,
+		"content": "Ionic Compounds"
+	},
+	{
+		"section": "2.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2519,
+		"content": "Covalent Bonding"
+	},
+	{
+		"section": "2.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2520,
+		"content": "Simple Molecular Substances"
+	},
+	{
+		"section": "2.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2521,
+		"content": "Polymers and Giant Covalent Structures"
+	},
+	{
+		"section": "2.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2522,
+		"content": "Allotropes of Carbon"
+	},
+	{
+		"section": "2.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2523,
+		"content": "Metallic Bonding"
+	},
+	{
+		"section": "2.10",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2524,
+		"content": "States of Matter"
+	},
+	{
+		"section": "2.11",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2525,
+		"content": "Changing State"
+	},
+	{
+		"section": "2.12",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2526,
+		"content": "Nanoparticles"
+	},
+	{
+		"section": "2.13",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2527,
+		"content": "Uses of Nanoparticles"
+	},
+	{
+		"section": "3.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2528,
+		"content": " Relative Formula Mass"
+	},
+	{
+		"section": "3.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2529,
+		"content": " The Mole"
+	},
+	{
+		"section": "3.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2530,
+		"content": " Conservation of Mass"
+	},
+	{
+		"section": "3.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2531,
+		"content": " The Mole and Equations"
+	},
+	{
+		"section": "3.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2532,
+		"content": " Limiting Reactants"
+	},
+	{
+		"section": "3.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2533,
+		"content": " Gases and Solutions"
+	},
+	{
+		"section": "3.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2534,
+		"content": " Concentration Calculations"
+	},
+	{
+		"section": "3.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2535,
+		"content": " Atom Economy"
+	},
+	{
+		"section": "3.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2536,
+		"content": " Percentage Yield"
+	},
+	{
+		"section": "4.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2537,
+		"content": "Acids and Bases"
+	},
+	{
+		"section": "4.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2538,
+		"content": "Titrations"
+	},
+	{
+		"section": "4.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2539,
+		"content": "Strong Acids and Weak Acids"
+	},
+	{
+		"section": "4.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2540,
+		"content": "Reactions of Acids"
+	},
+	{
+		"section": "4.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2541,
+		"content": "The Reactivity Series"
+	},
+	{
+		"section": "4.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2542,
+		"content": "Separating Metals From Metal Oxides"
+	},
+	{
+		"section": "4.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2543,
+		"content": "Redox Reactions"
+	},
+	{
+		"section": "4.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2544,
+		"content": "Electrolysis"
+	},
+	{
+		"section": "4.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2545,
+		"content": "Electrolysis of Aqueous Solutions"
+	},
+	{
+		"section": "5.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2546,
+		"content": "Exothermic and Endothermic Reactions"
+	},
+	{
+		"section": "5.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2547,
+		"content": "More Exothermic and Endothermic Reactions"
+	},
+	{
+		"section": "5.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2548,
+		"content": "Bond Energies"
+	},
+	{
+		"section": "5.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2549,
+		"content": "Cells and Batteries"
+	},
+	{
+		"section": "5.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2550,
+		"content": "Fuel Cells"
+	},
+	{
+		"section": "6.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2551,
+		"content": "Chemical Change"
+	},
+	{
+		"section": "6.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2552,
+		"content": "Rates of Reaction"
+	},
+	{
+		"section": "6.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2553,
+		"content": "Factors Affecting Rates of Reaction"
+	},
+	{
+		"section": "6.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2554,
+		"content": "Measuring Rates of Reaction"
+	},
+	{
+		"section": "6.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2555,
+		"content": "Two Rates Experiments"
+	},
+	{
+		"section": "6.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2556,
+		"content": "Finding Reaction Rates from Graphs"
+	},
+	{
+		"section": "6.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2557,
+		"content": "Reversible Reactions"
+	},
+	{
+		"section": "6.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2558,
+		"content": "Le Chatelier's Principle"
+	},
+	{
+		"section": "7.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2559,
+		"content": "Hydrocarbons"
+	},
+	{
+		"section": "7.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2560,
+		"content": "Fractional Distillation"
+	},
+	{
+		"section": "7.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2561,
+		"content": "Uses and Cracking of Crude Oil"
+	},
+	{
+		"section": "7.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2562,
+		"content": "Alkenes"
+	},
+	{
+		"section": "7.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2563,
+		"content": "Reactions of Alkenes"
+	},
+	{
+		"section": "7.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2564,
+		"content": "Addition Polymers"
+	},
+	{
+		"section": "7.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2565,
+		"content": "Alcohol"
+	},
+	{
+		"section": "7.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2566,
+		"content": "Carboxylic Acids"
+	},
+	{
+		"section": "7.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2567,
+		"content": "Condensation Polymers"
+	},
+	{
+		"section": "7.10",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2568,
+		"content": "Naturally occurring Polymers"
+	},
+	{
+		"section": "8.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2569,
+		"content": "Purity and Formulations"
+	},
+	{
+		"section": "10.1",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2570,
+		"content": "Ceramics, Composites and Polymers"
+	},
+	{
+		"section": "10.2",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2571,
+		"content": "Properties of Materials"
+	},
+	{
+		"section": "10.3",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2572,
+		"content": "Corrosion"
+	},
+	{
+		"section": "10.4",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2573,
+		"content": "Finite and Renewable Resources"
+	},
+	{
+		"section": "10.5",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2574,
+		"content": "Reuse and Recycling"
+	},
+	{
+		"section": "10.6",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2575,
+		"content": "Life Cycle Assessments"
+	},
+	{
+		"section": "10.7",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2576,
+		"content": "Potable Water"
+	},
+	{
+		"section": "10.8",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2577,
+		"content": "Waste Water Treatment"
+	},
+	{
+		"section": "10.9",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2578,
+		"content": "The Haber Process"
+	},
+	{
+		"section": "10.10",
+		"specificationName": "GCSE Chemistry (AQA)",
+		"contentID": 2579,
+		"content": "NPK Fertilisers"
+	}
+]
