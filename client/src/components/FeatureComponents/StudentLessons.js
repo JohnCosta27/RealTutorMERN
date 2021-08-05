@@ -76,11 +76,10 @@ const StudentLessons = (props) => {
 				)
 			);
 		}
-
 		lessons.sort((a, b) => {
 			return b.date - a.date;
 		});
-		await setRows(lessons);
+		setRows(lessons);
 		setLoading(false);
 	};
 

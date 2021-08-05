@@ -34,14 +34,32 @@ const Progress = () => {
 		);
 
 		const data = await response.json();
+		console.log(data);
 
 		if (data.error != undefined) {
 			//Error handling later? Probably redirect.
 		} else {
 			let dataRows = [];
 			for (let point of data) {
-				dataRows.push(createData(point.content, point.date, point._id));
+
+				if (point.date.length == 1) {
+					dataRows.push(createData(point.content, point.date[0], point._id));
+				} else {
+
+					let latestDate = 0;
+					for (let d of point.date) {
+						if (d > latestDate) {
+							latestDate = d;
+						}
+					}
+					dataRows.push(createData(point.content, latestDate, point._id));
+
+				}
+
 			}
+			dataRows.sort(function(a, b) {
+				return a.date - b.date;
+			});
 			setRows(dataRows);
 		}
 	};
