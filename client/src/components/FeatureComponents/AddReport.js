@@ -122,6 +122,7 @@ const AddReport = () => {
 		});
 
 		const saveLessonResponse = await saveLesson.json();
+		console.log(saveLessonResponse);
 
 		if (saveLessonResponse.error != undefined) {
 			//something?

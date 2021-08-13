@@ -187,6 +187,10 @@ accounts.post('/addlessonreport', async (req, res) => {
 						lesson.date
 					);
 					await lesson.save();
+					const account = await getAccount(lesson.studentID);
+					account.remainingHours = account.remainingHours - 1;
+					await account.save();
+
 					res.json({ success: 'Lesson updated successfully' });
 				} catch (error) {
 					res.json({ error: 'Lesson not found' });
