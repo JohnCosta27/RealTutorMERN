@@ -1,4 +1,4 @@
 name: GitHub Action for DigitalOcean - doctl
 uses: digitalocean/action-doctl@v2.1.0
 with:
-    token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}

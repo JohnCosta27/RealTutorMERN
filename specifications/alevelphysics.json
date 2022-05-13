@@ -1,1195 +1,1192 @@
 [
-	{
-		"contentID": 81,
-		"content": "Use of SI units and their prefixes",
-		"sub_content": [
-			"Fundamental (base) units.",
-			"Use of mass, length, time, amount of substance temperature, electric current and their associated SI units.",
-            "SI units derived.",
-            "Knowledge and use of the SI prefixes, values and standard form.",
-            "The fundamental unit of light intensity, the candela, is excluded.",
-            "Students are not expected to recall definitions of the fundamental quantities.",
-            "Dimensional analysis is not required.",
-            "Students should be able to use the prefixes: T, G, M, k, c, m, μ, n,p, f",
-            "Students should be able to convert between different units of the same quantity, eg J and eV, J and kWh"  
-		],
-		"section": "3.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 82,
-		"content": "Limitation of physical measurements",
-		"sub_content": [
-            "Random and systematic errors.",
-            "Precision, repeatability, reproducibility, resolution and accuracy.",
-            "Uncertainty: Absolute, fractional and percentage uncertainties represent uncertainty in the final answer for a quantity.",
-            "Combination of absolute and percentage uncertainties.",
-            "Represent uncertainty in a data point on a graph using error bars.",
-            "Determine the uncertainties in the gradient and intercept of a straight-line graph.",
-            "Individual points on the graph may or may not have associated error bars."
-		],
-		"section": "3.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 83,
-		"content": "Estimation of physical quantities",
-		"sub_content": [
-            "Orders of magnitude.",
-            "Estimation of approximate values of physical quantities."            
-		],
-		"section": "3.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 84,
-		"content": "Estimation of physical quantities",
-		"sub_content": [
-            "Orders of magnitude.",
-            "Estimation of approximate values of physical quantities."            
-		],
-		"section": "3.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 85,
-		"content": "Constituents of the atom",
-		"sub_content": [
-            "Simple model of the atom, including the proton, neutron and electron. Charge and mass of the proton, neutron and electron in SI units and relative units.",
-            "The atomic mass unit (amu) is included in the A-level Nuclear physics section.",
-            "Specific charge of the proton and the electron, and of nuclei and ions.",
-            "Proton number Z , nucleon number A, nuclide notation.",
-            "Students should be familiar with the (A/Z)X notation.",
-            "Meaning of isotopes and the use of isotopic data."
-		],
-		"section": "3.2.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 86,
-		"content": "Stable and unstable nuclei",
-		"sub_content": [
-            "The strong nuclear force; its role in keeping the nucleus stable; short-range attraction up to approximately 3 fm, very-short range repulsion closer than approximately 0.5 fm.",
-            "Unstable nuclei; alpha and beta decay.",
-            "Equations for alpha decay, β−decay including the need for the neutrino",
-            "The existence of the neutrino was hypothesised to account for conservation of energy in beta decay."
-		],
-		"section": "3.2.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 87,
-		"content": "Particles, antiparticles and photons",
-		"sub_content": [
-            "For every type of particle, there is a corresponding antiparticle.",
-            "Comparison of particle and antiparticle masses, charge and rest energy in MeV.",
-            "Students should know that the positron, antiproton, antineutron and antineutrino are the antiparticles of the electron, proton, neutron and neutrino respectively.",
-            "Photon model of electromagnetic radiation, the Planck constant.",
-            "E = hf = hc / λ",
-            "Knowledge of annihilation and pair production and the energies involved.",
-            "The use of E = mc^2 is not required in calculations."
-		],
-		"section": "3.2.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 88,
-		"content": "Particle interactions",
-		"sub_content": [
-            "Four fundamental interactions: gravity, electromagnetic, weak nuclear, strong nuclear. (The strong nuclear force may be referred to as the strong interaction.)",
-            "The concept of exchange particles to explain forces between elementary particles.",
-            "Knowledge of the gluon, Z^0 and graviton will not be tested.",
-            "The electromagnetic force; virtual photons as the exchange particle.",
-            "The weak interaction limited to B- and B+ decay, electron capture and electron-proton collisions; W+ and W- as the exchange particles.",
-            "Simple diagrams to represent the above reactions or interactions in terms of incoming and outgoing particles and exchange particles."
-
-		],
-		"section": "3.2.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 89,
-		"content": "Classification of particles",
-		"sub_content": [
-            "Hadrons are subject to the strong interaction.",
-            "The two classes of hadrons: baryons (proton, neutron) and antibaryons (antiproton and antineutron), mesons (pion, kaon).",
-            "Baryon number as a quantum number.",
-            "Conservation of baryon number.",
-            "The proton is the only stable baryon into which other baryons eventually decay.",
-            "The pion as the exchange particle of the strong nuclear force.",
-            "The kaon as a particle that can decay into pions.",
-            "Leptons: electron, muon, neutrino (electron and muon types only) and their antiparticles.",
-            "Lepton number as a quantum number; conservation of lepton number for muon leptons and for electron leptons.",
-            "The muon as a particle that decays into an electron.",
-            "Strange particles",
-            "Strange particles as particles that are produced through the strong interaction and decay through the weak interaction (eg kaons).",
-            "Strangeness (symbol s) as a quantum number to reflect the fact that strange particles are always created in pairs.",
-            "Conservation of strangeness in strong interactions.",
-            "Strangeness can change by 0, +1 or -1 in weak interactions.",
-            "Appreciation that particle physics relies on the collaborative efforts of large teams of scientists and engineers to validate new knowledge."
-		],
-		"section": "3.2.1.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 90,
-		"content": "Quarks and antiquarks",
-		"sub_content": [
-            "Properties of quarks and antiquarks: charge, baryon number and strangeness.",
-            "Combinations of quarks and antiquarks required for baryons (proton and neutron only), antibaryons (antiproton and antineutron only) and mesons (pion and kaon only).",
-            "Only knowledge of up (u), down (d) and strange (s) quarks and their antiquarks will be tested.",
-            "The decay of the neutron should be known."
-		],
-		"section": "3.2.1.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-	},
-    {
-		"contentID": 91,
-		"content": "Applications of conservation laws",
-		"sub_content": [
-            "Change Application of quark of the character conservation in β− and in β+ decay",
-            "Application of the conservation laws for charge, baryon number, leptons number and strangeness to particle interactions. The necessary data will be provided in questions for particles outside those specified.",
-            "Students should recognise that energy and momentum are conserved in interactions."
-		],
-		"section": "3.2.1.7",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 92,
-		"content": "The photoelectric effect",
-		"sub_content": [
-            "Threshold frequency; photon explaination fo threshold frequency",
-            "Work function Φ, stopping potential",
-            "Photoelectric equation: hf = Φ + Ek(max)",
-            "Ek(max) is the maximum kinetic energy of the photoelectrons",
-            "The experimental determination of stopping potential is not required"
-		],
-		"section": "3.2.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 93,
-		"content": "Collisions of electrons with atoms",
-		"sub_content": [
-            "Ionisation and excitation; understanding of ionisation and excitation in the fluorescent tube.",
-            "The electron volt.",
-            "Students will be expected to be able to convert eV into J and vice versa."
-		],
-		"section": "3.2.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 94,
-		"content": "Energy levels and photon emission",
-		"sub_content": [
-            "Line spectra (eg of atomic hydrogen) as evidence for transitions between discrete energy levels in atoms.",
-            "hf = E1 - E2",
-            "In questions, energy levels may be quoted in J or eV."
-		],
-		"section": "3.2.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 95,
-		"content": "Progressive waves",
-		"sub_content": [
-            "Oscillation of the particles of the medium;",
-            "amplitude, frequency, wavelength, speed, phase, phase",
-            "difference, c = fλ may f = 1/T",
-            "Phase difference may be measured as angles (radians and degrees) or as fractions of a cycle."
-		],
-		"section": "3.3.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 96,
-		"content": "Longitudinal and transverse waves",
-		"sub_content": [
-            "Nature of longitudinal and transverse waves.",
-            "Examples to include: sound, electromagnetic waves, and waves on a string.",
-            "Students will be expected to know the direction of displacement of particles/fields relative to the direction of energy propagation and that all electromagnetic waves   travel at the same speed in a vacuum.",
-            "Polarisation as evidence for the nature of transverse waves.",
-            "Applications of polarisers to include Polaroid material and the alignment of aerials for transmission and reception.",
-            "Malus’s law will not be expected."
-		],
-		"section": "3.3.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 97,
-		"content": "Principle of superposition of waves and formation of stationary waves",
-		"sub_content": [
-            "Stationary waves.",
-            "Nodes and antinodes on strings.",
-            "f = (1/2l)(t/u)^0.5 for first harmonic",
-            "The formation of stationary waves by two waves of the save frequency travelling in opposite directions",
-            "A graphical explanation of formation of stationary waves will be expected.",
-            "Stationary waves formed on a string and those produced with microwaves and sound waves should be considered.",
-            "Stationary waves on strings will be described in terms of harmonics. The terms fundamental (for first harmonic) and overtone will not be used."
-		],
-		"section": "3.3.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 98,
-		"content": "Interference",
-		"sub_content": [
-            "Path difference. Coherence.",
-            "Interference and diffraction using a laser as a source of monochromatic light.",
-            "Young’s double-slit experiment: the use of two coherent sources or the use of a single source with double slits to produce an interference pattern.",
-            "Fringe spacing, w = (λD)/s",
-            "Production of interference pattern using white light.",
-            "Students are expected to show awareness of safety issues associated with using lasers.",
-            "Students will not be required to describe how a laser works.",
-            "Students will be expected to describe and explain interference produced with sound and electromagnetic waves.",
-            "Appreciation of how knowledge and understanding of nature of electromagnetic radiation has changed over time."
-		],
-		"section": "3.3.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 99,
-		"content": "Diffraction",
-		"sub_content": [
-            "Appearance of the diffraction pattern from a single slit using monochromatic and white light.",
-            "Qualitative treatment of the variation of the width of the central diffraction maximum with wavelength and slit width. The graph of intensity against angular separation is not required.",
-            "Plane transmission diffraction grating at normal incidence.",
-            "Derivation of dsinθ = nλ",
-            "Use of the spectrometer will not be tested.",
-            "Applications of diffraction gratings."
-		],
-		"section": "3.3.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 100,
-		"content": "Refraction at a plane surface",
-		"sub_content": [
-            "Refractive index of a substance, n = c/(cs)",
-            "Students should recall that the refractive index of air is approximately 1.",
-            "Snell’s law of reflection for a boundary n1sinθ1 = n2sinθ2",
-            "Total internal reflection sinθc = n2/n1",
-            "Simple treatment of fibre optics including the function of the cladding.",
-            "Optical fibres will be limited to step index only.",
-            "Material and modal dispersion.",
-            "Students are expected to understand the principles and consequences of pulse broadening and absorption."
-		],
-		"section": "3.3.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 101,
-		"content": "Scalars and vectors",
-		"sub_content": [
-            "Nature of scalars and vectors.",
-            "Examples should include: velocity/speed, mass, force/weight, acceleration, displacement/distance.",
-            "Addition of vectors by calculation or scale drawing. Calculations will be limited to two vectors at right angles. Scale drawings may involve vectors at angles other than 90°.",
-            "Resolution of vectors into two components at right angles to each other.",
-            "Examples should include components of forces along and perpendicular to an inclined plane.",
-            "Problems may be solved either by the use of resolved forces or the use of a closed triangle.",
-            "Conditions for equilibrium for two or three coplanar forces acting at a point. Appreciation of the meaning of equilibrium in the context of an object at rest or moving with constant velocity."
-		],
-		"section": "3.4.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 102,
-		"content": "Moments",
-		"sub_content": [
-            "Moment of a force about a point.",
-            "Moment defined as force × perpendicular distance from the point to the line of action of the force.",
-            "Couple as a pair of equal and opposite coplanar forces.",
-            "Moment of couple defined as force × perpendicular distance between the lines of action of the forces.",
-            "Principle of moments.",
-            "Centre of mass.",
-            "Knowledge that the position of the centre of mass of uniform regular solid is at its centre."
-		],
-		"section": "3.4.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 103,
-		"content": "Motion along a straight line",
-		"sub_content": [
-            "Displacement, speed, velocity, acceleration.",
-            "v = ∆s/∆t",
-            "a = ∆v/∆t",
-            "Calculations may include average and instantaneous speeds and velocities.",
-            "Representation by graphical methods of uniform and non-uniform acceleration.",
-            "Significance of areas of velocity–time and acceleration–time graphs and gradients of displacement–time and velocity–time graphs for uniform and non-uniform acceleration eg graphs for motion of bouncing ball.",
-            "Equations for uniform acceleration:",
-            "v = u + at",
-            "s = (u + v)/2 * t",
-            "s = ut + at^2",
-            "v^2 = u^2 + 2as",
-            "Acceleration due to gravity, g."
-		],
-		"section": "3.4.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 104,
-		"content": "Projectile motion",
-		"sub_content": [
-            "Independent effect of motion in horizontal and vertical directions of a uniform gravitational field. Problems will be solvable using the equations of uniform acceleration.",
-            "Qualitative treatment of friction.",
-            "Distinctions between static and dynamic friction will not be tested.",
-            "Qualitative treatment of lift and drag forces.",
-            "Terminal speed.",
-            "Knowledge that air resistance increases with speed.",
-            "Qualitative understanding of the effect of air resistance on the trajectory of a projectile and on the factors that affect the maximum speed of a vehicle."
-		],
-		"section": "3.4.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 105,
-		"content": "Newton’s laws of motion",
-		"sub_content": [
-            "Knowledge and application of the three laws of motion in appropriate situations.",
-            "F = ma for situations where the mass is constant."
-		],
-		"section": "3.4.1.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 106,
-		"content": "Momentum",
-		"sub_content": [
-            "momentum = mass × velocity",
-            "Conservation of linear momentum.",
-            "Principle applied quantitatively to problems in one dimension.",
-            "Force as the rate of change of momentum, F = ∆mv/∆t",
-            "Impulse = change in momentum",
-            "F∆t = ∆mv, where F is constant.",
-            "Significance of the area under a force-time graph",
-            "Quantitative questions may be set on forces that vary with time. Impact forces are related to contact times (eg kicking a football, crumple zones, packaging).",
-            "Elastic and inelastic collisions; explosions.",
-            "Appreciation of momentum conservation issues in the context of ethical transport design."
-		],
-		"section": "3.4.1.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 107,
-		"content": "Newton’s laws of motion",
-		"sub_content": [
-            "Principle of conservation of energy.",
-            "∆Ep = mg∆h and Ek = 1/2mv^2",
-            "Quantitative and qualitative application of energy conservation to examples involving gravitational potential energy, kinetic energy, and work done against resistive orces."
-		],
-		"section": "3.4.1.7",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 108,
-		"content": "Bulk properties of solids",
-		"sub_content": [
-            "Density, p = m/v",
-            "Hooke's law, elastic limit,",
-            "F = k∆L , k as stiffness and spring constant.",
-            "Tensile strain and tensile stress.",
-            "Elastic strain energy, breaking stress.",
-            "energy stored  = 1/2F∆L = area under force − extension graph",
-            "Description of plastic behavior, fracture and brittle behaviour linked to force-extension graphs.",
-            "Quantitative and qualitative application of energy conservation to examples involving elastic strain energy and energy to deform.",
-            "Spring energy transformed to kinetic and gravitational potential energy.",
-            "Interpretation of simple stress–strain curves.",
-            "Appreciation of energy conservation issues in the context of ethical transport design."
-		],
-		"section": "3.4.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 109,
-		"content": "The Young modulus",
-		"sub_content": [
-            "Young modulus = tensile stress / tensile strain = FL / A∆L",
-            "Use of stress–strain graphs to find ∆ the Young modulus.",
-            "(One simple method of measurement is required.)"
-		],
-		"section": "3.4.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 110,
-		"content": "Basics of electricity",
-		"sub_content": [
-            "Electric current as the rate of flow of charge; potential difference as work done per unit charge.",
-            "I = ∆Q/∆t , V = W/Q",
-            "Resistance defined as R = V/I"
-		],
-		"section": "3.5.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 111,
-		"content": "Current–voltage characteristics",
-		"sub_content": [
-            "For an ohmic conductor, semiconductor diode, and filament lamp.",
-            "Ohm’s physical law conditions. as a special case where I ∝ V under constant",
-            "Unless specifically stated in questions, ammeters and voltmeters should be treated as ideal (having zero and infinite resistance respectively).",
-            "Questions can be set where either I or V is on the horizontal axis of the characteristic graph."
-		],
-		"section": "3.5.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 112,
-		"content": "Resistivity",
-		"sub_content": [
-            "Resistivity, p = RA/L",
-            "Description of the qualitative effect of temperature on the resistance of metal conductors and thermistors.",
-            "Only negative temperature coefficient (ntc) thermistors will be considered.",
-            "Applications of thermistors to include temperature sensors and resistance–temperature graphs.",
-            "Superconductivity as a property of certain materials which have zero resistivity at and below a critical temperature which depends on the material.",
-            "Applications of superconductors to include the production of strong magnetic fields and the reduction of energy loss in transmission of electric power.",
-            "Critical field will not be assessed."
-		],
-		"section": "3.5.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 113,
-		"content": "Circuits",
-		"sub_content": [
-            "Resistors: in series, RT = R1 + R2 + R3 + ..., in parallel, 1/RT = 1/R1 + 1/R2 + ...",
-            "Energy and power equations: E = IVt; P = IV = I^2R = V^2/R",
-            "The relationships between currents, voltages and resistances in series and parallel circuits, including cells in series and identical cells in parallel.",
-            "Conservation of charge and conservation of energy in dc circuits."
-		],
-		"section": "3.5.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 114,
-		"content": "Potential divider",
-		"sub_content": [
-            "The potential divider used to supply constant or variable potential difference from a power supply.",
-            "The use of the potentiometer as a measuring instrument is not required.",
-            "Examples should include the use of variable resistors, thermistors, and light dependent resistors (LDR) in the potential divider."
-		],
-		"section": "3.5.1.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 115,
-		"content": "Electromotive force and internal resistance",
-		"sub_content": [
-            "ε = E/Q, ε = I(R + r)",
-            "Students will be expected to understand and perform calculations for circuits in which the internal resistance of the supply is not negligible"
-		],
-		"section": "3.5.1.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 116,
-		"content": "Circular motion",
-		"sub_content": [
-            "Motion in a circular path at constant speed implies there is an acceleration and requires a centripetal force.",
-            "Magnitude angular speed w = v/r = 2 * Pi * f",
-            "Radian measure of angle",
-            "Direction of angular velocity will not be considered.",
-            "Centripetal acceleration a = v^2/r = w^2*r",
-            "The derivation of the centripetal acceleration formula will not be examined.",
-            "Centripetal force F = mv^2/r = mW^2r"
-		],
-		"section": "3.6.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 117,
-		"content": "Simple harmonic motion",
-		"section": "3.6.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 118,
-		"content": "Simple harmonic systems",
-		"section": "3.6.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 119,
-		"content": "Simple harmonic systems",
-        "sub_content": [
-            "Qualitative treatment of free and forced vibrations.",
-            "Resonance and the effects of damping on the sharpness of resonance.",
-            "Examples of these effects in mechanical systems and situations involving stationary waves."
-        ],
-		"section": "3.6.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 120,
-		"content": "Thermal energy transfer",
-        "sub_content": [
-            "Internal energy is the sum of the randomly distributed kinetic energies and potential energies of the particles in a body.",
-            "The internal energy of a system is increased when energy is transferred to it by heating or when work is done on it (and vice versa), eg a qualitative treatment of the first law of thermodynamics.",
-            "Appreciation that during a change of state the potential energies of the particle ensemble are changing but not the kinetic energies. Calculations involving transfer of energy.",
-            "For a change of temperature: Q = mc∆θ where c is specific",
-            "Calculations including continuous flow.",
-            "For a change of state Q = ml where l is the specific latent heat."
-        ],
-		"section": "3.6.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 121,
-		"content": "Ideal gases",
-        "sub_content": [
-            "Gas laws as experimental relationships between p, V , T and the mass of the gas.",
-            "Concept of absolute zero of temperature.",
-            "Ideal gas equation: pV = nRT for n moles and pV = NkT for N molecules.",
-            "Work done = p∆V",
-            "Avogadro constant N A, molar gas constant R, Boltzmann constant k",
-            "Molar mass and molecular mass."
-        ],
-		"section": "3.6.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 122,
-		"content": "Molecular kinetic theory model",
-        "sub_content": [
-            "Brownian motion as evidence for existence of atoms.",
-            "Explanation of relationships between p, V and T in terms of a simple molecular model.",
-            "Students should understand that the gas laws are empirical in nature whereas the kinetic theory model arises from theory.",
-            "Assumptions leading to pV = 1/3Nm(crms)^2 including derivation of the equation and calculations.",
-            "A simple algebraic approach involving conservation of momentum is required.",
-            "Appreciation that for an ideal gas internal energy is kinetic energy of the atoms.",
-            "Use of average molecular kinetic energy = 1/2m(crms)^2 = 3/2kT=3RT/2Na",
-            "Appreciation of how knowledge and understanding of thebehaviour of a gas has changed over time."
-        ],
-		"section": "3.6.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 123,
-		"content": "Fields",
-        "sub_content": [
-            "Concept of a force field as a region in which a body experiences a non-contact force.",
-            "Students should recognise that a force field can be represented as a vector, the direction of which must be determined by inspection.",
-            "Force fields arise from the interaction of mass, of static charge, and between moving charges.",
-            "Similarities and differences between gravitational and electrostatic forces:",
-            "Similarities: Both have inverse-square force laws that have many characteristics in common, eg use of field lines, use of potential concept, equipotential surfaces etc",
-            "Differences: masses always attract, but charges may attract or repel"
-        ],
-		"section": "3.7.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 124,
-		"content": "Newton's law",
-        "sub_content": [
-            "Gravity as a universal attractive force acting between all matter.",
-            "Magnitude of force between point masses: F = Gm1m2/r^2 where G is the gravitational constant."
-        ],
-		"section": "3.7.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 125,
-		"content": "Gravitational field strength",
-        "sub_content": [
-            "Representation of a gravitational field by gravitational field lines.",
-            "g as force per unit mass as defined by g = F/m",
-            "Magnitude of g in a radial field given by g = GM/r2"
-        ],
-		"section": "3.7.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 126,
-		"content": "Gravitational potential",
-        "sub_content": [
-            "Understanding of definition of gravitational potential, including zero value at infinity.",
-            "Understanding of gravitational potential difference.",
-            "Work Equipotential done in surfaces. moving mass m given by ∆W = m∆V",
-            "Equipotential surfaces",
-            "Idea that no work is done when moving along an equipotential surface.",
-            "V in a radial field given by V = − GM/r",
-            "Significance of the negative sign",
-            "Graphical representations of variations of g and V with r.",
-            "V related to g by: g = -∆v/∆r",
-            "∆V from area under graph of g against r"
-        ],
-		"section": "3.7.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 127,
-		"content": "Orbits of planets and satellites",
-        "sub_content": [
-            "Orbital period and speed related to radius of circular orbit; derivation of T^2 ∝ r^3",
-            "Energy considerations for an orbiting satellite.",
-            "Total energy of an orbiting satellite.",
-            "Escape velocity.",
-            "Synchronous orbits.",
-            "Use of satellites in low orbits and geostationary orbits, to include plane and radius of geostationary orbit."
-        ],
-		"section": "3.7.2.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 128,
-		"content": "Coulomb's law",
-        "sub_content": [
-            "Force between point charges in a vacuum: F = 1/(4*Pi*ε0) * (Q1Q2)/r^2",
-            "Permittivity of free space, ε0",
-            "Appreciation that air can be treated as a vacuum when calculating force between charges",
-            "For a charged sphere, charge may be considered to be at the centre.",
-            "Comparison of magnitude of gravitational and electrostatic forces between subatomic particles."
-        ],
-		"section": "3.7.3.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 129,
-		"content": "Electric field strength",
-        "sub_content": [
-            "Representation of electric fields by electric field lines.",
-            "Electric field strength.",
-            "E as force per unit charge defined by E = F/Q",
-            "Magnitude of E in a uniform field given by E = V/d",
-            "Derivation from work done moving charge between plates: Fd = QΔV",
-            "Trajectory of moving charged particle entering a uniform electric field initially at right angles.",
-            "Magnitude of E in a radial field given by E = 1/(4*Pi*ε0) * Q/r^2"
-        ],
-		"section": "3.7.3.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 130,
-		"content": "Electric potential",
-        "sub_content": [
-            "Understanding of definition of absolute electric potential, including zero value at infinity, and of electric potential difference.",
-            "Work done in moving charge Q given by ∆ W = Q ∆ V",
-            "Equipotential surfaces",
-            "No work done moving charge along an equipotential surface.",
-            "Magnitude of V in a radial field given by V = 1/(4*Pi*ε0) * Q/r^",
-            "Graphical representations of variations of E and V with r.",
-            "V related to E by E = ∆V/∆r",
-            "∆V from the area under ∆ graph of E against r."
-        ],
-		"section": "3.7.3.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 131,
-		"content": "Capacitance",
-        "sub_content": [
-            "Definition of capacitance: C = Q/V"
-        ],
-		"section": "3.7.4.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-    {
-		"contentID": 132,
-		"content": "Parallel plate capacitor",
-        "sub_content": [
-        	"Dielectric action in a capacitor C = (Aε0εr)/d",
-        	"Relative permittivity and dielectric constant.",
-        	"Students should be able to describe the action of a simple polar molecule that rotates in the presence of an electric field."
-        ],
-		"section": "3.7.4.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 133,
-		"content": "Energy stored by a capacitor",
-		"section": "3.7.4.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 134,
-		"content": "Capacitor charge and discharge",
-		"sub_content": [
-			"Graphical representation of charging and discharging of capacitors through resistors. Corresponding graphs for Q, V and I against time for charging and discharging.",
-			"Interpretation of gradients and areas under graphs where appropriate.",
-			"Time constant RC.",
-			"Calculation of time constants including their determination from graphical data.",
-			"Time to halve, T 1⁄2 = 0.69RC"
-		],
-		"section": "3.7.4.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 135,
-		"content": "Magnetic flux density",
-		"sub_content": [
-			"Force on a current-carrying wire in a magnetic field: F = BIl when field is perpendicular to current.",
-			"Fleming’s left hand rule.",
-			"Magnetic flux density B and definition of the tesla."
-		],
-		"section": "3.7.5.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 136,
-		"content": "Moving charges in a magnetic field",
-		"sub_content": [
-			"Force on charged particles moving in a magnetic field, F = BQv when the field is perpendicular to velocity.",
-			"Direction of force on positive and negative charged particles.",
-			"Circular path of particles; application in devices such as the cyclotron."		   
-		],
-		"section": "3.7.5.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 137,
-		"content": "Magnetic flux and flux linkage",
-		"sub_content": [
-			"Magnetic flix defined by Φ = BA where B is normal to A.",
-			"Flux linkage as NΦ where N is the number of turns cutting the flux",
-			"Flux and flux linkage passing through a rectangular coil rotated in a magnetic field:",
-			"flux linkage Nθ = BANcosθ"
-		],
-		"section": "3.7.5.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 138,
-		"content": "Electromagnetic induction",
-		"sub_content": [
-			"Simple experimental phenomena.",
-			"Faraday’s and Lenz’s laws.",
-			"Magnitude of induced emf = rate of change of flux linkage ε = N * ∆Φ/∆t",
-			"Applications such as straight conductor moving in a magnetic field.",
-			"emf induced in a coil rotating uniformly in a magnetic field: ε = BANwSin(wt)"
-		],
-		"section": "3.7.5.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 139,
-		"content": "Alternating currents",
-		"sub_content": [
-			"Sinusoidal voltages and currents only; root mean square, peak and peak-to-peak values for sinusoidal waveforms only.",
-			"Irms = I0 / 2^0.5; Vrms = V0/2^0.5",
-			"Application to the calculation of mains electricity peak and peak-to-peak voltage values.",
-			"Use of an oscilloscope as a dc and ac voltmeter, to measure time intervals and frequencies, and to display ac waveforms.",
-			"No details of the structure of the instrument are required but familiarity with the operation of the controls is expected."
-		],
-		"section": "3.7.5.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 140,
-		"content": "The operation of a transformer",
-		"sub_content": [
-			"The transformer equation: Ns/Np = Vs/Vp",
-			"Transformer efficiency = IsVs/IpVp",
-			"Production of eddy currents.",
-			"Causes of inefficiencies in a transformer.",
-			"Transmission of electrical power at high voltage including calculations of power loss in transmission lines"
-		],
-		"section": "3.7.5.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 141,
-		"content": "Rutherford scattering",
-		"sub_content": [
-			"Qualitative study of Rutherford scattering.",
-			"Appreciation of how knowledge and understanding of the structure of the nucleus has changed over time."
-		],
-		"section": "3.8.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 142,
-		"content": "α, β and γ radiation",
-		"sub_content": [
-			"Their properties and experimental identification using simple absorption experiments; applications eg to relative hazards of exposure to humans.",
-			"Applications also include thickness measurements of aluminium foil paper and steel.",
-			"Inverse-square Experimental verification law for γ radiation: of inverse-square I = k/x^2",
-			"Experimental verification of inverse-square law",
-			"Applications eg to safe handling of radioactive sources.",
-			"Background radiation; examples of its origins and experimental elimination from calculations.",
-			"Appreciation of balance between risk and benefits in the uses of radiation in medicine"
-		],
-		"section": "3.8.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 143,
-		"content": "Radioactive decay",
-		"sub_content": [
-			"Random nature of radioactive decay; constant decay probability of a given nucleus;",
-			"∆N/∆t = -λN",
-			"N = N0e^-λt",
-			"Use of activity, A = λN",
-			"Modelling with constant decay probability",
-			"Questions may also require students to use A = A0e^-λt",
-			"Questions may also involve use of molar mass or the Avogadro constant.",
-			"Half-life equation: T1/2 = ln2/λ",
-			"Determination of half-life from graphical decay data including decay curves and log graphs.",
-			"Applications eg relevance to storage of radioactive waste, radioactive dating etc."
-		],
-		"section": "3.8.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 144,
-		"content": "Nuclear instability",
-		"section": "3.8.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 145,
-		"content": "Nuclear radius",
-		"sub_content": [
-			"Estimate of radius from closest approach of alpha particles and determination of radius from electron diffraction.",
-			"Knowledge of typical values for nuclear radius.",
-			"Students will need to be familiar with the Coulomb equation for the closest approach estimate.",
-			"Dependence of radius on nucleon number:",
-			"R = R0 A1/3 derived from experimental data. ",
-			"Interpretation of equation as evidence for constant density of nuclear material.",
-			"Calculation of nuclear density.",
-			"Students should be familiar with the graph of intensity against angle for electron diffraction by a nucleus."
-		],
-		"section": "3.8.1.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 146,
-		"content": "Mass and energy",
-		"sub_content": [
-			"Appreciation that E = mc2 applies to all energy changes,",
-			"Simple calculations involving mass difference and binding energy.",
-			"Atomic mass unit, u.",
-			"Conversion of units; 1 u = 931.5 MeV.",
-			"Fission and fusion processes.",
-			"Simple calculations from nuclear masses of energy released in fission and fusion reactions.",
-			"Graph of average binding energy per nucleon against nucleon number.",
-			"Students may be expected to identify, on the plot, the regions where nuclei will release energy when undergoing fission/fusion.",
-			"Appreciation that knowledge of the physics of nuclear energy allows society to use science to inform decision making."
-		],
-		"section": "3.8.1.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 147,
-		"content": "Induced fission",
-		"sub_content": [
-			"Fission induced by thermal neutrons; possibility of a chain reaction; critical mass.",
-			"The functions of the moderator, control rods, and coolant in a thermal nuclear reactor.",
-			"Details of particular reactors are not required.",
-			"Students should have studied a simple mechanical model of moderation by elastic collisions.",
-			"Factors affecting the choice of materials for the moderator, control rods and coolant. Examples of materials used for these functions."
-		],
-		"section": "3.8.1.7",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 148,
-		"content": "Safety aspects",
-		"sub_content": [
-			"Fuel used, remote handling of fuel, shielding, emergency shut-down. ",
-			"Production, remote handling, and storage of radioactive waste materials. ",
-			"Appreciation of balance between risk and benefits in the development of nuclear power."
-		],
-		"section": "3.8.1.8",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 149,
-		"content": "Astronomical telescope consisting of two converging lenses",
-		"section": "3.9.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 150,
-		"content": "Reflecting telescopes",
-		"section": "3.9.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 151,
-		"content": "Single dish radio telescopes, I-R, U-V and X-ray telescopes",
-		"section": "3.9.1.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 152,
-		"content": "Advantages of large diameter telescopes",
-		"section": "3.9.1.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 153,
-		"content": "Classification by luminosity",
-		"section": "3.9.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 154,
-		"content": "Absolute magnitude, M",
-		"section": "3.9.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 155,
-		"content": "Classification by temperature, black-body radiation",
-		"section": "3.9.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 156,
-		"content": "Principles of the use of stellar spectral classes",
-		"section": "3.9.2.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 157,
-		"content": "The Hertzsprung-Russell (HR) diagram",
-		"section": "3.9.2.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 158,
-		"content": "Supernovae, neutron stars and black holes",
-		"section": "3.9.2.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 159,
-		"content": "Doppler effect",
-		"section": "3.9.3.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 160,
-		"content": "Hubble's law",
-		"section": "3.9.3.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 161,
-		"content": "Quasars",
-		"section": "3.9.3.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 162,
-		"content": "Detection of exoplanets",
-		"section": "3.9.3.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 163,
-		"content": "Physics of vision",
-		"section": "3.10.1.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 164,
-		"content": "Defects of vision and their correction using lenses",
-		"section": "3.10.1.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 165,
-		"content": "Ear as a sound detection system",
-		"section": "3.10.2.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 166,
-		"content": "Sensitivity and frequency response",
-		"section": "3.10.2.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 167,
-		"content": "Defects of hearing",
-		"section": "3.10.2.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 168,
-		"content": "Simple ECG machines and the normal ECG waveform",
-		"section": "3.10.3.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 169,
-		"content": "Ultrasound imaging",
-		"section": "3.10.4.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 170,
-		"content": "Fibre optics and endoscopy",
-		"section": "3.10.4.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 171,
-		"content": "Magnetic resonance (MR) scanner",
-		"section": "3.10.4.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 172,
-		"content": "The physics of diagnostic X-rays",
-		"section": "3.10.5.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 173,
-		"content": "Image detection and enhancement",
-		"section": "3.10.5.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 174,
-		"content": "Absorption of X-rays",
-		"section": "3.10.5.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 175,
-		"content": "CT scanner",
-		"section": "3.10.5.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 176,
-		"content": "Imaging Techniques",
-		"section": "3.10.6.1",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 177,
-		"content": "Half-life",
-		"section": "3.10.6.2",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 178,
-		"content": "Gamma camera",
-		"section": "3.10.6.3",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 179,
-		"content": "Use of high-energy X-rays",
-		"section": "3.10.6.4",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 180,
-		"content": "Use of radioactive implants",
-		"section": "3.10.6.5",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    },
-	{
-		"contentID": 181,
-		"content": "Imaging comparisons",
-		"section": "3.10.6.6",
-		"specificationName": "A-level Physics (AQA)",
-		"specID": 2
-    }
+  {
+    "contentID": 81,
+    "content": "Use of SI units and their prefixes",
+    "sub_content": [
+      "Fundamental (base) units.",
+      "Use of mass, length, time, amount of substance temperature, electric current and their associated SI units.",
+      "SI units derived.",
+      "Knowledge and use of the SI prefixes, values and standard form.",
+      "The fundamental unit of light intensity, the candela, is excluded.",
+      "Students are not expected to recall definitions of the fundamental quantities.",
+      "Dimensional analysis is not required.",
+      "Students should be able to use the prefixes: T, G, M, k, c, m, μ, n,p, f",
+      "Students should be able to convert between different units of the same quantity, eg J and eV, J and kWh"
+    ],
+    "section": "3.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 82,
+    "content": "Limitation of physical measurements",
+    "sub_content": [
+      "Random and systematic errors.",
+      "Precision, repeatability, reproducibility, resolution and accuracy.",
+      "Uncertainty: Absolute, fractional and percentage uncertainties represent uncertainty in the final answer for a quantity.",
+      "Combination of absolute and percentage uncertainties.",
+      "Represent uncertainty in a data point on a graph using error bars.",
+      "Determine the uncertainties in the gradient and intercept of a straight-line graph.",
+      "Individual points on the graph may or may not have associated error bars."
+    ],
+    "section": "3.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 83,
+    "content": "Estimation of physical quantities",
+    "sub_content": [
+      "Orders of magnitude.",
+      "Estimation of approximate values of physical quantities."
+    ],
+    "section": "3.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 84,
+    "content": "Estimation of physical quantities",
+    "sub_content": [
+      "Orders of magnitude.",
+      "Estimation of approximate values of physical quantities."
+    ],
+    "section": "3.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 85,
+    "content": "Constituents of the atom",
+    "sub_content": [
+      "Simple model of the atom, including the proton, neutron and electron. Charge and mass of the proton, neutron and electron in SI units and relative units.",
+      "The atomic mass unit (amu) is included in the A-level Nuclear physics section.",
+      "Specific charge of the proton and the electron, and of nuclei and ions.",
+      "Proton number Z , nucleon number A, nuclide notation.",
+      "Students should be familiar with the (A/Z)X notation.",
+      "Meaning of isotopes and the use of isotopic data."
+    ],
+    "section": "3.2.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 86,
+    "content": "Stable and unstable nuclei",
+    "sub_content": [
+      "The strong nuclear force; its role in keeping the nucleus stable; short-range attraction up to approximately 3 fm, very-short range repulsion closer than approximately 0.5 fm.",
+      "Unstable nuclei; alpha and beta decay.",
+      "Equations for alpha decay, β−decay including the need for the neutrino",
+      "The existence of the neutrino was hypothesised to account for conservation of energy in beta decay."
+    ],
+    "section": "3.2.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 87,
+    "content": "Particles, antiparticles and photons",
+    "sub_content": [
+      "For every type of particle, there is a corresponding antiparticle.",
+      "Comparison of particle and antiparticle masses, charge and rest energy in MeV.",
+      "Students should know that the positron, antiproton, antineutron and antineutrino are the antiparticles of the electron, proton, neutron and neutrino respectively.",
+      "Photon model of electromagnetic radiation, the Planck constant.",
+      "E = hf = hc / λ",
+      "Knowledge of annihilation and pair production and the energies involved.",
+      "The use of E = mc^2 is not required in calculations."
+    ],
+    "section": "3.2.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 88,
+    "content": "Particle interactions",
+    "sub_content": [
+      "Four fundamental interactions: gravity, electromagnetic, weak nuclear, strong nuclear. (The strong nuclear force may be referred to as the strong interaction.)",
+      "The concept of exchange particles to explain forces between elementary particles.",
+      "Knowledge of the gluon, Z^0 and graviton will not be tested.",
+      "The electromagnetic force; virtual photons as the exchange particle.",
+      "The weak interaction limited to B- and B+ decay, electron capture and electron-proton collisions; W+ and W- as the exchange particles.",
+      "Simple diagrams to represent the above reactions or interactions in terms of incoming and outgoing particles and exchange particles."
+    ],
+    "section": "3.2.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 89,
+    "content": "Classification of particles",
+    "sub_content": [
+      "Hadrons are subject to the strong interaction.",
+      "The two classes of hadrons: baryons (proton, neutron) and antibaryons (antiproton and antineutron), mesons (pion, kaon).",
+      "Baryon number as a quantum number.",
+      "Conservation of baryon number.",
+      "The proton is the only stable baryon into which other baryons eventually decay.",
+      "The pion as the exchange particle of the strong nuclear force.",
+      "The kaon as a particle that can decay into pions.",
+      "Leptons: electron, muon, neutrino (electron and muon types only) and their antiparticles.",
+      "Lepton number as a quantum number; conservation of lepton number for muon leptons and for electron leptons.",
+      "The muon as a particle that decays into an electron.",
+      "Strange particles",
+      "Strange particles as particles that are produced through the strong interaction and decay through the weak interaction (eg kaons).",
+      "Strangeness (symbol s) as a quantum number to reflect the fact that strange particles are always created in pairs.",
+      "Conservation of strangeness in strong interactions.",
+      "Strangeness can change by 0, +1 or -1 in weak interactions.",
+      "Appreciation that particle physics relies on the collaborative efforts of large teams of scientists and engineers to validate new knowledge."
+    ],
+    "section": "3.2.1.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 90,
+    "content": "Quarks and antiquarks",
+    "sub_content": [
+      "Properties of quarks and antiquarks: charge, baryon number and strangeness.",
+      "Combinations of quarks and antiquarks required for baryons (proton and neutron only), antibaryons (antiproton and antineutron only) and mesons (pion and kaon only).",
+      "Only knowledge of up (u), down (d) and strange (s) quarks and their antiquarks will be tested.",
+      "The decay of the neutron should be known."
+    ],
+    "section": "3.2.1.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 91,
+    "content": "Applications of conservation laws",
+    "sub_content": [
+      "Change Application of quark of the character conservation in β− and in β+ decay",
+      "Application of the conservation laws for charge, baryon number, leptons number and strangeness to particle interactions. The necessary data will be provided in questions for particles outside those specified.",
+      "Students should recognise that energy and momentum are conserved in interactions."
+    ],
+    "section": "3.2.1.7",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 92,
+    "content": "The photoelectric effect",
+    "sub_content": [
+      "Threshold frequency; photon explaination fo threshold frequency",
+      "Work function Φ, stopping potential",
+      "Photoelectric equation: hf = Φ + Ek(max)",
+      "Ek(max) is the maximum kinetic energy of the photoelectrons",
+      "The experimental determination of stopping potential is not required"
+    ],
+    "section": "3.2.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 93,
+    "content": "Collisions of electrons with atoms",
+    "sub_content": [
+      "Ionisation and excitation; understanding of ionisation and excitation in the fluorescent tube.",
+      "The electron volt.",
+      "Students will be expected to be able to convert eV into J and vice versa."
+    ],
+    "section": "3.2.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 94,
+    "content": "Energy levels and photon emission",
+    "sub_content": [
+      "Line spectra (eg of atomic hydrogen) as evidence for transitions between discrete energy levels in atoms.",
+      "hf = E1 - E2",
+      "In questions, energy levels may be quoted in J or eV."
+    ],
+    "section": "3.2.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 95,
+    "content": "Progressive waves",
+    "sub_content": [
+      "Oscillation of the particles of the medium;",
+      "amplitude, frequency, wavelength, speed, phase, phase",
+      "difference, c = fλ may f = 1/T",
+      "Phase difference may be measured as angles (radians and degrees) or as fractions of a cycle."
+    ],
+    "section": "3.3.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 96,
+    "content": "Longitudinal and transverse waves",
+    "sub_content": [
+      "Nature of longitudinal and transverse waves.",
+      "Examples to include: sound, electromagnetic waves, and waves on a string.",
+      "Students will be expected to know the direction of displacement of particles/fields relative to the direction of energy propagation and that all electromagnetic waves   travel at the same speed in a vacuum.",
+      "Polarisation as evidence for the nature of transverse waves.",
+      "Applications of polarisers to include Polaroid material and the alignment of aerials for transmission and reception.",
+      "Malus’s law will not be expected."
+    ],
+    "section": "3.3.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 97,
+    "content": "Principle of superposition of waves and formation of stationary waves",
+    "sub_content": [
+      "Stationary waves.",
+      "Nodes and antinodes on strings.",
+      "f = (1/2l)(t/u)^0.5 for first harmonic",
+      "The formation of stationary waves by two waves of the save frequency travelling in opposite directions",
+      "A graphical explanation of formation of stationary waves will be expected.",
+      "Stationary waves formed on a string and those produced with microwaves and sound waves should be considered.",
+      "Stationary waves on strings will be described in terms of harmonics. The terms fundamental (for first harmonic) and overtone will not be used."
+    ],
+    "section": "3.3.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 98,
+    "content": "Interference",
+    "sub_content": [
+      "Path difference. Coherence.",
+      "Interference and diffraction using a laser as a source of monochromatic light.",
+      "Young’s double-slit experiment: the use of two coherent sources or the use of a single source with double slits to produce an interference pattern.",
+      "Fringe spacing, w = (λD)/s",
+      "Production of interference pattern using white light.",
+      "Students are expected to show awareness of safety issues associated with using lasers.",
+      "Students will not be required to describe how a laser works.",
+      "Students will be expected to describe and explain interference produced with sound and electromagnetic waves.",
+      "Appreciation of how knowledge and understanding of nature of electromagnetic radiation has changed over time."
+    ],
+    "section": "3.3.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 99,
+    "content": "Diffraction",
+    "sub_content": [
+      "Appearance of the diffraction pattern from a single slit using monochromatic and white light.",
+      "Qualitative treatment of the variation of the width of the central diffraction maximum with wavelength and slit width. The graph of intensity against angular separation is not required.",
+      "Plane transmission diffraction grating at normal incidence.",
+      "Derivation of dsinθ = nλ",
+      "Use of the spectrometer will not be tested.",
+      "Applications of diffraction gratings."
+    ],
+    "section": "3.3.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 100,
+    "content": "Refraction at a plane surface",
+    "sub_content": [
+      "Refractive index of a substance, n = c/(cs)",
+      "Students should recall that the refractive index of air is approximately 1.",
+      "Snell’s law of reflection for a boundary n1sinθ1 = n2sinθ2",
+      "Total internal reflection sinθc = n2/n1",
+      "Simple treatment of fibre optics including the function of the cladding.",
+      "Optical fibres will be limited to step index only.",
+      "Material and modal dispersion.",
+      "Students are expected to understand the principles and consequences of pulse broadening and absorption."
+    ],
+    "section": "3.3.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 101,
+    "content": "Scalars and vectors",
+    "sub_content": [
+      "Nature of scalars and vectors.",
+      "Examples should include: velocity/speed, mass, force/weight, acceleration, displacement/distance.",
+      "Addition of vectors by calculation or scale drawing. Calculations will be limited to two vectors at right angles. Scale drawings may involve vectors at angles other than 90°.",
+      "Resolution of vectors into two components at right angles to each other.",
+      "Examples should include components of forces along and perpendicular to an inclined plane.",
+      "Problems may be solved either by the use of resolved forces or the use of a closed triangle.",
+      "Conditions for equilibrium for two or three coplanar forces acting at a point. Appreciation of the meaning of equilibrium in the context of an object at rest or moving with constant velocity."
+    ],
+    "section": "3.4.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 102,
+    "content": "Moments",
+    "sub_content": [
+      "Moment of a force about a point.",
+      "Moment defined as force × perpendicular distance from the point to the line of action of the force.",
+      "Couple as a pair of equal and opposite coplanar forces.",
+      "Moment of couple defined as force × perpendicular distance between the lines of action of the forces.",
+      "Principle of moments.",
+      "Centre of mass.",
+      "Knowledge that the position of the centre of mass of uniform regular solid is at its centre."
+    ],
+    "section": "3.4.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 103,
+    "content": "Motion along a straight line",
+    "sub_content": [
+      "Displacement, speed, velocity, acceleration.",
+      "v = ∆s/∆t",
+      "a = ∆v/∆t",
+      "Calculations may include average and instantaneous speeds and velocities.",
+      "Representation by graphical methods of uniform and non-uniform acceleration.",
+      "Significance of areas of velocity–time and acceleration–time graphs and gradients of displacement–time and velocity–time graphs for uniform and non-uniform acceleration eg graphs for motion of bouncing ball.",
+      "Equations for uniform acceleration:",
+      "v = u + at",
+      "s = (u + v)/2 * t",
+      "s = ut + at^2",
+      "v^2 = u^2 + 2as",
+      "Acceleration due to gravity, g."
+    ],
+    "section": "3.4.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 104,
+    "content": "Projectile motion",
+    "sub_content": [
+      "Independent effect of motion in horizontal and vertical directions of a uniform gravitational field. Problems will be solvable using the equations of uniform acceleration.",
+      "Qualitative treatment of friction.",
+      "Distinctions between static and dynamic friction will not be tested.",
+      "Qualitative treatment of lift and drag forces.",
+      "Terminal speed.",
+      "Knowledge that air resistance increases with speed.",
+      "Qualitative understanding of the effect of air resistance on the trajectory of a projectile and on the factors that affect the maximum speed of a vehicle."
+    ],
+    "section": "3.4.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 105,
+    "content": "Newton’s laws of motion",
+    "sub_content": [
+      "Knowledge and application of the three laws of motion in appropriate situations.",
+      "F = ma for situations where the mass is constant."
+    ],
+    "section": "3.4.1.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 106,
+    "content": "Momentum",
+    "sub_content": [
+      "momentum = mass × velocity",
+      "Conservation of linear momentum.",
+      "Principle applied quantitatively to problems in one dimension.",
+      "Force as the rate of change of momentum, F = ∆mv/∆t",
+      "Impulse = change in momentum",
+      "F∆t = ∆mv, where F is constant.",
+      "Significance of the area under a force-time graph",
+      "Quantitative questions may be set on forces that vary with time. Impact forces are related to contact times (eg kicking a football, crumple zones, packaging).",
+      "Elastic and inelastic collisions; explosions.",
+      "Appreciation of momentum conservation issues in the context of ethical transport design."
+    ],
+    "section": "3.4.1.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 107,
+    "content": "Newton’s laws of motion",
+    "sub_content": [
+      "Principle of conservation of energy.",
+      "∆Ep = mg∆h and Ek = 1/2mv^2",
+      "Quantitative and qualitative application of energy conservation to examples involving gravitational potential energy, kinetic energy, and work done against resistive orces."
+    ],
+    "section": "3.4.1.7",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 108,
+    "content": "Bulk properties of solids",
+    "sub_content": [
+      "Density, p = m/v",
+      "Hooke's law, elastic limit,",
+      "F = k∆L , k as stiffness and spring constant.",
+      "Tensile strain and tensile stress.",
+      "Elastic strain energy, breaking stress.",
+      "energy stored  = 1/2F∆L = area under force − extension graph",
+      "Description of plastic behavior, fracture and brittle behaviour linked to force-extension graphs.",
+      "Quantitative and qualitative application of energy conservation to examples involving elastic strain energy and energy to deform.",
+      "Spring energy transformed to kinetic and gravitational potential energy.",
+      "Interpretation of simple stress–strain curves.",
+      "Appreciation of energy conservation issues in the context of ethical transport design."
+    ],
+    "section": "3.4.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 109,
+    "content": "The Young modulus",
+    "sub_content": [
+      "Young modulus = tensile stress / tensile strain = FL / A∆L",
+      "Use of stress–strain graphs to find ∆ the Young modulus.",
+      "(One simple method of measurement is required.)"
+    ],
+    "section": "3.4.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 110,
+    "content": "Basics of electricity",
+    "sub_content": [
+      "Electric current as the rate of flow of charge; potential difference as work done per unit charge.",
+      "I = ∆Q/∆t , V = W/Q",
+      "Resistance defined as R = V/I"
+    ],
+    "section": "3.5.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 111,
+    "content": "Current–voltage characteristics",
+    "sub_content": [
+      "For an ohmic conductor, semiconductor diode, and filament lamp.",
+      "Ohm’s physical law conditions. as a special case where I ∝ V under constant",
+      "Unless specifically stated in questions, ammeters and voltmeters should be treated as ideal (having zero and infinite resistance respectively).",
+      "Questions can be set where either I or V is on the horizontal axis of the characteristic graph."
+    ],
+    "section": "3.5.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 112,
+    "content": "Resistivity",
+    "sub_content": [
+      "Resistivity, p = RA/L",
+      "Description of the qualitative effect of temperature on the resistance of metal conductors and thermistors.",
+      "Only negative temperature coefficient (ntc) thermistors will be considered.",
+      "Applications of thermistors to include temperature sensors and resistance–temperature graphs.",
+      "Superconductivity as a property of certain materials which have zero resistivity at and below a critical temperature which depends on the material.",
+      "Applications of superconductors to include the production of strong magnetic fields and the reduction of energy loss in transmission of electric power.",
+      "Critical field will not be assessed."
+    ],
+    "section": "3.5.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 113,
+    "content": "Circuits",
+    "sub_content": [
+      "Resistors: in series, RT = R1 + R2 + R3 + ..., in parallel, 1/RT = 1/R1 + 1/R2 + ...",
+      "Energy and power equations: E = IVt; P = IV = I^2R = V^2/R",
+      "The relationships between currents, voltages and resistances in series and parallel circuits, including cells in series and identical cells in parallel.",
+      "Conservation of charge and conservation of energy in dc circuits."
+    ],
+    "section": "3.5.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 114,
+    "content": "Potential divider",
+    "sub_content": [
+      "The potential divider used to supply constant or variable potential difference from a power supply.",
+      "The use of the potentiometer as a measuring instrument is not required.",
+      "Examples should include the use of variable resistors, thermistors, and light dependent resistors (LDR) in the potential divider."
+    ],
+    "section": "3.5.1.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 115,
+    "content": "Electromotive force and internal resistance",
+    "sub_content": [
+      "ε = E/Q, ε = I(R + r)",
+      "Students will be expected to understand and perform calculations for circuits in which the internal resistance of the supply is not negligible"
+    ],
+    "section": "3.5.1.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 116,
+    "content": "Circular motion",
+    "sub_content": [
+      "Motion in a circular path at constant speed implies there is an acceleration and requires a centripetal force.",
+      "Magnitude angular speed w = v/r = 2 * Pi * f",
+      "Radian measure of angle",
+      "Direction of angular velocity will not be considered.",
+      "Centripetal acceleration a = v^2/r = w^2*r",
+      "The derivation of the centripetal acceleration formula will not be examined.",
+      "Centripetal force F = mv^2/r = mW^2r"
+    ],
+    "section": "3.6.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 117,
+    "content": "Simple harmonic motion",
+    "section": "3.6.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 118,
+    "content": "Simple harmonic systems",
+    "section": "3.6.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 119,
+    "content": "Simple harmonic systems",
+    "sub_content": [
+      "Qualitative treatment of free and forced vibrations.",
+      "Resonance and the effects of damping on the sharpness of resonance.",
+      "Examples of these effects in mechanical systems and situations involving stationary waves."
+    ],
+    "section": "3.6.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 120,
+    "content": "Thermal energy transfer",
+    "sub_content": [
+      "Internal energy is the sum of the randomly distributed kinetic energies and potential energies of the particles in a body.",
+      "The internal energy of a system is increased when energy is transferred to it by heating or when work is done on it (and vice versa), eg a qualitative treatment of the first law of thermodynamics.",
+      "Appreciation that during a change of state the potential energies of the particle ensemble are changing but not the kinetic energies. Calculations involving transfer of energy.",
+      "For a change of temperature: Q = mc∆θ where c is specific",
+      "Calculations including continuous flow.",
+      "For a change of state Q = ml where l is the specific latent heat."
+    ],
+    "section": "3.6.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 121,
+    "content": "Ideal gases",
+    "sub_content": [
+      "Gas laws as experimental relationships between p, V , T and the mass of the gas.",
+      "Concept of absolute zero of temperature.",
+      "Ideal gas equation: pV = nRT for n moles and pV = NkT for N molecules.",
+      "Work done = p∆V",
+      "Avogadro constant N A, molar gas constant R, Boltzmann constant k",
+      "Molar mass and molecular mass."
+    ],
+    "section": "3.6.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 122,
+    "content": "Molecular kinetic theory model",
+    "sub_content": [
+      "Brownian motion as evidence for existence of atoms.",
+      "Explanation of relationships between p, V and T in terms of a simple molecular model.",
+      "Students should understand that the gas laws are empirical in nature whereas the kinetic theory model arises from theory.",
+      "Assumptions leading to pV = 1/3Nm(crms)^2 including derivation of the equation and calculations.",
+      "A simple algebraic approach involving conservation of momentum is required.",
+      "Appreciation that for an ideal gas internal energy is kinetic energy of the atoms.",
+      "Use of average molecular kinetic energy = 1/2m(crms)^2 = 3/2kT=3RT/2Na",
+      "Appreciation of how knowledge and understanding of thebehaviour of a gas has changed over time."
+    ],
+    "section": "3.6.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 123,
+    "content": "Fields",
+    "sub_content": [
+      "Concept of a force field as a region in which a body experiences a non-contact force.",
+      "Students should recognise that a force field can be represented as a vector, the direction of which must be determined by inspection.",
+      "Force fields arise from the interaction of mass, of static charge, and between moving charges.",
+      "Similarities and differences between gravitational and electrostatic forces:",
+      "Similarities: Both have inverse-square force laws that have many characteristics in common, eg use of field lines, use of potential concept, equipotential surfaces etc",
+      "Differences: masses always attract, but charges may attract or repel"
+    ],
+    "section": "3.7.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 124,
+    "content": "Newton's law",
+    "sub_content": [
+      "Gravity as a universal attractive force acting between all matter.",
+      "Magnitude of force between point masses: F = Gm1m2/r^2 where G is the gravitational constant."
+    ],
+    "section": "3.7.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 125,
+    "content": "Gravitational field strength",
+    "sub_content": [
+      "Representation of a gravitational field by gravitational field lines.",
+      "g as force per unit mass as defined by g = F/m",
+      "Magnitude of g in a radial field given by g = GM/r2"
+    ],
+    "section": "3.7.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 126,
+    "content": "Gravitational potential",
+    "sub_content": [
+      "Understanding of definition of gravitational potential, including zero value at infinity.",
+      "Understanding of gravitational potential difference.",
+      "Work Equipotential done in surfaces. moving mass m given by ∆W = m∆V",
+      "Equipotential surfaces",
+      "Idea that no work is done when moving along an equipotential surface.",
+      "V in a radial field given by V = − GM/r",
+      "Significance of the negative sign",
+      "Graphical representations of variations of g and V with r.",
+      "V related to g by: g = -∆v/∆r",
+      "∆V from area under graph of g against r"
+    ],
+    "section": "3.7.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 127,
+    "content": "Orbits of planets and satellites",
+    "sub_content": [
+      "Orbital period and speed related to radius of circular orbit; derivation of T^2 ∝ r^3",
+      "Energy considerations for an orbiting satellite.",
+      "Total energy of an orbiting satellite.",
+      "Escape velocity.",
+      "Synchronous orbits.",
+      "Use of satellites in low orbits and geostationary orbits, to include plane and radius of geostationary orbit."
+    ],
+    "section": "3.7.2.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 128,
+    "content": "Coulomb's law",
+    "sub_content": [
+      "Force between point charges in a vacuum: F = 1/(4*Pi*ε0) * (Q1Q2)/r^2",
+      "Permittivity of free space, ε0",
+      "Appreciation that air can be treated as a vacuum when calculating force between charges",
+      "For a charged sphere, charge may be considered to be at the centre.",
+      "Comparison of magnitude of gravitational and electrostatic forces between subatomic particles."
+    ],
+    "section": "3.7.3.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 129,
+    "content": "Electric field strength",
+    "sub_content": [
+      "Representation of electric fields by electric field lines.",
+      "Electric field strength.",
+      "E as force per unit charge defined by E = F/Q",
+      "Magnitude of E in a uniform field given by E = V/d",
+      "Derivation from work done moving charge between plates: Fd = QΔV",
+      "Trajectory of moving charged particle entering a uniform electric field initially at right angles.",
+      "Magnitude of E in a radial field given by E = 1/(4*Pi*ε0) * Q/r^2"
+    ],
+    "section": "3.7.3.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 130,
+    "content": "Electric potential",
+    "sub_content": [
+      "Understanding of definition of absolute electric potential, including zero value at infinity, and of electric potential difference.",
+      "Work done in moving charge Q given by ∆ W = Q ∆ V",
+      "Equipotential surfaces",
+      "No work done moving charge along an equipotential surface.",
+      "Magnitude of V in a radial field given by V = 1/(4*Pi*ε0) * Q/r^",
+      "Graphical representations of variations of E and V with r.",
+      "V related to E by E = ∆V/∆r",
+      "∆V from the area under ∆ graph of E against r."
+    ],
+    "section": "3.7.3.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 131,
+    "content": "Capacitance",
+    "sub_content": ["Definition of capacitance: C = Q/V"],
+    "section": "3.7.4.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 132,
+    "content": "Parallel plate capacitor",
+    "sub_content": [
+      "Dielectric action in a capacitor C = (Aε0εr)/d",
+      "Relative permittivity and dielectric constant.",
+      "Students should be able to describe the action of a simple polar molecule that rotates in the presence of an electric field."
+    ],
+    "section": "3.7.4.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 133,
+    "content": "Energy stored by a capacitor",
+    "section": "3.7.4.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 134,
+    "content": "Capacitor charge and discharge",
+    "sub_content": [
+      "Graphical representation of charging and discharging of capacitors through resistors. Corresponding graphs for Q, V and I against time for charging and discharging.",
+      "Interpretation of gradients and areas under graphs where appropriate.",
+      "Time constant RC.",
+      "Calculation of time constants including their determination from graphical data.",
+      "Time to halve, T 1⁄2 = 0.69RC"
+    ],
+    "section": "3.7.4.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 135,
+    "content": "Magnetic flux density",
+    "sub_content": [
+      "Force on a current-carrying wire in a magnetic field: F = BIl when field is perpendicular to current.",
+      "Fleming’s left hand rule.",
+      "Magnetic flux density B and definition of the tesla."
+    ],
+    "section": "3.7.5.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 136,
+    "content": "Moving charges in a magnetic field",
+    "sub_content": [
+      "Force on charged particles moving in a magnetic field, F = BQv when the field is perpendicular to velocity.",
+      "Direction of force on positive and negative charged particles.",
+      "Circular path of particles; application in devices such as the cyclotron."
+    ],
+    "section": "3.7.5.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 137,
+    "content": "Magnetic flux and flux linkage",
+    "sub_content": [
+      "Magnetic flix defined by Φ = BA where B is normal to A.",
+      "Flux linkage as NΦ where N is the number of turns cutting the flux",
+      "Flux and flux linkage passing through a rectangular coil rotated in a magnetic field:",
+      "flux linkage Nθ = BANcosθ"
+    ],
+    "section": "3.7.5.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 138,
+    "content": "Electromagnetic induction",
+    "sub_content": [
+      "Simple experimental phenomena.",
+      "Faraday’s and Lenz’s laws.",
+      "Magnitude of induced emf = rate of change of flux linkage ε = N * ∆Φ/∆t",
+      "Applications such as straight conductor moving in a magnetic field.",
+      "emf induced in a coil rotating uniformly in a magnetic field: ε = BANwSin(wt)"
+    ],
+    "section": "3.7.5.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 139,
+    "content": "Alternating currents",
+    "sub_content": [
+      "Sinusoidal voltages and currents only; root mean square, peak and peak-to-peak values for sinusoidal waveforms only.",
+      "Irms = I0 / 2^0.5; Vrms = V0/2^0.5",
+      "Application to the calculation of mains electricity peak and peak-to-peak voltage values.",
+      "Use of an oscilloscope as a dc and ac voltmeter, to measure time intervals and frequencies, and to display ac waveforms.",
+      "No details of the structure of the instrument are required but familiarity with the operation of the controls is expected."
+    ],
+    "section": "3.7.5.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 140,
+    "content": "The operation of a transformer",
+    "sub_content": [
+      "The transformer equation: Ns/Np = Vs/Vp",
+      "Transformer efficiency = IsVs/IpVp",
+      "Production of eddy currents.",
+      "Causes of inefficiencies in a transformer.",
+      "Transmission of electrical power at high voltage including calculations of power loss in transmission lines"
+    ],
+    "section": "3.7.5.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 141,
+    "content": "Rutherford scattering",
+    "sub_content": [
+      "Qualitative study of Rutherford scattering.",
+      "Appreciation of how knowledge and understanding of the structure of the nucleus has changed over time."
+    ],
+    "section": "3.8.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 142,
+    "content": "α, β and γ radiation",
+    "sub_content": [
+      "Their properties and experimental identification using simple absorption experiments; applications eg to relative hazards of exposure to humans.",
+      "Applications also include thickness measurements of aluminium foil paper and steel.",
+      "Inverse-square Experimental verification law for γ radiation: of inverse-square I = k/x^2",
+      "Experimental verification of inverse-square law",
+      "Applications eg to safe handling of radioactive sources.",
+      "Background radiation; examples of its origins and experimental elimination from calculations.",
+      "Appreciation of balance between risk and benefits in the uses of radiation in medicine"
+    ],
+    "section": "3.8.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 143,
+    "content": "Radioactive decay",
+    "sub_content": [
+      "Random nature of radioactive decay; constant decay probability of a given nucleus;",
+      "∆N/∆t = -λN",
+      "N = N0e^-λt",
+      "Use of activity, A = λN",
+      "Modelling with constant decay probability",
+      "Questions may also require students to use A = A0e^-λt",
+      "Questions may also involve use of molar mass or the Avogadro constant.",
+      "Half-life equation: T1/2 = ln2/λ",
+      "Determination of half-life from graphical decay data including decay curves and log graphs.",
+      "Applications eg relevance to storage of radioactive waste, radioactive dating etc."
+    ],
+    "section": "3.8.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 144,
+    "content": "Nuclear instability",
+    "section": "3.8.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 145,
+    "content": "Nuclear radius",
+    "sub_content": [
+      "Estimate of radius from closest approach of alpha particles and determination of radius from electron diffraction.",
+      "Knowledge of typical values for nuclear radius.",
+      "Students will need to be familiar with the Coulomb equation for the closest approach estimate.",
+      "Dependence of radius on nucleon number:",
+      "R = R0 A1/3 derived from experimental data. ",
+      "Interpretation of equation as evidence for constant density of nuclear material.",
+      "Calculation of nuclear density.",
+      "Students should be familiar with the graph of intensity against angle for electron diffraction by a nucleus."
+    ],
+    "section": "3.8.1.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 146,
+    "content": "Mass and energy",
+    "sub_content": [
+      "Appreciation that E = mc2 applies to all energy changes,",
+      "Simple calculations involving mass difference and binding energy.",
+      "Atomic mass unit, u.",
+      "Conversion of units; 1 u = 931.5 MeV.",
+      "Fission and fusion processes.",
+      "Simple calculations from nuclear masses of energy released in fission and fusion reactions.",
+      "Graph of average binding energy per nucleon against nucleon number.",
+      "Students may be expected to identify, on the plot, the regions where nuclei will release energy when undergoing fission/fusion.",
+      "Appreciation that knowledge of the physics of nuclear energy allows society to use science to inform decision making."
+    ],
+    "section": "3.8.1.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 147,
+    "content": "Induced fission",
+    "sub_content": [
+      "Fission induced by thermal neutrons; possibility of a chain reaction; critical mass.",
+      "The functions of the moderator, control rods, and coolant in a thermal nuclear reactor.",
+      "Details of particular reactors are not required.",
+      "Students should have studied a simple mechanical model of moderation by elastic collisions.",
+      "Factors affecting the choice of materials for the moderator, control rods and coolant. Examples of materials used for these functions."
+    ],
+    "section": "3.8.1.7",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 148,
+    "content": "Safety aspects",
+    "sub_content": [
+      "Fuel used, remote handling of fuel, shielding, emergency shut-down. ",
+      "Production, remote handling, and storage of radioactive waste materials. ",
+      "Appreciation of balance between risk and benefits in the development of nuclear power."
+    ],
+    "section": "3.8.1.8",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 149,
+    "content": "Astronomical telescope consisting of two converging lenses",
+    "section": "3.9.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 150,
+    "content": "Reflecting telescopes",
+    "section": "3.9.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 151,
+    "content": "Single dish radio telescopes, I-R, U-V and X-ray telescopes",
+    "section": "3.9.1.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 152,
+    "content": "Advantages of large diameter telescopes",
+    "section": "3.9.1.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 153,
+    "content": "Classification by luminosity",
+    "section": "3.9.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 154,
+    "content": "Absolute magnitude, M",
+    "section": "3.9.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 155,
+    "content": "Classification by temperature, black-body radiation",
+    "section": "3.9.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 156,
+    "content": "Principles of the use of stellar spectral classes",
+    "section": "3.9.2.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 157,
+    "content": "The Hertzsprung-Russell (HR) diagram",
+    "section": "3.9.2.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 158,
+    "content": "Supernovae, neutron stars and black holes",
+    "section": "3.9.2.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 159,
+    "content": "Doppler effect",
+    "section": "3.9.3.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 160,
+    "content": "Hubble's law",
+    "section": "3.9.3.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 161,
+    "content": "Quasars",
+    "section": "3.9.3.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 162,
+    "content": "Detection of exoplanets",
+    "section": "3.9.3.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 163,
+    "content": "Physics of vision",
+    "section": "3.10.1.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 164,
+    "content": "Defects of vision and their correction using lenses",
+    "section": "3.10.1.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 165,
+    "content": "Ear as a sound detection system",
+    "section": "3.10.2.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 166,
+    "content": "Sensitivity and frequency response",
+    "section": "3.10.2.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 167,
+    "content": "Defects of hearing",
+    "section": "3.10.2.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 168,
+    "content": "Simple ECG machines and the normal ECG waveform",
+    "section": "3.10.3.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 169,
+    "content": "Ultrasound imaging",
+    "section": "3.10.4.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 170,
+    "content": "Fibre optics and endoscopy",
+    "section": "3.10.4.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 171,
+    "content": "Magnetic resonance (MR) scanner",
+    "section": "3.10.4.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 172,
+    "content": "The physics of diagnostic X-rays",
+    "section": "3.10.5.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 173,
+    "content": "Image detection and enhancement",
+    "section": "3.10.5.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 174,
+    "content": "Absorption of X-rays",
+    "section": "3.10.5.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 175,
+    "content": "CT scanner",
+    "section": "3.10.5.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 176,
+    "content": "Imaging Techniques",
+    "section": "3.10.6.1",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 177,
+    "content": "Half-life",
+    "section": "3.10.6.2",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 178,
+    "content": "Gamma camera",
+    "section": "3.10.6.3",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 179,
+    "content": "Use of high-energy X-rays",
+    "section": "3.10.6.4",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 180,
+    "content": "Use of radioactive implants",
+    "section": "3.10.6.5",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  },
+  {
+    "contentID": 181,
+    "content": "Imaging comparisons",
+    "section": "3.10.6.6",
+    "specificationName": "A-level Physics (AQA)",
+    "specID": 2
+  }
 ]

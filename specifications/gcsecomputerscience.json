@@ -1,704 +1,700 @@
 [
-	{
-		"section": "1.1.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 301,
-		"content": "the purpose of the CPU",
-		"sub_content": []
-	},
-	{
-		"section": "1.1.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 302,
-		"content": "Von Neumann architecture",
-		"sub_content": [
-			"MAR (Memory Address Register)",
-			"MDR (Memory Data Register)",
-			"Program Counter",
-			"Accumulator"
-		]
-	},
-	{
-		"section": "1.1.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 303,
-		"content": "common CPU components and their function",
-		"sub_content": [
-			"ALU (Arithmetic Logic Unit)",
-			"CU (Control Unit)",
-			"Cache"
-		]
-	},
-	{
-		"section": "1.1.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 304,
-		"content": "the function of the CPU as fetch and execute instructions stored in memory",
-		"sub_content": []
-	},
-	{
-		"section": "1.1.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 305,
-		"content": "how common characteristics of CPUs affect their performance",
-		"sub_content": ["clock speed", "cache size", "number of cores"]
-	},
-	{
-		"section": "1.1.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 306,
-		"content": "embedded systems",
-		"sub_content": [
-			"purpose of embedded systems",
-			"examples of embedded sytems."
-		]
-	},
-	{
-		"section": "1.2.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 308,
-		"content": "the difference between RAM and ROM",
-		"sub_content": []
-	},
-	{
-		"section": "1.2.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 309,
-		"content": "the purpose of ROM in a computer system",
-		"sub_content": []
-	},
-	{
-		"section": "1.2.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 310,
-		"content": "the purpose of RAM in a computer system",
-		"sub_content": []
-	},
-	{
-		"section": "1.2.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 311,
-		"content": "the need for virtual memory",
-		"sub_content": []
-	},
-	{
-		"section": "1.2.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 312,
-		"content": "flash memory.",
-		"sub_content": []
-	},
-	{
-		"section": "1.3.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 314,
-		"content": "the need for secondary storage",
-		"sub_content": []
-	},
-	{
-		"section": "1.3.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 315,
-		"content": "data capacity and calculation of data capacity requirements",
-		"sub_content": []
-	},
-	{
-		"section": "1.3.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 316,
-		"content": "common types of storage",
-		"sub_content": ["optical", "magnetic", "solid state"]
-	},
-	{
-		"section": "1.3.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 317,
-		"content": "suitable storage devices and storage media for a given application.",
-		"sub_content": [
-			"capacity",
-			"speed",
-			"portability",
-			"durability",
-			"reliability",
-			"cost."
-		]
-	},
-	{
-		"section": "1.4.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 319,
-		"content": "types of networks",
-		"sub_content": ["LAN (Local Area Network)", "WAN (Wide Area Network)"]
-	},
-	{
-		"section": "1.4.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 320,
-		"content": "factors that affect the performance of networks",
-		"sub_content": []
-	},
-	{
-		"section": "1.4.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 321,
-		"content": "the different roles of computers in a client-server and a peer-to-peer network",
-		"sub_content": []
-	},
-	{
-		"section": "1.4.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 322,
-		"content": "the hardware needed to connect stand-alone computers into a Local Area Network",
-		"sub_content": [
-			"wireless access points",
-			"routers/switches",
-			"NIC (Network Interface Controller/Card)",
-			"transmission media"
-		]
-	},
-	{
-		"section": "1.4.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 323,
-		"content": "the internet as a worldwide collection of computer networks",
-		"sub_content": ["DNS (Domain Name Server)", "hosting", "the cloud"]
-	},
-	{
-		"section": "1.4.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 324,
-		"content": "the concept of virtual networks.",
-		"sub_content": []
-	},
-	{
-		"section": "1.5.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 326,
-		"content": "star and mesh network topologies",
-		"sub_content": []
-	},
-	{
-		"section": "1.5.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 327,
-		"content": "Wifi",
-		"sub_content": ["frequency and channels", "encryption"]
-	},
-	{
-		"section": "1.5.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 328,
-		"content": "ethernet",
-		"sub_content": []
-	},
-	{
-		"section": "1.5.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 329,
-		"content": "the uses of IP addressing, MAC addressing, and protocols including",
-		"sub_content": [
-			"TCP/IP (Transmission Control Protocol/Internet Protocol)",
-			"HTTP (Hyper Text Transfer Protocol)",
-			"HTTPS (Hyper Text Transfer Protocol Secure)",
-			"FTP (File Transfer Protocol)",
-			"POP (Post Office Protocol)",
-			"IMAP (Internet Message Access Protocol)",
-			"SMTP (Simple Mail Transfer Protocol)"
-		]
-	},
-	{
-		"section": "1.5.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 330,
-		"content": "the concept of layers",
-		"sub_content": []
-	},
-	{
-		"section": "1.5.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 331,
-		"content": "packet switching.",
-		"sub_content": []
-	},
-	{
-		"section": "1.6.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 333,
-		"content": "forms of attack",
-		"sub_content": []
-	},
-	{
-		"section": "1.6.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 334,
-		"content": "threats posed to networks",
-		"sub_content": [
-			"malware",
-			"phishing",
-			"people as the ‘weak point’ in secure systems (social engineering)",
-			"brute force attacks",
-			"denial of service attacks",
-			"data interception and theft",
-			"the concept of SQL injection",
-			"poor network policy"
-		]
-	},
-	{
-		"section": "1.6.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 335,
-		"content": "identifying and preventing vulnerabilities",
-		"sub_content": [
-			"penetration testing",
-			"network forensics",
-			"network policies",
-			"anti-malware software",
-			"firewalls",
-			"user access levels",
-			"passwords",
-			"encryption."
-		]
-	},
-	{
-		"section": "1.7.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 337,
-		"content": "operating systems",
-		"sub_content": [
-			"user interface",
-			"memory management/multitasking",
-			"peripheral management and drivers",
-			"user management",
-			"file management"
-		]
-	},
-	{
-		"section": "1.7.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 338,
-		"content": "utility system software",
-		"sub_content": [
-			"encryption software",
-			"defragmentation",
-			"data compression",
-			"the role and methods of backup"
-		]
-	},
-	{
-		"section": "1.8.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 340,
-		"content": "how to investigate and discuss Computer Science technologies while considering",
-		"sub_content": [
-			"ethical issues",
-			"legal issues",
-			"cultural issues",
-			"environmental issues.",
-			"privacy issues."
-		]
-	},
-	{
-		"section": "1.8.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 341,
-		"content": "how key stakeholders are affected by technologies",
-		"sub_content": []
-	},
-	{
-		"section": "1.8.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 342,
-		"content": "environmental impact of Computer Science",
-		"sub_content": []
-	},
-	{
-		"section": "1.8.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 343,
-		"content": "cultural implications of Computer Science",
-		"sub_content": []
-	},
-	{
-		"section": "1.8.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 344,
-		"content": "open source vs proprietary software",
-		"sub_content": []
-	},
-	{
-		"section": "1.8.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 345,
-		"content": "legislation relevant to Computer Science",
-		"sub_content": [
-			"The Data Protection Act 1998",
-			"Computer Misuse Act 1990",
-			"Copyright Designs and Patents Act 1988",
-			"Creative Commons Licensing",
-			"Freedom of Information Act 2000."
-		]
-	},
-	{
-		"section": "2.1.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 347,
-		"content": "computational thinking:",
-		"sub_content": ["abstraction", "decomposition", "algorithmic thinking"]
-	},
-	{
-		"section": "2.1.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 348,
-		"content": "standard searching algorithms:",
-		"sub_content": ["binary search", "linear search"]
-	},
-	{
-		"section": "2.1.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 349,
-		"content": "standard sorting algorithms:",
-		"sub_content": ["bubble sort", "merge sort", "insertion sort"]
-	},
-	{
-		"section": "2.1.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 350,
-		"content": "how to produce algorithms using:",
-		"sub_content": ["pseudocode", "using flow diagrams"]
-	},
-	{
-		"section": "2.1.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 351,
-		"content": "interpret, correct or complete algorithms. ",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 353,
-		"content": "the use of variables, constants, operators, inputs, outputs and assignments",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 354,
-		"content": "the use of the three basic programming constructs used to control the flow of a program:",
-		"sub_content": [
-			"sequence",
-			"selection",
-			"iteration (count and condition controlled loops)"
-		]
-	},
-	{
-		"section": "2.2.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 355,
-		"content": "the use of basic string manipulation",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 356,
-		"content": "the use of basic file handling operations:",
-		"sub_content": ["open", "read", "write", "close"]
-	},
-	{
-		"section": "2.2.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 357,
-		"content": "the use of records to store data",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 358,
-		"content": "the use of SQL to search for data",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.7",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 359,
-		"content": "the use of arrays (or equivalent) when solving problems, including both one and two dimensional arrays",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.8",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 360,
-		"content": "how to use sub programs (functions and procedures) to produce structured code",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.9",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 361,
-		"content": "the use of data types:",
-		"sub_content": [
-			"integer",
-			"real",
-			"Boolean",
-			"character and string",
-			"casting"
-		]
-	},
-	{
-		"section": "2.2.10",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 362,
-		"content": "the common arithmetic operators",
-		"sub_content": []
-	},
-	{
-		"section": "2.2.11",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 363,
-		"content": "the common Boolean operators.",
-		"sub_content": []
-	},
-	{
-		"section": "2.3.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 365,
-		"content": "defensive design considerations:",
-		"sub_content": [
-			"input sanitisation/validation",
-			"planning for contingencies",
-			"anticipating misuse",
-			"authentication"
-		]
-	},
-	{
-		"section": "2.3.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 366,
-		"content": "maintainability:",
-		"sub_content": ["comments", "indentation"]
-	},
-	{
-		"section": "2.3.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 367,
-		"content": "the purpose of testing",
-		"sub_content": []
-	},
-	{
-		"section": "2.3.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 368,
-		"content": "types of testing:",
-		"sub_content": ["iterative", "final/terminal"]
-	},
-	{
-		"section": "2.3.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 369,
-		"content": "how to identify syntax and logic errors",
-		"sub_content": []
-	},
-	{
-		"section": "2.3.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 370,
-		"content": "selecting and using suitable test data. ",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 372,
-		"content": "why data is represented in computer systems in binary form",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 373,
-		"content": "simple logic diagrams using the operations AND, OR and NOT",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 374,
-		"content": "truth tables",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 375,
-		"content": "combining Boolean operators using AND, OR and NOT to two levels",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 376,
-		"content": "applying logical operators in appropriate truth tables to solve problems",
-		"sub_content": []
-	},
-	{
-		"section": "2.4.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 377,
-		"content": "applying computing-related mathematics:",
-		"sub_content": ["+", "–", "/", "*", "Exponentiation (^)", "MOD", "DIV"]
-	},
-	{
-		"section": "2.5.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 379,
-		"content": "characteristics and purpose of different levels of programming language, including low level languages",
-		"sub_content": []
-	},
-	{
-		"section": "2.5.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 380,
-		"content": "the purpose of translators",
-		"sub_content": []
-	},
-	{
-		"section": "2.5.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 381,
-		"content": "the characteristics of an assembler, a compiler and an interpreter",
-		"sub_content": []
-	},
-	{
-		"section": "2.5.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 382,
-		"content": "common tools and facilities available in an integrated development environment (IDE):",
-		"sub_content": [
-			"editors",
-			"error diagnostics",
-			"run-time environment",
-			"translators."
-		]
-	},
-	{
-		"section": "2.6.1",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 384,
-		"content": "bit, nibble, byte, kilobyte, megabyte, gigabyte, terabyte, petabyte",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.2",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 385,
-		"content": "how data needs to be converted into a binary format to be processed by a computer.",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.3",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 386,
-		"content": "how to convert positive denary whole numbers (0–255) into 8 bit binary numbers and vice versa",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.4",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 387,
-		"content": "how to add two 8 bit binary integers and explain overflow errors which may occur",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.5",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 388,
-		"content": "binary shifts",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.6",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 389,
-		"content": "how to convert positive denary whole numbers (0–255) into 2 digit hexadecimal numbers and vice",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.7",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 390,
-		"content": "how to convert from binary to hexadecimal equivalents and vice versa",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.8",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 391,
-		"content": "check digits.",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.9",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 392,
-		"content": "the use of binary codes to represent characters",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.10",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 393,
-		"content": "the term ‘character-set’",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.11",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 394,
-		"content": "how an image is represented as a series of pixels represented in binary",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.12",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 395,
-		"content": "metadata included in the file",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.13",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 396,
-		"content": "the effect of colour depth and resolution on the size of an image file.",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.14",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 397,
-		"content": "how sound can be sampled and stored in digital form",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.15",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 398,
-		"content": "how sampling intervals and other factors affect the size of a sound file and the quality of its playback:",
-		"sub_content": ["sample size", "bit rate", "sampling frequency."]
-	},
-	{
-		"section": "2.6.16",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 399,
-		"content": "need for compression",
-		"sub_content": []
-	},
-	{
-		"section": "2.6.17",
-		"specificationName": "GCSE Computer Science (OCR)",
-		"contentID": 400,
-		"content": "types of compression:",
-		"sub_content": ["lossy", "lossless."]
-	}
+  {
+    "section": "1.1.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 301,
+    "content": "the purpose of the CPU",
+    "sub_content": []
+  },
+  {
+    "section": "1.1.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 302,
+    "content": "Von Neumann architecture",
+    "sub_content": [
+      "MAR (Memory Address Register)",
+      "MDR (Memory Data Register)",
+      "Program Counter",
+      "Accumulator"
+    ]
+  },
+  {
+    "section": "1.1.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 303,
+    "content": "common CPU components and their function",
+    "sub_content": ["ALU (Arithmetic Logic Unit)", "CU (Control Unit)", "Cache"]
+  },
+  {
+    "section": "1.1.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 304,
+    "content": "the function of the CPU as fetch and execute instructions stored in memory",
+    "sub_content": []
+  },
+  {
+    "section": "1.1.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 305,
+    "content": "how common characteristics of CPUs affect their performance",
+    "sub_content": ["clock speed", "cache size", "number of cores"]
+  },
+  {
+    "section": "1.1.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 306,
+    "content": "embedded systems",
+    "sub_content": [
+      "purpose of embedded systems",
+      "examples of embedded sytems."
+    ]
+  },
+  {
+    "section": "1.2.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 308,
+    "content": "the difference between RAM and ROM",
+    "sub_content": []
+  },
+  {
+    "section": "1.2.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 309,
+    "content": "the purpose of ROM in a computer system",
+    "sub_content": []
+  },
+  {
+    "section": "1.2.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 310,
+    "content": "the purpose of RAM in a computer system",
+    "sub_content": []
+  },
+  {
+    "section": "1.2.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 311,
+    "content": "the need for virtual memory",
+    "sub_content": []
+  },
+  {
+    "section": "1.2.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 312,
+    "content": "flash memory.",
+    "sub_content": []
+  },
+  {
+    "section": "1.3.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 314,
+    "content": "the need for secondary storage",
+    "sub_content": []
+  },
+  {
+    "section": "1.3.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 315,
+    "content": "data capacity and calculation of data capacity requirements",
+    "sub_content": []
+  },
+  {
+    "section": "1.3.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 316,
+    "content": "common types of storage",
+    "sub_content": ["optical", "magnetic", "solid state"]
+  },
+  {
+    "section": "1.3.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 317,
+    "content": "suitable storage devices and storage media for a given application.",
+    "sub_content": [
+      "capacity",
+      "speed",
+      "portability",
+      "durability",
+      "reliability",
+      "cost."
+    ]
+  },
+  {
+    "section": "1.4.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 319,
+    "content": "types of networks",
+    "sub_content": ["LAN (Local Area Network)", "WAN (Wide Area Network)"]
+  },
+  {
+    "section": "1.4.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 320,
+    "content": "factors that affect the performance of networks",
+    "sub_content": []
+  },
+  {
+    "section": "1.4.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 321,
+    "content": "the different roles of computers in a client-server and a peer-to-peer network",
+    "sub_content": []
+  },
+  {
+    "section": "1.4.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 322,
+    "content": "the hardware needed to connect stand-alone computers into a Local Area Network",
+    "sub_content": [
+      "wireless access points",
+      "routers/switches",
+      "NIC (Network Interface Controller/Card)",
+      "transmission media"
+    ]
+  },
+  {
+    "section": "1.4.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 323,
+    "content": "the internet as a worldwide collection of computer networks",
+    "sub_content": ["DNS (Domain Name Server)", "hosting", "the cloud"]
+  },
+  {
+    "section": "1.4.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 324,
+    "content": "the concept of virtual networks.",
+    "sub_content": []
+  },
+  {
+    "section": "1.5.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 326,
+    "content": "star and mesh network topologies",
+    "sub_content": []
+  },
+  {
+    "section": "1.5.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 327,
+    "content": "Wifi",
+    "sub_content": ["frequency and channels", "encryption"]
+  },
+  {
+    "section": "1.5.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 328,
+    "content": "ethernet",
+    "sub_content": []
+  },
+  {
+    "section": "1.5.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 329,
+    "content": "the uses of IP addressing, MAC addressing, and protocols including",
+    "sub_content": [
+      "TCP/IP (Transmission Control Protocol/Internet Protocol)",
+      "HTTP (Hyper Text Transfer Protocol)",
+      "HTTPS (Hyper Text Transfer Protocol Secure)",
+      "FTP (File Transfer Protocol)",
+      "POP (Post Office Protocol)",
+      "IMAP (Internet Message Access Protocol)",
+      "SMTP (Simple Mail Transfer Protocol)"
+    ]
+  },
+  {
+    "section": "1.5.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 330,
+    "content": "the concept of layers",
+    "sub_content": []
+  },
+  {
+    "section": "1.5.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 331,
+    "content": "packet switching.",
+    "sub_content": []
+  },
+  {
+    "section": "1.6.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 333,
+    "content": "forms of attack",
+    "sub_content": []
+  },
+  {
+    "section": "1.6.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 334,
+    "content": "threats posed to networks",
+    "sub_content": [
+      "malware",
+      "phishing",
+      "people as the ‘weak point’ in secure systems (social engineering)",
+      "brute force attacks",
+      "denial of service attacks",
+      "data interception and theft",
+      "the concept of SQL injection",
+      "poor network policy"
+    ]
+  },
+  {
+    "section": "1.6.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 335,
+    "content": "identifying and preventing vulnerabilities",
+    "sub_content": [
+      "penetration testing",
+      "network forensics",
+      "network policies",
+      "anti-malware software",
+      "firewalls",
+      "user access levels",
+      "passwords",
+      "encryption."
+    ]
+  },
+  {
+    "section": "1.7.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 337,
+    "content": "operating systems",
+    "sub_content": [
+      "user interface",
+      "memory management/multitasking",
+      "peripheral management and drivers",
+      "user management",
+      "file management"
+    ]
+  },
+  {
+    "section": "1.7.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 338,
+    "content": "utility system software",
+    "sub_content": [
+      "encryption software",
+      "defragmentation",
+      "data compression",
+      "the role and methods of backup"
+    ]
+  },
+  {
+    "section": "1.8.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 340,
+    "content": "how to investigate and discuss Computer Science technologies while considering",
+    "sub_content": [
+      "ethical issues",
+      "legal issues",
+      "cultural issues",
+      "environmental issues.",
+      "privacy issues."
+    ]
+  },
+  {
+    "section": "1.8.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 341,
+    "content": "how key stakeholders are affected by technologies",
+    "sub_content": []
+  },
+  {
+    "section": "1.8.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 342,
+    "content": "environmental impact of Computer Science",
+    "sub_content": []
+  },
+  {
+    "section": "1.8.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 343,
+    "content": "cultural implications of Computer Science",
+    "sub_content": []
+  },
+  {
+    "section": "1.8.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 344,
+    "content": "open source vs proprietary software",
+    "sub_content": []
+  },
+  {
+    "section": "1.8.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 345,
+    "content": "legislation relevant to Computer Science",
+    "sub_content": [
+      "The Data Protection Act 1998",
+      "Computer Misuse Act 1990",
+      "Copyright Designs and Patents Act 1988",
+      "Creative Commons Licensing",
+      "Freedom of Information Act 2000."
+    ]
+  },
+  {
+    "section": "2.1.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 347,
+    "content": "computational thinking:",
+    "sub_content": ["abstraction", "decomposition", "algorithmic thinking"]
+  },
+  {
+    "section": "2.1.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 348,
+    "content": "standard searching algorithms:",
+    "sub_content": ["binary search", "linear search"]
+  },
+  {
+    "section": "2.1.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 349,
+    "content": "standard sorting algorithms:",
+    "sub_content": ["bubble sort", "merge sort", "insertion sort"]
+  },
+  {
+    "section": "2.1.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 350,
+    "content": "how to produce algorithms using:",
+    "sub_content": ["pseudocode", "using flow diagrams"]
+  },
+  {
+    "section": "2.1.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 351,
+    "content": "interpret, correct or complete algorithms. ",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 353,
+    "content": "the use of variables, constants, operators, inputs, outputs and assignments",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 354,
+    "content": "the use of the three basic programming constructs used to control the flow of a program:",
+    "sub_content": [
+      "sequence",
+      "selection",
+      "iteration (count and condition controlled loops)"
+    ]
+  },
+  {
+    "section": "2.2.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 355,
+    "content": "the use of basic string manipulation",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 356,
+    "content": "the use of basic file handling operations:",
+    "sub_content": ["open", "read", "write", "close"]
+  },
+  {
+    "section": "2.2.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 357,
+    "content": "the use of records to store data",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 358,
+    "content": "the use of SQL to search for data",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.7",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 359,
+    "content": "the use of arrays (or equivalent) when solving problems, including both one and two dimensional arrays",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.8",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 360,
+    "content": "how to use sub programs (functions and procedures) to produce structured code",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.9",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 361,
+    "content": "the use of data types:",
+    "sub_content": [
+      "integer",
+      "real",
+      "Boolean",
+      "character and string",
+      "casting"
+    ]
+  },
+  {
+    "section": "2.2.10",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 362,
+    "content": "the common arithmetic operators",
+    "sub_content": []
+  },
+  {
+    "section": "2.2.11",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 363,
+    "content": "the common Boolean operators.",
+    "sub_content": []
+  },
+  {
+    "section": "2.3.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 365,
+    "content": "defensive design considerations:",
+    "sub_content": [
+      "input sanitisation/validation",
+      "planning for contingencies",
+      "anticipating misuse",
+      "authentication"
+    ]
+  },
+  {
+    "section": "2.3.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 366,
+    "content": "maintainability:",
+    "sub_content": ["comments", "indentation"]
+  },
+  {
+    "section": "2.3.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 367,
+    "content": "the purpose of testing",
+    "sub_content": []
+  },
+  {
+    "section": "2.3.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 368,
+    "content": "types of testing:",
+    "sub_content": ["iterative", "final/terminal"]
+  },
+  {
+    "section": "2.3.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 369,
+    "content": "how to identify syntax and logic errors",
+    "sub_content": []
+  },
+  {
+    "section": "2.3.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 370,
+    "content": "selecting and using suitable test data. ",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 372,
+    "content": "why data is represented in computer systems in binary form",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 373,
+    "content": "simple logic diagrams using the operations AND, OR and NOT",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 374,
+    "content": "truth tables",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 375,
+    "content": "combining Boolean operators using AND, OR and NOT to two levels",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 376,
+    "content": "applying logical operators in appropriate truth tables to solve problems",
+    "sub_content": []
+  },
+  {
+    "section": "2.4.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 377,
+    "content": "applying computing-related mathematics:",
+    "sub_content": ["+", "–", "/", "*", "Exponentiation (^)", "MOD", "DIV"]
+  },
+  {
+    "section": "2.5.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 379,
+    "content": "characteristics and purpose of different levels of programming language, including low level languages",
+    "sub_content": []
+  },
+  {
+    "section": "2.5.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 380,
+    "content": "the purpose of translators",
+    "sub_content": []
+  },
+  {
+    "section": "2.5.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 381,
+    "content": "the characteristics of an assembler, a compiler and an interpreter",
+    "sub_content": []
+  },
+  {
+    "section": "2.5.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 382,
+    "content": "common tools and facilities available in an integrated development environment (IDE):",
+    "sub_content": [
+      "editors",
+      "error diagnostics",
+      "run-time environment",
+      "translators."
+    ]
+  },
+  {
+    "section": "2.6.1",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 384,
+    "content": "bit, nibble, byte, kilobyte, megabyte, gigabyte, terabyte, petabyte",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.2",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 385,
+    "content": "how data needs to be converted into a binary format to be processed by a computer.",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.3",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 386,
+    "content": "how to convert positive denary whole numbers (0–255) into 8 bit binary numbers and vice versa",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.4",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 387,
+    "content": "how to add two 8 bit binary integers and explain overflow errors which may occur",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.5",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 388,
+    "content": "binary shifts",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.6",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 389,
+    "content": "how to convert positive denary whole numbers (0–255) into 2 digit hexadecimal numbers and vice",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.7",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 390,
+    "content": "how to convert from binary to hexadecimal equivalents and vice versa",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.8",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 391,
+    "content": "check digits.",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.9",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 392,
+    "content": "the use of binary codes to represent characters",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.10",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 393,
+    "content": "the term ‘character-set’",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.11",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 394,
+    "content": "how an image is represented as a series of pixels represented in binary",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.12",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 395,
+    "content": "metadata included in the file",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.13",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 396,
+    "content": "the effect of colour depth and resolution on the size of an image file.",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.14",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 397,
+    "content": "how sound can be sampled and stored in digital form",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.15",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 398,
+    "content": "how sampling intervals and other factors affect the size of a sound file and the quality of its playback:",
+    "sub_content": ["sample size", "bit rate", "sampling frequency."]
+  },
+  {
+    "section": "2.6.16",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 399,
+    "content": "need for compression",
+    "sub_content": []
+  },
+  {
+    "section": "2.6.17",
+    "specificationName": "GCSE Computer Science (OCR)",
+    "contentID": 400,
+    "content": "types of compression:",
+    "sub_content": ["lossy", "lossless."]
+  }
 ]

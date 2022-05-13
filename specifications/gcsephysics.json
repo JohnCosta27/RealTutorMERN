@@ -1,518 +1,518 @@
 [
-	{
-		"section": "1.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3000,
-		"content": "Energy Stores and Systems"
-	},
-	{
-		"section": "1.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3001,
-		"content": "Kinetic and Potential Energy Stores"
-	},
-	{
-		"section": "1.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3002,
-		"content": "Specific Heat Capacity"
-	},
-	{
-		"section": "1.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3003,
-		"content": "Conservation of Energy and Power"
-	},
-	{
-		"section": "1.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3004,
-		"content": "Conduction and Convection"
-	},
-	{
-		"section": "1.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3005,
-		"content": "Reducing Unwanted Energy Transfers"
-	},
-	{
-		"section": "1.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3006,
-		"content": "Efficiency"
-	},
-	{
-		"section": "1.8",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3007,
-		"content": "Energy Resources and their Uses"
-	},
-	{
-		"section": "1.9",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3008,
-		"content": "Wind, Solar and Geothermal"
-	},
-	{
-		"section": "1.10",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3009,
-		"content": "Hydro-electricity, Waves and Tides"
-	},
-	{
-		"section": "1.11",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3010,
-		"content": "Bio-fuels and Non-renewables"
-	},
-	{
-		"section": "1.12",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3011,
-		"content": "Trends in Energy Resource Use"
-	},
-	{
-		"section": "2.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3012,
-		"content": "Current and Circuit Symbols"
-	},
-	{
-		"section": "2.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3013,
-		"content": "Resistance and V = IR"
-	},
-	{
-		"section": "2.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3014,
-		"content": "Resistance and I-V Characteristics"
-	},
-	{
-		"section": "2.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3015,
-		"content": "Circuit Devices"
-	},
-	{
-		"section": "2.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3016,
-		"content": "Series Circuits"
-	},
-	{
-		"section": "2.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3017,
-		"content": "Parallel Circuits"
-	},
-	{
-		"section": "2.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3018,
-		"content": "Investigating Resistance"
-	},
-	{
-		"section": "2.8",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3019,
-		"content": "Electricity in the Home"
-	},
-	{
-		"section": "2.9",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3020,
-		"content": "Power of Electrical Appliances"
-	},
-	{
-		"section": "2.10",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3021,
-		"content": "More on Power"
-	},
-	{
-		"section": "2.11",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3022,
-		"content": "The National Grid"
-	},
-	{
-		"section": "2.12",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3023,
-		"content": "Static Electricity"
-	},
-	{
-		"section": "2.13",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3024,
-		"content": "Electric Fields"
-	},
-	{
-		"section": "3.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3025,
-		"content": "Density of Materials"
-	},
-	{
-		"section": "3.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3026,
-		"content": "Internal Energy and Changes of State"
-	},
-	{
-		"section": "3.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3027,
-		"content": "Specific Latent Heat"
-	},
-	{
-		"section": "3.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3028,
-		"content": "Particle Motion in Gases"
-	},
-	{
-		"section": "4.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3029,
-		"content": "Developing the Model of the Atom"
-	},
-	{
-		"section": "4.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3030,
-		"content": "Isotopes and Nuclear Radiation"
-	},
-	{
-		"section": "4.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3031,
-		"content": "Nuclear Equations"
-	},
-	{
-		"section": "4.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3032,
-		"content": "Half-life"
-	},
-	{
-		"section": "4.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3033,
-		"content": "Background Radiation and Contamination"
-	},
-	{
-		"section": "4.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3034,
-		"content": "Uses and Risk"
-	},
-	{
-		"section": "4.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3035,
-		"content": "Fission and Fusion"
-	},
-	{
-		"section": "5.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3036,
-		"content": "Contact and Non-Contact Forces"
-	},
-	{
-		"section": "5.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3037,
-		"content": "Weight, Mass and Gravity"
-	},
-	{
-		"section": "5.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3038,
-		"content": "Resultant Forces and Work Done"
-	},
-	{
-		"section": "5.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3039,
-		"content": "Calculating Forces"
-	},
-	{
-		"section": "5.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3040,
-		"content": "Forces and Elasticity"
-	},
-	{
-		"section": "5.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3041,
-		"content": "Investigating Springs"
-	},
-	{
-		"section": "5.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3042,
-		"content": "Moments"
-	},
-	{
-		"section": "5.8",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3043,
-		"content": "Fluid Pressure"
-	},
-	{
-		"section": "5.9",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3044,
-		"content": "Upthrust and Atmospheric Pressure"
-	},
-	{
-		"section": "5.10",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3045,
-		"content": "Distance, Displacement, Speed and Velocity,"
-	},
-	{
-		"section": "5.11",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3046,
-		"content": "Acceleration"
-	},
-	{
-		"section": "5.12",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3047,
-		"content": "Distance-Time and Velocity-Time Graphs"
-	},
-	{
-		"section": "5.13",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3048,
-		"content": "Terminal Velocity"
-	},
-	{
-		"section": "5.14",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3049,
-		"content": "Newton's First and Second Laws"
-	},
-	{
-		"section": "5.15",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3050,
-		"content": "Inertia and Newton's Third Law"
-	},
-	{
-		"section": "5.16",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3051,
-		"content": "Investigating Motion"
-	},
-	{
-		"section": "5.17",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3052,
-		"content": "Stopping Distances"
-	},
-	{
-		"section": "5.18",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3053,
-		"content": "Reaction Times"
-	},
-	{
-		"section": "5.19",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3054,
-		"content": "More on Stopping Distances"
-	},
-	{
-		"section": "5.20",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3055,
-		"content": "Momentum"
-	},
-	{
-		"section": "5.21",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3056,
-		"content": "Changes in Momentum"
-	},
-	{
-		"section": "6.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3057,
-		"content": "Transverse and Longitudinal Waves"
-	},
-	{
-		"section": "6.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3058,
-		"content": "Experiments With Waves"
-	},
-	{
-		"section": "6.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3059,
-		"content": "Reflection"
-	},
-	{
-		"section": "6.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3060,
-		"content": "Electromagnetic Waves and Refraction"
-	},
-	{
-		"section": "6.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3061,
-		"content": "Investigating Light"
-	},
-	{
-		"section": "6.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3062,
-		"content": "Radio Waves"
-	},
-	{
-		"section": "6.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3063,
-		"content": "EM Waves and Their Uses"
-	},
-	{
-		"section": "6.8",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3064,
-		"content": "More Uses of EM Waves"
-	},
-	{
-		"section": "6.9",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3065,
-		"content": "Dangers of Electromagnetic Waves"
-	},
-	{
-		"section": "6.10",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3066,
-		"content": "Lenses"
-	},
-	{
-		"section": "6.11",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3067,
-		"content": "Images and Ray Diagrams"
-	},
-	{
-		"section": "6.12",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3068,
-		"content": "Concave Lenses and Magnification,"
-	},
-	{
-		"section": "6.13",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3069,
-		"content": "Visible Light"
-	},
-	{
-		"section": "6.14",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3070,
-		"content": "Infrared Radiation and Temperature,"
-	},
-	{
-		"section": "6.15",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3071,
-		"content": "Black Body Radiation"
-	},
-	{
-		"section": "6.16",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3072,
-		"content": "Sound Wave"
-	},
-	{
-		"section": "6.17",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3073,
-		"content": "Ultrasound"
-	},
-	{
-		"section": "6.18",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3074,
-		"content": "Exploring Structures Using Waves"
-	},
-	{
-		"section": "7.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3075,
-		"content": "Electromagnetism"
-	},
-	{
-		"section": "7.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3076,
-		"content": "Permanent and Induced Magnets"
-	},
-	{
-		"section": "7.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3077,
-		"content": "Electromagnetism"
-	},
-	{
-		"section": "7.4",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3078,
-		"content": "The Motor Effect"
-	},
-	{
-		"section": "7.5",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3079,
-		"content": "Electric Motors and Loudspeakers,"
-	},
-	{
-		"section": "7.6",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3080,
-		"content": "The Generator Effect"
-	},
-	{
-		"section": "7.7",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3081,
-		"content": "Generators and Microphones"
-	},
-	{
-		"section": "7.8",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3082,
-		"content": "Transformers"
-	},
-	{
-		"section": "9.1",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3083,
-		"content": "The Life Cycle of Stars"
-	},
-	{
-		"section": "9.2",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3084,
-		"content": "The Solar System and Orbits"
-	},
-	{
-		"section": "9.3",
-		"specificationName": "GCSE Physics (AQA)",
-		"contentID": 3085,
-		"content": "Red-shift and the Big Bang"
-	}
+  {
+    "section": "1.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3000,
+    "content": "Energy Stores and Systems"
+  },
+  {
+    "section": "1.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3001,
+    "content": "Kinetic and Potential Energy Stores"
+  },
+  {
+    "section": "1.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3002,
+    "content": "Specific Heat Capacity"
+  },
+  {
+    "section": "1.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3003,
+    "content": "Conservation of Energy and Power"
+  },
+  {
+    "section": "1.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3004,
+    "content": "Conduction and Convection"
+  },
+  {
+    "section": "1.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3005,
+    "content": "Reducing Unwanted Energy Transfers"
+  },
+  {
+    "section": "1.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3006,
+    "content": "Efficiency"
+  },
+  {
+    "section": "1.8",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3007,
+    "content": "Energy Resources and their Uses"
+  },
+  {
+    "section": "1.9",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3008,
+    "content": "Wind, Solar and Geothermal"
+  },
+  {
+    "section": "1.10",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3009,
+    "content": "Hydro-electricity, Waves and Tides"
+  },
+  {
+    "section": "1.11",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3010,
+    "content": "Bio-fuels and Non-renewables"
+  },
+  {
+    "section": "1.12",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3011,
+    "content": "Trends in Energy Resource Use"
+  },
+  {
+    "section": "2.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3012,
+    "content": "Current and Circuit Symbols"
+  },
+  {
+    "section": "2.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3013,
+    "content": "Resistance and V = IR"
+  },
+  {
+    "section": "2.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3014,
+    "content": "Resistance and I-V Characteristics"
+  },
+  {
+    "section": "2.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3015,
+    "content": "Circuit Devices"
+  },
+  {
+    "section": "2.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3016,
+    "content": "Series Circuits"
+  },
+  {
+    "section": "2.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3017,
+    "content": "Parallel Circuits"
+  },
+  {
+    "section": "2.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3018,
+    "content": "Investigating Resistance"
+  },
+  {
+    "section": "2.8",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3019,
+    "content": "Electricity in the Home"
+  },
+  {
+    "section": "2.9",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3020,
+    "content": "Power of Electrical Appliances"
+  },
+  {
+    "section": "2.10",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3021,
+    "content": "More on Power"
+  },
+  {
+    "section": "2.11",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3022,
+    "content": "The National Grid"
+  },
+  {
+    "section": "2.12",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3023,
+    "content": "Static Electricity"
+  },
+  {
+    "section": "2.13",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3024,
+    "content": "Electric Fields"
+  },
+  {
+    "section": "3.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3025,
+    "content": "Density of Materials"
+  },
+  {
+    "section": "3.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3026,
+    "content": "Internal Energy and Changes of State"
+  },
+  {
+    "section": "3.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3027,
+    "content": "Specific Latent Heat"
+  },
+  {
+    "section": "3.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3028,
+    "content": "Particle Motion in Gases"
+  },
+  {
+    "section": "4.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3029,
+    "content": "Developing the Model of the Atom"
+  },
+  {
+    "section": "4.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3030,
+    "content": "Isotopes and Nuclear Radiation"
+  },
+  {
+    "section": "4.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3031,
+    "content": "Nuclear Equations"
+  },
+  {
+    "section": "4.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3032,
+    "content": "Half-life"
+  },
+  {
+    "section": "4.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3033,
+    "content": "Background Radiation and Contamination"
+  },
+  {
+    "section": "4.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3034,
+    "content": "Uses and Risk"
+  },
+  {
+    "section": "4.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3035,
+    "content": "Fission and Fusion"
+  },
+  {
+    "section": "5.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3036,
+    "content": "Contact and Non-Contact Forces"
+  },
+  {
+    "section": "5.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3037,
+    "content": "Weight, Mass and Gravity"
+  },
+  {
+    "section": "5.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3038,
+    "content": "Resultant Forces and Work Done"
+  },
+  {
+    "section": "5.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3039,
+    "content": "Calculating Forces"
+  },
+  {
+    "section": "5.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3040,
+    "content": "Forces and Elasticity"
+  },
+  {
+    "section": "5.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3041,
+    "content": "Investigating Springs"
+  },
+  {
+    "section": "5.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3042,
+    "content": "Moments"
+  },
+  {
+    "section": "5.8",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3043,
+    "content": "Fluid Pressure"
+  },
+  {
+    "section": "5.9",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3044,
+    "content": "Upthrust and Atmospheric Pressure"
+  },
+  {
+    "section": "5.10",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3045,
+    "content": "Distance, Displacement, Speed and Velocity,"
+  },
+  {
+    "section": "5.11",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3046,
+    "content": "Acceleration"
+  },
+  {
+    "section": "5.12",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3047,
+    "content": "Distance-Time and Velocity-Time Graphs"
+  },
+  {
+    "section": "5.13",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3048,
+    "content": "Terminal Velocity"
+  },
+  {
+    "section": "5.14",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3049,
+    "content": "Newton's First and Second Laws"
+  },
+  {
+    "section": "5.15",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3050,
+    "content": "Inertia and Newton's Third Law"
+  },
+  {
+    "section": "5.16",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3051,
+    "content": "Investigating Motion"
+  },
+  {
+    "section": "5.17",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3052,
+    "content": "Stopping Distances"
+  },
+  {
+    "section": "5.18",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3053,
+    "content": "Reaction Times"
+  },
+  {
+    "section": "5.19",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3054,
+    "content": "More on Stopping Distances"
+  },
+  {
+    "section": "5.20",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3055,
+    "content": "Momentum"
+  },
+  {
+    "section": "5.21",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3056,
+    "content": "Changes in Momentum"
+  },
+  {
+    "section": "6.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3057,
+    "content": "Transverse and Longitudinal Waves"
+  },
+  {
+    "section": "6.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3058,
+    "content": "Experiments With Waves"
+  },
+  {
+    "section": "6.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3059,
+    "content": "Reflection"
+  },
+  {
+    "section": "6.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3060,
+    "content": "Electromagnetic Waves and Refraction"
+  },
+  {
+    "section": "6.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3061,
+    "content": "Investigating Light"
+  },
+  {
+    "section": "6.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3062,
+    "content": "Radio Waves"
+  },
+  {
+    "section": "6.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3063,
+    "content": "EM Waves and Their Uses"
+  },
+  {
+    "section": "6.8",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3064,
+    "content": "More Uses of EM Waves"
+  },
+  {
+    "section": "6.9",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3065,
+    "content": "Dangers of Electromagnetic Waves"
+  },
+  {
+    "section": "6.10",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3066,
+    "content": "Lenses"
+  },
+  {
+    "section": "6.11",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3067,
+    "content": "Images and Ray Diagrams"
+  },
+  {
+    "section": "6.12",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3068,
+    "content": "Concave Lenses and Magnification,"
+  },
+  {
+    "section": "6.13",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3069,
+    "content": "Visible Light"
+  },
+  {
+    "section": "6.14",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3070,
+    "content": "Infrared Radiation and Temperature,"
+  },
+  {
+    "section": "6.15",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3071,
+    "content": "Black Body Radiation"
+  },
+  {
+    "section": "6.16",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3072,
+    "content": "Sound Wave"
+  },
+  {
+    "section": "6.17",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3073,
+    "content": "Ultrasound"
+  },
+  {
+    "section": "6.18",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3074,
+    "content": "Exploring Structures Using Waves"
+  },
+  {
+    "section": "7.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3075,
+    "content": "Electromagnetism"
+  },
+  {
+    "section": "7.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3076,
+    "content": "Permanent and Induced Magnets"
+  },
+  {
+    "section": "7.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3077,
+    "content": "Electromagnetism"
+  },
+  {
+    "section": "7.4",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3078,
+    "content": "The Motor Effect"
+  },
+  {
+    "section": "7.5",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3079,
+    "content": "Electric Motors and Loudspeakers,"
+  },
+  {
+    "section": "7.6",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3080,
+    "content": "The Generator Effect"
+  },
+  {
+    "section": "7.7",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3081,
+    "content": "Generators and Microphones"
+  },
+  {
+    "section": "7.8",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3082,
+    "content": "Transformers"
+  },
+  {
+    "section": "9.1",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3083,
+    "content": "The Life Cycle of Stars"
+  },
+  {
+    "section": "9.2",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3084,
+    "content": "The Solar System and Orbits"
+  },
+  {
+    "section": "9.3",
+    "specificationName": "GCSE Physics (AQA)",
+    "contentID": 3085,
+    "content": "Red-shift and the Big Bang"
+  }
 ]
